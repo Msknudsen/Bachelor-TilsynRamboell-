@@ -1,0 +1,22 @@
+	I dette afsnit beskrives design og implementring af Traffic Controls android applikation. 
+	Applikationen er skrevet i C\# ved hjælp af Xamarin, som gør dette muligt.
+	Til udvikling af vores android applikation er der blevet brugt et MVP design på en 3-layer arkitektur. Dette kan ses i diagrammet herunder.
+	
+	\begin{figure} [!ht]
+		\begin{center}
+			\includegraphics[height=14cm]{Android/Billeder/MVP}
+		\end{center}
+		\caption{MVP + 3-layer på android applikationen}
+		\label{fig:MVP}
+	\end{figure}
+	\pagebreak
+	\noindent Model-View-Presenter er et design pattern til opbygning af user interfaces. \textbf{\emph{Model}} er der alt vores data ligger. Det er så \textbf{\emph{Presenterens}} opgave at manipulere det til \textbf{\emph{Viewet}}. Viewet er det som vi ser som bruger og som vi kan interagere med. Hvis brugeren interagerer med applikationen er det Presenterens opgave at få det ned i vores Model og få kaldet det nye view frem. \\
+	En årsag til der er implementeret en MVP på applikationen er for at gøre koden så testbar som muligt. \\
+	Der er i vores MVP brugt et Observer Pattern som gør det muligt for vores system at snakke begge veje. Dette er vigtigt da Modellen skal kunne give besked til Presenteren, når data har ændret sig.
+	\\
+	\\
+	Vi har brugt et 3-layer architetrure pattern til opbygningen af vores applikation. Layers architetruren giver os en logisk opdeling af vores applikation som kan ses på diagrammet figure \vref{fig:MVP}.
+	\\
+	\\
+	Der vil på de kommende sider blive beskrevet hvordan vi har valgt at designe og implementere vores android applikation. Der vil være et design, grafisk bruger interface, implenterings og test afsnit til alle delene af vores applikation.
+	\pagebreak
