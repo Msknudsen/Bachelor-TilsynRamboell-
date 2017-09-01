@@ -40,6 +40,9 @@ være handlinger	foretaget af aktøreren og/eller systemet.\\
 Disse trin definerer udfaldet af forudgående handlinger i et givet 
 scenarie. Alle scenarier skal afsluttes ved at definere et det forventede 
 udfald i et eller flere "Så"trin.\\
+
+\clearpage
+
 \large{\textbf{Scenarier}}\\
 Scenarier er samlinger af trin som definerer de funktionelle krav til 
 forløb. Første scenarie i en egenskab dækker hovedfunktionaliteten. De 
@@ -84,6 +87,7 @@ For at kunne benytte applikationen\\
 \textcolor{RoyalBlue}{Så} informeres han om, at der er indtastet forkerte oplysninger\\
 \textcolor{RoyalBlue}{Og} han bliver på log-in siden\\
 
+\clearpage
 
 \subsubsection{Opret bruger} \label{sec:USOpretBruger}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret bruger}} \\
@@ -153,7 +157,7 @@ For at have aktuelle oplysninger\\
 \subsubsection{Opret en registrering på PDF tegning} %\label{sec:USOpretSag}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret en registrering på PDF tegning}}\\
 Som bruger\\
-Ønsker jeg at kunne oprette en registrering\\
+Ønsker jeg at kunne oprette en registrering på en PDF\\
 For kunne lave en registrering på et givent projekts pdf tegning\\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
@@ -166,95 +170,74 @@ For kunne lave en registrering på et givent projekts pdf tegning\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret en registrering på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Søren vælger "Opret registrering på PDF tegning"\\
-\textcolor{RoyalBlue}{Så}  Navigeres han videre til registrerings siden\\
-\textcolor{RoyalBlue}{Så}  Har han mulighed for at indsætte objekter på PDF'en som en del af hans registrering\\
-\textcolor{RoyalBlue}{Når} Han er færdig med at registrer kan han vælge afslut \\
-\textcolor{RoyalBlue}{Så}  Navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\ 
+\textcolor{RoyalBlue}{Så}  navigeres han videre til registrerings siden\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for at indsætte objekter på PDF'en som en del af hans registrering\\
+\textcolor{RoyalBlue}{Når} han er færdig med at registrer kan han vælge afslut \\
+\textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\ 
 
-!!!!!
-
-\subsubsection{Tag en sag}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Tag en sag}}\\
-Som montør\\
-Ønsker jeg at kunne tage en sag\\
-For at kunne lave en reparation på et fejlmeldt lyskryds\\
+\subsubsection{Opret en registrering uden PDF tegning}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret en registrering uden PDF tegning}}\\
+Som bruger\\
+Ønsker jeg at kunne oprette en registrering uden en PDF\\
+For kunne lave en registrering på et givent projekt\\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Ao" er logget ind\\
+\textcolor{RoyalBlue}{Givet} at "Dan" er logget ind\\
 \textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
 \begin{tabular}{| l | l |}
 	\textbf{fornavn} & \textbf{rolle} \\
-	Ao & Montør\\
+	Dan & Bruger\\
 \end{tabular}
 \newline \newline
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Tag en sag - Android applikation}\\
-\textcolor{RoyalBlue}{Når} Ao trykker på en sag\\
-\textcolor{RoyalBlue}{Så} navigeres han til sagen\\
-\textcolor{RoyalBlue}{Og} han kun nu tage sagen\\
-\textcolor{RoyalBlue}{Så} hvis han trykker tag sag\\
-\textcolor{RoyalBlue}{Så} er sagen hans\\
-\textcolor{RoyalBlue}{Og} han kan nu ændre oplysningerne på den valgte sag\\
-\clearpage
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret en registrering uden PDF tegning}\\
+\textcolor{RoyalBlue}{Når} Dan vælger "Opret registrering uden PDF tegning"\\
+\textcolor{RoyalBlue}{Så} navigeres han videre til registrerings siden\\
+\textcolor{RoyalBlue}{Så} har han mulighed for at indsætte billede objekter på den tomme PDF\\
+\textcolor{RoyalBlue}{Når} an er færdig med at registrer kan han vælge afslut\\
+\textcolor{RoyalBlue}{Så} navigeres hans videre til tilsyns rapporten for hans registrering\\
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Tag en sag - Web applikation}\\
-\textcolor{RoyalBlue}{Når} Ao trykker på vælg en sag\\
-\textcolor{RoyalBlue}{Så} så er sagen hans\\
-\textcolor{RoyalBlue}{Og} han kan nu ændre oplysningerne på den valgte sag\\
-
-\subsubsection{Ændring af en sagsoplysninger}\label{sec:USRedigerSag}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Ændring af en sagsoplysninger}}\\
-Som montør\\
-Ønsker jeg at kunne ændre en sags driftstatus\\
-For at kunne holde Strøm Hansen og Randers kommune opdateret på reparatoioner af lyskryds\\
+\subsubsection{Se fejlrapporter} %\label{sec:USRedigerSag}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Se fejlrapporter}}\\
+Som bruger\\
+Ønsker jeg at kunne alle fejlrapporter på et givent projekt\\
+For at kunne følge historikken for et projekt\\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at "Morten" er logget ind\\
 \textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
 \begin{tabular}{| l | l |}
 	\textbf{fornavn} & \textbf{rolle} \\
-	Morten & Montør\\
+	Morten & Bruger\\
 \end{tabular}
 \newline \newline
 
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se fejlrapporter}\\
+\textcolor{RoyalBlue}{Når} Morten vælger et givent projekt\\
+\textcolor{RoyalBlue}{Så} kan han nu vælge at se en liste over alle oprettede fejlrapporter\\
+\textcolor{RoyalBlue}{Og} derved se alle fejl oprettet på projektet\\
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Ændring af en sagsoplysninger - Android applikation}\\
-\textcolor{RoyalBlue}{Når} Morten tager en sag som allerede har været tager\\
-\textcolor{RoyalBlue}{Så} kan han nu ændre i oplysningerne på sagen\\
-\textcolor{RoyalBlue}{Og} ændre driftstatusen på sagen\\
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Ændring af en sagsoplysninger - Web applikation}\\
-\textcolor{RoyalBlue}{Når} Morten tager en sag som allerede har været tager\\
-\textcolor{RoyalBlue}{Så} kan han nu ændre i oplysningerne på den specifike sag\\
-\textcolor{RoyalBlue}{Og} ændre driftstatusen på sagen\\
-
-\subsubsection{Skrive kommentar til en sag}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Skrive kommentar til en sag}}\\
+\subsubsection{Se tilsynsrapporter} %\label{sec:USRedigerSag}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Se tilsynsrapporter}}\\
 Som bruger\\
-Ønsker jeg at kunne skrive kommentar til en given sag\\
-For at kunne skrive kommentar på eventuelle mangler, feedback og til korrespondance mellem de forskellige brugere.
+Ønsker jeg at kunne alle tilsynsrapporter på et givent projekt\\
+For at kunne følge historikken for et projekt\\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Cecilie" er logget ind\\
+\textcolor{RoyalBlue}{Givet} at "Jonas" er logget ind\\
 \textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
 \begin{tabular}{| l | l |}
 	\textbf{fornavn} & \textbf{rolle} \\
-	Cecilie & Ejer\\
+	Jonas & Bruger\\
 \end{tabular}
 \newline \newline
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Skrive kommentar til en sag - Android applikation}\\
-\textcolor{RoyalBlue}{Når} Cecilie ønsker at skrive en kommentar til en sag som en montør har lavet\\
-\textcolor{RoyalBlue}{Så} går hun ind på den sag hun ønsker at skrive kommentar til \\
-\textcolor{RoyalBlue}{Og} når hun har lavet ændringer i kommentarfeltet\\
-\textcolor{RoyalBlue}{Og} trykket gem kommentar\\
-\textcolor{RoyalBlue}{Så} vil montøren kunne gå ind på sagen og se kommentaren\\
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se tilsynsrapporter}\\
+\textcolor{RoyalBlue}{Når} Jonas vælger et givent projekt\\
+\textcolor{RoyalBlue}{Så} kan han nu vælge at se en liste over alle oprettede tilsynsrapporter\\
+\textcolor{RoyalBlue}{Og} derved se alle tilsyn oprettet på projektet\\
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Skrive kommentar til en sag - Web applikation}\\
-\textcolor{RoyalBlue}{Når} Cecilie ønsker at skrive en kommentar til en sag som en montør har lavet\\
-\textcolor{RoyalBlue}{Og} hun så laver ændringer i kommentarfeltet\\
-\textcolor{RoyalBlue}{Så} Vil montøren kunne gå ind på sagen og se kommentaren\\
-
+!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 \subsubsection{Sortere sager}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Sortere sager}}\\
