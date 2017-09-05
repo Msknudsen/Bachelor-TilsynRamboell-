@@ -1,15 +1,41 @@
 	\chapter{Kravspecifikation}
 	
 	\section{Systembeskrivelse}
-			
+	Systemet består af en database med brugeradgang via iOS applikation.
+	Databasen indeholder brugere, projekter, PDF tegninger og data om projekterne.
+	Et projekt indeholder en PDF tegning, tegne objekter, mulighed for upload af billede og tekst.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.4\linewidth]{Kravspecifikation/Oversigtoversystem}
+		\caption{Oversigt over systemet}
+		\label{fig:OversigtSystembeskrivelse}
+	\end{figure}
+	
+	Systemet skal kunne håndtere de bygge projekter Rambøll har, og oprette nye når de overtager et nyt bygge projekt.
+	Disse skal kunne tilgåes af Rambøll ansatte, via enten en smartphone eller tablet.
+	Rambøll ansatte får tildelt et personligt login.
+	Brugere skal kunne oprette en registring for et givet projekt.
+	Når en bruger er færdig med at oprette sin registrering, skal denne kunne exportes til en excel fil og sendes som en vedhæftet fil i en mail.
+	Systemet har en log, som indeholder en liste over alle registreringer, til et givent projekt. \\	
 			
 	\section{Afgrænsning}
+	SOME TEXT
+	
+	\clearpage
 		
 
 \section{User stories} \label{sec:UserStories}
 Følgende er en beskrivelse af de aktuelle krav stillet til projektet. De er alle opstillet som user stories. User stories er korte beskrivelser af funktionalitet, som står på en fast form. De er let læselige og har værdi for både personer direkte involveret i projektet og udefrakommende, som skal opnå en idé om kravene til projektet. 
 
 \subsection{Aktør kontekst diagram}\label{sec:aktor}
+	På figur \ref{fig:AktorKontekst} ses aktør kontekst diagrammet for Rambøll Tilsyn. Diagrammet viser hvilke aktør der interagere med systemet.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\linewidth]{Kravspecifikation/AktorDiagram}
+	\caption{Aktør kontekst diagram for Rambøll Tilsyn}
+	\label{fig:AktorKontekst}
+\end{figure}
 
 
 \subsection{User stories beskrevet med Gherkin}
@@ -173,7 +199,30 @@ For kunne lave en registrering på et givent projekts pdf tegning\\
 \textcolor{RoyalBlue}{Så}  navigeres han videre til registrerings siden\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at indsætte objekter på PDF'en som en del af hans registrering\\
 \textcolor{RoyalBlue}{Når} han er færdig med at registrer kan han vælge afslut \\
-\textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\ 
+\textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\
+
+\subsubsection{Opret fluebens opbjekt på PDF tegning} %\label{sec:USOpretSag}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret fluebens opbjekt på PDF tegning}}\\
+Som bruger\\
+Ønsker jeg at kunne oprette et fluebens objekt på en PDF\\
+For kunne redigere min registrering på et givent projekts pdf tegning\\
+
+\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
+\textcolor{RoyalBlue}{Givet} at "Søren" er logget ind\\
+\textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
+\begin{tabular}{| l | l |}
+	\textbf{fornavn} & \textbf{rolle} \\
+	Søren & Bruger\\
+\end{tabular}
+
+!!!!!!!!!!!!!!!!!!
+
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret fluebens opbjekt på PDF tegning}\\
+\textcolor{RoyalBlue}{Når} Søren vælger "Opret registrering på PDF tegning"\\
+\textcolor{RoyalBlue}{Så}  navigeres han videre til registrerings siden\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for at indsætte objekter på PDF'en som en del af hans registrering\\
+\textcolor{RoyalBlue}{Når} han er færdig med at registrer kan han vælge afslut \\
+\textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\
 
 \subsubsection{Opret en registrering uden PDF tegning}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret en registrering uden PDF tegning}}\\
@@ -197,7 +246,7 @@ For kunne lave en registrering på et givent projekt\\
 \textcolor{RoyalBlue}{Når} an er færdig med at registrer kan han vælge afslut\\
 \textcolor{RoyalBlue}{Så} navigeres hans videre til tilsyns rapporten for hans registrering\\
 
-\subsubsection{Se fejlrapporter} %\label{sec:USRedigerSag}
+\subsubsection{Se tilsynsrapporter} %\label{sec:USRedigerSag}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Se fejlrapporter}}\\
 Som bruger\\
 Ønsker jeg at kunne alle fejlrapporter på et givent projekt\\
@@ -212,149 +261,15 @@ For at kunne følge historikken for et projekt\\
 \end{tabular}
 \newline \newline
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se fejlrapporter}\\
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se tilsynsrapporter}\\
 \textcolor{RoyalBlue}{Når} Morten vælger et givent projekt\\
 \textcolor{RoyalBlue}{Så} kan han nu vælge at se en liste over alle oprettede fejlrapporter\\
 \textcolor{RoyalBlue}{Og} derved se alle fejl oprettet på projektet\\
 
-\subsubsection{Se tilsynsrapporter} %\label{sec:USRedigerSag}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Se tilsynsrapporter}}\\
-Som bruger\\
-Ønsker jeg at kunne alle tilsynsrapporter på et givent projekt\\
-For at kunne følge historikken for et projekt\\
 
-\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Jonas" er logget ind\\
-\textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
-\begin{tabular}{| l | l |}
-	\textbf{fornavn} & \textbf{rolle} \\
-	Jonas & Bruger\\
-\end{tabular}
-\newline \newline
+!!!!!!!!!!!!!!!!!!!!!!!!!
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se tilsynsrapporter}\\
-\textcolor{RoyalBlue}{Når} Jonas vælger et givent projekt\\
-\textcolor{RoyalBlue}{Så} kan han nu vælge at se en liste over alle oprettede tilsynsrapporter\\
-\textcolor{RoyalBlue}{Og} derved se alle tilsyn oprettet på projektet\\
-
-!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-\subsubsection{Sortere sager}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Sortere sager}}\\
-Som bruger\\
-Ønsker jeg at kunne sortere sager\\
-For at give et hurtigt overblik hvis en specifik sag ønskes fundet\\
-
-\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Jacob" er logget ind\\
-\textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
-\begin{tabular}{| l | l |}
-	\textbf{fornavn} & \textbf{rolle} \\
-	Jacob & Bruger\\
-\end{tabular}
-\newline \newline
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Sortere sager - Android applikation}\\
-\textcolor{RoyalBlue}{Når} Jacob ønsker at få et overblik over alle sager som ligger i systemet\\
-\textcolor{RoyalBlue}{Så} navigere han til menupunktet sager\\
-\textcolor{RoyalBlue}{Så} vælger han hvilken værdi han ønsker sorteret efter\\
-\textcolor{RoyalBlue}{Og} trykker på sortere sager knappen\\
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Sortere sager - Web applikation}\\
-\textcolor{RoyalBlue}{Når} Jacob ønsker at få et overblik over alle sager som ligger i systemet\\
-\textcolor{RoyalBlue}{Og} han ønsker at sortere dem efter en specifik værdi\\
-\textcolor{RoyalBlue}{Så} vælger han hvilken værdi han ønsker sorteret efter\\
-\textcolor{RoyalBlue}{Og} trykker på sortere sager knappen\\
-
-\clearpage
-
-\subsubsection{Sortere lyskryds}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Sortere lyskryds}}\\
-Som bruger\\
-Ønsker jeg at kunne sortere lyskryds\\
-For at give et hurtigt overblik hvis et specifik lyskryds ønskes fundet\\
-
-\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Jacob" er logget ind\\
-\textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
-\begin{tabular}{| l | l |}
-	\textbf{fornavn} & \textbf{rolle} \\
-	Jacob & Bruger\\
-\end{tabular}
-\newline \newline
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Sortere lyskryds - Android applikation}\\
-\textcolor{RoyalBlue}{Når} Jacob ønsker at få et overblik over alle sager som ligger i systemet\\
-\textcolor{RoyalBlue}{Så} navigere han til menupunktet lyskryds\\
-\textcolor{RoyalBlue}{Så} vælger han hvilken værdi han ønsker sorteret efter\\
-\textcolor{RoyalBlue}{Og} trykker på sortere sager knappen\\
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Sortere lyskryds - Web applikation}\\
-\textcolor{RoyalBlue}{Når} Jacob ønsker at få et overblik over alle lyskryds som ligger i systemet\\
-\textcolor{RoyalBlue}{Og} han ønsker at sortere dem efter en specifik værdi\\
-\textcolor{RoyalBlue}{Så} vælger han hvilken værdi han ønsker sorteret efter\\
-\textcolor{RoyalBlue}{Og} trykker på sortere lyskryds knappen\\
-
-\subsubsection{Få overblik ved hjælp af et map}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Få overblik ved hjælp af map}}\\
-Som bruger\\
-Ønsker jeg at kunne danne mig et hurtigt overblik ved hjælp af en map funktion\\
-For at kunne se et overbliks billede af alle lyskryds i Randers kommune  og deres nuværende status\\
-
-\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Søren" er logget ind\\
-\textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
-\begin{tabular}{| l | l |}
-	\textbf{fornavn} & \textbf{rolle} \\
-	Søren & Bruger\\
-\end{tabular}
-\newline \newline
-\clearpage
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Få overblik ved hjælp af et map - Android applikation}\\
-\textcolor{RoyalBlue}{Når} Søren ønsker at få et overblik over alle lyskryds\\
-\textcolor{RoyalBlue}{Og} han ønsker vist det visuelt på et kort\\
-\textcolor{RoyalBlue}{Så} navigere han til menupunktet kort\\
-\textcolor{RoyalBlue}{Så} får han vist et kort over Randers hvor lyskrydsene i kommunen er vist med et ikon hvor farven viser deres status\\
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Få overblik ved hjælp af et map - Web applikation}\\
-\textcolor{RoyalBlue}{Når} Søren ønsker at få et overblik over alle lyskryds\\
-\textcolor{RoyalBlue}{Og} han ønsker vist det visuelt på et kort\\
-\textcolor{RoyalBlue}{Så} kan han gå ind i menuen\\
-\textcolor{RoyalBlue}{Og} trykke på map\\
-\textcolor{RoyalBlue}{Så} får han vist et kort over Randers hvor lyskrydsene i kommunen er vist med et ikon hvor farven viser deres status\\
-
-\subsubsection{Modtage notifikationer}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Modtage notifikationer om ændrede driftstatus}}\\
-Som kunde og ejer\\
-Ønsker jeg at modtage notifikationer når en driftstatus ændre sig på et lyskryds ændre sig\\
-For at få opdateringer hvis et lyskryds ændre driftstatus\\
-
-\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
-\textcolor{RoyalBlue}{Givet} at "Søren" er logget ind\\
-\textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
-\begin{tabular}{| l | l |}
-	\textbf{fornavn} & \textbf{rolle} \\
-	Søren & Kunde eller Ejer\\
-\end{tabular}
-\newline \newline
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Modtage notifikationer på 
-	mail}\\
-\textcolor{RoyalBlue}{Når} et lyskryds ændre driftstatus\\
-\textcolor{RoyalBlue}{Så} modtager brugerne, som ønsker 
-mail-notifikationer, en notifikation via mail omkring driftstatusændringen\\
-\textcolor{RoyalBlue}{Og} vedkommende er nu opdateret omkring det specifike lyskryds\\
-
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Modtage notifikationer på 
-	SMS}\\
-\textcolor{RoyalBlue}{Når} et lyskryds ændre driftstatus\\
-\textcolor{RoyalBlue}{Så} modtager brugerne, som ønsker SMS-notifikationer, 
-en notifikation via SMS omkring driftstatusændringen\\
-\textcolor{RoyalBlue}{Og} vedkommende er nu opdateret omkring det specifike 
-lyskryds\\
-
-\subsubsection{Information omkring lyskryds}
+\subsubsection{Information omkring projekt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Information omkring lyskryds}}\\
 Som bruger\\
 Ønsker jeg at kunne skrive generelle informationer eller kommentar til et specifikt lyskryds\\
@@ -384,7 +299,6 @@ For at kunne videre give kommentar som er specifike for det enkelte lyskryds\\
 \textcolor{RoyalBlue}{Og} brugeren kan nu se at informationen på lyskrydset 
 er opdateret\\
 
-
 \subsection{User stories, som ikke er beskrevet videre}
 Prioriteret efter MoSCoW
 
@@ -395,35 +309,16 @@ Prioriteret efter MoSCoW
 \textbf{Could:}  Som bruger ønsker jeg at kunne se kort over alle lyskryds med driftstatus for at kunne danne et hurtig overblik.\\
 \textbf{Could:} Som bruger ønsker jeg at kunne skrive kommentarer til et lyskryds for at tilføje generel og aktuel information om lyskrydset.
 
-\subsubsection{User stories for kunde}
-\textbf{Must:} Som kunde ønsker jeg at modtage notifikation via mail, SMS eller app, når der sker en ændring af driftstatus for at blive opdateret på den aktuelle status.
-
-\subsubsection{User stories for montør}
-\textbf{Must:} Som montør ønsker jeg at kunne ændre driftsstatus for at Strøm Hansen og Randers kommune kan holdes opdateret.\\
-\textbf{Must:} Som montør ønsker jeg at oprette en sag for at opdatere proces.\\	
-\textbf{Should:} Som montør ønsker jeg at tage en sag, for at sikre der kun er én montør har en sag af gangen.\\
-\textbf{Should:} Som montør ønsker jeg at kunne uploade billede til sag for at dokumentere arbejde.\\
-\textbf{Could:} Som montør ønsker jeg at kunne scanne en QR-kode, for at finde lyskrydsets log i systemet.\\
-\textbf{Could:} Som montør ønsker jeg at kunne få adresse til lyskrydset, for at kunne finde vej.\\
-\textbf{Could:} Som montør ønsker jeg at kunne se el-diagrammer for at fejlsøge nemmere.
-
-\subsubsection{User stories for ejer}
-\textbf{Must:} Som ejer ønsker jeg at kunne ændre driftstatus på et lyskryds for at opdater status.\\
-\textbf{Must:} Som ejer ønsker jeg at oprette en sag for at opdatere proces.\\
-\textbf{Must:} Som ejer ønsker jeg at modtage notifikation via mail, SMS eller app, når der sker en ændring af driftstatus for at blive opdateret på den aktuelle status.\\
-\textbf{Should:} Som ejer ønsker jeg at kunne ændre brugerindstillinger for at ændre adgang til systemet.
-
 \hspace{1em}
 \subsection{Ikke funktionelle krav}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item Skal kunne tilgås gennem en Web applikation og Android applikation
+	\item Skal kunne tilgås gennem iOS applikation
 	\item Der skal anvendes Microsoft teknologier og software
 	\item Alle brugere skal kunne anvende systemet på samme tid Maks antal brugere er 100 på samme tid
-	\item Systemet skal have svartider under 500ms ved 99\% af requests på en dansk kablet internetforbindelse
-	\item Systemet skal have en oppe tid på 99,7\%, målt over 3 måneder
-	\item Database og web-server skal være køre på hver deres server
-	\item Domænet trafficcontrol.dk skal anvendes 
+%	\item Systemet skal have svartider under 500ms ved 99\% af requests på en dansk kablet internetforbindelse
+%	\item Systemet skal have en oppe tid på 99,7\%, målt over 3 måneder
+%	\item Database og web-server skal være køre på hver deres server 
 \end{itemize}
 
 \hspace{1em}
