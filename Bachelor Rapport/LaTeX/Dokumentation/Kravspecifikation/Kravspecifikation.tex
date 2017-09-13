@@ -164,7 +164,7 @@ For at have aktuelle oplysninger
 \textcolor{RoyalBlue}{Og} han skriver "london" i "Ny adgangskode" og "Bekræft ny adgangskode"\\
 \textcolor{RoyalBlue}{Og} han trykker på gem oplysninger\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Og} han informeres om at ændringerne er gemt \\
+\textcolor{RoyalBlue}{Og} han informeres om at ændringerne er gemt
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger for- og efternavn}\\
 \textcolor{RoyalBlue}{Når} Niels indtaster nyt for- og efternavn i de korrekte tekstfelter\\
@@ -522,7 +522,41 @@ For at kunne følge byggeriets gang
 \textcolor{RoyalBlue}{Så} kan han vælge hvilken han ønsker at exportere til excel\\
 \textcolor{RoyalBlue}{Når} han har valgt hvilken han ønsker at exportere til excel, vil han blive navigeret tilbage til projektforsiden\\
 
-\clearpage
+\subsubsection{Opret sub entrerpise (CRS-19)} \label{sec:USOpretProjekt}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret projekt}}\\
+Som bruger\\
+Ønsker jeg at kunne oprette projektoplysninger\\
+For at have aktuelle oplysninger \\
+
+\textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
+\textcolor{RoyalBlue}{Givet} at "Jonas" er logget ind\\
+\textcolor{RoyalBlue}{Og} han ønsker at oprette en sub entreprise på et projekt med følgende oplysninger:\\
+\begin{tabular}{| l | l | l |}
+	\textbf{Projektnavn} & \textbf{Projektnummer} & \textbf{Adresse} \\
+	Broer & Projekt 170 & Finlandsgade 22 \\
+\end{tabular}
+\newline \newline
+
+\begin{tabular}{| l | l | l |}
+	\textbf{Entreprise} & \textbf{Entreprisetnummer} & \textbf{Adresse} \\
+	Bro 1 & Projekt 170.1 & Finlandsgade 28 \\
+\end{tabular}
+\newline \newline
+
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret projekt}\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise navn i entreprise navn feltet\\
+\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
+\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise nummer i entreprise nummer feltet\\
+\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
+\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise adresse i entreprise adresse feltet\\
+\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
+\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise informationer i entreprise informations felter\\
+\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
+\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+
 
 %\hspace{1em}
 \subsection{Ikke funktionelle krav}
@@ -535,6 +569,8 @@ For at kunne følge byggeriets gang
 %	\item Systemet skal have en oppe tid på 99,7\%, målt over 3 måneder
 %	\item Database og web-server skal være køre på hver deres server 
 \end{itemize}
+
+\clearpage
 
 \section{Afgrænsning}
 Projektet har en naturlig begrænsning i form af den korte tid fra idé til produkt, som er gældende for bachelorprojekter.\\
@@ -566,4 +602,5 @@ Prioriteret efter MoSCoW
 \textbf{Could:} Afslut registrering uden PDF tegning (CRS-15) \\
 \textbf{Could:} Rediger af projektoplysninger (CRS-17) \\
 \textbf{Could:} Se tilsynsrapporter (CRS-18) \\
+\textbf{Could:} Opret sub entrerpise (CRS-19) \\
 
