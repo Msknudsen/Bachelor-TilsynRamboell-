@@ -3,5 +3,6 @@
   <PropertyGroup>
     <SelectedDevice>VisualStudio_android-23_x86_tablet</SelectedDevice>
     <DefaultDevice>VisualStudio_android-23_x86_tablet</DefaultDevice>
+    <AndroidDesignerPreferredDevice>Nexus 4</AndroidDesignerPreferredDevice>
   </PropertyGroup>
 </Project>
