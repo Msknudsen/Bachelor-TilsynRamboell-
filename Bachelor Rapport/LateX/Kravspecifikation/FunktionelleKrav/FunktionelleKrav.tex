@@ -1,4 +1,5 @@
-\chapter{Funktionelle Krav} \label{sec:FunktionelleKrav}
+\chapter{Kravspecifikation}
+
 Følgende er en beskrivelse af de aktuelle krav stillet til projektet. De er alle opstillet som user stories. User stories er korte beskrivelser af funktionalitet, som står på en fast form. De er let læselige og har værdi for både personer direkte involveret i projektet og udefrakommende, som skal opnå en idé om kravene til projektet. 
 
 \section{Aktør kontekst diagram}\label{sec:Aktor}
@@ -10,8 +11,8 @@ Følgende er en beskrivelse af de aktuelle krav stillet til projektet. De er all
 	\label{fig:AktorKontekst}
 \end{figure}
 
-
-\section{User stories beskrevet med Gherkin}
+\section{Funktionelle Krav} \label{sec:UserStories}
+\subsection{User stories beskrevet med Gherkin}
 Til beskrivelse af user stories er Gherkin-syntaksen valgt, hvor stories 
 kan skrives på et flydende sprog, mens de er testbare.\cite{Gherkin} Dette kaldes også et Business-Readable Domain  
 Specific Language. En særlig fordel ved anvendelsen af syntaksen er at den er opstiller kravene så de er særligt testbare, hvilket medfører at kravene for test af features er skrevet i user stories.
@@ -128,7 +129,7 @@ For at have aktuelle oplysninger
 	Niels & TestTest & london \\
 \end{tabular}
 \newline \newline
-\textcolor{RoyalBlue}{Og} at han er navigeret til rediger bruger siden \\
+\textcolor{RoyalBlue}{Og} at han er navigeret til rediger bruger siden \\ \\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger kode}\\-
 \textcolor{RoyalBlue}{Når} Niels indtaster "paris" i kodefeltet "Gammel adgangskode"\\
@@ -170,6 +171,8 @@ For kunne lave en registrering på et givent projekts pdf tegning \\
 \textcolor{RoyalBlue}{Når} han er færdig med at registrer kan han vælge afslut \\
 \textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\
 
+\clearpage
+
 \subsection{Opret fluebens opbjekt på PDF tegning (CRS-5)} \label{sec:USOpretFlueben}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret fluebens opbjekt på PDF tegning}}\\
 Som bruger\\
@@ -209,6 +212,8 @@ For kunne redigere min registrering på et givent projekts pdf tegning \\
 \textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
 \textcolor{RoyalBlue}{Så}  åbnes hans kamera og han kan nu tilføje et billede, og derefter en billede tekst\\
 \textcolor{RoyalBlue}{Når} han har placeret billede objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
+
+\clearpage
 
 \subsection{Opret tekstfelt opbjekt på PDF tegning (CRS-7)} \label{sec:USOpretTekstfelt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret tekstfelt opbjekt på PDF tegning}}\\
@@ -250,6 +255,8 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at skrive en tekst, som vises på PDF tegningen\\
 \textcolor{RoyalBlue}{Når} han har placeret teskstfelt objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
+\clearpage
+
 \subsection{Opret pil opbjekt på PDF tegning (CRS-9)} \label{sec:USOpretPilObjekt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret pil opbjekt på PDF tegning}}\\
 Som bruger\\
@@ -289,6 +296,8 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at trække i cirkelen så den passer i radius\\
 \textcolor{RoyalBlue}{Når} han har placeret cirkel objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
+
+\clearpage
 
 \subsection{Opret minus opbjekt på PDF tegning (CRS-11)} \label{sec:USOpretMinusObjekt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret minus opbjekt på PDF tegning}}\\
@@ -330,6 +339,8 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at trykke på det objekt han ønsker at slette\\
 \textcolor{RoyalBlue}{Når} han har slettet objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
+\clearpage
+
 \subsection{Afslut registrering på PDF tegning (CRS-13)} \label{sec:USAfslutRegPåPDF}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Afslut registrering på PDF tegning}}\\
 Som bruger\\
@@ -369,6 +380,8 @@ For kunne lave en registrering på et givent projekt\\
 \textcolor{RoyalBlue}{Når} Dan vælger "Opret registrering uden PDF tegning"\\
 \textcolor{RoyalBlue}{Så} navigeres han videre til registrerings siden\\
 \textcolor{RoyalBlue}{Så} har han mulighed for at indsætte billede objekter på den tomme PDF\\
+
+\clearpage
 
 \subsection{Afslut registrering uden PDF tegning (CRS-15)} \label{sec:USAfslutRegUdenPDF}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Afslut registrering på PDF tegning}}\\
