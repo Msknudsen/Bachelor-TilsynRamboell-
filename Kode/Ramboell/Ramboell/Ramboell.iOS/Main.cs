@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Firebase.Database;
 using Foundation;
 using UIKit;
 
@@ -15,6 +15,8 @@ namespace Ramboell.iOS
 			// if you want to use a different Application Delegate class from "AppDelegate"
 			// you can specify it here.
 			UIApplication.Main(args, null, "AppDelegate");
-		}
-	}
+		    DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
+
+        }
+    }
 }
