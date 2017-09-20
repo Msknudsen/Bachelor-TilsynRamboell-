@@ -1,8 +1,12 @@
 \input{../Preamble/Preamble}
 
 \begin{document}
-	\input{Forside/Forside}s
-	\tableofcontents
+	\input{Forside/Forside}
+	
+		\begin{KeepFromToc}
+			\tableofcontents
+		\end{KeepFromToc}
+
 	\input{Projektformulering/Projektformulering}
 	\input{Systembeskrivelse/Systembeskrivelse}
 	\input{FunktionelleKrav/FunktionelleKrav}
