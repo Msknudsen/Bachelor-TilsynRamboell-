@@ -1,0 +1,13 @@
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\ibtool\_BundleResourceWithLogicalName.items
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\actool\_PartialAppManifest.items
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\actool\_BundleResourceWithLogicalName.items
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\optimized\
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\Ramboell.iOS.csprojResolveAssemblyReference.cache
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\XbdMerge\Firebase.Core.dll.stamp
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\XbdMerge\Firebase.InstanceID.dll.stamp
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\XbdMerge\Firebase.Analytics.dll.stamp
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\XbdMerge\Firebase.Database.dll.stamp
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\XbdMerge\Firebase.Storage.dll.stamp
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\XbdMerge\Firebase.Auth.dll.stamp
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\Ramboell.iOS.MainPage.xaml.g.cs
+C:\Users\m_s_k\Documents\IKT\7.Semester\Bachelor-TilsynRamboell-\Kode\Ramboell\Ramboell\Ramboell.iOS\obj\iPhone\Debug\Ramboell.iOS.App.xaml.g.cs
