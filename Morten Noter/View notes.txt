@@ -1,0 +1,2 @@
+Login:
+StackLayout, simpelt stack opstilling af login side, nemmere og hurtigere end at skulle definere grids
