@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Firebase.Analytics;
+using Firebase.Database;
 using Foundation;
 using UIKit;
 using UserNotifications;
@@ -10,40 +12,33 @@ using UserNotifications;
 namespace Ramboell.iOS
 {
     //https://components.xamarin.com/gettingstarted/firebaseiosanalytics last seen 22/9
-    public class FireBaseDataService
+    public class FireBaseDataService: FirebaseService
     {
+        DatabaseReference _rootNode;
+
         public FireBaseDataService()
         {
-            Firebase.Analytics.App.Configure();
-            // Register your app for remote notifications.
-            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
-            {
-                // iOS 10 or later
-                var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
-                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
-                    Console.WriteLine(granted);
-                });
-
-                // For iOS 10 display notification (sent via APNS)
-                UNUserNotificationCenter.Current.Delegate = this;
-
-                // For iOS 10 data message (sent via FCM)
-                Messaging.SharedInstance.RemoteMessageDelegate = this;
-            }
-            else
-            {
-                // iOS 9 or before
-                var allNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound;
-                var settings = UIUserNotificationSettings.GetSettingsForTypes(allNotificationTypes, null);
-                UIApplication.SharedApplication.RegisterUserNotificationSettings(settings);
-            }
-
-            UIApplication.SharedApplication.RegisterForRemoteNotifications();
+            
+            _rootNode = Database.DefaultInstance.GetRootReference();
         }
 
         public void Post<T>(T obj)
         {
             
+        }
+        public T Get<T>(string objId)
+        {
+            throw new InvalidOperationException();
+        }
+
+        public ICollection<T> GetAll<T>()
+        {
+            return new Collection<T>();
+        }
+
+        public bool Put<T>(T obj)
+        {
+            return false;
         }
     }
 }
