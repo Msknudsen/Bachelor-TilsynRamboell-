@@ -13,28 +13,33 @@ namespace Ramboell.iOS
 	// User Interface of the application, as well as listening (and optionally responding) to 
 	// application events from iOS.
 	[Register("AppDelegate")]
-	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
+	public partial class AppDelegate : 
+        global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
 	{
-        protected AppDelegate()
-        {
-            Firebase.Analytics.App.Configure();
-            // Register your app for remote notifications.
-            if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
-            {
-                // iOS 10 or later
-                var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge | UNAuthorizationOptions.Sound;
-                UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) => {
-                    Console.WriteLine(granted);
-                });
+	    protected AppDelegate()
+	    {
+	        Firebase.Analytics.App.Configure();
+	        // Register your app for remote notifications.
+	        if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
+	        {
+	            // iOS 10 or later
+	            var authOptions = UNAuthorizationOptions.Alert | UNAuthorizationOptions.Badge |
+	                              UNAuthorizationOptions.Sound;
+	            UNUserNotificationCenter.Current.RequestAuthorization(authOptions, (granted, error) =>
+	            {
+	                Console.WriteLine(granted);
+	            });
 
-                // For iOS 10 display notification (sent via APNS)
-                UNUserNotificationCenter.Current.Delegate = this;
+	            // For iOS 10 display notification (sent via APNS)
+	            UNUserNotificationCenter.Current.Delegate = this;
 
-                // For iOS 10 data message (sent via FCM)
-                Messaging.SharedInstance.RemoteMessageDelegate = this;
-            }
+	            // For iOS 10 data message (sent via FCM)
+	            //Messaging.SharedInstance.RemoteMessageDelegate = this;
+	        }
 
-        //
+	    }
+
+	    //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
         // visible.
@@ -43,7 +48,7 @@ namespace Ramboell.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.Init ();
+			Xamarin.Forms.Forms.Init ();
 			LoadApplication (new Ramboell.App ());
 		    var fireBaseDataService = new FireBaseDataService();
 

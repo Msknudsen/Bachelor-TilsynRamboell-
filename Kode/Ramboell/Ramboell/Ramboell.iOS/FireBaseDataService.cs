@@ -18,7 +18,6 @@ namespace Ramboell.iOS
 
         public FireBaseDataService()
         {
-            
             _rootNode = Database.DefaultInstance.GetRootReference();
         }
 
