@@ -15,7 +15,12 @@ namespace Ramboell.iOS
     public class FireBaseAuthService : FirebaseService
     {
         public event EventHandler<FireBaseCustomAuthEventHandler> CustomFirebaseAuthEvent;
-        
+        private const string PasswordUpdatedEventMsg = "PasswordUpdated";
+        private const string UserCreatedEventMsg = "UserCreated";
+        private const string UserSignedInEventMsg = "UserSignedIn";
+
+
+
         public void CreateUser(string email, string password)
         {
             Auth.DefaultInstance.CreateUser(email, password, (user, error) => {
@@ -35,7 +40,7 @@ namespace Ramboell.iOS
                         case AuthErrorCode.OperationNotAllowed:
                         case AuthErrorCode.WeakPassword:
                         default:
-                            RaiseEvent(errorCode.ToString("g"));
+                            RaiseEvent(UserCreatedEventMsg);
                             // Print error
                             break;
                     }
@@ -73,7 +78,7 @@ namespace Ramboell.iOS
                 }
                 else
                 {
-                    // Do your magic to handle authentication result
+                    RaiseEvent(UserSignedInEventMsg);
                 }
             });
         }
@@ -81,7 +86,6 @@ namespace Ramboell.iOS
         private void RaiseEvent(string msg)
         {
             CustomFirebaseAuthEvent?.Invoke(this, new FireBaseCustomAuthEventHandler(msg));
-
         }
         public void SignOut()
         {
@@ -106,9 +110,11 @@ namespace Ramboell.iOS
                         break;
                 }
             }
-
+            RaiseEvent(UserSignedOutEventMsg);
             // Do your magic to handle successful signout
         }
+
+        public string UserSignedOutEventMsg { get; private set; }
 
         public void DeleteUser(string password)
         {
@@ -136,7 +142,7 @@ namespace Ramboell.iOS
                 }
                 else
                 {
-                    // Password updated.
+                    RaiseEvent("Password Updated Succesfully");
                 }
             });
         }
