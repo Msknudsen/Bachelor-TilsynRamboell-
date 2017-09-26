@@ -2204,7 +2204,7 @@ namespace Ramboell.Droid
 			public const int notification_template_icon_bg = 2130837666;
 			
 			// aapt resource value: 0x7f0200a1
-			public const int Ramboll_Logo = 2130837665;
+			public const int ramboll = 2130837665;
 			
 			static Drawable()
 			{

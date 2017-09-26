@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ramboell.Overview"
+             BackgroundColor="White">
+    
+    <StackLayout
+        Orientation="Vertical"
+        Padding="50"
+        Spacing="20">
+
+        <Image Source="ramboll.png"
+               Scale="0.3"/>
+        
+        <Label Text="Projekt oversigt" 
+               TextColor="Black"
+               FontSize="30"
+               HorizontalOptions="Center"/>
+       
+        <Button
+            x:Name="Projekt1Btn"
+            Text="Projekt 1"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            />
+
+        <Button
+            x:Name="Projekt2Btn"
+            Text="Projekt 2"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            />
+
+        <Button
+            x:Name="Projekt3Btn"
+            Text="Projekt 3"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            />
+
+        <Button
+            x:Name="Projekt4Btn"
+            Text="Projekt 4"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            />
+        <ListView>
+            
+        </ListView>
+        
+    </StackLayout>
+</ContentPage>
