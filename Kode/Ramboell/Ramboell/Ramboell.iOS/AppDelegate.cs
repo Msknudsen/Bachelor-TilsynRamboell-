@@ -13,7 +13,8 @@ namespace Ramboell.iOS
 	// User Interface of the application, as well as listening (and optionally responding) to 
 	// application events from iOS.
 	[Register("AppDelegate")]
-	public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
+	public partial class AppDelegate : 
+        global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate, IUNUserNotificationCenterDelegate
 	{
 	    protected AppDelegate()
 	    {
@@ -35,6 +36,7 @@ namespace Ramboell.iOS
 	            // For iOS 10 data message (sent via FCM)
 	            //Messaging.SharedInstance.RemoteMessageDelegate = this;
 	        }
+
 	    }
 
 	    //
@@ -46,7 +48,7 @@ namespace Ramboell.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.Init ();
+			Xamarin.Forms.Forms.Init ();
 			LoadApplication (new Ramboell.App ());
 		    var fireBaseDataService = new FireBaseDataService();
 
