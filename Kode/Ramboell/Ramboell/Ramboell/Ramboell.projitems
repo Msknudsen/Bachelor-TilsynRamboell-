@@ -12,9 +12,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FireBaseCustomAuthEventHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IFireBaseAuthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MessagingEventHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OpretBruger.xaml.cs">
       <DependentUpon>OpretBruger.xaml</DependentUpon>
       <SubType>Code</SubType>
