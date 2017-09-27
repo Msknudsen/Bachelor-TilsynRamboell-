@@ -2560,7 +2560,7 @@ containing a value of this type.
         public static final int mr_ic_play_dark=0x7f02009f;
         public static final int mr_ic_play_light=0x7f0200a0;
         public static final int notification_template_icon_bg=0x7f0200a2;
-        public static final int ramboll_logo=0x7f0200a1;
+        public static final int ramboll=0x7f0200a1;
     }
     public static final class id {
         public static final int action0=0x7f07008b;

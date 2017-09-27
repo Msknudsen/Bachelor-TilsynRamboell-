@@ -12,8 +12,9 @@ namespace Ramboell
 		public App ()
 		{
 			InitializeComponent();
-            MainPage = new NavigationPage(new MainPage());
-		}
+
+			MainPage = new Ramboell.MainPage();
+         }
 
 		protected override void OnStart ()
 		{

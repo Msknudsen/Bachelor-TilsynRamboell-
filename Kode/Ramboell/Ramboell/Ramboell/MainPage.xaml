@@ -9,14 +9,14 @@
         Padding="100"
         Spacing="30">
 
-        <Image Source="Ramboll_Logo.png"
-               Scale="1" />
-        
+        <Image Source="ramboll.png"
+               Scale="1"/>
+
         <Label Text="Tilsyns App"
                TextColor="Black"
                FontSize="20"
                HorizontalOptions="Center"/>
-
+        
         <BoxView 
             HeightRequest="75"
             Color="White" 
@@ -57,6 +57,7 @@
             TextColor="White"
             Clicked="LoginButton_OnClicked"
             />
+
 
 
     </StackLayout>
