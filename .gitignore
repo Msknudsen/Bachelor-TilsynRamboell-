@@ -26,3 +26,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
