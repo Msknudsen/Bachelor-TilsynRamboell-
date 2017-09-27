@@ -32,3 +32,4 @@ bld/
 
 # Java class files
 *.class
+*.props
