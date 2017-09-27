@@ -11,8 +11,8 @@
 namespace Ramboell {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\m_s_k\\Documents\\IKT\\7.Semester\\Bachelor-TilsynRamboell-\\Kode\\Ramboell\\Ra" +
-        "mboell\\Ramboell\\App.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("D:\\liao\\Documents\\Github\\Bachelor-TilsynRamboell-\\Kode\\Ramboell\\Ramboell\\Ramboell" +
+        "\\App.xaml")]
     public partial class App : global::Xamarin.Forms.Application {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
