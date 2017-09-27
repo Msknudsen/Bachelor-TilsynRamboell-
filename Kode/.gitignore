@@ -35,3 +35,5 @@ bld/
 [Ll]og/
 
 packages/
+
+.vs/
