@@ -4,22 +4,14 @@ using Foundation;
 
 namespace Ramboell.iOS
 {
-    public class FireBaseCustomAuthEventHandler : EventArgs
+    public class FireBaseAuthService : FirebaseService, IFireBaseAuthService
     {
-        public string Message { get; }
-        public FireBaseCustomAuthEventHandler(string s)
-        {
-            Message = s;
-        }
-    }
-    public class FireBaseAuthService : FirebaseService
-    {
-        public event EventHandler<FireBaseCustomAuthEventHandler> CustomFirebaseAuthEvent;
+       
+        public event EventHandler<MessagingEventHandler> FirebaseEvent;
         private const string PasswordUpdatedEventMsg = "PasswordUpdated";
         private const string UserCreatedEventMsg = "UserCreated";
         private const string UserSignedInEventMsg = "UserSignedIn";
-
-
+        private const string UserSignedOutEventMsg = "UserSignedOut";
 
         public void CreateUser(string email, string password)
         {
@@ -85,7 +77,7 @@ namespace Ramboell.iOS
 
         private void RaiseEvent(string msg)
         {
-            CustomFirebaseAuthEvent?.Invoke(this, new FireBaseCustomAuthEventHandler(msg));
+            FirebaseEvent?.Invoke(this, new MessagingEventHandler(msg));
         }
         public void SignOut()
         {
@@ -113,8 +105,6 @@ namespace Ramboell.iOS
             RaiseEvent(UserSignedOutEventMsg);
             // Do your magic to handle successful signout
         }
-
-        public string UserSignedOutEventMsg { get; private set; }
 
         public void DeleteUser(string password)
         {

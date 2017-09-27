@@ -51,9 +51,11 @@
         </Frame>
         
         <Button
+            x:Name="LoginButton"
             Text="Login"
             BackgroundColor="#009DE0"
             TextColor="White"
+            Clicked="LoginButton_OnClicked"
             />
 
 
