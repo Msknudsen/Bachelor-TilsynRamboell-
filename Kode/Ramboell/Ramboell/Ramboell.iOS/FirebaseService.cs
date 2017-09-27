@@ -1,10 +1,11 @@
-﻿namespace Ramboell.iOS
+﻿using Firebase.Analytics;
+namespace Ramboell.iOS
 {
     public class FirebaseService
     {
         public FirebaseService()
         {
-            Firebase.Analytics.App.Configure();
+            App.Configure();
         }
     }
 }
