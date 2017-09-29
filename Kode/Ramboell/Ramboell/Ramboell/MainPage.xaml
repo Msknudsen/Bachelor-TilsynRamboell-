@@ -46,7 +46,8 @@
                 Placeholder="Kodeord"
                 HeightRequest="40"
                 TextColor="Black"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center"
+                IsPassword="True"/>
             </StackLayout>
         </Frame>
         
