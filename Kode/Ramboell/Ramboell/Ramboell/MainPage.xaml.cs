@@ -19,8 +19,11 @@ namespace Ramboell
 
 	    private void LoginButton_OnClicked(object sender, EventArgs e)
 	    {
-	        throw new NotImplementedException();
-            
+            var email = BrugerEntry;
+            var pass = KodeEntry;
+
+            var firebaseAuthService = DependencyService.Get<IFireBaseAuthService>();
+            firebaseAuthService.SignIn(email.Text, pass.Text);   
 	    }
 	}
 }

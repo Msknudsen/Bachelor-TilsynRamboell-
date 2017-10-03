@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ramboell.iOS
+namespace Ramboell
 {
     public interface IFireBaseAuthService
     {
