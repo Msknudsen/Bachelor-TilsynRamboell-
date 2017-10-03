@@ -25,8 +25,17 @@
                FontSize="30"
                HorizontalOptions="Center"/>
   
-        <ListView>
-                   
+        <ListView
+            x:Name ="ProjectGroups"
+            GroupDisplayBinding="{Binding Title}"
+            GroupShortNameBinding="{Binding ShortName}"
+            IsGroupingEnabled="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Title}"
+                              Detail="{Binding Subtitle}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
 
    </StackLayout>
