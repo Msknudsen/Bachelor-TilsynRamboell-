@@ -17,9 +17,14 @@ namespace Ramboell
 			InitializeComponent ();
 		}
 
-        private void CancelUserButton_Clicked(object sender, EventArgs e)
-        {
+	    private void AddUserButton_OnClicked(object sender, EventArgs e)
+	    {
+	        throw new NotImplementedException();
+	    }
 
-        }
-    }
+	    private void CancelUserButton_Clicked(object sender, EventArgs e)
+	    {
+	        throw new NotImplementedException();
+	    }
+	}
 }

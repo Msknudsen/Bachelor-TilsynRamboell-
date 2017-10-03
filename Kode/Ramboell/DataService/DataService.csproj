@@ -49,9 +49,6 @@
     <Reference Include="crypto, Version=1.8.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\crypto.dll</HintPath>
     </Reference>
-    <Reference Include="Firebase.Database">
-      <HintPath>..\packages\Xamarin.Firebase.iOS.Database.3.1.2\lib\Xamarin.iOS10\Firebase.Database.dll</HintPath>
-    </Reference>
     <Reference Include="Firebase.Xamarin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Firebase.Xamarin.0.3.6\lib\Firebase.Xamarin.dll</HintPath>
     </Reference>
