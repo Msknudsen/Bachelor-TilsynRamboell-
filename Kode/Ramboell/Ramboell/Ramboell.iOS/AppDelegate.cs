@@ -18,7 +18,6 @@ namespace Ramboell.iOS
 	{
 	    protected AppDelegate()
 	    {
-	        Firebase.Analytics.App.Configure();
 	        // Register your app for remote notifications.
 	        if (UIDevice.CurrentDevice.CheckSystemVersion(10, 0))
 	        {
@@ -50,7 +49,7 @@ namespace Ramboell.iOS
 		{
 			Xamarin.Forms.Forms.Init ();
 			LoadApplication (new Ramboell.App ());
-		    var fireBaseDataService = new FireBaseDataService();
+		    var fireBaseDataService = new FireBaseAuthService();
 
 		    return base.FinishedLaunching (app
                 , options);

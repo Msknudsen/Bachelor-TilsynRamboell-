@@ -1,12 +1,14 @@
 ﻿using System;
 using Firebase.Auth;
 using Foundation;
-
+using Xamarin.Forms;
+using Ramboell.iOS;
+[assembly: Dependency(typeof(FireBaseAuthService))]
 namespace Ramboell.iOS
 {
     public class FireBaseAuthService : FirebaseService, IFireBaseAuthService
     {
-       
+        
         public event EventHandler<MessagingEventHandler> FirebaseEvent;
         private const string PasswordUpdatedEventMsg = "PasswordUpdated";
         private const string UserCreatedEventMsg = "UserCreated";
