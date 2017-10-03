@@ -19,8 +19,8 @@ namespace Ramboell
 
 	    private void LoginButton_OnClicked(object sender, EventArgs e)
 	    {
-            var email = BrugerEntry;
-            var pass = KodeEntry;
+            var email = UsernameLoginEntry;
+            var pass = PasswordLoginEntry;
 
             var firebaseAuthService = DependencyService.Get<IFireBaseAuthService>();
             firebaseAuthService.SignIn(email.Text, pass.Text);   

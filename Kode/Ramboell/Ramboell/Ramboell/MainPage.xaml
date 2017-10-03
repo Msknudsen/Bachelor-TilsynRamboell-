@@ -59,7 +59,5 @@
             Clicked="LoginButton_OnClicked"
             />
 
-
-
     </StackLayout>
 </ContentPage>
