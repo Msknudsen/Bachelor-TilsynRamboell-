@@ -27,7 +27,7 @@
             OutlineColor="#009DE0">
             <StackLayout>
                 <Entry
-                x:Name="BrugerEntry"
+                x:Name="UsernameLoginEntry"
                 Text="Brugernavn"
                 Placeholder="Brugernavn"
                 HeightRequest="40"
@@ -41,7 +41,7 @@
                     HorizontalOptions="FillAndExpand" />
 
                 <Entry
-                x:Name="KodeEntry"
+                x:Name="PasswordLoginEntry"
                 Text="Kodeord"
                 Placeholder="Kodeord"
                 HeightRequest="40"

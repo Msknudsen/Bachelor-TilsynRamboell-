@@ -16,5 +16,10 @@ namespace Ramboell
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void CancelUserButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

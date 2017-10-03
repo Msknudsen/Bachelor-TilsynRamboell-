@@ -5,8 +5,14 @@
              BackgroundColor="White">
     <StackLayout
         Orientation="Vertical"
-        Padding="50"
-        Spacing="20">
+        Padding="30"
+        Spacing="10">
+
+        <Button
+            HorizontalOptions="End"
+            BackgroundColor="#fafafa"
+            Text="Menu"
+            TextColor="Black"/>
 
         <Image Source="ramboll.png"
                Scale="0.3"/>
@@ -15,6 +21,7 @@
                TextColor="Black"
                FontSize="30"
                HorizontalOptions="Center"/>
+        
         <Frame
             BackgroundColor="#fafafa"
             OutlineColor="#009DE0">
@@ -24,7 +31,7 @@
                 Placeholder="Fornavn"
                 HeightRequest="40"
                 TextColor="Black"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Start"/>
         </Frame>
 
         <Frame
@@ -36,7 +43,7 @@
                 Placeholder="Efternavn"
                 HeightRequest="40"
                 TextColor="Black"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Start"/>
         </Frame>
 
         <Frame
@@ -48,7 +55,7 @@
                 Placeholder="Email"
                 HeightRequest="40"
                 TextColor="Black"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Start"/>
         </Frame>
 
         <Frame
@@ -60,8 +67,48 @@
                 Placeholder="Telefon"
                 HeightRequest="40"
                 TextColor="Black"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Start"/>
         </Frame>
-        
+
+        <Frame
+            BackgroundColor="#fafafa"
+            OutlineColor="#009DE0">
+            <Entry
+                x:Name="UserNameUserEntry"
+                Text="Brugernavn"
+                Placeholder="Brugernavn"
+                HeightRequest="40"
+                TextColor="Black"
+                HorizontalOptions="Start"/>
+        </Frame>
+
+        <Frame
+            BackgroundColor="#fafafa"
+            OutlineColor="#009DE0">
+            <Entry
+                x:Name="PasswordUserEntry"
+                Text="Kodeord"
+                Placeholder="Kodeord"
+                HeightRequest="40"
+                TextColor="Black"
+                HorizontalOptions="Start"/>
+        </Frame>
+
+        <Button
+            x:Name="AddUserButton"
+            Text="Tilføj"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            Clicked="AddUserButton_OnClicked"
+            />
+
+        <Button
+            x:Name="CancelUserButton"
+            Text="Annuller"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            Clicked="CancelUserButton_Clicked"
+            />
+
     </StackLayout>
 </ContentPage>
