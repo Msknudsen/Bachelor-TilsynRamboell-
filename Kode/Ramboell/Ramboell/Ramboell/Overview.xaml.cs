@@ -15,6 +15,11 @@ namespace Ramboell
 		public Overview ()
 		{
 			InitializeComponent ();
+
+            ProjectsListView.ItemsSource = new List<string>
+            {
+                "Ansvej", "Finlandsgade", "Olaf Palmes Alle"
+            };
 		}
 	}
 }

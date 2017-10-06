@@ -24,20 +24,9 @@
                TextColor="Black"
                FontSize="30"
                HorizontalOptions="Center"/>
-  
-        <ListView
-            x:Name ="ProjectGroups"
-            GroupDisplayBinding="{Binding Title}"
-            GroupShortNameBinding="{Binding ShortName}"
-            IsGroupingEnabled="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <TextCell Text="{Binding Title}"
-                              Detail="{Binding Subtitle}" />
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
 
-   </StackLayout>
+        <ListView x:Name ="ProjectsListView" />
+
+    </StackLayout>
 
 </ContentPage>
