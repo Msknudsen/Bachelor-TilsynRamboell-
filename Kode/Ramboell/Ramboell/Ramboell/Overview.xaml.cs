@@ -16,9 +16,32 @@ namespace Ramboell
 		{
 			InitializeComponent ();
 
-            ProjectsListView.ItemsSource = new List<string>
+            ProjectsListView.ItemsSource = new List<ProjectInfo>
             {
-                "Ansvej", "Finlandsgade", "Olaf Palmes Alle"
+                new ProjectInfo
+                {
+                    Name = "Bro Ansvej",
+                    Adress = "Ansvej",
+                    City = "Silkeborg",
+                    ZipCode = 8600
+                },
+
+                new ProjectInfo
+                {
+                    Name = "Tunnel Finlandsgade",
+                    Adress = "Finlandsgade",
+                    City = "Aarhus N",
+                    ZipCode = 8200
+                },
+
+                new ProjectInfo
+                {
+                    Name = "Bro Olaf Palmes Alle",
+                    Adress = "Olaf Palmes Alle",
+                    City = "Aarhus N",
+                    ZipCode = 8200
+                },
+
             };
 		}
 	}

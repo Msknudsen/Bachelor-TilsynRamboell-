@@ -7,8 +7,8 @@
 
     <StackLayout
         Orientation="Vertical"
-        Padding="50"
-        Spacing="20">
+        Padding="30"
+        Spacing="10">
 
         <Button
             HorizontalOptions="End"
@@ -25,8 +25,21 @@
                FontSize="30"
                HorizontalOptions="Center"/>
 
-        <ListView x:Name ="ProjectsListView" />
-
+        <ListView x:Name ="ProjectsListView" 
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding Adress}" />
+                            <Label Text="{Binding City}" />
+                            <Label Text="{Binding ZipCode}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
