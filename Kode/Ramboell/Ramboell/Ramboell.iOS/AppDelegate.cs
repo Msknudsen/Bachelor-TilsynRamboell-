@@ -49,9 +49,8 @@ namespace Ramboell.iOS
 		{
 			Xamarin.Forms.Forms.Init ();
 			LoadApplication (new Ramboell.App ());
-		    var fireBaseDataService = new FireBaseAuthService();
-
-		    return base.FinishedLaunching (app
+		    Firebase.Core.App.Configure();
+            return base.FinishedLaunching (app
                 , options);
 		}
 	}
