@@ -6,7 +6,7 @@ using Ramboell.iOS;
 [assembly: Dependency(typeof(FireBaseAuthService))]
 namespace Ramboell.iOS
 {
-    public class FireBaseAuthService : FirebaseService, IFireBaseAuthService
+    public class FireBaseAuthService : IFireBaseAuthService
     {
         
         public event EventHandler<MessagingEventHandler> FirebaseEvent;
