@@ -34,47 +34,47 @@
 	\subsection*{Opret bruger (CRS-2)}
 	Som ejer\\
 	Ønsker jeg at kunne oprette bruger på applikationen\\
-	For at kunne give montører samt kunder adgang til systemet
+	For at kunne give en ny bruger adgang til systemet
 	
 	\subsection*{Opret en registrering på PDF tegning (CRS-4)}
 	Som bruger\\
-	Ønsker jeg at kunne ændre brugeroplysninger\\
-	For at have aktuelle oplysninger på applikationen
+	Ønsker jeg at kunne oprette en registrering på PDF tegning\\
+	For at have kunne lave en registrering på et givet projekt 
 	
 	\subsection*{Opret fluebens opbjekt på PDF tegning (CRS-5)}
-	Som ejer eller montør\\
-	Ønsker jeg at kunne oprette en sag\\
-	For kunne lave en fejlmelding på et given lyskryds
+	Som bruger \\
+	Ønsker jeg at kunne oprette et fluebens opbjekt\\
+	For kunne indikere at konstruktionen er godkendt 
 
 	\subsection*{Opret billede opbjekt på PDF tegning (CRS-6)}
-	Som montør\\
-	Ønsker jeg at kunne tage en sag\\
-	For at kunne lave en reparation på et fejlmeldt lyskryds
+	Som bruger\\
+	Ønsker jeg at kunne oprette et billede objekt\\
+	For at kunne tage et billede og vedlægge som dokumentation 
 	
 	\subsection*{Opret tekstfelt opbjekt på PDF tegning (CRS-7)}
-	Som montør\\
-	Ønsker jeg at kunne ændre en sags driftstatus\\
-	For at kunne holde Strøm Hansen og Randers kommune opdateret på reparatoioner af lyskryds
+	Som bruger\\
+	Ønsker jeg at kunne oprette et tekstfelt\\
+	For at kunne skrive en kommentar til en del af konstruktionen 
 	
 	\subsection*{Opret minus opbjekt på PDF tegning (CRS-11)}
 	Som bruger\\
-	Ønsker jeg at kunne skrive kommentar til en given sag\\
-	For at kunne skrive kommentar på eventuelle mangler, feedback og til korrespondance mellem de forskellige brugere.
+	Ønsker jeg at kunne oprette et minus objekt\\
+	For at kunne indikere at der er en fejl konstruktionen
 
 	\subsection*{Slet opbjekt på PDF tegning (CRS-12)}
 	Som bruger\\
-	Ønsker jeg at kunne sortere sager\\
-	For at give et hurtigt overblik hvis en specifik sag ønskes fundet
+	Ønsker jeg at kunne slette et objekt\\
+	For at kunne fjerne objekter som enten er forkerte eller en fejl 
 
 	\subsection*{Afslut registrering på PDF tegning (CRS-13)}
 	Som bruger\\
-	Ønsker jeg at kunne danne mig et hurtigt overblik ved hjælp af en map funktion\\
-	For at kunne se et overbliks billede af alle lyskryds i Randers kommune  og deres nuværende status
+	Ønsker jeg at kunne afslutte en registrering\\
+	For at kunne se en liste over tilsyns registreringerne
 	
 	\subsection*{Opret projekt (CRS-16)}
-	Som kunde og ejer\\
-	Ønsker jeg at modtage notifikationer når en driftstatus ændre sig på et lyskryds ændre sig\\
-	For at få opdateringer hvis et lyskryds ændre driftstatus \\
+	Som bruger\\
+	Ønsker jeg at oprette et nyt projekt\\
+	For at kunne oprette nye projekter løbende
 	
 
 	\section{Ikke funktionelle krav}
@@ -96,11 +96,35 @@ Smartphone applikationen vil blive udviklet ved anvendelse af Xamarin, det mulig
 Applikationen som bliver udviklet til iOS i første omgang, da dette er Rambølls ønske. \\
 Derudover er der til projektet lavet en Firebase database, for at mindske database problemer til udviklingen af appliaktionen og ikke påvirke Rambølls nuværende database.
 
-\subsection{User stories, prioriteret efter MoSCoW}
-Der er i samarbejde med Rambøll også lavet en MoSCoW \cite{MoSCoW} analyse, for at prioriter funktionaliteten, som følgende: \\
+\subsection{User stories, prioriteret efter MoSCoW} \label{sec:MoSCoW}
+I denne sektion er der lavet en prioriteren af user stories efter MoSCoW analyse metoden.
+
+\subsubsection{User stories}
+\textbf{Must:} Log ind (CRS-1) \\
+\textbf{Must:} Opret bruger (CRS-2) \\
 \textbf{Must:} Opret en registrering på PDF tegning (CRS-4) \\
+\textbf{Must:} Opret fluebens opbjekt på PDF tegning (CRS-5) \\
+\textbf{Must:} Opret billede opbjekt på PDF tegning (CRS-6) \\
+\textbf{Must:} Opret tekstfelt opbjekt på PDF tegning (CRS-7) \\
+\textbf{Must:} Opret minus opbjekt på PDF tegning (CRS-11) \\
+\textbf{Must:} Slet opbjekt på PDF tegning (CRS-12) \\
+\textbf{Must:} Afslut registrering på PDF tegning (CRS-13) \\
+\textbf{Must:} Opret projekt (CRS-16) \\
+
+\clearpage
+
+\textbf{Should:} Rediger af brugeroplysninger (CRS-3) \\
+\textbf{Should:} Opret kommentarfelt opbjekt på PDF tegning (CRS-8) \\
+\textbf{Should:} Opret pil opbjekt på PDF tegning (CRS-9) \\
 \textbf{Should:} Opret cirkel opbjekt på PDF tegning (CRS-10) \\
+
 \textbf{Could:} Opret en registrering uden PDF tegning (CRS-14) \\
-Must er funktionalitet af højeste prioritet, derefter er det Should og tilsidst er det Could. \\
-For den fulde MoSCoW analyse se \ref{Krav-sec:MoSCoW} i kravspecifikationen. 
+\textbf{Could:} Afslut registrering uden PDF tegning (CRS-15) \\
+\textbf{Could:} Rediger af projektoplysninger (CRS-17) \\
+\textbf{Could:} Se tilsynsrapporter (CRS-18) \\
+\textbf{Could:} Opret sub entrerpise (CRS-19)
+
+Udfra MoSCoW analysen kan det ses hvilke user stories som der vil blive lagt fokus på først. \\
+Must kategorien er den funktionalitet som skal skal implementeres under dette projekt. Should er funktionalitet som er i anden prioritet, og vil blive implementeret, hvis alle Must casene bliver færdige før afleveringsfrist. Could casene er ting som man kan arbejde videre på, hvis man ønsker at videre udvikle systemet. \\
+Det forventes at alle Must casene bliver implementeret, men at Should og Could ikke bliver en del af dette projekt.
 	
