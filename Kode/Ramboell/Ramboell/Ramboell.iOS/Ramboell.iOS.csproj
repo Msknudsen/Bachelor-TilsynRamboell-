@@ -173,10 +173,25 @@
     <ImageAsset Include="Resources\Media.xcassets\Images.imageset\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\Images.imageset\Ramboll_Logo.png">
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json">
       <InProject>false</InProject>
     </ImageAsset>
-    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json">
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ramboll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\threedots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\Images.imageset\ramboll.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <InProject>false</InProject>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\Images.imageset\threedots.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <InProject>false</InProject>
     </ImageAsset>
   </ItemGroup>

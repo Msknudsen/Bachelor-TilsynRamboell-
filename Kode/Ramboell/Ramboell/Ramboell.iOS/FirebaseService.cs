@@ -7,4 +7,4 @@
             Firebase.Core.App.Configure();
         }
     }
-}
+}   
