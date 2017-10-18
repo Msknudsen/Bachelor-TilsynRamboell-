@@ -1,4 +1,34 @@
-\chapter{Firebase}
+\section{Back-end}
+I følgende afsnit gøres der rede for beslutningerne i forhold til udvikling af back-end, heriblandt database, Authentication og Storage.
+
+\subsection{Database}
+I følgende afsnit redegøres for de beslutninger der tages angående valg af database. SQL eller NoSQL.
+Der er fordele og ulemper ved begge database typer herunder nævnes nogle af forskellige mellem disse to typer.
+
+\subsubsection{Database modellen}
+Ved SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres, os kaldes et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL mere fleksibelt når det omhandler ændringer i data modellen, men ligger mere ansvar hos udvikleren at modellere dataen optimalt. Men ved valget af et andet database betyder dette, at der vil være et server applikation, opstilling af database og vedligeholdelse af det. 
+
+\subsubsection{Queries}
+Når data skal hentes tilbyder SQL database JOIN, hvor data fra flere tabler flettes sammen og returneres. Noget som man ikke har i NoSQL database. For at få tilsvarende effekt skal applikationen query flere gange og sammensætte resultatet selv.  
+
+\subsubsection{Transactions}
+SQL tilbyder transaction, hvis man skal have transaction tilsvarende effekt på NoSQL skal man selv sørge for det i applikations kode.
+ 
+\subsubsection{Skalering}
+Efterhånden som applikationen bliver brugt, vokser mængden af lagret data skal stillingen tages om man vel skalerer sin server op eller skalerer ud ved at tilføje et server. Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. Fordelen ved NoSQL har over SQL database er at det er lettere at skalere ud, men
+når man kigger på at det er en inhouse projekt til Ramboell vil der være begrænset antal brugere til systemet, og mængden af data der vokser vil være i begrænset omfang, og derfor er det ikke være noget reelt betydning for denne projekt. 
+
+
+\subsection{Valg af back-end udviklingsværktøj}
+I følgende afsnit redegøres for de beslutninger der tages angående valg af Firebase. \\ \\
+Firebase kræven næsten næsten ingen setup at bruge, hvilken var et af de store plus for hvorvidt hvilke teknologier der bruges iforhold til Ramboell App. 
+For at starte Firebase i Android og iOS, skal man have en google account, og oprette en projekt i google. Derefter skal man blot add firebase til ens app, og tilføje de bibloteker man har behov for.
+Det giver et let adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
+Et andet grund til Firebase er at der er ikke behov for at sætte en server op, og fordi at Ramboell ikke lægger en server tilrådighed er dette til oplagt mulighed.
+
+Et af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det er kun beregnet som inhouse applikation med ca. 10 bruger er dette acceptablet.
+
+\subsection{Firebase}
 Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell App benytter sig af: \\
 
 \textbf{Authentication\cite{FirebaseAuth}}
@@ -18,31 +48,5 @@ Firebase\cite{Firebase} er en development platform til mobile applikationer, som
 	\item[] Tilsvarende Firebase Database er Cloud Storage tilregnet for filer, som video, billeder eller andre tilsvarende data. I denne tilfælde bliver Firebase Storage benyttet til at gemme på PDF objecter som brugeren hente og uploade. Et vigtigt egenskab Storage har er at den er bygget til at genoptage download af filer i tilfælde af ustabilt internet. Hvilket kan være tilfældet hos Rambøll hvis de skal ud til konstruktions arbejde på et motorvej hvor forbindelse er ikke lige så optimalt som i byen. 
 \end{itemize}
 
-\subsection{Firebase}
-I følgende afsnit redegøres for de beslutninger der tages angående valg af Firebase. \\
-Firebase kræven næsten næsten ingen setup at bruge, hvilken var et af de store plus for hvorvidt hvilke teknologier der bruges iforhold til Ramboell App. 
-For at starte Firebase i Android og iOS, skal man have en google account, og oprette en projekt i google. Derefter skal man blot add firebase til ens app, og tilføje de bibloteker man har behov for.
-Det giver et let adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
-Et andet grund til Firebase er at der er ikke behov for at sætte en server op, og fordi at Ramboell ikke lægger en server tilrådighed er dette til oplagt mulighed.
-
-Et af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det er kun beregnet som inhouse applikation med ca. 10 bruger er dette acceptablet.
-
-
-\subsection{Database}
-I følgende afsnit redegøres for de beslutninger der tages angående valg af database. SQL eller NoSQL.
-Der er fordele og ulemper ved begge database typer herunder nævnes nogle af forskellige mellem disse to typer.
-
-\textbf{database modellen} \\
-Ved SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres, os kaldes et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL mere fleksibelt når det omhandler ændringer i data modellen, men ligger mere ansvar hos udvikleren at modellere dataen optimalt. Men ved valget af et andet database betyder dette, at der vil være et server applikation, opstilling af database og vedligeholdelse af det. 
-
-\subsection{Queries}
-Når data skal hentes tilbyder SQL database JOIN, hvor data fra flere tabler flettes sammen og returneres. Noget som man ikke har i NoSQL database. For at få tilsvarende effekt skal applikationen query flere gange og sammensætte resultatet selv.  
-
-\subsection{Transactions}
-SQL tilbyder transaction, hvis man skal have transaction tilsvarende effekt på NoSQL skal man selv sørge for det i applikations kode.
- 
-\subsection{Skalering}
-Efterhånden som applikationen bliver brugt, vokser mængden af lagret data skal stillingen tages om man vel skalerer sin server op eller skalerer ud ved at tilføje et server. Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. Fordelen ved NoSQL har over SQL database er at det er lettere at skalere ud, men
-når man kigger på at det er en inhouse projekt til Ramboell vil der være begrænset antal brugere til systemet, og mængden af data der vokser vil være i begrænset omfang, og derfor er det ikke være noget reelt betydning for denne projekt. 
 
 \clearpage
