@@ -39,6 +39,8 @@ Corona tilbyder en cross-platform, hvor der udviklet i Lua scripting \cite{Lua}.
 	\item Gratis at bruge
 \end{itemize}
 
+\clearpage
+
 \subsubsection{Sencha}
 Sencha er en platform som er baseret på web applikations udvikling. De bruger teknologier som ES6\cite{ES6}, HTML5\cite{HTML5}, JavaScripts\cite{JavaScript} og CSS\cite{CSS}. \\
 Deres platform tilbyder en masse ekstra ved hjælp af Ext JS frameworket. Nogle af disse er f.eks:
@@ -61,13 +63,27 @@ Developer dokumentationen for Xarmarin er også et plus. Hvis man sidder med et 
 \subsection{Xarmarin}
 I denne sektion vil der komme en mere dybdegående beskrivelse af hvordan Xarmarin platformen er bygget op.
 
-
-
+En af fordelene ved at skrive i Xarmarin, er at man kan dele C\# kode, for de forskellige applikationer.
+På billedet herunder kan man se hvordan at Uster Iterface koden og App Logic koden, er delt på tværs af alle tre enheder. Man skal altså kun skrive sin App Logic og User Interface én gang og virke på både iOS, Android og Windows.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{Applikation/XarmarinShare.JPG}
 	\caption{Kode deling i Xarmarin}
 	\label{fig:CodeShare}
 \end{figure}
+
+\clearpage
+
+Xarmarin kommer både med Xarmarin.iOS og Xarmarin.Android. Hvad dette gør er at når du kompiler koden, komplier den ned til native kode. IOS delen vil blive kompileret til ARM assembly, så ens app er native binære platform. Android kompileres så den kører native Android APK. Så man vil får kompileret koden så den passer til den specifike enhed, man vil bruge. \\
+Xarmarin er baseret på C\# og ved hjælp af Xarmarin.iOS og Xarmarin.Android er det muligt at kalde binde det sammen med den eksisterende kode i både iOS og Android, gennem Xarmarins automatiske binding generator. \\
+Der bliver i både Xarmarin.iOS og Xarmarin.Android givet muligheder for at forbinde til alle API'er der er nødvendige. \\
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{Applikation/NuGet.JPG}
+	\caption{NuGet og Xarmarin Componet Store}
+	\label{fig:NuGet}
+\end{figure}
+Xarmarin tilbyder også en masse ekstra komponenter som kan integreres i ens applikation. Det kan være alt fra web api'er til sikkerheds features.
 
 \clearpage
