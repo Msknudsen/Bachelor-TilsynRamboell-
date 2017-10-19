@@ -1,9 +1,9 @@
 \chapter{Kravspecifikation}
 
-Følgende er en beskrivelse af de aktuelle krav stillet til projektet. De er alle opstillet som user stories. User stories er korte beskrivelser af funktionalitet, som står på en fast form. De er let læselige og har værdi for både personer direkte involveret i projektet og udefrakommende, som skal opnå en idé om kravene til projektet. 
+Følgende er en beskrivelse af de aktuelle krav stillet til projektet, i samarbejde mellem Rambøll og projektgruppen. De er alle opstillet som user stories. User stories er korte beskrivelser af funktionalitet, som står på en fast form. De er let læselige og har værdi for både personer direkte involveret i projektet og udefrakommende, som skal opnå en idé om kravene til projektet. 
 
 \section{Aktør kontekst diagram}\label{sec:Aktor}
-	På figur \ref{fig:AktorKontekst} ses aktør kontekst diagrammet for Rambøll Tilsyn. Diagrammet viser hvilke aktør der interagere med systemet.
+	På figur \ref{fig:AktorKontekst} ses aktør kontekst diagrammet for Rambøll Tilsyn. Diagrammet viser, hvilke aktør der interagerer med systemet.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{FunktionelleKrav/AktorDiagram}
@@ -12,22 +12,24 @@ Følgende er en beskrivelse af de aktuelle krav stillet til projektet. De er all
 \end{figure}
 
 \section{Funktionelle Krav} \label{sec:UserStories}
+I følgende afsnit vil der være en beskrivelse af de funktionlle krav for Rambøll Tilsyns App.
+
 \subsection{User stories beskrevet med Gherkin}
-Til beskrivelse af user stories er Gherkin-syntaksen valgt, hvor stories 
-kan skrives på et flydende sprog, mens de er testbare.\cite{Gherkin} Dette kaldes også et Business-Readable Domain  
-Specific Language. En særlig fordel ved anvendelsen af syntaksen er at den er opstiller kravene så de er særligt testbare, hvilket medfører at kravene for test af features er skrevet i user stories.
-Gherkin anvender nøgleord (i det flg. afsnit 
-markeret med blåt), som hver især har en funktion i beskrivelsen af hver 
-user story.  \vspace{0.2 cm}\\
-Første del af en egenskab indeholder en beskrivelse af forretningsdomænet. 
+Til beskrivelse af user stories er Gherkin-syntaksen\cite{Gherkin} valgt, hvor stories 
+kan skrives på et flydende sprog, mens de er testbare. Gherkin-syntaksen er et Business-Readable Domain  
+Specific Language. En fordel ved anvendelsen af syntaksen er, at den opstiller kravene så de er testbare, hvilket medfører at kravene for test af features er skrevet i user stories.
+Gherkin anvender nøgleord i det flg. afsnit 
+markeret med blåt,  som hver især har en funktion i beskrivelsen af hver 
+user story, dette vil blive beskrevet i følgende afsnit.  \vspace{0.2 cm}\\
+Første del i Gherkin modellen er en egenskab, som indeholder en beskrivelse af forretningsdomænet. 
 Formatet i	dette afsnit vælges frit. Det anbefales, at man anvender et 
 system, hvor der som minimum svares på hvilke aktører der har et behov, hvad 
 behovet består af og hvorfor aktører har dette behov. En tre trins user 
 story opfylder dette krav og opstilles med tre 
-sætninger. Første sætning svarer på hvilken aktør, eller aktører der har
-behovet. Dernæst svarer man på hvad det konkret er at aktøreren ønsker at 
+sætninger. Første sætning svarer på, hvilken aktør eller aktør(er) der har
+behovet. Dernæst svarer man på, hvad det konkret er at aktøreren ønsker at 
 opnå. Den tredje sætning beskriver aktørens motivation for at anvende 
-funktionaliteten\\
+funktionaliteten. \\
 Samtlige nøgleord beskrives nedenfor:
 
 \clearpage
@@ -35,20 +37,23 @@ Samtlige nøgleord beskrives nedenfor:
 \large{\textbf{Givet}}\\
 Disse trin definerer tilstande og datastrukturer som anvendes i de 
 efterfølgende trin og scenarier.\\
+
 \large{\textbf{Når}}\\
-Disse trin beskriver handlinger som ændrer Scenariets tilstand. Dette kan 
+Disse trin beskriver handlinger, som ændrer Scenariets tilstand. Dette kan 
 være handlinger	foretaget af aktøreren og/eller systemet.\\
+
 \large{\textbf{Så}}\\
 Disse trin definerer udfaldet af forudgående handlinger i et givet 
-scenarie. Alle scenarier skal afsluttes ved at definere et det forventede 
+scenarie. Alle scenarier skal afsluttes ved at definere det forventede 
 udfald i et eller flere Så trin.
 
 \large{\textbf{Scenarier}}\\
-Scenarier er samlinger af trin som definerer de funktionelle krav til 
+Scenarier er samlinger af trin, som definerer de funktionelle krav til 
 forløb. Første scenarie i en egenskab dækker hovedfunktionaliteten. De 
 efterfølgende scenarier dækker fejlhåndteringer og alternative scenarier.\\
 \large{\textbf{Baggrund}}\\
-Baggrund er en særlig type scenarie som udføres inden hvert af de 
+
+Baggrund er en særlig type scenarie, som udføres inden hvert af de 
 efterfølgende scenarier	i egenskaben. Systemets tilstand og preconditions 
 beskrives under overskriften Baggrund efterfulgt af et kolon og 
 linjeskift. Herefter listes alle de data, tilstande og handlinger som udgør 
@@ -131,7 +136,7 @@ For at have aktuelle oplysninger
 	Niels & TestTest & london \\
 \end{tabular}
 \newline \newline
-\textcolor{RoyalBlue}{Og} at han er navigeret til rediger bruger siden \\ \\
+\textcolor{RoyalBlue}{Og} at han er navigeret til \emph{rediger bruger siden} \\ \\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger kode}\\
 \textcolor{RoyalBlue}{Når} Niels indtaster paris i kodefeltet Gammel adgangskode\\
@@ -169,17 +174,17 @@ For kunne lave en registrering på et givent projekts pdf tegning \\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret en registrering på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Søren vælger Opret registrering på PDF tegning\\
 \textcolor{RoyalBlue}{Så}  navigeres han videre til registrerings siden\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for at indsætte objekter på PDF'en som en del af hans registrering\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for at indsætte objekter på PDF tegningen som en del af sin registrering\\
 \textcolor{RoyalBlue}{Når} han er færdig med at registrer kan han vælge afslut \\
 \textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\
 
 \clearpage
 
 \subsection{Opret fluebens objekt på PDF tegning (CRS-5)} \label{sec:USOpretFlueben}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret fluebens objekt på PDF tegning}}\\
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret fluebensobjekt på PDF tegning}}\\
 Som bruger\\
-Ønsker jeg at kunne oprette et fluebens objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning \\
+Ønsker jeg at kunne oprette et fluebens objekt på en PDF tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Søren er logget ind\\
@@ -191,15 +196,15 @@ For kunne redigere min registrering på et givent projekts pdf tegning \\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret fluebens objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Søren trykker på fluebens objektet\\
-\textcolor{RoyalBlue}{Så}  får han valgmuligheden om hvilken farve han ønsker fluebenet skal have\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
-\textcolor{RoyalBlue}{Når} han har placeret flueben objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
+\textcolor{RoyalBlue}{Så}  får han valgmuligheden om, hvilken farve han ønsker fluebenet skal have\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen\\
+\textcolor{RoyalBlue}{Når} han har placeret fluebens objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
 \subsection{Opret billede objekt på PDF tegning (CRS-6)} \label{sec:USOpretBillede}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret billede objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette et billede objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning \\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Jan er logget ind\\
@@ -209,9 +214,9 @@ For kunne redigere min registrering på et givent projekts pdf tegning \\
 	Jan & Bruger\\
 \end{tabular}
 
-\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret fluebens objekt på PDF tegning}\\
+\textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret billede objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Jan trykker på billede objektet\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen\\
 \textcolor{RoyalBlue}{Så}  åbnes hans kamera og han kan nu tilføje et billede, og derefter en billede tekst\\
 \textcolor{RoyalBlue}{Når} han har placeret billede objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
@@ -221,7 +226,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning \\
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret tekstfelt objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette et tekstfelt objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Jan er logget ind\\
@@ -233,15 +238,15 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret tekstfelt objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Jan trykker på tekstfelt objektet\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for at skrive en tekst, osm ligger som et objekt han kan åbne og læse teksten\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for at skrive en tekst, som ligger som et objekt han kan åbne og læse teksten\\
 \textcolor{RoyalBlue}{Når} han har placeret teskstfelt objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
 \subsection{Opret kommentarfelt objekt på PDF tegning (CRS-8)} \label{sec:USOpretKommentarfelt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret kommentarfelt objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette et kommentarfelt objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Morten er logget ind\\
@@ -253,7 +258,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret kommentarfelt objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Morten trykker på kommentarfelt objektet\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at skrive en tekst, som vises på PDF tegningen\\
 \textcolor{RoyalBlue}{Når} han har placeret teskstfelt objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
@@ -263,7 +268,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret pil objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette et pil objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Morten er logget ind\\
@@ -275,7 +280,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret pil objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Morten trykker på pil objektet\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at trække i pilen så den passer i længde og retning\\
 \textcolor{RoyalBlue}{Når} han har placeret pil objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
@@ -283,7 +288,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret cirkel objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette et cirkel objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Morten er logget ind\\
@@ -295,8 +300,8 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret cirkel objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Morten trykker på cirkel objektet\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for at trække i cirkelen så den passer i radius\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for at trække i cirklen så den passer i radius\\
 \textcolor{RoyalBlue}{Når} han har placeret cirkel objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
 \clearpage
@@ -305,7 +310,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret minus objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette et minus objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Lars er logget ind\\
@@ -317,7 +322,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret minus objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Lars trykker på minus objektet\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen han ønsker\\
+\textcolor{RoyalBlue}{Så}  har han mulighed for sætte objektet det sted på PDF tegningen \\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at placere den tilhørende cirkel, hvis han ønsker at markere et større område\\
 \textcolor{RoyalBlue}{Når} han har placeret minus objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
@@ -325,7 +330,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Slet objekt på PDF tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne slette et objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+For at kunne opdatere min registrering på et givent projekt \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Lars er logget ind\\
@@ -338,16 +343,15 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Slet objekt på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Lars trykker på viskelæder objektet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for slette et objektet på PDF tegningen\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for at trykke på det objekt han ønsker at slette\\
-\textcolor{RoyalBlue}{Når} han har slettet objektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
+\textcolor{RoyalBlue}{Når} han trykker på objektet, slettes dette. Han kun nu oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
 \clearpage
 
 \subsection{Afslut registrering på PDF tegning (CRS-13)} \label{sec:USAfslutRegPåPDF}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Afslut registrering på PDF tegning}}\\
 Som bruger\\
-Ønsker jeg at kunne slette et objekt på en PDF\\
-For kunne redigere min registrering på et givent projekts pdf tegning\\
+Ønsker jeg at kunne afslutte min registrering\\
+For at kunne afslutte en registrering på et projekt\\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Jakob er logget ind\\
@@ -361,7 +365,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Afslut registrering på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Jakob trykker på submenu ikonet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for afslut og eksporter\\
-\textcolor{RoyalBlue}{Så}  navigeres han tilbage, og hans mail skulle gerne åbne med en vedhæftet excel fil\\
+\textcolor{RoyalBlue}{Så}  navigeres han tilbage og sin mail skulle gerne åbne med en vedhæftet excel fil\\
 
 \subsection{Opret en registrering uden PDF tegning (CRS-14)} \label{sec:USOpretRegUdenPDF}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret en registrering uden PDF tegning}}\\
@@ -402,7 +406,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Afslut registrering på PDF tegning}\\
 \textcolor{RoyalBlue}{Når} Jakob trykker på submenu ikonet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for afslut og eksporter\\
-\textcolor{RoyalBlue}{Så}  navigeres han tilbage, og hans mail skulle gerne åbne med en vedhæftet word fil\\
+\textcolor{RoyalBlue}{Så}  navigeres han tilbage og sin mail skulle gerne åbne med en vedhæftet word fil\\
 
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se tilsynsrapporter}\\
@@ -415,7 +419,7 @@ For kunne redigere min registrering på et givent projekts pdf tegning\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret projekt}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette projektoplysninger\\
-For at have aktuelle oplysninger
+For at have aktuelle oplysninger om projektet
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Jonas er logget ind\\
@@ -427,16 +431,16 @@ For at have aktuelle oplysninger
 \newline \newline
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret projekt}\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster projekt navn i projekt navn feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster projektnavn i feltet projektnavn\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster projekt nummer i projekt nummer feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster projektnummer i feltet projektnummer\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster projekt adresse i projekt adresse feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster projektadresse i feltet projektadresse\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster projektets entreprenør informationer i projekt entreprenør felter\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster information om projektets entreprenør i deres tilhørende felter\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 
@@ -462,17 +466,17 @@ For at have aktuelle oplysninger
 \newline
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger projekt navn}\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt navn i projekt navn feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt navn i projektnavn feltet\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger projekt nummer}\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt nummer i projekt nummer feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt nummer i projektnummer feltet\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger projekt adresse}\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt adresse i projekt adresse feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt adresse i projektadresse feltet\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 
@@ -505,18 +509,18 @@ For at kunne følge byggeriets gang
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se tilsynsrapporter}\\
 \textcolor{RoyalBlue}{Når} Jonas vælger tilsynsrapport\\
 \textcolor{RoyalBlue}{Så} navigeres han ind til en liste af alle oprettede tilsynsrapporter\\
-\textcolor{RoyalBlue}{Så} kan han vælge hvilken han ønsker at exportere til excel\\
-\textcolor{RoyalBlue}{Når} han har valgt hvilken han ønsker at exportere til excel, vil han blive navigeret tilbage til projektforsiden\\
+\textcolor{RoyalBlue}{Så} kan han vælge, hvilken han ønsker at exportere til excel\\
+\textcolor{RoyalBlue}{Når} han har valgt, hvilken han ønsker at exportere til excel, vil han blive navigeret tilbage til projektforsiden\\
 
-\subsection{Opret sub projekt (CRS-19)} \label{sec:USOpretSubEntreprise}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret sub projekt}}\\
+\subsection{Opret subprojekt (CRS-19)} \label{sec:USOpretSubEntreprise}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret subprojekt}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette projektoplysninger\\
 For at have aktuelle oplysninger \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Jonas er logget ind\\
-\textcolor{RoyalBlue}{Og} han ønsker at oprette en sub projekt på et projekt med følgende oplysninger:\\
+\textcolor{RoyalBlue}{Og} han ønsker at oprette en subprojekt på et projekt med følgende oplysninger:\\
 \begin{tabular}{| l | l | l |}
 	\textbf{Projektnavn} & \textbf{Projektnummer} & \textbf{Adresse} \\
 	Broer & Projekt 170 & Finlandsgade 22 \\
@@ -530,15 +534,15 @@ For at have aktuelle oplysninger \\
 \newline \newline
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret sub projekt}\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise navn i entreprise navn feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise navn i entreprisenavn feltet\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise nummer i entreprise nummer feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entreprisenummer i entreprisenummer feltet\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise adresse i entreprise adresse feltet\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entrepriseadresse i entrepriseadresse feltet\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster entreprise informationer i entreprise informations felter\\
+\textcolor{RoyalBlue}{Når} Alexander indtaster entrepriseinformationer i entrepriseinformations felter\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\

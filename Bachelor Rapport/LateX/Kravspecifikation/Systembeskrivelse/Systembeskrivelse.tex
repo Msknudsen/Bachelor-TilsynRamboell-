@@ -1,7 +1,7 @@
 \chapter{Systembeskrivelse}
-	Systemet består af en database med brugeradgang via iOS applikation.
-	Databasen indeholder brugere, projekter, PDF tegninger og data om projekterne.
-	Et projekt indeholder en PDF tegning, tegne objekter, mulighed for upload af billede og tekst.
+	Systemet består af tre databaser via Firebase med brugeradgang via iOS og Android applikation.
+	Databaserne indeholder brugere, projekter, PDF tegninger, information og objekter tilhørende projekterne.
+	Et byggeprojekt indeholder en PDF tegning, tegne objekter, mulighed for upload af billede og tekst. \\
 	
 	\begin{figure}[H]
 		\centering
@@ -10,11 +10,11 @@
 		\label{fig:OversigtSystembeskrivelse}
 	\end{figure}
 	
-	Systemet skal kunne håndtere de bygge projekter Rambøll har, og oprette nye når de overtager et nyt bygge projekt.
+	Systemet skal kunne håndtere de bygge projekter Rambøll har og oprette nye når de overtager et nyt bygge projekt.
 	Disse skal kunne tilgåes af Rambøll ansatte, via enten en smartphone eller tablet.
-	Rambøll ansatte får tildelt et personligt login.
+	Rambøll ansatte får tildelt et personligt login, for at der kan holdes historik over hvem der har oprettet projekter og registreringer.
 	Brugere skal kunne oprette en registring for et givet projekt.
-	Når en bruger er færdig med at oprette sin registrering, skal denne kunne exportes til en excel fil og sendes som en vedhæftet fil i en mail.
+	Når en bruger er færdig med at oprette sin registrering, skal denne kunne eksporteres til en excel fil og sendes som en vedhæftet fil i en mail.
 	Systemet har en log, som indeholder en liste over alle registreringer, til et givent projekt. \\	
 				 
 	\clearpage
