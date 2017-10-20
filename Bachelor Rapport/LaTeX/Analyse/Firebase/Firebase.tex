@@ -8,12 +8,13 @@ Der er fordele og ulemper ved begge database typer, herunder nævnes nogle af fo
 \subsubsection{Database modellen}
 Ved en SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL er mere fleksibelt når det omhandler ændringer i data modellen, men dette ligger mere ansvar hos udvikleren, som skal modellere dataen optimalt. \\
 
-\subsubsection{Queries}
-Når data skal hentes tilbyder SQL database JOIN, hvor data fra flere tabler flettes sammen og returneres. Dette har man ikke i en NoSQL database. \\
+\subsubsection{Queries\cite{Query}}
+Når data skal hentes tilbyder SQL database JOIN\cite{JOIN}, hvor data fra flere tabler flettes sammen og returneres. Dette har man ikke i en NoSQL database. \\
 For at få tilsvarende effekt skal NoSQL databaser query flere gange og sammensætte resultatet selv.
 
-\subsubsection{Transactions}
- !!!!! SQL tilbyder transaction, hvis man skal have transaction tilsvarende effekt på NoSQL skal man selv sørge for det i applikations kode. !!!! Hvad er Transcations?
+\subsubsection{Transactions\cite{Transactions}}
+ SQL tilbyder transaction som er nyttigt når man arbejder med flere databaser. Transaction gør at man kan opdatere flere databaser med et functions kald, hvis man skal have transaction tilsvarende effekt på NoSQL skal man selv sørge for det i applikations kode. 
+
  
 \subsubsection{Skalering}
 Efterhånden som applikationen bliver brugt, vokser mængden af lagret data. Her skal der tages stilling til om man vil skalerer sin server op eller skalerer ud ved at tilføje en ekstra server. Problemmet ved at udvide sin server er at der kommer et tidspunkt, hvor det vil blive for dyrt at udvide serveren og man vil hellere skalere serveren ud. \\
@@ -28,7 +29,7 @@ Firebase kræver næsten ingen setup at bruge, hvilket var et af de store plusse
 For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app, og tilføje de bibloteker man har behov for.
 Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
 
-!!! En andet grund til Firebase, er at der er ikke behov for at sætte en server op og da Rambøll ikke lægger en server tilrådighed er dette til oplagt mulighed. Men ved valget af anden database betyder dette, at der vil være et server applikation, opstilling af database og vedligholdelse af det !! - Omformuler
+ Firebase blev valgt fordi, at der er ikke behov for at sætte en server op, og da Rambøll ikke lægger en server tilrådighed, er dette til oplagt mulighed, men ved valget af en anden database betyder, at man skal sætte en server op, som databasen kan være i, eller vælge at Cloud hoste\cite{{Cloud}} sin database. 
 
 En af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet.
 
