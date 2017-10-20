@@ -17,37 +17,46 @@ Når data skal hentes tilbyder SQL database JOIN funktionen, hvor data fra flere
  !!!!! SQL tilbyder transaction, hvis man skal have transaction tilsvarende effekt på NoSQL skal man selv sørge for det i applikations kode. !!!! Hvad er Transcations?
  
 \subsubsection{Skalering}
-Efterhånden som applikationen bliver brugt, vokser mængden af lagret data skal stillingen tages om man vel skalerer sin server op eller skalerer ud ved at tilføje et server. Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. Fordelen ved NoSQL har over SQL database er at det er lettere at skalere ud, men
-når man kigger på at det er en inhouse projekt til Ramboell vil der være begrænset antal brugere til systemet, og mængden af data der vokser vil være i begrænset omfang, og derfor er det ikke være noget reelt betydning for denne projekt. 
+Efterhånden som applikationen bliver brugt, vokser mængden af lagret data. Her skal der tages stilling til om man vil skalerer sin server op eller skalerer ud ved at tilføje en ekstra server.  
+
+!!Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. \\ !! - Omformuler
+
+Fordelen ved NoSQL kontra en SQL database er at det er lettere at skalere ud. Men
+når man kigger på at det er et inhouse projekt til Ramboell, vil der være begrænset antal af brugere til systemet og mængden af data der vokser vil være i et begrænset omfang. 
+
+!!! Derfor er det ikke være noget reelt betydning for denne projekt. !! - Omformuler
 
 
 \subsection{Valg af back-end udviklingsværktøj}
-I følgende afsnit redegøres for de beslutninger der tages angående valg af Firebase. \\ \\
-Firebase kræven næsten næsten ingen setup at bruge, hvilken var et af de store plus for hvorvidt hvilke teknologier der bruges iforhold til Ramboell App. 
-For at starte Firebase i Android og iOS, skal man have en google account, og oprette en projekt i google. Derefter skal man blot add firebase til ens app, og tilføje de bibloteker man har behov for.
-Det giver et let adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
-Et andet grund til Firebase er at der er ikke behov for at sætte en server op, og fordi at Ramboell ikke lægger en server tilrådighed er dette til oplagt mulighed.
+I følgende afsnit redegøres for de beslutninger der er taget angående valg af database. \\ \\
+Firebase kræver næsten ingen setup at bruge, hvilket var et af de store plusser for hvilken teknologi der skulle bruges til Ramboell Tilsyns App. 
+For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app, og tilføje de bibloteker man har behov for.
+Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
 
-Et af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det er kun beregnet som inhouse applikation med ca. 10 bruger er dette acceptablet.
+!!! En andet grund til Firebase, er at der er ikke behov for at sætte en server op og da Ramboell ikke lægger en server tilrådighed er dette til oplagt mulighed. !! - Skriv noget mere om det arbejde man slipper for ved ikke at skulle lave en server
+
+En af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet.
 
 \subsection{Firebase}
-Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell App benytter sig af: \\
+Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell Tilsyns App benytter sig af: \\
 
 \textbf{Authentication\cite{FirebaseAuth}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[] Firebase Authentication giver en række funktioner indenfor User Management, der gør det let at logge på, opret og log af. Firebase Authentication tilbyder en række forskellige muligheder for login fra mail eller en andet sociale medier, som Facebook, Twitter osv, til både Android og iOS applikationer, af disse vælger vi at benytte mail som login for. Bruger data som E-mail, navn og crypteret password, vil blive gemt i Firebase, og derfor vil der ikke være behov for, at Rambøll Danmark A/S skal sørge for at opsætte server med en bruger database, forbindelsen op til serveren og derefter vedligeholdelse. 
+	\item[] Firebase Authentication giver en række funktioner indenfor User Management, der gør det let at logge på, opret og log af. Firebase Authentication tilbyder en række forskellige muligheder for login fra mail eller et andet sociale medie, som Facebook, Twitter osv. \\
+	Bruger data som E-mail, navn og crypteret password, vil blive gemt i Firebase, og derfor vil der ikke være behov for, at Rambøll Danmark A/S skal sørge for at opsætte server med en bruger database, forbindelsen op til serveren og derefter vedligeholdelse. 
 	
 \end{itemize}	
 \textbf{Realtime Database\cite{FirebaseRealtimeDB}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[]  Firebase Realtime Database er et NoSQL cloud database, der gemmer data'en som JSON\cite{JSON}, med mulighed for synkroniser data med alle som benytter Ramboell App, der har forbindelse til internet. Databasen er Cloud hosted, hvilket betyder at som udviklere vil det give en "serverless" miljø at arbejde med, hvor arbejde med opsætning og vedligeholdelse af server vil ikke være nødvendigt. Et af de store fordele er at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil enhver device der er koblet til internet modtage notifikationen om ændringen, og kan begynde at hente det ned. 
+	\item[]  Firebase Realtime Database er et NoSQL cloud database, der gemmer data'en som JSON\cite{JSON}, med mulighed for synkroniser data med alle som benytter Ramboell Tilsyns App, der har forbindelse til internet. Databasen er Cloud hosted, hvilket betyder at som udviklere vil det give et "serverless" miljø at arbejde med. Dette betyder at arbejde med opsætning og vedligeholdelse af server ikke vil være nødvendigt. \\
+	En af de store fordele er at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil alle devices der er koblet til internet modtage notifikation om ændringen og kan begynde at hente det ned. 
 \end{itemize}
 \textbf{Firebase Storage\cite{FirebaseStorage}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[] Tilsvarende Firebase Database er Cloud Storage tilregnet for filer, som video, billeder eller andre tilsvarende data. I denne tilfælde bliver Firebase Storage benyttet til at gemme på PDF objecter som brugeren hente og uploade. Et vigtigt egenskab Storage har er at den er bygget til at genoptage download af filer i tilfælde af ustabilt internet. Hvilket kan være tilfældet hos Rambøll hvis de skal ud til konstruktions arbejde på et motorvej hvor forbindelse er ikke lige så optimalt som i byen. 
+	\item[] Tilsvarende Firebase Database er Cloud Storage tilregnet for filer som video, billeder eller andre tilsvarende data. I dette tilfælde bliver Firebase Storage benyttet til at gemme PDF objekter som brugeren kan hente og uploade. En vigtigt egenskab Storage har er, at den er bygget til at genoptage download af filer i tilfælde af ustabilt internet. Dette kan være tilfældet hos Rambøll hvis de skal ud til konstruktions arbejde på en motorvej, hvor forbindelse er ikke lige så optimalt som i byen. 
 \end{itemize}
 
 
