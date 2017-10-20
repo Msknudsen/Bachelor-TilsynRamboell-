@@ -7,10 +7,12 @@ Der er fordele og ulemper ved begge database typer, herunder nævnes nogle af fo
 
 \subsubsection{Database modellen}
 Ved en SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL er mere fleksibelt når det omhandler ændringer i data modellen, men denne ligger mere ansvar hos udvikleren, som skal modellere dataen optimalt. \\
+
 !!!!! Men ved valget af et andet database betyder dette, at der vil være et server applikation, opstilling af database og vedligeholdelse af det. !!!!!!! . Omformuler
 
 \subsubsection{Queries}
 Når data skal hentes tilbyder SQL database JOIN funktionen, hvor data fra flere tabler flettes sammen og returneres. Dette harman ikke i en NoSQL database. \\
+
 !!!!! For at få tilsvarende effekt skal applikationen query flere gange og sammensætte resultatet selv.  !!!!!! - Omformuler
 
 \subsubsection{Transactions}
@@ -19,7 +21,7 @@ Når data skal hentes tilbyder SQL database JOIN funktionen, hvor data fra flere
 \subsubsection{Skalering}
 Efterhånden som applikationen bliver brugt, vokser mængden af lagret data. Her skal der tages stilling til om man vil skalerer sin server op eller skalerer ud ved at tilføje en ekstra server.  
 
-!!Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. \\ !! - Omformuler
+!! Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. \\ !! - Omformuler
 
 Fordelen ved NoSQL kontra en SQL database er at det er lettere at skalere ud. Men
 når man kigger på at det er et inhouse projekt til Ramboell, vil der være begrænset antal af brugere til systemet og mængden af data der vokser vil være i et begrænset omfang. 
