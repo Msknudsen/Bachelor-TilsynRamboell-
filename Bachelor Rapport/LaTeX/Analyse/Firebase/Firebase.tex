@@ -1,32 +1,25 @@
 \section{Back-end}
-I følgende sektion gøres der rede for beslutningerne i forhold til udvikling af back-end, heriblandt database, Authentication og Storage.
+I følgende sektion gøres der rede for beslutningerne i forhold til udvikling af back-end, heriblandt database, authentication og storage.
 
 \subsection{Database}
 I følgende afsnit redegøres for de beslutninger der tages angående valg af database. SQL eller NoSQL.
 Der er fordele og ulemper ved begge database typer, herunder nævnes nogle af forskelligene mellem disse to typer.
 
 \subsubsection{Database modellen}
-Ved en SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL er mere fleksibelt når det omhandler ændringer i data modellen, men denne ligger mere ansvar hos udvikleren, som skal modellere dataen optimalt. \\
-
-!!!!! Men ved valget af et andet database betyder dette, at der vil være et server applikation, opstilling af database og vedligeholdelse af det. !!!!!!! . Omformuler
+Ved en SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL er mere fleksibelt når det omhandler ændringer i data modellen, men dette ligger mere ansvar hos udvikleren, som skal modellere dataen optimalt. \\
 
 \subsubsection{Queries}
-Når data skal hentes tilbyder SQL database JOIN funktionen, hvor data fra flere tabler flettes sammen og returneres. Dette harman ikke i en NoSQL database. \\
-
-!!!!! For at få tilsvarende effekt skal applikationen query flere gange og sammensætte resultatet selv.  !!!!!! - Omformuler
+Når data skal hentes tilbyder SQL database JOIN, hvor data fra flere tabler flettes sammen og returneres. Dette har man ikke i en NoSQL database. \\
+For at få tilsvarende effekt skal NoSQL databaser query flere gange og sammensætte resultatet selv.
 
 \subsubsection{Transactions}
  !!!!! SQL tilbyder transaction, hvis man skal have transaction tilsvarende effekt på NoSQL skal man selv sørge for det i applikations kode. !!!! Hvad er Transcations?
  
 \subsubsection{Skalering}
-Efterhånden som applikationen bliver brugt, vokser mængden af lagret data. Her skal der tages stilling til om man vil skalerer sin server op eller skalerer ud ved at tilføje en ekstra server.  
-
-!! Problemmet ved at lave en større server er at der kommer et tidspunkt, hvor det vil blive for dyrt at købe en større server, hvor man vil hellere skalere ud. \\ !! - Omformuler
-
+Efterhånden som applikationen bliver brugt, vokser mængden af lagret data. Her skal der tages stilling til om man vil skalerer sin server op eller skalerer ud ved at tilføje en ekstra server. Problemmet ved at udvide sin server er at der kommer et tidspunkt, hvor det vil blive for dyrt at udvide serveren og man vil hellere skalere serveren ud. \\
 Fordelen ved NoSQL kontra en SQL database er at det er lettere at skalere ud. Men
-når man kigger på at det er et inhouse projekt til Ramboell, vil der være begrænset antal af brugere til systemet og mængden af data der vokser vil være i et begrænset omfang. 
-
-!!! Derfor er det ikke være noget reelt betydning for denne projekt. !! - Omformuler
+når man kigger på at det er et inhouse projekt til Rambøll, vil der være begrænset antal af brugere til systemet og mængden af data vokser derfor i et begrænset omfang. 
+Derfor vil det ikke være noget reelt betydning for dette projekt.
 
 
 \subsection{Valg af back-end udviklingsværktøj}
@@ -35,7 +28,7 @@ Firebase kræver næsten ingen setup at bruge, hvilket var et af de store plusse
 For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app, og tilføje de bibloteker man har behov for.
 Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
 
-!!! En andet grund til Firebase, er at der er ikke behov for at sætte en server op og da Ramboell ikke lægger en server tilrådighed er dette til oplagt mulighed. !! - Skriv noget mere om det arbejde man slipper for ved ikke at skulle lave en server
+!!! En andet grund til Firebase, er at der er ikke behov for at sætte en server op og da Rambøll ikke lægger en server tilrådighed er dette til oplagt mulighed. Men ved valget af anden database betyder dette, at der vil være et server applikation, opstilling af database og vedligholdelse af det !! - Omformuler
 
 En af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet.
 
