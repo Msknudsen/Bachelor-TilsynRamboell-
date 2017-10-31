@@ -1,27 +1,18 @@
 	\chapter{Kravspecifikation}
 	
-		\section{Systembeskrivelse}
-		Systemet består af en database med brugeradgang via iOS applikation.
-		Databasen indeholder brugere, projekter, PDF tegninger og data om projekterne.
-		Et projekt indeholder en PDF tegning, tegne objekter, mulighed for upload af billede og tekst.
-		
-		\begin{figure}[H]
-			\centering
-			\includegraphics[width=0.4\linewidth]{Kravspecifikation/Oversigtoversystem}
-			\caption{Oversigt over systemet}
-			\label{fig:OversigtSystembeskrivelse}
-		\end{figure}
-		
-		Systemet skal kunne håndtere de bygge projekter Rambøll har, og oprette nye når de overtager et nyt bygge projekt.
-		Disse skal kunne tilgåes af Rambøll ansatte, via enten en smartphone eller tablet.
-		Rambøll ansatte får tildelt et personligt login.
-		Brugere skal kunne oprette en registring for et givet projekt.
-		Når en bruger er færdig med at oprette sin registrering, skal denne kunne exportes til en excel fil og sendes som en vedhæftet fil i en mail.
-		Systemet har en log, som indeholder en liste over alle registreringer, til et givent projekt. \\	
-				
-		\clearpage
+	\section{Aktør kontekst diagram}
+		På figur \ref{fig:AktorKontekst} ses aktør kontekst diagrammet for Rambøll Tilsyn. Diagrammet viser, hvilke aktør der interagerer med systemet.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.6\linewidth]{Kravspecifikation/AktorDiagram}
+		\caption{Aktør kontekst diagram for Rambøll Tilsyn}
+		\label{fig:AktorKontekst}
+	\end{figure}
 
+		På venstre side af figur \ref{fig:AktorKontekst} ses brugeren som er den primære aktør af systemet. Brugeren benytter systemet, som på diagrammet bliver symboliseret som en blackbox. På højre side, ses de sekundære aktører. Disse aktører er dem som systemet bruger. Microsoft Office er en sekundær bruger, da systemet eksportere til Excel.
 	
+	\section{User stories diagram}
+
 	\section{Funktionelle krav} 
 	Følgende er en kort beskrivelse af must user stories til Rambølls Tilsyns App, som er fundet sammen med Rambøll ved hjælp af MoSCoW analyse. \cite{MoSCoW} For alle user stories fuldt beskrevet med Gherkin, se kravspecifikationen afsnit \ref{Krav-sec:UserStories}.
 	Aktør kontekst diagram findes i kravspecifikationen afsnit \ref{Krav-sec:Aktor}.

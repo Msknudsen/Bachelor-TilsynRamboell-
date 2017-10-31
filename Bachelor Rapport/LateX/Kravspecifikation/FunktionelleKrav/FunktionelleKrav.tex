@@ -3,16 +3,34 @@
 Følgende er en beskrivelse af de aktuelle krav stillet til projektet, i samarbejde mellem Rambøll og projektgruppen. De er alle opstillet som user stories. User stories er korte beskrivelser af funktionalitet, som står på en fast form. De er let læselige og har værdi for både personer direkte involveret i projektet og udefrakommende, som skal opnå en idé om kravene til projektet. 
 
 \section{Aktør kontekst diagram}\label{sec:Aktor}
-	På figur \ref{fig:AktorKontekst} ses aktør kontekst diagrammet for Rambøll Tilsyn. Diagrammet viser, hvilke aktør der interagerer med systemet.
+	På figur \ref{fig:AktorKontekst} ses aktør kontekst diagrammet for Rambøll Tilsyn. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{FunktionelleKrav/AktorDiagram}
-	\caption{Aktør kontekst diagram for Rambøll Tilsyn}
+	\caption{Aktør kontekst diagram for Rambøll Tilsyns App}
 	\label{fig:AktorKontekst}
 \end{figure}
+Det ses at systemet har følgende aktører:
+\begin{itemize}
+	\item Primær aktør: Bruger
+	\item Sekundær aktør: Microsoft Office \\
+\end{itemize}
+
+\clearpage
 
 \section{Funktionelle Krav} \label{sec:UserStories}
 I følgende afsnit vil der være en beskrivelse af de funktionlle krav for Rambøll Tilsyns App.
+
+\subsection{User stories diagram}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{FunktionelleKrav/UserStorieDiagram}
+	\caption{User stories diagram for Rambøll Tilsyns App}
+	\label{fig:Userstoriediagram}
+\end{figure}
+
+\clearpage
 
 \subsection{User stories beskrevet med Gherkin}
 Til beskrivelse af user stories er Gherkin-syntaksen\cite{Gherkin} valgt, hvor stories 
@@ -32,15 +50,13 @@ opnå. Den tredje sætning beskriver aktørens motivation for at anvende
 funktionaliteten. \\
 Samtlige nøgleord beskrives nedenfor:
 
-\clearpage
-
 \large{\textbf{Givet}}\\
 Disse trin definerer tilstande og datastrukturer som anvendes i de 
-efterfølgende trin og scenarier.\\
+efterfølgende trin og scenarier.
 
 \large{\textbf{Når}}\\
 Disse trin beskriver handlinger, som ændrer Scenariets tilstand. Dette kan 
-være handlinger	foretaget af aktøreren og/eller systemet.\\
+være handlinger	foretaget af aktøreren og/eller systemet.
 
 \large{\textbf{Så}}\\
 Disse trin definerer udfaldet af forudgående handlinger i et givet 
@@ -50,9 +66,9 @@ udfald i et eller flere Så trin.
 \large{\textbf{Scenarier}}\\
 Scenarier er samlinger af trin, som definerer de funktionelle krav til 
 forløb. Første scenarie i en egenskab dækker hovedfunktionaliteten. De 
-efterfølgende scenarier dækker fejlhåndteringer og alternative scenarier.\\
-\large{\textbf{Baggrund}}\\
+efterfølgende scenarier dækker fejlhåndteringer og alternative scenarier.
 
+\large{\textbf{Baggrund}}\\
 Baggrund er en særlig type scenarie, som udføres inden hvert af de 
 efterfølgende scenarier	i egenskaben. Systemets tilstand og preconditions 
 beskrives under overskriften Baggrund efterfulgt af et kolon og 
@@ -116,8 +132,8 @@ fornavn og efternavn \\
 \textcolor{RoyalBlue}{Så} oprettes den nye bruger\\
 \textcolor{RoyalBlue}{Og} den nye bruger kan logge ind\\
 
-\subsection{Rediger af brugeroplysninger (CRS-3)} \label{sec:USRedigerBruger}
-\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Rediger af brugeroplysninger}}\\
+\subsection{Rediger brugeroplysninger (CRS-3)} \label{sec:USRedigerBruger}
+\textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Rediger brugeroplysninger}}\\
 Som bruger\\
 Ønsker jeg at kunne ændre brugeroplysninger\\
 For at have aktuelle oplysninger
@@ -136,7 +152,7 @@ For at have aktuelle oplysninger
 	Niels & TestTest & london \\
 \end{tabular}
 \newline \newline
-\textcolor{RoyalBlue}{Og} at han er navigeret til \emph{rediger bruger siden} \\ \\
+\textcolor{RoyalBlue}{Og} at han er navigeret til \emph{rediger bruger siden} \\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger kode}\\
 \textcolor{RoyalBlue}{Når} Niels indtaster paris i kodefeltet Gammel adgangskode\\
@@ -177,8 +193,6 @@ For kunne lave en registrering på et givent projekts pdf tegning \\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at indsætte objekter på PDF tegningen som en del af sin registrering\\
 \textcolor{RoyalBlue}{Når} han er færdig med at registrer kan han vælge afslut \\
 \textcolor{RoyalBlue}{Så}  navigeres hans videre til fejl rapporten for alle objekter oprettet på projektet \\
-
-\clearpage
 
 \subsection{Opret fluebens objekt på PDF tegning (CRS-5)} \label{sec:USOpretFlueben}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret fluebensobjekt på PDF tegning}}\\
@@ -444,7 +458,7 @@ For at have aktuelle oplysninger om projektet
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 
-\subsection{Rediger af projektoplysninger (CRS-17)} \label{sec:USRedigerProjekt}
+\subsection{Rediger projektoplysninger (CRS-17)} \label{sec:USRedigerProjekt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Rediger af projektoplysninger}}\\
 Som bruger\\
 Ønsker jeg at kunne ændre projektoplysninger\\
