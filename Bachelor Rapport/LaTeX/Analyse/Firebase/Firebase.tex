@@ -7,7 +7,7 @@ Der er fordele og ulemper ved begge database typer, herunder nævnes nogle af fo
 
 \subsubsection{Database modellen}
 
-Ved en SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL er mere fleksibelt når det omhandler ændringer i data modellen, men dette pålægger ansvar hos udviklerne af applikationernetil, at modellere dataen optimalt.\\
+Ved en SQL database kræves der Schema, som definerer data modellen, og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en data model. NoSQL er mere fleksibelt når det omhandler ændringer i data modellen, men dette pålægger ansvar hos udviklerne af applikationernetil, at modellere dataen optimalt.
 
 \subsubsection{Queries\cite{Query}}
 Når data skal hentes tilbyder SQL database JOIN\cite{JOIN}, hvor data fra flere tabler flettes sammen og returneres. Dette har man ikke i en NoSQL database. \\
@@ -22,28 +22,28 @@ Fordelen ved NoSQL kontra en SQL database er at det er lettere at skalere ud. Me
 når man kigger på at det er et inhouse projekt til Rambøll, vil der være begrænset antal af brugere til systemet og mængden af data vokser derfor i et begrænset omfang. 
 Derfor vil det ikke være noget reelt betydning for dette projekt.
 
+\subsection{Back-end udviklingsværktøjer}
+I denne sektion vil der være en kort beskrivelse af nogle database typer.
+
+\subsubsection{Firebase}
+
+
+\subsubsection{MongoDB}
+
+
+\subsubsection{SQL}
+
+
 \subsection{Valg af back-end udviklingsværktøj}
 I følgende afsnit redegøres for de beslutninger der er taget angående valg af database. \\ \\
-Firebase kræver næsten ingen setup at bruge, hvilket var et af de store plusser for hvilken teknologi der skulle bruges til Ramboell Tilsyns App. 
+Til projektet er der valgt at bruge Firebase 
 
-Der findes en voksende mængde af NoSQL databaser for eksempel MongoDB, Cassandra og Firebase osv.
-NoSQL databaser er delt op i 4 kategorier \cite{NoSQLTypes}:
-\begin{itemize}[-]
-	\itemsep 0.3em 
-	\item[]– Key-value store
-	\item[] Simpelt key-value pair hvor data gemmes som i hash table, hvor data gemmes som blob. \\
-	\item[]– Document store
-	\item[] Næsten ligesom Key-value store, dog kender databasen til data type af indholdet.\\
-	\item[]– Column-family store 
-	\item[] Samme concept som key-value pair, hvor der findes flere kolonner, og indholdet af kolonnerne er typisk relateret til hinanden og tilgås ofte sammen. \\
-	\item[]– Graph	
- 	\item[] Bruger noder og kanter til at representere data og relationerne bag dem.\\
-\end{itemize}	
-
-
+ kræver næsten ingen setup at bruge, hvilket var et af de store plusser for hvilken teknologi der skulle bruges til Ramboell Tilsyns App. 
 
 \subsection{Firebase}
-Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell Tilsyns App benytter sig af. \\
+I følgende afsnit redegøres for de beslutninger der tages angående valg af Firebase. \\
+
+Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell Tilsyns App benytter sig af.
 
 Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der udstilles. Firebase blev valgt fordi, at der er ikke behov for at sætte en server op, og da Rambøll ikke lægger en server tilrådighed, er dette til oplagt mulighed, men ved valget af en anden database betyder, at man skal sætte en server op, som databasen kan være i, eller vælge at Cloud hoste\cite{{Cloud}} sin database. En af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet.
 
@@ -53,10 +53,6 @@ Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der
  Firebase blev valgt fordi, at der er ikke behov for at sætte en server op, og da Rambøll ikke lægger en server tilrådighed, er dette til oplagt mulighed, men ved valget af en anden database betyder, at man skal sætte en server op, som databasen kan være i, eller vælge at Cloud hoste\cite{{Cloud}} sin database. 
 
 En af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, \cite{{FirebasePricing}}, men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet.
-
-
-
-
 
 \textbf{Authentication\cite{FirebaseAuth}}
 \begin{itemize}[-]
@@ -71,8 +67,6 @@ En af ulemperne med firebase er deres pris der kan blive dyrt hvis applikationen
 	\item[]  Firebase Realtime Database er et NoSQL cloud database, der gemmer data'en som JSON\cite{JSON}, med mulighed for synkroniser data med alle som benytter Ramboell Tilsyns App, der har forbindelse til internet. Databasen er cloud hosted, hvilket betyder at som udviklere vil det give et "serverless" miljø at arbejde med. Dette betyder at arbejde med opsætning og vedligeholdelse af server ikke vil være nødvendigt. \\ Hvor man kan tilgå databasens indhold via api kald. 
 	En af de store fordele er at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil alle devices der er koblet til internet modtage notifikation om ændringen og kan begynde at hente det ned. 
 \end{itemize}
-
-\clearpage
 
 \textbf{Firebase Storage\cite{FirebaseStorage}}
 \begin{itemize}[-]
