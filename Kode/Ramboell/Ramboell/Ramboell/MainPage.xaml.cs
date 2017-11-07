@@ -25,5 +25,14 @@ namespace Ramboell
             var firebaseAuthService = DependencyService.Get<IFireBaseAuthService>();
             firebaseAuthService.SignIn(email.Text, pass.Text);   
 	    }
-	}
+
+	    private async void PDFButton_OnClicked(object sender, EventArgs e)
+	    {
+            await Navigation.PushAsync(new PdfWebViewPage());
+        }
+    }
+
+    public interface IWaterMarkPage
+    {
+    }
 }

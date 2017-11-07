@@ -8,7 +8,13 @@
         Orientation="Vertical"
         Padding="100"
         Spacing="30">
-
+        <Button
+            x:Name="PDFButton"
+            Text="Login"
+            BackgroundColor="#009DE0"
+            TextColor="White"
+            Clicked="PDFButton_OnClicked"
+        />
         <Image Source="ramboll.png"
                Scale="1"/>
 
@@ -58,6 +64,6 @@
             TextColor="White"
             Clicked="LoginButton_OnClicked"
             />
-
+     
     </StackLayout>
 </ContentPage>

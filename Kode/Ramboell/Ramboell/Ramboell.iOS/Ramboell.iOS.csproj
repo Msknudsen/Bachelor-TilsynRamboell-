@@ -91,11 +91,14 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="CustomWebViewRenderer.cs" />
     <Compile Include="FireBaseAuthService.cs" />
     <Compile Include="FireBaseDataService.cs" />
     <Compile Include="FirebaseService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <BundleResource Include="Content\Sample.pdf" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <ITunesArtwork Include="iTunesArtwork" />
@@ -105,6 +108,7 @@
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+    <BundleResource Include="Resources\Sample.pdf" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -125,6 +129,9 @@
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Apitron.PDF.Kit, Version=1.0.79.0, Culture=neutral, PublicKeyToken=6e759dbb0039406e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Apitron.PDF.Kit.1.0.79\lib\Xamarin.iOS10\Apitron.PDF.Kit.dll</HintPath>
+    </Reference>
     <Reference Include="Firebase.Analytics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Firebase.iOS.Analytics.4.0.2\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
       <Private>True</Private>

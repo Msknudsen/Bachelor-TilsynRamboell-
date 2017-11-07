@@ -12,6 +12,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)CustomPdfWebView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FireBaseCustomAuthEventHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IFireBaseAuthService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
@@ -25,6 +26,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Overview.xaml.cs">
       <DependentUpon>Overview.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)PDFWebViewPage.xaml.cs">
+      <DependentUpon>PdfWebViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ProjectInfo.cs" />
   </ItemGroup>
@@ -48,5 +52,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)PdfWebViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 </Project>
