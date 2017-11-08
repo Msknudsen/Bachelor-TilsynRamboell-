@@ -48,9 +48,8 @@ En dokument baseret database.
 \end{itemize}
 
 \subsection{Valg af back-end database}
-Firebase database er blevet valgt til dette projekt, så i følgende afsnit redegøres for de beslutninger der er taget angående valget af Firebase database. \\
+I denne sektion vil der komme en mere dybdegående beskrivelse af hvordan Firebase er bygget op og hvorfor Firebase er valgt til dette projekt.\\
 
-\subsection{Firebase}
 Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell Tilsyn benytter sig af.
 
 For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app, og tilføje de bibloteker man har behov for.
@@ -60,7 +59,7 @@ Firebase database blev valgt fordi, at der er ikke behov for at sætte en server
 
 Firebase kræver næsten ingen setup at bruge, hvilket var et af de fordele for hvilken teknologi der skulle bruges til Rambøll Tilsyn. Firebase tilbyder tre forskellige databaser med hvert deres formål. 
 
-En af ulemperne med Firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget, men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet. For at vide mere om deres pris niveau kan i læse mere \cite{FirebasePricing}. 
+En af ulemperne med Firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget. Men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet. For at vide mere om deres pris niveau kan i læse mere \cite{FirebasePricing}. 
 
 \textbf{Authentication\cite{FirebaseAuth}}
 \begin{itemize}[-]
@@ -72,7 +71,7 @@ En af ulemperne med Firebase er deres pris der kan blive dyrt hvis applikationen
 \textbf{Realtime Database\cite{FirebaseRealtimeDB}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[]  Firebase Realtime Database er et NoSQL database, der gemmer data'en som JSON\cite{JSON}, med mulighed for synkroniser data med alle som benytter Ramboell Tilsyns App, der har forbindelse til internet. Databasen er cloud hosted, hvilket betyder at som udviklere vil det give et "serverless" miljø at arbejde med. Dette betyder at arbejde med opsætning og vedligeholdelse af server ikke vil være nødvendigt. \\ Hvor man kan tilgå databasens indhold via api kald. 
+	\item[]  Firebase Realtime Database er et NoSQL database, der gemmer data'en som JSON\cite{JSON}, med mulighed for synkroniser data med alle som benytter Ramboell Tilsyn, der har forbindelse til internet. Databasen er cloud hosted, hvilket betyder at som udviklere vil det give et "serverless" miljø at arbejde med. Dette betyder at arbejde med opsætning og vedligeholdelse af server ikke vil være nødvendigt. \\ Hvor man kan tilgå databasens indhold via api kald. 
 	En af de store fordele er at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil alle devices der er koblet til internet modtage notifikation om ændringen og kan begynde at hente det ned. 
 \end{itemize}
 
