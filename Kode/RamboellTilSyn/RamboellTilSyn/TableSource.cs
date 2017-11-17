@@ -6,7 +6,7 @@ using System.Text;
 using Foundation;
 using UIKit;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     public class TableSource : UITableViewSource
     {

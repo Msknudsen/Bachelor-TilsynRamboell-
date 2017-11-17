@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     [Register ("ProjectListViewController")]
     partial class ProjectListViewController

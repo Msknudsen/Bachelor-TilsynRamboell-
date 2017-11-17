@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamboellView", "..\RamboellView\RamboellView\RamboellView.csproj", "{3F32F56E-1666-4067-AC89-11EE3A5AD9F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RamboellTilSyn", "RamboellView\RamboellTilSyn.csproj", "{3F32F56E-1666-4067-AC89-11EE3A5AD9F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,6 +38,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {082C9D39-90F8-4620-8967-51AF2482988E}
+		SolutionGuid = {A2F74E8D-E5E0-4426-B4BF-AEC0D38507D6}
 	EndGlobalSection
 EndGlobal

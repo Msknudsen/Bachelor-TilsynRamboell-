@@ -8,7 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     [Register ("LoginViewController")]
     partial class LoginViewController
@@ -19,7 +19,7 @@ namespace RamboellView
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        RamboellView.View LoginView { get; set; }
+        RamboellTilSyn.View LoginView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

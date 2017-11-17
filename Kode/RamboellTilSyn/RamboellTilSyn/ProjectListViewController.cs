@@ -2,7 +2,7 @@
 using System;
 using UIKit;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     public partial class ProjectListViewController : UITableViewController
     {

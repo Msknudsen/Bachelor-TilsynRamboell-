@@ -2,7 +2,7 @@
 
 using UIKit;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     public partial class PdfViewController : UIViewController
     {

@@ -8,7 +8,7 @@ using Foundation;
 using System;
 using System.CodeDom.Compiler;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     [Register ("PdfViewController")]
     partial class PdfViewController

@@ -2,7 +2,7 @@
 using Foundation;
 using UIKit;
 
-namespace RamboellView
+namespace RamboellTilSyn
 {
     public partial class LoginViewController : UIViewController
     {
