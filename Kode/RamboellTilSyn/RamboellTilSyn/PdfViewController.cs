@@ -1,8 +1,6 @@
-﻿using System;
+﻿using UIKit;
 
-using UIKit;
-
-namespace RamboellTilSyn
+namespace RamboellView
 {
     public partial class PdfViewController : UIViewController
     {

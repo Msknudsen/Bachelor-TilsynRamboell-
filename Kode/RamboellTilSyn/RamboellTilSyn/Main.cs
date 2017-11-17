@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace RamboellTilSyn
+namespace RamboellView
 {
     public class Application
     {

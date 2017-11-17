@@ -1,8 +1,7 @@
-﻿using Foundation;
-using System;
+﻿using System;
 using UIKit;
 
-namespace RamboellTilSyn
+namespace RamboellView
 {
     public partial class View : UIView
     {

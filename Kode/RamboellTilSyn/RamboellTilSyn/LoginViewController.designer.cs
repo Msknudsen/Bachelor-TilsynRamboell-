@@ -4,11 +4,11 @@
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
-using Foundation;
-using System;
-using System.CodeDom.Compiler;
 
-namespace RamboellTilSyn
+using System.CodeDom.Compiler;
+using Foundation;
+
+namespace RamboellView
 {
     [Register ("LoginViewController")]
     partial class LoginViewController
@@ -19,7 +19,7 @@ namespace RamboellTilSyn
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        RamboellTilSyn.View LoginView { get; set; }
+        View LoginView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
