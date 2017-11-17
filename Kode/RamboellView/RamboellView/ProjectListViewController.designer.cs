@@ -11,8 +11,8 @@ using UIKit;
 
 namespace RamboellView
 {
-    [Register ("ProjectOverviewViewController")]
-    partial class ProjectOverviewViewController
+    [Register ("ProjectListViewController")]
+    partial class ProjectListViewController
     {
         void ReleaseDesignerOutlets ()
         {

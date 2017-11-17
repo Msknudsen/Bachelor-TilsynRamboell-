@@ -7,12 +7,11 @@
 using Foundation;
 using System;
 using System.CodeDom.Compiler;
-using UIKit;
 
 namespace RamboellView
 {
-    [Register ("ProjectOverviewViewController")]
-    partial class ProjectOverviewViewController
+    [Register ("PdfViewController")]
+    partial class PdfViewController
     {
         void ReleaseDesignerOutlets ()
         {
