@@ -48,9 +48,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignKey>iPhone Developer: liao@live.dk (T8G846WVA6)</CodesignKey>
+    <CodesignEntitlements>
+    </CodesignEntitlements>
+    <CodesignKey>iPhone Developer: Ulf Larsson (ENWWYRQS8W)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignProvision>ramboell-mini-iPad-development</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -151,7 +153,9 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entitlements.plist" />
+    <Content Include="Entitlements.plist">
+      <SubType>Designer</SubType>
+    </Content>
     <BundleResource Include="Ramboll_Logo_Cyan_RGB_402x85px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
