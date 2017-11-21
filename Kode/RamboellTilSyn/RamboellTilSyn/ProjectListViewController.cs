@@ -2,7 +2,7 @@
 using Foundation;
 using UIKit;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     public partial class ProjectListViewController : UITableViewController
     {
@@ -17,7 +17,6 @@ namespace RamboellView
             TableView = new UITableView(View.Bounds);
             tableItems = new[] { "Add new Project","Sample", "Fruits", "Flower Buds", "Legumes", "Bulbs", "Tubers" };
             TableView.Source = new TableSource(tableItems);
-            Add(TableView);
         }
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {

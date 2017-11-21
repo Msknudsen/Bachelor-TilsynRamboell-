@@ -2,7 +2,7 @@
 using Foundation;
 using UIKit;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     public class TableSource : UITableViewSource
     {

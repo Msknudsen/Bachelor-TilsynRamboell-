@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     public class Application
     {

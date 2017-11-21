@@ -8,7 +8,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController" storyboardIdentifier="LoginViewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -64,8 +64,18 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5312">
+                                <rect key="frame" x="10" y="534" width="580" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
-                                    <action selector="LoginButton_Touched:" destination="BYZ-38-t0r" id="3663" eventType="touchDown"/>
+                                    <action selector="LoginButton_Touched:" destination="5314" id="5313" eventType="touchDown"/>
+                                    <action selector="LogOutBtn_TouchUpInside:" destination="BYZ-38-t0r" id="5315" eventType="touchUpInside"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -73,12 +83,12 @@
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="1422"/>
                     <connections>
-                        <outlet property="LoginView" destination="8bC-Xf-vdC" id="name-outlet-8bC-Xf-vdC"/>
                         <outlet property="UserNameLabel" destination="450" id="name-outlet-450"/>
                         <outlet property="PasswordLabel" destination="449" id="name-outlet-449"/>
                         <outlet property="UserNameTxt" destination="447" id="name-outlet-447"/>
                         <outlet property="PasswordTxt" destination="227" id="name-outlet-227"/>
                         <outlet property="LoginBtn" destination="2510" id="name-outlet-2510"/>
+                        <outlet property="LogOutBtn" destination="5312" id="name-outlet-5312"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -117,7 +127,7 @@
         </scene>
         <scene sceneID="4405">
             <objects>
-                <tableViewController id="4406" sceneMemberID="viewController" customClass="ProjectListViewController">
+                <tableViewController id="4406" sceneMemberID="viewController" customClass="ProjectListViewController" storyboardIdentifier="ProjectListViewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4407">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

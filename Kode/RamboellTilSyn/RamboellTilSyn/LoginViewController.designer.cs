@@ -4,11 +4,11 @@
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
-
-using System.CodeDom.Compiler;
 using Foundation;
+using System;
+using System.CodeDom.Compiler;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     [Register ("LoginViewController")]
     partial class LoginViewController
@@ -19,7 +19,7 @@ namespace RamboellView
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        View LoginView { get; set; }
+        UIKit.UIButton LogOutBtn { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -37,9 +37,9 @@ namespace RamboellView
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField UserNameTxt { get; set; }
 
-        [Action ("LoginButton_Touched:")]
+        [Action ("LogOutBtn_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
-        partial void LoginButton_Touched (UIKit.UIButton sender);
+        partial void LogOutBtn_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {
@@ -48,9 +48,9 @@ namespace RamboellView
                 LoginBtn = null;
             }
 
-            if (LoginView != null) {
-                LoginView.Dispose ();
-                LoginView = null;
+            if (LogOutBtn != null) {
+                LogOutBtn.Dispose ();
+                LogOutBtn = null;
             }
 
             if (PasswordLabel != null) {

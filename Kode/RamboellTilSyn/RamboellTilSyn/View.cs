@@ -1,7 +1,7 @@
 ﻿using System;
 using UIKit;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     public partial class View : UIView
     {

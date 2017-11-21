@@ -4,10 +4,11 @@
 // actions declared in your storyboard file.
 // Manual changes to this file will not be maintained.
 //
-
 using Foundation;
+using System;
+using System.CodeDom.Compiler;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     [Register ("View")]
     partial class View

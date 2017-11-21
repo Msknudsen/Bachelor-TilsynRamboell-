@@ -7,7 +7,7 @@
 
 using Foundation;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     [Register ("ProjectListViewController")]
     partial class ProjectListViewController

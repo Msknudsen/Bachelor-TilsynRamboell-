@@ -7,7 +7,7 @@
 
 using Foundation;
 
-namespace RamboellView
+namespace Ramboell.iOS
 {
     [Register ("PdfViewController")]
     partial class PdfViewController
