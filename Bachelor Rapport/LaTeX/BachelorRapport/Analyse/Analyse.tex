@@ -2,54 +2,12 @@
 I projektets start blev der udarbejdet en analyse af systemet. I dette kapitel vil der blive beskrevet de valg, som blev taget til projektet. Den fulde analyse kan findes i bilag. \\
 
 \section{Firebase}
-I denne sektion vil der komme en mere dybdegående beskrivelse af hvordan Firebase er bygget op og hvorfor Firebase er valgt til dette projekt.
+	Til håndtering af back-end i systemet er der valgt, at bruge Firebase. Firebase\cite{Firebase} er en development platform som Google har udviklet. Firebase tilbyder flere forskellige funktionaliteter til både iOS og Android. \\
+	Firebase er serverless, hvilket betyder at der ikke er behov for et web interface i systemet, for at kunne interagere med databasen. Samtidig stillede Rambøll ikke en server tilrådig, så derfor virkede dette, som den optimale løsning. \\
 
-Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell Tilsyn benytter sig af.
-
-For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app, og tilføje de bibloteker man har behov for.
-Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
-
-Firebase database blev valgt fordi, at der er ikke behov for at sætte en server op, og da Rambøll ikke lægger en server tilrådighed, er dette til oplagt mulighed, men ved valget af en anden database betyder, at man skal sætte en server op, som databasen kan være i, eller vælge at Cloud hoste\cite{Cloud} sin database. 
-
-Firebase kræver næsten ingen setup at bruge, hvilket var et af de fordele for hvilken teknologi der skulle bruges til Rambøll Tilsyn. Firebase tilbyder tre forskellige databaser med hvert deres formål. 
-
-En af ulemperne med Firebase er deres pris der kan blive dyrt hvis applikationen bliver brugt meget. Men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet. For at vide mere om deres pris niveau kan i læse mere \cite{FirebasePricing}. 
-
-	Authentication\cite{FirebaseAuth}
-	\begin{itemize}[-]
-		\itemsep 0.3em 
-		\item[] Firebase Authentication giver en række funktioner indenfor User Management, der gør det let at logge på, opret og log af. Firebase Authentication tilbyder en række forskellige muligheder for login fra mail eller et andet sociale medie, som Facebook, Twitter osv. \\
-		Bruger data som E-mail, navn og crypteret password, vil blive gemt i Firebase, og derfor vil der ikke være behov for, at Rambøll Danmark A/S skal sørge for at opsætte server med en bruger database, forbindelsen op til serveren og derefter vedligeholdelse. 
-	\end{itemize}	
+\section{Xamarin}
+	Applikationen udviklet til systemet, blev udviklet i Xamarin\cite{Xarmain}. Dette er et cross platform udviklingsværktøj, som giver mulighed for at udnytte share code. Dette gør at man kan bruge samme kode til både iOS og Android platformen. \\
+	Valget bag dette er et ønske fra Rambøll, som gerne ville have et system der både virkede på iOS og Android, da deres ansatte brugte begge styresystemer.
 	
-	Realtime Database\cite{FirebaseRealtimeDB}
-		\begin{itemize}[-]
-			\itemsep 0.3em 
-			\item[]  Firebase Realtime Database er et NoSQL database, der gemmer data'en som JSON\cite{JSON}, med mulighed for synkroniser data med alle som benytter Ramboell Tilsyn, der har forbindelse til internet. Databasen er cloud hosted, hvilket betyder at som udviklere vil det give et "serverless" miljø at arbejde med. Dette betyder at arbejde med opsætning og vedligeholdelse af server ikke vil være nødvendigt. \\ Hvor man kan tilgå databasens indhold via api kald. 
-			En af de store fordele er at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil alle devices der er koblet til internet modtage notifikation om ændringen og kan begynde at hente det ned. 
-		\end{itemize}
-		
-		Firebase Storage\cite{FirebaseStorage}
-			\begin{itemize}[-]
-				\itemsep 0.3em 
-				\item[] Tilsvarende Firebase Database er Cloud Storage tilregnet for filer som video, billeder eller andre tilsvarende data. I dette tilfælde bliver Firebase Storage benyttet til at gemme PDF objekter som brugeren kan hente og uploade. En vigtigt egenskab Storage har er, at den er bygget til at genoptage download af filer i tilfælde af ustabilt internet. Dette kan være tilfældet hos Rambøll hvis de skal ud til konstruktions arbejde på en motorvej, hvor forbindelse er ikke lige så optimalt som i byen. \\
-			\end{itemize}
-		
-	\section{Xamarin}
-		I følgende afsnit redegøres for de beslutninger, der tages angående valg af Xamarin.
-		
-		Der var et lille kendskab til Xamarin fra et tidligere projekt lavet på Ingeniør Højskolen. \\
-		Xamarin giver mulighed for at skrive i C\#, som er et sprog, der er blevet undervist i på skolen, som er et højniveau sprog. \\
-		Xamarin blev i februar 2016 opkøbt af Microsoft, hvilket betyder, at det siden da har været en integreret del af Microsoft Visual Studio, som er det fortrukne udviklingsværktøj.\\			Developer dokumentationen for Xamarin er også et plus. Hvis man sidder med et problem, har Xamarin lavet en meget grundig dokumentation, hvor man kan finde eksempler og guides, til hvordan forskellige dele i en applikaiton skal programmeres.
-		
-		I denne sektion vil der komme en mere dybdegående beskrivelse af, hvordan Xamarin platformen er bygget op.
-		
-		En af fordelene ved at skrive i Xamarin, er at man kan dele C\# kode for de forskellige applikationer.
-		På billedet herunder kan man se, hvordan User Interface koden og App Logic koden, er delt på tværs af alle tre enheder. Man skal altså kun skrive sin App Logic og User Interface én gang og så virker det på både iOS, Android og Windows.
-		
-		Xamarin kommer både med Xamarin.iOS og Xamarin.Android. Hvad dette gør er, at når du kompiler koden, komplier den ned til native kode. IOS delen vil blive kompileret til ARM assembly, så ens app er native binære platform. Android kompileres så den kører native Android APK. Så man vil får kompileret koden så den passer til den specifike enhed, man vil bruge. \\
-		Xamarin er baseret på C\# og ved hjælp af Xamarin.iOS og Xamarin.Android er det muligt, at kalde og binde det sammen med den eksisterende kode i både iOS og Android, gennem Xamarins automatiske binding generator. \\
-		Der bliver i både Xamarin.iOS og Xamarin.Android givet muligheder for at forbinde til alle API'er, der er nødvendige. \\
-		
-		Xamarin tilbyder også en masse ekstra komponenter, som kan integreres i ens applikation. Det kan være alt fra web api'er til sikkerheds features.
-			
+	Fordelen ved Xamarin i forhold til andre cross platform værktøjer er, at det er en indbygget del af Visual Studio, som var programmet der blev brugt til udvikling af applikationen. \\
+	Derudover kan der udviklet i C\#, som er et kodesprog der undervises i på skolen.
