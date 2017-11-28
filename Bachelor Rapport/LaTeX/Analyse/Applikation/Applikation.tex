@@ -5,9 +5,9 @@ I følgende afsnit gøres der rede for beslutningerne i forhold til udviklingen 
 Der findes forskellige styresystemer til mobiltelefoner i dag. De to mest brugte\cite{OS} er dog iOS \cite{iOS} og Android. \cite{Android} \\
 IOS er Apples eget styresystem, som er udviklet i forhold til deres mobile og tablet enheder. \\
 Android er et stort open source project, som bliver brugt på ca. 80\% af alle mobile og tablet enheder i dag. Der findes forskellige versioner af Android styresystemet alt efter, hvilken producent der har leveret enheder\cite{OS}. \\
-Nogle af de kendte Android enheder leverendører er firmaer som Samsung, Huawei og HTC. De har alle en Android Core i deres styresystemer og har alle også videreudviklet styresystemet, så det passer specifikt til deres enheder.
+Nogle af de kendte Android enheder leverendører er firmaer som Samsung, Huawei og HTC. De har alle en Android Core i deres styresystemer og har også alle videreudviklet styresystemet, så det passer specifikt til deres enheder.
 
-Rambøll ønskede en applikation udviklet til iOS. Til en workshop med Rambøll, fandt vi ud af at der også var ansatte, som bruger Android. Derfor blev der aftalt at udvikle cross-platform.
+Rambøll ønskede en applikation udviklet til iOS. Til en workshop med Rambøll fandt vi ud af, at der også var ansatte, som bruger Android. Derfor blev der aftalt at udvikle cross-platform.
 
 \subsection{Cross-platform udviklingsværktøjer}
 I denne sektion vil der være en kort beskrivelse af nogle udviklingsværktøjer til cross-platform.
@@ -41,18 +41,18 @@ Corona\cite{Corona} tilbyder en cross-platform, hvor der udvikles i Lua scriptin
 \end{itemize}
 
 \subsection{Valg af cross-platform udviklingsværktøj}
-I følgende afsnit redegøres for de beslutninger, der tages angående valg af Xamarin.
+I følgende afsnit redegøres for de beslutninger, der er tagey angående valg af Xamarin.
 
 Der var et lille kendskab til Xamarin fra et tidligere projekt lavet på Ingeniørhøjskolen Aarhus Universitet. \\
 Xamarin giver mulighed for at skrive i C\#, som er et sprog, der er blevet undervist i på Ingeniørhøjskolen Aarhus Universitet, som er et højniveau sprog. \\
-Xamarin blev i februar 2016 opkøbt af Microsoft, hvilket betyder, at det siden da har været en integreret del af Microsoft Visual Studio, som er det fortrukne udviklingsværktøj.\\
+Xamarin blev i februar 2016 opkøbt af Microsoft, hvilket har betydet, at det siden da har været en integreret del af Microsoft Visual Studio, som er det fortrukne udviklingsværktøj.\\
 Udvikler dokumentationen for Xamarin er også et plus. Hvis man sidder med et problem, har Xamarin lavet en meget grundig dokumentation, hvor man kan finde eksempler og guides, til hvordan forskellige dele i en applikaiton skal programmeres.
 
 \subsection{Xamarin}
-I denne sektion vil der komme en mere dybdegående beskrivelse af, hvordan Xamarin platformen er bygget op.
+Denne sektion vil indeholde en mere dybdegående beskrivelse af, hvordan Xamarin platformen er bygget op.
 
-En af fordelene ved at skrive i Xamarin, er at man kan dele C\# kode for de forskellige applikationer.
-På billedet herunder kan man se, hvordan User Interface koden og App Logic koden, er delt på tværs af alle tre enheder. Der skal altså kun skrive sin App Logic og User Interface én gang og så virker det på både iOS, Android og Windows.
+En af fordelene ved at skrive i Xamarin er, at man kan dele C\# kode for de forskellige applikationer.
+På billedet herunder kan man se, hvordan User Interface koden og App Logic koden er delt på tværs af alle tre enheder. Der skal altså kun skrive sin App Logic og User Interface én gang, og så virker det på både iOS, Android og Windows.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\linewidth]{Applikation/XarmarinShare.JPG}
@@ -62,8 +62,8 @@ På billedet herunder kan man se, hvordan User Interface koden og App Logic kode
 
 \clearpage
 
-Xamarin kommer både med Xamarin.iOS og Xamarin.Android. Hvad dette gør er, at når koden kompiles, komplier den ned til native kode. IOS delen vil blive kompileret til ARM assembly, så ens app er native binære platform. Android kompileres så den kører native Android APK. Så man vil får kompileret koden så den passer til den specifike enhed, man vil bruge. \\
-Xamarin er baseret på C\# og ved hjælp af Xamarin.iOS og Xamarin.Android er det muligt, at kalde og binde det sammen med den eksisterende kode i både iOS og Android, gennem Xamarins automatiske binding generator. \\
+Xamarin kommer både med Xamarin.iOS og Xamarin.Android. Hvad dette gør er, at når koden kompiles, komplier den ned til native kode. IOS delen vil blive kompileret til ARM assembly, så ens app er native binære platform. Android kompileres, så den kører native Android APK. Så man vil får kompileret koden så den passer til den specifike enhed, man vil bruge. \\
+Xamarin er baseret på C\# og ved hjælp af Xamarin.iOS og Xamarin.Android er det muligt, at kalde og binde det sammen med den eksisterende kode i både iOS og Android, via Xamarins automatiske binding generator. \\
 Der bliver i både Xamarin.iOS og Xamarin.Android givet muligheder for at forbinde til alle API'er, der er nødvendige. \\
 
 \begin{figure}[H]

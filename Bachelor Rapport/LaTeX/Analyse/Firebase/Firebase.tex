@@ -2,31 +2,31 @@
 I følgende sektion gøres der rede for beslutningerne i forhold til udvikling af back-end, heriblandt database, authentication og storage.
 
 \subsection{Database}
-I følgende afsnit redegøres for de beslutninger der tages angående valg af database, SQL\cite{SQL} eller NoSQL\cite{NoSQL}.
-Der er fordele og ulemper ved begge database typer, herunder nævnes nogle af forskellene mellem disse to typer.
+I følgende afsnit redegøres for de beslutninger, der tages angående valg af database, SQL\cite{SQL} eller NoSQL\cite{NoSQL}.
+Der er fordele og ulemper ved begge database typer, herunder nævnes nogle af forskellene mellem de to typer.
 
 \subsubsection{Database modellen}
 
-Ved en SQL database kræves der Schema\cite{Schema}, som definerer datamodellen og danner et billede af hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL som er "schema-less", er det op til brugeren at definere en datamodel. NoSQL er mere fleksibelt, når det omhandler ændringer i datamodellen, men dette pålægger ansvar hos applikations udviklere til, at modellere data optimalt.
+Ved en SQL database kræves der Schema\cite{Schema}, som definerer datamodellen og danner et billede af, hvad og hvordan data skal struktureres også kaldet et table. Ved NoSQL, som er "schema-less", er det op til brugeren at definere en datamodel. NoSQL er mere fleksibelt, når det omhandler ændringer i datamodellen, men dette kræver ansvar hos applikations udviklere til, at modellere data optimalt.
 
 \subsubsection{Queries\cite{Query}}
 Når data skal hentes, tilbyder SQL database JOIN\cite{JOIN}, hvor data fra flere tabler flettes sammen og returneres. Dette har en NoSQL database ikke. \\
-For at få tilsvarende effekt skal NoSQL databaser, query flere gange og sammensætte resultatet selv.
+For at få tilsvarende effekt skal NoSQL databaser, query flere gange og selv sammensætte resultatet.
 
 \subsubsection{Transactions\cite{Transactions}}
- SQL tilbyder transaction, hvilket er nyttigt, når der arbejdes med flere databaser, der skal opdateres samtidigt. Transaction tillader, at opdatere flere databaser under et funktionskald til serveren. For at opnå tilsvarende effekt på NoSQL databaser, skal dette implementeres i applikations kode. 
+ SQL tilbyder transaction, hvilket er nyttigt, når der arbejdes med flere databaser, der skal opdateres samtidigt. Transaction tillader, at opdatere flere databaser under et funktionskald til serveren. For at opnå tilsvarende effekt på NoSQL databaser, skal dette implementeres via applikations kode. 
 
 \subsubsection{Skalering}
 Efterhånden som applikationen bliver brugt, vokser mængden af lagret data. Her tages der stilling til om serveren skal skaleres op eller om den skal skaleres ud ved at tilføje en ekstra server. Problemmet ved at udvide serveren er, at der kommer et tidspunkt, hvor det vil blive for dyrt at udvide serveren og det vil være bedre at skalere serveren ud. \\
 Fordelen ved NoSQ,L i forhold til SQL, er at det er lettere at skalere ud. 
 Projektet vil have en begrænset mængde brugere, så derfor vil mængden af data stige i begrænset omfang
-Derfor vil dette ikke være noget reelt betydning for dette projekt.
+Derfor vil dette ikke have reelt betydning for dette projekt.
 
 \subsection{Back-end udviklingsværktøjer}
-I denne sektion vil der beskrives kort om nøglepunkterne om nogle af databaserne, der blev taget overvejelse. 
+I denne sektion vil der beskrives kort om nøglepunkterne om nogle af databaserne, der overvejelset. 
 
 \subsubsection{MySQL\cite{MySQL}}
-En populær SQL database, der benytter sig af SQL.
+En populær database, der benytter sig af SQL.
 \begin{itemize}[-]
 	\item ACID\cite{ACID} operationer understøttes.
 	\item Tilbyder mange query muligheder.
@@ -43,43 +43,43 @@ Firebase indeholder flere databaser til hvert deres formål, som kan vælges eft
 En dokument baseret database.
 \begin{itemize}[-]
 	\item Hurtigt og simpelt søgning.
-	\item Bygget til at kunne skalerer og understøtte fleksibilitet i data modeller.  \\
+	\item Bygget til at kunne skalere og understøtte fleksibilitet i data modeller.  \\
 	
 \end{itemize}
 
 \subsection{Valg af back-end database}
-I denne sektion vil der komme en mere dybdegående beskrivelse af, hvordan Firebase er bygget op og hvorfor Firebase er valgt til dette projekt.\\
+I denne sektion vil der komme en mere dybdegående beskrivelse af, hvordan Firebase er bygget op, og hvorfor Firebase er valgt til dette projekt.\\
 
 Firebase\cite{Firebase} er en development platform til mobile applikationer, som Google står bag. Firebase tilbyder forskellige slags funktionaliter til både Android og iOS applikationer. Herunder beskrives disse produkter fra Firebase, som Ramboell Tilsyn benytter sig af.
 
-For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app, og tilføje de bibloteker man har behov for.
-Det giver simpel adgang til data, brugere og filer pågrund af de bibloteker der udstilles. 
+For at starte Firebase i Android og iOS, skal man have en google account og oprette et projekt i google. Derefter skal man blot tilføje firebase til ens app samt tilføje de bibloteker, man har behov for.
+Det giver simpel adgang til data, brugere og filer påvgrund af de bibloteker, der udstilles. 
 
-Firebase database blev valgt fordi, at der er ikke var behov for at sætte en server op, og da Rambøll ikke lægger en server tilrådighed, er dette til oplagt mulighed, men ved valget af en anden database betyder, at der skal sætte en server op, som databasen kan være i, eller vælge at Cloud hoste\cite{{Cloud}} sin database. 
+Firebase databasen blev valgt, fordi der ikke er behov for at sætte en server op, og da Rambøll ikke lægger en server tilrådighed, er dette oplagt. Ved valg af en anden database, betyder det at der skal sættes en server op, som kan indeholde databasen i, alternativt vælge at Cloud hoste\cite{{Cloud}} sin database. 
 
-Firebase kræver ikke meget setup at bruge, hvilket var et af de fordele for, hvilken teknologi der skulle bruges til Rambøll Tilsyn. Firebase tilbyder tre forskellige databaser med hvert deres formål. 
+Firebase kræver ikke meget setup at bruge, hvilket var et af fordelene for, hvilken teknologi der skulle bruges til Rambøll Tilsyn. Firebase tilbyder tre forskellige databaser med hvert deres formål. 
 
-En af ulemperne med Firebase er prisen, der kan blive dyr hvis applikationen bliver brugt meget. Men da det kun er beregnet som en inhouse applikation med ca. 10 bruger er dette acceptablet. For at vide mere om deres pris niveau kan i læse mere \cite{FirebasePricing}. 
+En af ulemperne med Firebase er prisen, som kan blive dyr hvis applikationen bliver brugt meget. Men da det kun er beregnet som en inhouse applikation med ca. 10 bruger, er dette acceptabelt. For at vide mere om deres prisniveau kan i læse mere herom \cite{FirebasePricing}. 
 
 \textbf{Authentication\cite{FirebaseAuth}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[] Firebase Authentication giver en række funktioner indenfor User Management, der gør det let at logge på, opret og log af. Firebase Authentication tilbyder en række forskellige muligheder for login fra mail eller et andet sociale medie, som Facebook, Twitter og lign. \\
-	Brugerdata som E-mail, navn og crypteret password, vil blive gemt i Firebase, og derfor vil der ikke være behov for, at Rambøll Danmark A/S skal sørge for at opsætte server med en brugerdatabase, forbindelsen op til serveren og derefter vedligeholdelse. 
+	\item[] Firebase Authentication giver en række funktioner indenfor User Management, der gør det let at logge på, oprette og logge af. Firebase Authentication tilbyder en række forskellige muligheder for login fra mail eller et andet sociale medie, som Facebook, Twitter og lign. \\
+	Brugerdata som E-mail, navn og crypteret password vil blive gemt i Firebase, og derfor vil der ikke være behov for, at Rambøll Danmark A/S skal sørge for at opsætte server med en brugerdatabase, forbindelse til serveren og derefter vedligeholdelse. 
 \end{itemize}	
 
 \textbf{Realtime Database\cite{FirebaseRealtimeDB}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[]  Firebase Realtime Database er et NoSQL database, der gemmer data som JSON\cite{JSON}, med mulighed for synkronisering af data med alle som benytter Ramboell Tilsyn, der har forbindelse til internet. Databasen er cloud hosted, hvilket betyder at som udviklere vil det give et "serverless" miljø at arbejde med. Dette betyder at arbejdet med opsætning og vedligeholdelse af server ikke vil være nødvendig. \\ 
+	\item[]  Firebase Realtime Database er et NoSQL database, der gemmer data som JSON\cite{JSON}, og med mulighed for at synkronisering af data med alle som benytter Ramboell Tilsyn, og som har forbindelse til internetet. Databasen er cloud hosted, hvilket betyder, at som udvikler vil give et "serverless" miljø at arbejde med. Dette betyder, at arbejdet med opsætning og vedligeholdelse af server ikke vil være nødvendig. \\ 
 	Hvor databasens indhold kan tilgåes via API kald. 
-	En af de store fordele er at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil alle enheder, der er koblet til internet, modtage notifikation om ændringen og kan begynde at hente det ned. 
+	En af de store fordele herved er, at det er en realtime database, der synchroniser data automatisk. Når der modtages ændringer i data vil alle enheder, der er koblet til internetet, modtage notifikation om ændringen og kan begynde at downloade det. 
 \end{itemize}
 
 \textbf{Firebase Storage\cite{FirebaseStorage}}
 \begin{itemize}[-]
 	\itemsep 0.3em 
-	\item[] Tilsvarende Firebase Database er Cloud Storage tilregnet for filtyper som video, billeder eller andre tilsvarende data. I dette tilfælde bliver Firebase Storage benyttet til at gemme PDF objekter som brugeren kan hente og uploade. En vigtigt egenskab Storage har er, at den er bygget til at genoptage download af filer i tilfælde af ustabilt internet. Dette kan være tilfældet hos Rambøll, hvis de skal ud til konstruktionsarbejde på en motorvej, hvor forbindelse er dårlig. \\
+	\item[] Tilsvarende Firebase Database er Cloud Storage tilegnet for filtyper som video, billeder eller andre tilsvarende data. I dette tilfælde bliver Firebase Storage benyttet til at gemme PDF objekter, som brugeren kan hente og uploade. En vigtigt egenskab for Storage er, at den er bygget til at genoptage download af filer i tilfælde af ustabilt internet. Dette kan være tilfældet hos Rambøll, hvis de skal ud til konstruktionsarbejde på en motorvej, hvor forbindelsen er dårlig. \\
 \end{itemize}
 \clearpage
 
