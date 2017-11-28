@@ -1,4 +1,5 @@
-﻿using Foundation;
+﻿using System;
+using Foundation;
 using UIKit;
 using Firebase.Core;
 namespace Ramboell.iOS
@@ -21,7 +22,16 @@ namespace Ramboell.iOS
         {
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
-            App.Configure();
+            try
+            {
+                App.Configure();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
             return true;
         }
 
