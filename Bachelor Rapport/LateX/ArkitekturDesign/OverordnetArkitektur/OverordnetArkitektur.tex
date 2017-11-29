@@ -1,11 +1,20 @@
 \chapter{Arktitektur}
-
+Dette kapitel viser arkitekturen for Rambøll Tilsyn. \\ \\
+På figur \ref{fig:OversigtSystembeskrivelse} ses oversigten over systemet og hvordan de forskellige elementer forbinder hinanden i systemet.
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/OverordnetArkitektur//Oversigtoversystem}
 	\caption{Oversigt over systemet.}
 	\label{fig:OversigtSystembeskrivelse}
 \end{figure}
+Det ses på figur \ref{fig:OversigtSystembeskrivelse}, at brugeren benytter applikationen. Applikationen kommunikere så via internettet til databasen. \\
+Yderligere beskrivelse af systemet kan findes i afsnit \ref{Krav-sec:Systembeskrivelse} Systembeskrivelse i kravspeceifikationen som er vedlagt i bilag.
+
+\clearpage
+
+\section{Domænemodel}
+En domænemodel giver et overblik over hvordan systemtet er bygget op. Systemet bliver delt op i mindre blokke, som kan designes og implementeres enkeltvis.
+I dette projekt er der udarbejdet én domænemodel som ses på figur \ref{fig:Domain}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -13,4 +22,7 @@
 	\caption{Domænemodel for Rambøll Tilsyn.}
 	\label{fig:Domain}
 \end{figure}
+Brugeren logger ind på applikationen. Her kan bruger så oprette et projekt, som vil indeholde en registrering. I denne registrering kan bruger tilknytte en PDF tegning. På PDF tegningen kan brugeren oprette forskellige objekter, eller fjerne forkerte objekter. \\
+Når bruger er færdig med en registrering, vil objekter, PDF tegning mv. blive gemt i Firebase databasen.
+
 \clearpage
