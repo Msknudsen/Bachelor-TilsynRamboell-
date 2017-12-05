@@ -10,9 +10,12 @@ namespace Ramboell.iOS
         string[] TableItems;
         string CellIdentifier = "TableCell";
 
-        public TableSource(string[] items)
+        public ProjectListViewController ProjectListViewController { get; }
+
+        public TableSource(string[] items , ProjectListViewController projectListViewController)
         {
             TableItems = items;
+            ProjectListViewController = projectListViewController;
         }
 
         public override nint RowsInSection(UITableView tableview, nint section)
@@ -32,6 +35,12 @@ namespace Ramboell.iOS
             cell.TextLabel.Text = item;
 
             return cell;
+        }
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
+            controller.PDFName = TableItems[indexPath.Row];
+            ProjectListViewController.NavigationController.PushViewController(controller, true);
         }
     }
 }

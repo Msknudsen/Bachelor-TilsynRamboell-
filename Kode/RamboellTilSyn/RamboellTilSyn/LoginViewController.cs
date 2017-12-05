@@ -19,7 +19,7 @@ namespace Ramboell.iOS
             listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) => {
                 if (user != null)
                 {
-                    Console.WriteLine($"User Currently Logged In: {0}", user.Email.ToString());
+                    Console.WriteLine("User Currently Logged In: {0}", user.Email);
 
                     if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
                     {
@@ -126,5 +126,10 @@ namespace Ramboell.iOS
         {
             SignOut();
         }
-   }
+
+        partial void LoginBtn_TouchUpInside(UIButton sender)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }

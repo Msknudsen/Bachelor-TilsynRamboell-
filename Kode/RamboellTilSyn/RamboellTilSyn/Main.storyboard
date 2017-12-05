@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC" customClass="View">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -64,7 +64,9 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections/>
+                                <connections>
+                                    <action selector="LoginBtn_TouchUpInside:" destination="BYZ-38-t0r" id="6879" eventType="touchUpInside"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5312">
                                 <rect key="frame" x="10" y="534" width="580" height="30"/>
@@ -112,19 +114,6 @@
             <point key="canvasLocation" x="-755" y="-2"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="3649">
-            <objects>
-                <viewController id="3650" sceneMemberID="viewController" customClass="PdfViewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3647"/>
-                        <viewControllerLayoutGuide type="bottom" id="3648"/>
-                    </layoutGuides>
-                    <connections/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3652" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="677" y="2"/>
-        </scene>
         <scene sceneID="4405">
             <objects>
                 <tableViewController id="4406" sceneMemberID="viewController" customClass="ProjectListViewController" storyboardIdentifier="ProjectListViewController">
@@ -151,6 +140,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4412" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1324" y="1"/>
+        </scene>
+        <scene sceneID="12830">
+            <objects>
+                <viewController id="12831" sceneMemberID="viewController" customClass="PdfViewController" storyboardIdentifier="PdfViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="12828"/>
+                        <viewControllerLayoutGuide type="bottom" id="12829"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="12832">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12833" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="-11"/>
         </scene>
     </scenes>
     <resources>

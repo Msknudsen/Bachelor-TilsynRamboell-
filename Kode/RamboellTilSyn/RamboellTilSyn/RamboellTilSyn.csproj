@@ -23,10 +23,14 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchSdkVersion>
+    </MtouchSdkVersion>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -117,15 +121,17 @@
       <DependentUpon>ProjectOverviewViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <InterfaceDefinition Include="PdfViewController.xib" />
     <None Include="packages.config" />
+    <BundleResource Include="Resources\Sample.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LoginViewController.designer.cs">
       <DependentUpon>LoginViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginViewController.cs" />
-    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard">
+      <SubType>Designer</SubType>
+    </InterfaceDefinition>
     <InterfaceDefinition Include="Resources\LaunchScreen.xib" />
   </ItemGroup>
   <ItemGroup>
