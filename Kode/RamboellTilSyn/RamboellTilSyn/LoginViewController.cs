@@ -126,5 +126,10 @@ namespace Ramboell.iOS
         {
             SignOut();
         }
-   }
+
+        partial void UIButton451_TouchUpInside(UIButton sender)
+        {
+            throw new NotImplementedException();
+        }
+    }
 }
