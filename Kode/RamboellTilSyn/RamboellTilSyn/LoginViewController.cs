@@ -127,7 +127,8 @@ namespace Ramboell.iOS
             SignOut();
         }
 
-        partial void LoginBtn_TouchUpInside(UIButton sender)
+        partial void UIButton451_TouchUpInside(UIButton sender)
+
         {
             throw new NotImplementedException();
         }

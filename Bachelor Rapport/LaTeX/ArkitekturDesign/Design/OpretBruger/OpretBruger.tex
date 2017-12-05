@@ -1,9 +1,7 @@
 \subsection{Opret Bruger}
 Dette afsnit indeholder en gennemgang af grafisk brugergrænseflade, design og implementering af Opret Bruger viewet i Rambøll Tilsyn.
 
-\subsubsection{Grafisk brugergrænseflade}
-
-\subsubsection{Design \& Implementering}
+\subsubsection{Design}
 På figur \ref{fig:OpretBrugerSekvens} ses sekvens diagrammet for opret bruger viewet til Rambøll Tilsyn.
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -12,4 +10,9 @@ På figur \ref{fig:OpretBrugerSekvens} ses sekvens diagrammet for opret bruger v
 	\label{fig:OpretBrugerSekvens}
 \end{figure}
 
-\clearpage
+\subsubsection{Grafisk brugergrænseflade}
+I OpretBrugerViewet er der lavet felter til alt det information, som skal tastes ind om en bruger. Se figur REF!
+
+\subsubsection{Implementering}
+Når der skal oprettes en ny bruger, validerer controlleren at der er indtastet information i alle felter,
+inden at informationen bliver sendt videre til modellen. Hvis et felt ikke er udfyldt giver controlleren fejlbesked til viewet. \\
