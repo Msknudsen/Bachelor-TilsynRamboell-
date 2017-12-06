@@ -4,10 +4,11 @@ Dette kapitel indeholder en beskrivelse af design valgene for Firebase databasen
 \section{Firebase database}
 
 \section{Applikation}
+Implementeringen af applikationen sker i Xamarin iOS, da der i analysen var blevet overset nogle begrænsninger i forhold til funktionaliteten når der skulle arbejdes med PDF'er i Xamarin Forms\cite{Forms}. \\ \\
 Til udvikling af applikationen er der brugt et MVC design \cite{MVC}, som vist herunder, på figur \ref{fig:MVC}
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=10cm, width=10cm]{../ArkitekturDesign/Design/MVC}
+	\includegraphics[height=8cm, width=8cm]{../ArkitekturDesign/Design/MVC}
 	\caption{MVC design for Rambøll Tilsyn.}
 	\label{fig:MVC}
 \end{figure}
@@ -25,3 +26,4 @@ Der er brugt MVC design pattern til alle views i applikationen.
 \input{Design/OpretBruger/OpretBruger}
 \input{Design/OpretProjekt/OpretProjekt}
 \input{Design/RegisterPDF/RegisterPDF}
+%\input{Design/AfslutRegistrering/AfslutRegistrering}
