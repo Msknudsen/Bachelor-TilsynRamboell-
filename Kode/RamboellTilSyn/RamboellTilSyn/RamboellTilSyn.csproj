@@ -27,10 +27,11 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchSdkVersion>
-    </MtouchSdkVersion>
+    <MtouchSdkVersion>11.0</MtouchSdkVersion>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchEnableSGenConc>false</MtouchEnableSGenConc>
+    <MtouchExtraArgs>--registrar:static</MtouchExtraArgs>
+    <OptimizePNGs>true</OptimizePNGs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -98,6 +99,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ProjectInfo.cs" />
     <Compile Include="TableSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
