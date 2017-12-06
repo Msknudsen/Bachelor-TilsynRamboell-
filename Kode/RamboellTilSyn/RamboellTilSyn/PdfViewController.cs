@@ -1,5 +1,7 @@
 ﻿using System;
+using System.IO;
 using CoreGraphics;
+using Firebase.Storage;
 using Foundation;
 using PdfKit;
 using UIKit;
@@ -10,9 +12,68 @@ namespace Ramboell.iOS
     {
         public PdfViewController(IntPtr handle) : base(handle)
         {
+        
+
+
+        }
+        public ProjectInfo PDFInfo { get; set; }
+        private bool PdfLocal { get; set; }
+        private bool MetaLocal { get; set; }
+        public NSUrl pdflocalNSUrl { get; set; }
+        public NSUrl metalocalNSUrl { get; set; }
+
+
+        public PdfViewController(IntPtr handle,ProjectInfo pdfInfo) : base(handle)
+        {
+            //filename to local
+            var documents = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            var pdfFilePath = Path.Combine(documents, $"{pdfInfo.Guid}.pdf");
+            var metaFilePath = Path.Combine(documents, $"{pdfInfo.MetaId}.json");
+           
+            //file node from firebase
+            var rootNode = Storage.DefaultInstance.GetRootReference();
+            var pdfNode = rootNode.GetChild($"{pdfInfo.Guid.ToString()}.pdf");
+            var metaNode = rootNode.GetChild($"{pdfInfo.MetaId.ToString()}.json");
+
+            pdflocalNSUrl = NSUrl.FromString(pdfFilePath);
+            metalocalNSUrl = NSUrl.FromString(metaFilePath);
+
+            if (!File.Exists(pdfFilePath))
+            {
+                StorageDownloadTask downloadTask = pdfNode.WriteToFile(pdflocalNSUrl, (url, error) =>
+                {
+                    if (error != null)
+                    {
+                        // Uh-oh, an error occurred!
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Loading a pdf: {pdfInfo.Name}");
+                        PdfLocal = true;
+                    }
+
+                });
+            }
+            if (!File.Exists(pdfFilePath))
+            {
+                StorageDownloadTask downloadTask = metaNode.WriteToFile(metalocalNSUrl, (url, error) =>
+                {
+                    if (error != null)
+                    {
+                        // Uh-oh, an error occurred!
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Loading a meta info on pdf: {pdfInfo.Name}");
+
+                        MetaLocal = true;
+                    }
+
+                });
+            }
         }
 
-        public string PDFName { get; set; }
+
 
         public override void DidReceiveMemoryWarning()
         {
@@ -35,7 +96,7 @@ namespace Ramboell.iOS
                 BackgroundColor = UIColor.DarkGray,
                 DisplayMode = PdfDisplayMode.SinglePage
             };
-            var documentUrl = NSBundle.MainBundle.GetUrlForResource(PDFName, "pdf");
+            var documentUrl = NSBundle.MainBundle.GetUrlForResource(PDFInfo.Name, "pdf");
             var document = new PdfDocument(documentUrl);
             if (documentUrl != null)
             {
