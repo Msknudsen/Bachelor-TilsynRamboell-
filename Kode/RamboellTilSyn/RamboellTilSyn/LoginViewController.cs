@@ -6,6 +6,7 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    [System.ComponentModel.DesignTimeVisible(false)]
     public partial class LoginViewController : UIViewController
     {
         NSObject listenerHandle;
@@ -23,6 +24,7 @@ namespace Ramboell.iOS
 
                     if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
                     {
+                        NavigationController.RemoveFromParentViewController();
                         NavigationController.PushViewController(projectList, true);
                     }
                 }
@@ -43,6 +45,7 @@ namespace Ramboell.iOS
         {
             base.ViewDidLoad();
             LoginBtn.TouchUpInside += LoginBtn_TouchUpInside;
+            LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
             CheckIfUserSignedIn();
         }
 
@@ -91,8 +94,7 @@ namespace Ramboell.iOS
 
         public void SignOut()
         {
-            NSError error;
-            var signedOut = Auth.DefaultInstance.SignOut(out error);
+            var signedOut = Auth.DefaultInstance.SignOut(out var error);
 
             if (!signedOut)
             {
@@ -122,15 +124,11 @@ namespace Ramboell.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
-        partial void LogOutBtn_TouchUpInside(UIButton sender)
+        private void LogOutBtn_TouchUpInside(object sender, EventArgs avg)
         {
             SignOut();
         }
 
-        partial void UIButton451_TouchUpInside(UIButton sender)
-
-        {
-            throw new NotImplementedException();
-        }
+  
     }
 }

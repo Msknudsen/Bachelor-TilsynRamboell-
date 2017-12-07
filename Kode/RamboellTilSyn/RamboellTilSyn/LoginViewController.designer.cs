@@ -37,18 +37,6 @@ namespace Ramboell.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField UserNameTxt { get; set; }
 
-        [Action ("LoginBtn_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void LoginBtn_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("LogOutBtn_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void LogOutBtn_TouchUpInside (UIKit.UIButton sender);
-
-        [Action ("UIButton451_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton451_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (LoginBtn != null) {
