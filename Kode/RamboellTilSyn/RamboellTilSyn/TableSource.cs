@@ -25,7 +25,7 @@ namespace Ramboell.iOS
 
         public override nint RowsInSection(UITableView tableview, nint section)
         {
-            return ProjectInfos.Count + 1;
+            return ProjectInfos.Count;
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -48,15 +48,10 @@ namespace Ramboell.iOS
                 //TODO add create new project viewcontroller aand logic to it
                 return;
             }
-            else
-            {
-                //look for file local, if not there download. 
-                if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
-                controller.PDFInfo = ProjectInfos[indexPath.Row];
-                ProjectListViewController.NavigationController.PushViewController(controller, true);
-
-            }
-
+            //look for file local, if not there download. 
+            if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
+            controller.PDFInfo = ProjectInfos[indexPath.Row];
+            ProjectListViewController.NavigationController.PushViewController(controller, true);
         }
     }
 }
