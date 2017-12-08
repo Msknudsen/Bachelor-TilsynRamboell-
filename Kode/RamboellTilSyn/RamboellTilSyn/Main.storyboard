@@ -18,68 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="227">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="227" misplaced="YES">
                                 <rect key="frame" x="184" y="407" width="233" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <constraints>
-                                    <constraint id="6063" firstAttribute="width" constant="233"/>
-                                </constraints>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="447" misplaced="YES" ambiguous="YES">
-                                <rect key="frame" x="184" y="307" width="233" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="447" misplaced="YES">
+                                <rect key="frame" x="184" y="300" width="233" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <constraints>
-                                    <constraint id="6059" firstAttribute="width" constant="233"/>
-                                    <constraint id="6060" firstAttribute="height" constant="30"/>
-                                </constraints>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kodeord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="449">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kodeord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="449" misplaced="YES">
                                 <rect key="frame" x="184" y="372" width="93" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="6071" firstAttribute="width" constant="93"/>
-                                    <constraint id="6072" firstAttribute="height" constant="21"/>
-                                </constraints>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brugernavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="450" misplaced="YES" ambiguous="YES">
-                                <rect key="frame" x="178" y="271" width="105" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brugernavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="450" misplaced="YES">
+                                <rect key="frame" x="184" y="271" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="6067" firstAttribute="width" constant="105"/>
-                                    <constraint id="6068" firstAttribute="height" constant="21"/>
-                                </constraints>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="451" userInteractionEnabled="NO">
-                                <rect key="frame" x="153" y="94" width="294" height="100"/>
-                                <state key="normal" title="Button" image="Ramboll_Logo_Cyan_RGB_402x85px.png">
-                                    <color key="titleColor" colorSpace="calibratedRGB" red="0" green="0.52549019607843139" blue="1" alpha="1"/>
-                                </state>
-                                <connections/>
-                                <constraints>
-                                    <constraint id="6053" firstAttribute="width" constant="294"/>
-                                    <constraint id="6054" firstAttribute="height" constant="100"/>
-                                </constraints>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilsyn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="453" misplaced="YES">
-                                <rect key="frame" x="248" y="202" width="103" height="50"/>
+                                <rect key="frame" x="247" y="167" width="102" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="39"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
-                                <constraints>
-                                    <constraint id="6081" firstAttribute="width" constant="103"/>
-                                    <constraint id="6082" firstAttribute="height" constant="68"/>
-                                </constraints>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2510" fixedFrame="YES">
-                                <rect key="frame" x="10" y="488" width="580" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2510" misplaced="YES">
+                                <rect key="frame" x="58" y="488" width="480" height="30"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,7 +57,6 @@
                                     <constraint id="6075" firstAttribute="width" constant="580"/>
                                     <constraint id="6076" firstAttribute="height" constant="30"/>
                                 </constraints>-->
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5312">
                                 <rect key="frame" x="10" y="526" width="580" height="29"/>
@@ -102,19 +69,33 @@
                                     <action selector="LoginButton_Touched:" destination="5314" id="5313" eventType="touchDown"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="16423" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" highlighted="YES" misplaced="YES">
+                                <rect key="frame" x="163" y="86" width="270" height="66"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint id="13627" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="451" secondAttribute="trailing" constant="133"/>
-                            <constraint id="13628" firstItem="451" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="133"/>
-                            <constraint id="13895" firstItem="451" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30"/>
-                            <constraint id="13898" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="447" secondAttribute="trailing" constant="163"/>
-                            <constraint id="13899" firstItem="447" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="164"/>
-                            <constraint id="13900" firstItem="447" firstAttribute="leading" secondItem="450" secondAttribute="leading" constant="4"/>
-                            <constraint id="13901" firstItem="447" firstAttribute="top" secondItem="450" secondAttribute="bottom" constant="8"/>
-                            <constraint id="14182" firstItem="453" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="248"/>
-                            <constraint id="14191" firstItem="451" firstAttribute="bottom" secondItem="453" secondAttribute="top" constant="1"/>
-                            <constraint id="14486" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="453" secondAttribute="trailing" constant="229"/>
+                            <constraint id="20998" firstItem="16423" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22"/>
+                            <constraint id="20999" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="16423" secondAttribute="trailing" constant="147"/>
+                            <constraint id="21000" firstItem="16423" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="143"/>
+                            <constraint id="21265" firstItem="453" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="76"/>
+                            <constraint id="21266" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="453" secondAttribute="centerX" constant="2"/>
+                            <constraint id="21796" firstItem="447" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="196"/>
+                            <constraint id="21797" firstItem="447" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="21798" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="447" secondAttribute="trailing" constant="163"/>
+                            <constraint id="21801" firstItem="227" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="303"/>
+                            <constraint id="21802" firstItem="227" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="21803" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="227" secondAttribute="trailing" constant="163"/>
+                            <constraint id="21804" firstItem="2510" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="384"/>
+                            <constraint id="21805" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="2510" secondAttribute="centerX" constant="2"/>
+                            <constraint id="21806" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="2510" secondAttribute="trailing" constant="42"/>
+                            <constraint id="22328" firstItem="447" firstAttribute="centerY" secondItem="450" secondAttribute="centerY" constant="33"/>
+                            <constraint id="22329" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="450" secondAttribute="centerX" constant="62"/>
+                            <constraint id="22330" firstItem="227" firstAttribute="centerY" secondItem="449" secondAttribute="centerY" constant="39"/>
+                            <constraint id="22331" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="449" secondAttribute="centerX" constant="69"/>
+                            <constraint id="22610" firstItem="449" firstAttribute="leading" secondItem="227" secondAttribute="leading"/>
+                            <constraint id="22617" firstItem="450" firstAttribute="leading" secondItem="447" secondAttribute="leading"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="1422"/>

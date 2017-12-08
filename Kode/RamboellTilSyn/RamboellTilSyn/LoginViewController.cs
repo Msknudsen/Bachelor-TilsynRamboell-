@@ -128,7 +128,5 @@ namespace Ramboell.iOS
         {
             SignOut();
         }
-
-  
     }
 }
