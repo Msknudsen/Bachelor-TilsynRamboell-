@@ -99,6 +99,14 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CreateProjectViewController.cs" />
+    <Compile Include="CreateProjectViewController.designer.cs">
+      <DependentUpon>CreateProjectViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateUserViewController.cs" />
+    <Compile Include="CreateUserViewController.designer.cs">
+      <DependentUpon>CreateUserViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="MarkedPdfPage.cs" />
     <Compile Include="ProjectInfo.cs" />
     <Compile Include="TableSource.cs" />
@@ -172,6 +180,7 @@
       <SubType>Designer</SubType>
     </Content>
     <BundleResource Include="Ramboll_Logo_Cyan_RGB_402x85px.png" />
+    <BundleResource Include="Resources\blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

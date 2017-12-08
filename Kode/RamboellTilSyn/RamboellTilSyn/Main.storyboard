@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="227" misplaced="YES">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="227" misplaced="YES" ambiguous="YES">
                                 <rect key="frame" x="184" y="407" width="233" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -46,28 +46,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2510" misplaced="YES">
-                                <rect key="frame" x="58" y="488" width="480" height="30"/>
-                                <state key="normal" title="Login">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2510" misplaced="YES" ambiguous="YES">
+                                <rect key="frame" x="60" y="488" width="480" height="52"/>
+                                <state key="normal" title="Login" backgroundImage="blue.png">
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections/>
                                 <!--<constraints>
                                     <constraint id="6075" firstAttribute="width" constant="580"/>
                                     <constraint id="6076" firstAttribute="height" constant="30"/>
                                 </constraints>-->
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5312">
-                                <rect key="frame" x="10" y="526" width="580" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="LoginButton_Touched:" destination="5314" id="5313" eventType="touchDown"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="16423" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" highlighted="YES" misplaced="YES">
                                 <rect key="frame" x="163" y="86" width="270" height="66"/>
@@ -87,15 +76,16 @@
                             <constraint id="21801" firstItem="227" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="303"/>
                             <constraint id="21802" firstItem="227" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
                             <constraint id="21803" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="227" secondAttribute="trailing" constant="163"/>
-                            <constraint id="21804" firstItem="2510" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="384"/>
-                            <constraint id="21805" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="2510" secondAttribute="centerX" constant="2"/>
-                            <constraint id="21806" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="2510" secondAttribute="trailing" constant="42"/>
                             <constraint id="22328" firstItem="447" firstAttribute="centerY" secondItem="450" secondAttribute="centerY" constant="33"/>
                             <constraint id="22329" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="450" secondAttribute="centerX" constant="62"/>
                             <constraint id="22330" firstItem="227" firstAttribute="centerY" secondItem="449" secondAttribute="centerY" constant="39"/>
                             <constraint id="22331" firstItem="8bC-Xf-vdC" firstAttribute="centerX" secondItem="449" secondAttribute="centerX" constant="69"/>
                             <constraint id="22610" firstItem="449" firstAttribute="leading" secondItem="227" secondAttribute="leading"/>
                             <constraint id="22617" firstItem="450" firstAttribute="leading" secondItem="447" secondAttribute="leading"/>
+                            <constraint id="25466" firstItem="2510" firstAttribute="centerY" secondItem="16423" secondAttribute="centerY" constant="395"/>
+                            <constraint id="25467" firstItem="2510" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="25468" firstItem="2510" firstAttribute="top" secondItem="227" secondAttribute="bottom" constant="51"/>
+                            <constraint id="25469" firstItem="8bC-Xf-vdC" firstAttribute="trailingMargin" secondItem="2510" secondAttribute="trailing" constant="40"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="1422"/>
@@ -105,7 +95,6 @@
                         <outlet property="UserNameTxt" destination="447" id="name-outlet-447"/>
                         <outlet property="PasswordTxt" destination="227" id="name-outlet-227"/>
                         <outlet property="LoginBtn" destination="2510" id="name-outlet-2510"/>
-                        <outlet property="LogOutBtn" destination="5312" id="name-outlet-5312"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -174,8 +163,287 @@
             </objects>
             <point key="canvasLocation" x="1422" y="-111"/>
         </scene>
+        <scene sceneID="24583">
+            <objects>
+                <viewController id="24584" sceneMemberID="viewController" customClass="CreateUserViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="24581"/>
+                        <viewControllerLayoutGuide type="bottom" id="24582"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="24585">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="24588" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" misplaced="YES">
+                                <rect key="frame" x="205" y="49" width="190" height="46"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24589" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="33" y="188" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opret Bruger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24590" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="234" y="103" width="133" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brugernavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24597" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="33" y="159" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24598" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="33" y="285" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kodeord:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24599" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="33" y="256" width="107" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefonnummer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24643" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="33" y="359" width="164" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24644" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="33" y="388" width="200" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fornavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24688" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="311" y="159" width="93" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24689" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="309" y="188" width="206" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Efternavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24780" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="309" y="256" width="103" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24781" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="309" y="285" width="206" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24782" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="311" y="359" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24783" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="311" y="388" width="204" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="27155" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="228" y="484" width="144" height="41"/>
+                                <state key="normal" title="Opret bruger" backgroundImage="blue.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="24591" firstItem="24588" firstAttribute="top" secondItem="24585" secondAttribute="top" constant="49"/>
+                            <constraint id="24592" firstItem="24585" firstAttribute="trailingMargin" secondItem="24588" secondAttribute="trailing" constant="185"/>
+                            <constraint id="24593" firstItem="24588" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
+                            <constraint id="24594" firstItem="24590" firstAttribute="top" secondItem="24588" secondAttribute="bottom" constant="8"/>
+                            <constraint id="24595" firstItem="24590" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
+                            <constraint id="24596" firstItem="24590" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="46"/>
+                            <constraint id="27487" firstItem="24597" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="97"/>
+                            <constraint id="27488" firstItem="24585" firstAttribute="centerX" secondItem="24597" secondAttribute="centerX" constant="213"/>
+                            <constraint id="27489" firstItem="24585" firstAttribute="centerX" secondItem="24589" secondAttribute="centerX" constant="170"/>
+                            <constraint id="27490" firstItem="24589" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="131"/>
+                            <constraint id="27491" firstItem="24589" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="27492" firstItem="24585" firstAttribute="centerX" secondItem="24599" secondAttribute="centerX" constant="213"/>
+                            <constraint id="27493" firstItem="24599" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="194"/>
+                            <constraint id="27494" firstItem="24599" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="27495" firstItem="24597" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="27496" firstItem="24585" firstAttribute="centerX" secondItem="24598" secondAttribute="centerX" constant="170"/>
+                            <constraint id="27497" firstItem="24598" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="228"/>
+                            <constraint id="27498" firstItem="24598" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="27499" firstItem="24585" firstAttribute="centerX" secondItem="24643" secondAttribute="centerX" constant="185"/>
+                            <constraint id="27500" firstItem="24643" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="297"/>
+                            <constraint id="27501" firstItem="24643" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="27502" firstItem="24585" firstAttribute="centerX" secondItem="24644" secondAttribute="centerX" constant="167"/>
+                            <constraint id="27503" firstItem="24644" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="331"/>
+                            <constraint id="27504" firstItem="24644" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="27511" firstItem="27155" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
+                            <constraint id="27512" firstItem="27155" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="432"/>
+                            <constraint id="27513" firstItem="27155" firstAttribute="top" secondItem="24783" secondAttribute="bottom" constant="66"/>
+                            <constraint id="27514" firstItem="24585" firstAttribute="trailingMargin" secondItem="27155" secondAttribute="trailing" constant="208"/>
+                            <constraint id="27515" firstItem="24582" firstAttribute="top" secondItem="27155" secondAttribute="bottom" constant="75"/>
+                            <constraint id="27516" firstItem="24688" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="97"/>
+                            <constraint id="27517" firstItem="24688" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX" constant="57"/>
+                            <constraint id="27518" firstItem="24585" firstAttribute="trailingMargin" secondItem="24688" secondAttribute="trailing" constant="176"/>
+                            <constraint id="27519" firstItem="24689" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX" constant="112"/>
+                            <constraint id="27520" firstItem="24689" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="131"/>
+                            <constraint id="27521" firstItem="24585" firstAttribute="trailingMargin" secondItem="24689" secondAttribute="trailing" constant="65"/>
+                            <constraint id="27522" firstItem="24780" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="194"/>
+                            <constraint id="27523" firstItem="24780" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX" constant="60"/>
+                            <constraint id="27524" firstItem="24585" firstAttribute="trailingMargin" secondItem="24780" secondAttribute="trailing" constant="168"/>
+                            <constraint id="27525" firstItem="24781" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="228"/>
+                            <constraint id="27526" firstItem="24781" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX" constant="112"/>
+                            <constraint id="27527" firstItem="24585" firstAttribute="trailingMargin" secondItem="24781" secondAttribute="trailing" constant="65"/>
+                            <constraint id="27528" firstItem="24782" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="297"/>
+                            <constraint id="27529" firstItem="24782" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX" constant="61"/>
+                            <constraint id="27530" firstItem="24585" firstAttribute="trailingMargin" secondItem="24782" secondAttribute="trailing" constant="168"/>
+                            <constraint id="27531" firstItem="24783" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="331"/>
+                            <constraint id="27532" firstItem="24783" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX" constant="113"/>
+                            <constraint id="27533" firstItem="24585" firstAttribute="trailingMargin" secondItem="24783" secondAttribute="trailing" constant="65"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="PasswordCreateUserTxt" destination="24598" id="name-outlet-24598"/>
+                        <outlet property="UserNameCreateUserTxt" destination="24589" id="name-outlet-24589"/>
+                        <outlet property="UsernameCreateUserLabel" destination="24597" id="name-outlet-24597"/>
+                        <outlet property="PasswordCreateUserLabel" destination="24599" id="name-outlet-24599"/>
+                        <outlet property="PhoneCreateUserLabel" destination="24643" id="name-outlet-24643"/>
+                        <outlet property="PhoneCreateUserTxt" destination="24644" id="name-outlet-24644"/>
+                        <outlet property="FirstnameCreateUserLabel" destination="24688" id="name-outlet-24688"/>
+                        <outlet property="FirstnameCreateUserTxt" destination="24689" id="name-outlet-24689"/>
+                        <outlet property="LastnameCreateUserTxt" destination="24781" id="name-outlet-24781"/>
+                        <outlet property="LastnameCreateUserLabel" destination="24780" id="name-outlet-24780"/>
+                        <outlet property="EmailCreateUserLabel" destination="24782" id="name-outlet-24782"/>
+                        <outlet property="EmailCreateUserTxt" destination="24783" id="name-outlet-24783"/>
+                        <outlet property="CreateUserBtn" destination="27155" id="name-outlet-27155"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="24586" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2168" y="-113"/>
+        </scene>
+        <scene sceneID="27625">
+            <objects>
+                <viewController id="27626" sceneMemberID="viewController" customClass="CreateProjectViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="27623"/>
+                        <viewControllerLayoutGuide type="bottom" id="27624"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="27627">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opret projekt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27638" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="229" y="120" width="142" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projektnavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27641" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="42" y="183" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="27642" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="42" y="212" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projektnummer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27739" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="42" y="274" width="130" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="27740" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="42" y="303" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kundenavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27741" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="329" y="183" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="27742" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="330" y="212" width="226" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Projektadresse:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="27743" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="42" y="367" width="193" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="27744" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="42" y="396" width="193" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="27859" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" misplaced="YES">
+                                <rect key="frame" x="174" y="45" width="240" height="61"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="27860" firstItem="27627" firstAttribute="trailingMargin" secondItem="27859" secondAttribute="trailing" constant="166"/>
+                            <constraint id="27861" firstItem="27859" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="154"/>
+                            <constraint id="27862" firstItem="27859" firstAttribute="top" secondItem="27623" secondAttribute="bottom" constant="25"/>
+                            <constraint id="27863" firstItem="27638" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="60"/>
+                            <constraint id="27864" firstItem="27638" firstAttribute="centerX" secondItem="27627" secondAttribute="centerX"/>
+                            <constraint id="27865" firstItem="27641" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="118"/>
+                            <constraint id="27866" firstItem="27627" firstAttribute="centerX" secondItem="27641" secondAttribute="centerX" constant="196"/>
+                            <constraint id="27867" firstItem="27642" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="151"/>
+                            <constraint id="27868" firstItem="27627" firstAttribute="centerX" secondItem="27642" secondAttribute="centerX" constant="161"/>
+                            <constraint id="27869" firstItem="27642" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="22"/>
+                            <constraint id="27870" firstItem="27627" firstAttribute="centerX" secondItem="27739" secondAttribute="centerX" constant="193"/>
+                            <constraint id="27871" firstItem="27739" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="209"/>
+                            <constraint id="27872" firstItem="27739" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="22"/>
+                            <constraint id="27873" firstItem="27627" firstAttribute="centerX" secondItem="27740" secondAttribute="centerX" constant="161"/>
+                            <constraint id="27874" firstItem="27740" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="242"/>
+                            <constraint id="27875" firstItem="27740" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="22"/>
+                            <constraint id="27876" firstItem="27627" firstAttribute="centerX" secondItem="27743" secondAttribute="centerX" constant="161"/>
+                            <constraint id="27877" firstItem="27743" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="302"/>
+                            <constraint id="27878" firstItem="27743" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="22"/>
+                            <constraint id="27879" firstItem="27627" firstAttribute="centerX" secondItem="27744" secondAttribute="centerX" constant="161"/>
+                            <constraint id="27880" firstItem="27744" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="335"/>
+                            <constraint id="27881" firstItem="27744" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="22"/>
+                            <constraint id="27882" firstItem="27741" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="118"/>
+                            <constraint id="27883" firstItem="27741" firstAttribute="centerX" secondItem="27627" secondAttribute="centerX" constant="78"/>
+                            <constraint id="27884" firstItem="27627" firstAttribute="trailingMargin" secondItem="27741" secondAttribute="trailing" constant="153"/>
+                            <constraint id="27885" firstItem="27742" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="151"/>
+                            <constraint id="27886" firstItem="27742" firstAttribute="centerX" secondItem="27627" secondAttribute="centerX" constant="143"/>
+                            <constraint id="27887" firstItem="27627" firstAttribute="trailingMargin" secondItem="27742" secondAttribute="trailing" constant="24"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ProjectnameCreateProjectLabel" destination="27641" id="name-outlet-27641"/>
+                        <outlet property="ProjectnameCreateProjectTxt" destination="27642" id="name-outlet-27642"/>
+                        <outlet property="CustomernameCreateProjectLabel" destination="27741" id="name-outlet-27741"/>
+                        <outlet property="CustomernameCreateProjectTxt" destination="27742" id="name-outlet-27742"/>
+                        <outlet property="ProjectnumberCreateProjectLabel" destination="27739" id="name-outlet-27739"/>
+                        <outlet property="ProjectnumberCreateProjectTxt" destination="27740" id="name-outlet-27740"/>
+                        <outlet property="ProjectadressCreateProjectLabel" destination="27743" id="name-outlet-27743"/>
+                        <outlet property="ProjectadressCreateProjectTxt" destination="27744" id="name-outlet-27744"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="27628" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2900" y="-113"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Ramboll_Logo_Cyan_RGB_402x85px.png" width="402" height="85"/>
+        <image name="blue.png" width="220" height="160"/>
     </resources>
 </document>

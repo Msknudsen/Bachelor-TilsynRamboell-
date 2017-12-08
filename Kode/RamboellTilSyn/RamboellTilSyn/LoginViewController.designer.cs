@@ -19,10 +19,6 @@ namespace Ramboell.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LogOutBtn { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel PasswordLabel { get; set; }
 
         [Outlet]
@@ -42,11 +38,6 @@ namespace Ramboell.iOS
             if (LoginBtn != null) {
                 LoginBtn.Dispose ();
                 LoginBtn = null;
-            }
-
-            if (LogOutBtn != null) {
-                LogOutBtn.Dispose ();
-                LogOutBtn = null;
             }
 
             if (PasswordLabel != null) {

@@ -45,7 +45,13 @@ namespace Ramboell.iOS
         {
             base.ViewDidLoad();
             LoginBtn.TouchUpInside += LoginBtn_TouchUpInside;
-            LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
+            //LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
+
+            UserNameTxt.Placeholder = "Indtast brugernavn";
+
+            PasswordTxt.SecureTextEntry = true;
+            PasswordTxt.Placeholder = "Indtast kodeord";
+
             CheckIfUserSignedIn();
         }
 
