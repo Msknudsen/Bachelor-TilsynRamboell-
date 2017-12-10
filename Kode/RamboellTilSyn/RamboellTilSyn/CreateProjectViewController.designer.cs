@@ -16,6 +16,10 @@ namespace Ramboell.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ChosePDFBtn { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel CustomernameCreateProjectLabel { get; set; }
 
         [Outlet]
@@ -48,6 +52,11 @@ namespace Ramboell.iOS
 
         void ReleaseDesignerOutlets ()
         {
+            if (ChosePDFBtn != null) {
+                ChosePDFBtn.Dispose ();
+                ChosePDFBtn = null;
+            }
+
             if (CustomernameCreateProjectLabel != null) {
                 CustomernameCreateProjectLabel.Dispose ();
                 CustomernameCreateProjectLabel = null;

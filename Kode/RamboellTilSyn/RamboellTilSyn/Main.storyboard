@@ -394,6 +394,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="27859" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" misplaced="YES">
                                 <rect key="frame" x="174" y="45" width="240" height="61"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28370" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="238" y="508" width="124" height="38"/>
+                                <state key="normal" backgroundImage="blue.png" title="Opret projekt">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vælg PDF:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="28382" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="330" y="274" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="28385" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="323" y="303" width="84" height="30"/>
+                                <state key="normal" title="Vælg fil" backgroundImage="blue.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" colorSpace="calibratedRGB" red="1" green="1" blue="1" alpha="1"/>
+                                </state>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint id="27860" firstItem="27627" firstAttribute="trailingMargin" secondItem="27859" secondAttribute="trailing" constant="166"/>
@@ -424,6 +444,16 @@
                             <constraint id="27885" firstItem="27742" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="151"/>
                             <constraint id="27886" firstItem="27742" firstAttribute="centerX" secondItem="27627" secondAttribute="centerX" constant="143"/>
                             <constraint id="27887" firstItem="27627" firstAttribute="trailingMargin" secondItem="27742" secondAttribute="trailing" constant="24"/>
+                            <constraint id="28379" firstItem="28370" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="451"/>
+                            <constraint id="28380" firstItem="27627" firstAttribute="trailingMargin" secondItem="28370" secondAttribute="trailing" constant="218"/>
+                            <constraint id="28381" firstItem="28370" firstAttribute="leading" secondItem="27627" secondAttribute="leadingMargin" constant="218"/>
+                            <constraint id="28383" firstItem="28382" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="209"/>
+                            <constraint id="28384" firstItem="27627" firstAttribute="trailingMargin" secondItem="28382" secondAttribute="trailing" constant="166"/>
+                            <constraint id="28517" firstItem="28385" firstAttribute="centerY" secondItem="27859" secondAttribute="centerY" constant="242"/>
+                            <constraint id="28518" firstItem="27627" firstAttribute="trailingMargin" secondItem="28385" secondAttribute="trailing" constant="173"/>
+                            <constraint id="28519" firstItem="28385" firstAttribute="top" secondItem="28382" secondAttribute="bottom" constant="8"/>
+                            <constraint id="28520" firstItem="28385" firstAttribute="leading" secondItem="27740" secondAttribute="trailing" constant="88"/>
+                            <constraint id="28521" firstItem="28370" firstAttribute="top" secondItem="28385" secondAttribute="bottom" constant="175"/>
                         </constraints>
                     </view>
                     <connections>
@@ -435,6 +465,7 @@
                         <outlet property="ProjectnumberCreateProjectTxt" destination="27740" id="name-outlet-27740"/>
                         <outlet property="ProjectadressCreateProjectLabel" destination="27743" id="name-outlet-27743"/>
                         <outlet property="ProjectadressCreateProjectTxt" destination="27744" id="name-outlet-27744"/>
+                        <outlet property="ChosePDFBtn" destination="28385" id="name-outlet-28385"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27628" userLabel="First Responder" sceneMemberID="firstResponder"/>
