@@ -20,7 +20,6 @@ namespace Ramboell.iOS
         private readonly string _file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "list.json");
         public ProjectListViewController (IntPtr handle) : base (handle)
         {
-            Database.DefaultInstance.PersistenceEnabled = true;
             _node = Database.DefaultInstance.GetRootReference().GetChild("pdf");
             _node.KeepSynced(true);
 
