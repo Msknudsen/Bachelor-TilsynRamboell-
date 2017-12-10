@@ -1,7 +1,10 @@
 ﻿using System;
+using System.IO;
 using Foundation;
 using UIKit;
 using Firebase.Core;
+using Firebase.Database;
+
 namespace Ramboell.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -24,7 +27,14 @@ namespace Ramboell.iOS
             // If not required for your application you can safely delete this method
             try
             {
+
+                var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+                var library = Path.Combine(documents, "..", "Library");
+                if (!Directory.Exists(library))
+                    Directory.CreateDirectory(library);
+
                 App.Configure();
+                Database.DefaultInstance.PersistenceEnabled = true;
 
             }
             catch (Exception e)
