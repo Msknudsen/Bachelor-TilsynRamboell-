@@ -45,13 +45,19 @@ namespace Ramboell.iOS
         {
             if (indexPath.Row == 0)
             {
-                //TODO add create new project viewcontroller aand logic to it
-                return;
+                if (ProjectListViewController.Storyboard.InstantiateViewController("CreateProjectViewController") is CreateProjectViewController projectList)
+                {
+
+                    ProjectListViewController.NavigationController.PushViewController(projectList, true);
+                }
             }
-            //look for file local, if not there download. 
-            if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
-            controller.PDFInfo = ProjectInfos[indexPath.Row];
-            ProjectListViewController.NavigationController.PushViewController(controller, true);
+            else
+            {
+                //look for file local, if not there download. 
+                if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
+                controller.PDFInfo = ProjectInfos[indexPath.Row];
+                ProjectListViewController.NavigationController.PushViewController(controller, true);
+            }
         }
     }
 }

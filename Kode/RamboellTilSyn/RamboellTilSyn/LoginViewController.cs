@@ -52,7 +52,7 @@ namespace Ramboell.iOS
             PasswordTxt.SecureTextEntry = true;
             PasswordTxt.Placeholder = "Indtast kodeord";
 
-            //CheckIfUserSignedIn();
+            CheckIfUserSignedIn();
         }
 
         public override void ViewDidUnload()

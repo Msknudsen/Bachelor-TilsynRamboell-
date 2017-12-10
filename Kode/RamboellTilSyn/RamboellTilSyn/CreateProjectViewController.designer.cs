@@ -50,6 +50,10 @@ namespace Ramboell.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField ProjectnumberCreateProjectTxt { get; set; }
 
+        [Action ("UIButton28370_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void UIButton28370_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
             if (ChosePDFBtn != null) {
