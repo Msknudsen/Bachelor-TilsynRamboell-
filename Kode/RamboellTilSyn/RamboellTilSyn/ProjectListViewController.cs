@@ -47,7 +47,8 @@ namespace Ramboell.iOS
             // var s = _node.GetQueryOrderedByKey();
             handleReference = _node.ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                ProjectInfos = new List<ProjectInfo> { new ProjectInfo { Name = "Add New Project" } };
+                ProjectInfos = new List<ProjectInfo> { new ProjectInfo { Name = "Tilføj projekt"}, new ProjectInfo { Name = "Tilføj bruger" } };
+
                 foreach (var element in snapshot.GetValue<NSDictionary>())
                 {
                     ProjectInfos.Add(new ProjectInfo

@@ -43,21 +43,30 @@ namespace Ramboell.iOS
         }
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
-            if (indexPath.Row == 0)
-            {
-                if (ProjectListViewController.Storyboard.InstantiateViewController("CreateProjectViewController") is CreateProjectViewController projectList)
+                switch (indexPath.Row)
                 {
+                    case 0:
+                        if (ProjectListViewController.Storyboard.InstantiateViewController("CreateProjectViewController") is CreateProjectViewController createProjectVC)
+                        {
 
-                    ProjectListViewController.NavigationController.PushViewController(projectList, true);
-                }
-            }
-            else
-            {
-                //look for file local, if not there download. 
-                if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
-                controller.PDFInfo = ProjectInfos[indexPath.Row];
-                ProjectListViewController.NavigationController.PushViewController(controller, true);
-            }
+                            ProjectListViewController.NavigationController.PushViewController(createProjectVC, true);
+                        }
+                        break;
+
+                    case 1:
+                        if (ProjectListViewController.Storyboard.InstantiateViewController("CreateUserViewController") is CreateUserViewController createUserVC)
+                        {
+
+                            ProjectListViewController.NavigationController.PushViewController(createUserVC, true);
+                        }
+                        break;
+
+                    default:
+                        if (!(ProjectListViewController.Storyboard.InstantiateViewController("PdfViewController") is PdfViewController controller)) return;
+                        controller.PDFInfo = ProjectInfos[indexPath.Row];
+                        ProjectListViewController.NavigationController.PushViewController(controller, true);
+                        break;
+                }         
         }
     }
 }
