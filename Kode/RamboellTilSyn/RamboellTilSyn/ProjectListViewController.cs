@@ -13,7 +13,7 @@ namespace Ramboell.iOS
     [System.ComponentModel.DesignTimeVisible(false)]
     public partial class ProjectListViewController : UITableViewController
     { 
-        public List<ProjectInfo> ProjectInfos;
+        public List<RegistrationDto> ProjectInfos;
         nuint handleReference;
         DatabaseReference _node;
 
@@ -32,13 +32,13 @@ namespace Ramboell.iOS
             
             if (!File.Exists(_file))
             {
-                ProjectInfos = new List<ProjectInfo> { new ProjectInfo { Name = "Add New Project" } };
+                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Add New Project" } };
                 File.WriteAllText(_file, JsonConvert.SerializeObject(ProjectInfos));
             }
             else
             {
                 var data = File.ReadAllText(_file);
-                ProjectInfos = JsonConvert.DeserializeObject<List<ProjectInfo>>(data);
+                ProjectInfos = JsonConvert.DeserializeObject<List<RegistrationDto>>(data);
             }
         }
 
@@ -47,10 +47,10 @@ namespace Ramboell.iOS
             // var s = _node.GetQueryOrderedByKey();
             handleReference = _node.ObserveEvent(DataEventType.Value, (snapshot) =>
             {
-                ProjectInfos = new List<ProjectInfo> { new ProjectInfo { Name = "Add New Project" } };
+                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Add New Project" } };
                 foreach (var element in snapshot.GetValue<NSDictionary>())
                 {
-                    ProjectInfos.Add(new ProjectInfo
+                    ProjectInfos.Add(new RegistrationDto
                     {
                         Guid = new Guid(element.Key.Description),
                         Name = element.Value.ValueForKeyPath((NSString)"name").Description,

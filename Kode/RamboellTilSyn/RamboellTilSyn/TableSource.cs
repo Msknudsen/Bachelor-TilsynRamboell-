@@ -8,7 +8,7 @@ namespace Ramboell.iOS
 {
     public class TableSource : UITableViewSource
     {
-        public List<ProjectInfo> ProjectInfos { get; }
+        public List<RegistrationDto> ProjectInfos { get; }
     
         //string[] TableItems;
 
@@ -17,7 +17,7 @@ namespace Ramboell.iOS
         public ProjectListViewController ProjectListViewController { get; }
 
  
-        public TableSource(List<ProjectInfo> projectInfos, ProjectListViewController projectListViewController)
+        public TableSource(List<RegistrationDto> projectInfos, ProjectListViewController projectListViewController)
         {
             ProjectInfos = projectInfos;
             ProjectListViewController = projectListViewController;

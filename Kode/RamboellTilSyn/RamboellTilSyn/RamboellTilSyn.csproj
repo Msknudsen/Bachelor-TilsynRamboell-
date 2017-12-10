@@ -107,8 +107,10 @@
     <Compile Include="CreateUserViewController.designer.cs">
       <DependentUpon>CreateUserViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dto\UserDto.cs" />
+    <Compile Include="Dto\ProjectDto.cs" />
     <Compile Include="MarkedPdfPage.cs" />
-    <Compile Include="ProjectInfo.cs" />
+    <Compile Include="Dto\RegistrationDto.cs" />
     <Compile Include="TableSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

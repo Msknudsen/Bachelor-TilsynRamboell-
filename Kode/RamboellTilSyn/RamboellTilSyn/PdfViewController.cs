@@ -16,16 +16,15 @@ namespace Ramboell.iOS
         {
             
         }
-        public ProjectInfo PDFInfo { get; set; }
+        public RegistrationDto PDFInfo { get; set; }
         private bool PdfLocal { get; set; }
         private bool MetaLocal { get; set; }
-        public NSUrl PdflocalNsUrl { get; set; }
+        public NSUrl PdfLocalNsUrl { get; set; }
         public NSUrl MetalocalNsUrl { get; set; }
-        public ProjectInfo PdfInfo { get; }
+        public RegistrationDto PdfInfo { get; }
         PdfView PDFView;
-        nfloat w;
-        nfloat h;
-
+        private nfloat h;
+        private nfloat w; 
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
@@ -35,10 +34,9 @@ namespace Ramboell.iOS
 
         private void LoadPdf(NSUrl url)
         {
-            PdfDocument document;
-            Console.WriteLine($"is a file: {url.IsFileUrl}");
             if (!url.IsFileUrl) return;
-            document = new PdfDocument(url.DataRepresentation);
+            var document = new PdfDocument(url);
+            var doc = document.GetDataRepresentation();
             if (document != null)
             {
                 // Set our document to the view, center it, and set a background color
@@ -101,8 +99,11 @@ namespace Ramboell.iOS
                 PDFView.SetNeedsDisplay();
                 // And apply the transform.
             };
-
-            View.AddSubviews(PDFView);
+            View.AddSubviews(PDFView, new UIView
+            {
+                Frame = new CGRect(w - 100, 0, w, 80),
+                BackgroundColor = UIColor.LightGray,
+            });
             PdfLocal = true;
         }
         private void LoadPdf(NSData url)
@@ -195,17 +196,23 @@ namespace Ramboell.iOS
             var pdfNode = rootNode.GetChild($"{PDFInfo.Guid.ToString()}.pdf");
             var metaNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
             //local file url to store file in
-            PdflocalNsUrl = NSUrl.FromString(Path.Combine(documents, $"{PDFInfo.Guid}.pdf"));
-            MetalocalNsUrl = NSUrl.FromString(Path.Combine(documents, $"{PDFInfo.MetaId}.json"));
-            var directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var fileName = $"{PDFInfo.Guid}.pdf";
-            string filePath = Path.Combine(directory, fileName);
 
-            if (!NSUrl.FromString(filePath).IsFileUrl)
+            var pdfName = $"{PDFInfo.Guid}.pdf";
+            var pdfFilePath = "file://" + Path.Combine(documents, pdfName);
+            PdfLocalNsUrl = NSUrl.FromString(pdfFilePath);
+
+            var metaName = $"{PDFInfo.MetaId}.json";
+            var jsonFilePath = "file://" + Path.Combine(documents, metaName);
+            MetalocalNsUrl = NSUrl.FromString(jsonFilePath);
+
+            if (!File.Exists(pdfFilePath) && PdfLocalNsUrl.IsFileUrl)
             {
                 pdfNode.GetData(1 * 1024 * 1024, (data, error) =>
                 {
-
+                    var test = PdfLocalNsUrl.FilePathUrl;
+                    var test2 = PdfLocalNsUrl.AbsoluteString;
+                    var test3 = PdfLocalNsUrl.FileReferenceUrl;
+                    var test4 = PdfLocalNsUrl.Scheme;
                     if (error != null)
                     {
                         Console.WriteLine();
@@ -215,7 +222,7 @@ namespace Ramboell.iOS
                   
                     //doesn't work
                     // saved to pdf, but is not identified as a file by iOS
-                    if (data.Save(filePath, NSDataWritingOptions.Atomic, out error))
+                    if (data.Save(PdfLocalNsUrl, NSDataWritingOptions.Atomic, out error))
                     {
                         Console.WriteLine("saved as " + PDFInfo.Guid);
                     }
@@ -223,18 +230,19 @@ namespace Ramboell.iOS
                     {
                         Console.WriteLine("NOT saved as " + PDFInfo.Guid + " because" + error.LocalizedDescription);
                     }
-                    ;
+                    
                     //Environment.GetFolderPath(S
 
                     //File.WriteAllBytes(filePath, data.ToArray());
 
-                    using (var fileStream = File.Create(filePath, Convert.ToInt32(data.Length)))
-                    {
-                        var dataBytes = new byte[data.Count()];
-                        System.Runtime.InteropServices.Marshal.Copy(data.Bytes, dataBytes, 0, Convert.ToInt32(data.Length));
-                        fileStream.Write(dataBytes, 0, dataBytes.Length);
-                    }
-
+                    //using (var fileStream = File.Create(filePath, Convert.ToInt32(data.Length)))
+                    //{
+                    //    var dataBytes = new byte[data.Count()];
+                    //    System.Runtime.InteropServices.Marshal.Copy(data.Bytes, dataBytes, 0, Convert.ToInt32(data.Length));
+                    //    fileStream.Write(dataBytes, 0, dataBytes.Length);
+                    //}
+                    //var rs = File.ReadAllBytes(filePath);
+                    
                     //var test = Path.Combine(documents, "test.pdf");
                     ////File.WriteAllBytes(test, data.ToArray());
                     //var sds = data.Save(PdflocalNsUrl, true);
@@ -245,7 +253,7 @@ namespace Ramboell.iOS
 
                     //LoadPdf(data);
 
-                    //LoadPdf(PdflocalNsUrl);
+                    LoadPdf(PdfLocalNsUrl);
 
                 });
                     
@@ -269,7 +277,7 @@ namespace Ramboell.iOS
             else
             {
                 Console.WriteLine("Loading local pdf");
-                LoadPdf(PdflocalNsUrl);
+                LoadPdf(PdfLocalNsUrl);
             }
 
 

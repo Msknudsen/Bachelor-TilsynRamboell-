@@ -8,7 +8,7 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
-    public class ProjectInfo
+    public class RegistrationDto
     {
         public string Name { get; set; }
         public string Updated { get; set; }
