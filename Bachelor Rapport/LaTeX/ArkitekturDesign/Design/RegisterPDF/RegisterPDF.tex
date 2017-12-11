@@ -2,6 +2,36 @@
 Dette afsnit indeholder en gennemgang af grafisk brugergrænseflade, design og implementering af Registrering på PDF viewet i Rambøll Tilsyn.
 
 \subsubsection{Design}
+Her under kan sekvensdiagrammerne for registrering på PDF. \\
+Det første sekvensdiagram, som ses på figur \ref{fig:LoadPDFSekvensDiagram}, hvordan PDF tegningen bliver loadet ind i applikationen.
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=12cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadPDFSekvensDiagram}
+	\caption{Sekvensdiagram for Registrering på PDF - Loading af PDF, i Rambøll Tilsyn.}
+	\label{fig:LoadPDFSekvensDiagram}
+\end{figure}
+
+\clearpage
+
+Næste sekvensdiagram, som ses på figur \ref{fig:LoadJSONSekvensDiagram}, viser hvordan JSON filen bliver oprettet. Sekvensen med JSON sker direkte efter at PDF sekvensen er overstået.
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=15cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadJSONSekvensDiagram}
+	\caption{Sekvensdiagram for Registrering på PDF - Loading af JSON, i Rambøll Tilsyn.}
+	\label{fig:LoadJSONSekvensDiagram}
+\end{figure}
+
+\clearpage
+
+Sidste sekvensdiagram viser hvordan systemet opføre sig, når brugeren interagere med applikationen i forbindelse med oprettelse af objekter på PDF tegningen. Denne sekvens sker i forlængelse af først Loading af PDF og Load JSON. Sekvensdiagrammet for dette kan ses på \ref{fig:RegistrerObjekterSekvensDiagram}.
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=18cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/RegistrerObjekterSekvensDiagram}
+	\caption{Sekvensdiagram for Registrering på PDF - Registrer på PDF, i Rambøll Tilsyn.}
+	\label{fig:RegistrerObjekterSekvensDiagram}
+\end{figure}
+
+\clearpage
 
 \subsubsection{Grafisk brugergrænseflade}
 

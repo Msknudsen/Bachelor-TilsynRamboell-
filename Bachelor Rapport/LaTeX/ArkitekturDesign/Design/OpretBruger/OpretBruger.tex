@@ -11,8 +11,16 @@ På figur \ref{fig:OpretBrugerSekvens} ses sekvens diagrammet for opret bruger v
 \end{figure}
 
 \subsubsection{Grafisk brugergrænseflade}
-I OpretBrugerViewet er der lavet felter til alt det information, som skal tastes ind om en bruger. Se figur REF!
+I OpretBrugerViewet er der lavet felter til alt det information, som skal tastes ind om en bruger. Se figur \ref{fig:OpretBrugerView}
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=12cm, width=10cm]{../ArkitekturDesign/Design/OpretBruger/OpretBrugerView}
+	\caption{Opret bruger viewet som det er implementeret i Rambøll Tilsyn.}
+	\label{fig:OpretBrugerView}
+\end{figure}
 
 \subsubsection{Implementering}
 Når der skal oprettes en ny bruger, validerer controlleren at der er indtastet information i alle felter,
 inden at informationen bliver sendt videre til modellen. Hvis et felt ikke er udfyldt giver controlleren fejlbesked til viewet. \\
+
+\clearpage
