@@ -465,6 +465,7 @@
                         <outlet property="ProjectadressCreateProjectLabel" destination="27743" id="name-outlet-27743"/>
                         <outlet property="ProjectadressCreateProjectTxt" destination="27744" id="name-outlet-27744"/>
                         <outlet property="ChosePDFBtn" destination="28385" id="name-outlet-28385"/>
+                        <outlet property="CreateProjectBtn" destination="28370" id="name-outlet-28370"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27628" userLabel="First Responder" sceneMemberID="firstResponder"/>

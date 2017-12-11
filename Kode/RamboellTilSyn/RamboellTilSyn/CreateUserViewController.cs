@@ -7,6 +7,7 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    [System.ComponentModel.DesignTimeVisible(false)]
     public partial class CreateUserViewController : UIViewController
     {
         DatabaseReference userNode;
