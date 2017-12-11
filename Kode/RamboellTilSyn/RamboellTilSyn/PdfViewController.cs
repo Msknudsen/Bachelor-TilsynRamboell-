@@ -16,6 +16,7 @@ namespace Ramboell.iOS
         {
             
         }
+        StorageDownloadTask downloadTask;
         public RegistrationDto PDFInfo { get; set; }
         private bool PdfLocal { get; set; }
         private bool MetaLocal { get; set; }
@@ -24,7 +25,8 @@ namespace Ramboell.iOS
         public RegistrationDto PdfInfo { get; }
         PdfView PDFView;
         private nfloat h;
-        private nfloat w; 
+        private nfloat w;
+        const int panelHeight = 70;
         public override void DidReceiveMemoryWarning()
         {
             base.DidReceiveMemoryWarning();
@@ -32,162 +34,14 @@ namespace Ramboell.iOS
             // Release any cached data, images, etc that aren't in use.
         }
 
-        private void LoadPdf(NSUrl url)
-        {
-            if (!url.IsFileUrl) return;
-            var document = new PdfDocument(url);
-            var doc = document.GetDataRepresentation();
-            if (document != null)
-            {
-                // Set our document to the view, center it, and set a background color
-                PDFView.AutoScales = true;
-                PDFView.Frame = new CGRect(10, 10, w - 20, h - 20);
-                PDFView.BackgroundColor = UIColor.DarkGray;
-
-                document.Delegate = this;
-                PDFView.Document = document;
-            }
-            var adb1 = UIButton.FromType(UIButtonType.RoundedRect);
-            adb1.Frame = new CGRect(60, 10, 50, 44);
-            adb1.SetTitle("Submit", UIControlState.Normal);
-            adb1.BackgroundColor = UIColor.White;
-            adb1.Layer.CornerRadius = 5f;
-            adb1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            adb1.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
-                PDFView.GoToPreviousPage(this);
-
-
-            };
-
-            var acdb2 = UIButton.FromType(UIButtonType.RoundedRect);
-            acdb2.Frame = new CGRect(100, 10, 50, 44);
-            acdb2.SetTitle("Submit", UIControlState.Normal);
-            acdb2.BackgroundColor = UIColor.White;
-            acdb2.Layer.CornerRadius = 5f;
-            acdb2.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            acdb2.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
-                PDFView.GoToNextPage(this);
-
-
-            };
-
-            var acdb3 = UIButton.FromType(UIButtonType.RoundedRect);
-            acdb3.Frame = new CGRect(150, 10, 50, 44);
-            acdb3.SetTitle("Submit", UIControlState.Normal);
-            acdb3.BackgroundColor = UIColor.White;
-            acdb3.Layer.CornerRadius = 5f;
-            acdb3.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            acdb3.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
-                var pagePageNumber = watermarkPage.Page.PageNumber;
-                watermarkPage?.DrawCircle();
-                PDFView.SetNeedsDisplay();
-                // And apply the transform.
-            };
-            View.AddSubviews(PDFView, new UIView
-            {
-                Frame = new CGRect(w - 100, 0, w, 80),
-                BackgroundColor = UIColor.LightGray,
-            });
-            PdfLocal = true;
-        }
-        private void LoadPdf(NSData url)
-        {
-            PdfDocument document;
-
-            document = new PdfDocument(url);
-            if (document != null)
-            {
-                // Set our document to the view, center it, and set a background color
-                PDFView.AutoScales = true;
-                PDFView.Frame = new CGRect(10, 10, w - 20, h - 20);
-                PDFView.BackgroundColor = UIColor.DarkGray;
-
-                document.Delegate = this;
-                PDFView.Document = document;
-            }
-            var adb1 = UIButton.FromType(UIButtonType.RoundedRect);
-            adb1.Frame = new CGRect(60, 10, 50, 44);
-            adb1.SetTitle("Submit", UIControlState.Normal);
-            adb1.BackgroundColor = UIColor.White;
-            adb1.Layer.CornerRadius = 5f;
-            adb1.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            adb1.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
-                PDFView.GoToPreviousPage(this);
-
-
-            };
-
-            var acdb2 = UIButton.FromType(UIButtonType.RoundedRect);
-            acdb2.Frame = new CGRect(100, 10, 50, 44);
-            acdb2.SetTitle("Submit", UIControlState.Normal);
-            acdb2.BackgroundColor = UIColor.White;
-            acdb2.Layer.CornerRadius = 5f;
-            acdb2.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            acdb2.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
-                PDFView.GoToNextPage(this);
-
-
-            };
-
-            var acdb3 = UIButton.FromType(UIButtonType.RoundedRect);
-            acdb3.Frame = new CGRect(150, 10, 50, 44);
-            acdb3.SetTitle("Submit", UIControlState.Normal);
-            acdb3.BackgroundColor = UIColor.White;
-            acdb3.Layer.CornerRadius = 5f;
-            acdb3.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            acdb3.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
-                var pagePageNumber = watermarkPage.Page.PageNumber;
-                watermarkPage?.DrawCircle();
-                PDFView.SetNeedsDisplay();
-                // And apply the transform.
-            };
-
-            View.AddSubviews(PDFView, new UIView
-            {
-                Frame = new CGRect(w-100,0,w,80),
-                BackgroundColor = UIColor.LightGray,
-            });
-
-            PdfLocal = true;
-        }
-
-        StorageDownloadTask downloadTask;
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            InitPdfView();
+            View.BackgroundColor = UIColor.Gray;
+            w = View.Bounds.Width;
+            h = View.Bounds.Height;
+
+            InitPdfView(w, h- panelHeight);
 
             var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
@@ -209,19 +63,12 @@ namespace Ramboell.iOS
             {
                 pdfNode.GetData(1 * 1024 * 1024, (data, error) =>
                 {
-                    var test = PdfLocalNsUrl.FilePathUrl;
-                    var test2 = PdfLocalNsUrl.AbsoluteString;
-                    var test3 = PdfLocalNsUrl.FileReferenceUrl;
-                    var test4 = PdfLocalNsUrl.Scheme;
                     if (error != null)
                     {
                         Console.WriteLine();
                         throw new Exception(error.LocalizedDescription);
                     }
 
-                  
-                    //doesn't work
-                    // saved to pdf, but is not identified as a file by iOS
                     if (data.Save(PdfLocalNsUrl, NSDataWritingOptions.Atomic, out error))
                     {
                         Console.WriteLine("saved as " + PDFInfo.Guid);
@@ -231,32 +78,9 @@ namespace Ramboell.iOS
                         Console.WriteLine("NOT saved as " + PDFInfo.Guid + " because" + error.LocalizedDescription);
                     }
                     
-                    //Environment.GetFolderPath(S
-
-                    //File.WriteAllBytes(filePath, data.ToArray());
-
-                    //using (var fileStream = File.Create(filePath, Convert.ToInt32(data.Length)))
-                    //{
-                    //    var dataBytes = new byte[data.Count()];
-                    //    System.Runtime.InteropServices.Marshal.Copy(data.Bytes, dataBytes, 0, Convert.ToInt32(data.Length));
-                    //    fileStream.Write(dataBytes, 0, dataBytes.Length);
-                    //}
-                    //var rs = File.ReadAllBytes(filePath);
-                    
-                    //var test = Path.Combine(documents, "test.pdf");
-                    ////File.WriteAllBytes(test, data.ToArray());
-                    //var sds = data.Save(PdflocalNsUrl, true);
-
-                    //Console.WriteLine("Saved {0}",sds);
-                    ////NSUrl.CreateWithDataRepresentation(data, PdflocalNsUrl);
-
-
-                    //LoadPdf(data);
-
                     LoadPdf(PdfLocalNsUrl);
 
                 });
-                    
                 #region Xamarin bug
 
                 //downloadTask = pdfNode.WriteToFile(PdflocalNsUrl, (url, error) =>
@@ -303,18 +127,135 @@ namespace Ramboell.iOS
 
         }
 
-        private void InitPdfView()
+        private void InitPdfView(nfloat nwidth, nfloat nfloat)
         {
-            View.BackgroundColor = UIColor.Gray;
-            w = View.Bounds.Width;
-            h = View.Bounds.Height;
             PDFView = new PdfView()
             {
                 AutoScales = true,
-                Frame = new CGRect(10, 10, w - 20, h - 20),
+                Frame = new CGRect(0, 0, nwidth, nfloat),
                 BackgroundColor = UIColor.DarkGray,
                 DisplayMode = PdfDisplayMode.SinglePage
             };
+        }
+        private void LoadPdf(NSUrl url)
+        {
+            if (!url.IsFileUrl) return;
+            LoadPdfView(url);
+
+            PdfLocal = true;
+
+            var loadPdfBottomPanel = LoadPdfBottomPanel();
+
+            View.AddSubviews(loadPdfBottomPanel, PDFView);
+            View.BringSubviewToFront(loadPdfBottomPanel);
+        }
+
+        private UIView LoadPdfBottomPanel()
+        {
+            var panelView = new UIView
+            {
+                Frame = new CGRect
+                {
+                    Location = new CGPoint(0, h - panelHeight),
+                    Width = w,
+                    Height = panelHeight,
+                },
+                BackgroundColor = UIColor.LightTextColor
+            };
+          
+            var pW = panelView.Bounds.Width;
+            var pH = panelView.Bounds.Height;
+            var pLocal = panelView.Bounds.Location;
+
+            var circleButton = UIButton.FromType(UIButtonType.RoundedRect);
+            circleButton.Frame = new CGRect(pLocal.X,pLocal.Y, 70, pH);
+            circleButton.SetTitle("Submit", UIControlState.Normal);
+            circleButton.BackgroundColor = panelView.BackgroundColor;
+            circleButton.Layer.CornerRadius = 5f;
+            circleButton.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
+
+            circleButton.TouchUpInside += delegate
+            {
+                Console.WriteLine("1 button pressed");
+                //var page = document.GetPage(1);
+                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
+
+                PDFView.GoToPreviousPage(this);
+
+
+            };
+            var PageBtn = UIButton.FromType(UIButtonType.Plain);
+            PageBtn.TouchUpInside += delegate
+            {
+                PDFView.GoToPreviousPage(this);
+            };
+
+            var prePageBtn = UIButton.FromType(UIButtonType.RoundedRect);
+            prePageBtn.Frame = new CGRect(pLocal.X, pLocal.Y, 70, pH);
+            prePageBtn.BackgroundColor = panelView.BackgroundColor;
+            //prePageBtn.SetImage(UIImage.FromBundle("preBtn"), UIControlState.Normal);
+            prePageBtn.TouchUpInside += delegate
+            {
+                Console.WriteLine("1 button pressed");
+                //var page = document.GetPage(1);
+                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
+
+                PDFView.GoToPreviousPage(this);
+
+
+            };
+
+            var acdb2 = UIButton.FromType(UIButtonType.RoundedRect);
+            acdb2.Frame = new CGRect(100, 10, 50, 44);
+            acdb2.SetTitle("Submit", UIControlState.Normal);
+            acdb2.BackgroundColor = UIColor.White;
+            acdb2.Layer.CornerRadius = 5f;
+            acdb2.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
+
+            acdb2.TouchUpInside += delegate
+            {
+                Console.WriteLine("1 button pressed");
+                //var page = document.GetPage(1);
+                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
+
+                PDFView.GoToNextPage(this);
+
+
+            };
+
+            var acdb3 = UIButton.FromType(UIButtonType.RoundedRect);
+            acdb3.Frame = new CGRect(w, h, 50, 44);
+            acdb3.SetTitle("Submit", UIControlState.Normal);
+            acdb3.BackgroundColor = UIColor.White;
+            acdb3.Layer.CornerRadius = 5f;
+            acdb3.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
+
+            acdb3.TouchUpInside += delegate
+            {
+                Console.WriteLine("1 button pressed");
+                var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
+                var pagePageNumber = watermarkPage.Page.PageNumber;
+                watermarkPage?.DrawCircle();
+                PDFView.SetNeedsDisplay();
+                // And apply the transform.
+            };
+       
+            panelView.AddSubview(prePageBtn,circleBtn, checkMarkBtn, minusBtn,nxtPageBtn,listPageBtn);
+
+           
+            return panelView;
+        }
+
+        private void LoadPdfView(NSUrl url)
+        {
+            var document = new PdfDocument(url);
+
+            if (document != null)
+            {
+                // Set our document to the view, center it, and set a background color
+                document.Delegate = this;
+                PDFView.Document = document;
+            }
         }
         #region PdfDocumentDelegate
         [Export("classForPage")]
