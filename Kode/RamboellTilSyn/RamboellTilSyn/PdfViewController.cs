@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using CoreGraphics;
 using Firebase.Storage;
 using Foundation;
@@ -62,7 +63,7 @@ namespace Ramboell.iOS
 
             if (!File.Exists(pdfFilePath) && PdfLocalNsUrl.IsFileUrl)
             {
-                pdfNode.GetData(1 * 1024 * 1024, (data, error) =>
+                pdfNode.GetData(10 * 1024 * 1024, (data, error) =>
                 {
                     if (error != null)
                     {
@@ -121,7 +122,12 @@ namespace Ramboell.iOS
 
             //    });
             //}
+           
+        }
 
+        public override void TouchesBegan(NSSet touches, UIEvent evt)
+        {
+            base.TouchesBegan(touches, evt);
         }
 
         public class MyPdfView: PdfView

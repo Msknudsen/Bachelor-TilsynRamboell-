@@ -17,8 +17,35 @@ Firebase Realtime Database bliver i forbindelse med applikationen vil blive brug
 	\label{fig:FirebaseDBPNG}
 \end{figure}
 
-På figur \ref{fig:FirebaseDBPNG} vises hvordan applikationens database er struktureret som et træ, med en root node\cite{rootNode} der hedder ramboellfcm, som derfra bliver opdelt i 3 noder pdf, project og user.
-Pdf-node indeholder en liste af Guid \cite{GUID}, hvor hvert Guid har nogle ekstra informationer tilhørende den pågældende Guid, som for eksempel "metaId", hvilket er endnu en Guid, der peger på en json fil i Firebase Storage. Det samme har vi i project-node, som har en Guid der peger på en pdf-node. 
-1
-På den måde kan man let få en oversigt over hvilket projekter og 
+På figur \ref{fig:FirebaseDBPNG} vises hvordan applikationens database er struktureret som et træ, med en root node\cite{rootNode} der hedder ramboellfcm, som derfra bliver opdelt i 3 noder:
+\textbf{pdf}, \textbf{project} og \textbf{user}.\\
 
+\textbf{Pdf} node indeholder en liste af Guid \cite{GUID}, fungerende som keys i pdf node, der bruges til at tilgå de specifikke pdf node, under hvert specifik pdf node er der 4 key-value-pair\cite{KVP}, ud over fungerer disse Guid som en referrence til Firebase Storage, når det bliver nødvendigt at hente filen ned lokalt.  Dette gør at man let kan se hvilket projekter og pdf'er der findes i databasen, og vente med at downloade PDF'en indtil når man har brug for det. På den måde kan man let få en oversigt over hvilket projekter og pdf'er der er, og kun hente de data man har rigtig behov for. 
+\begin{itemize}
+	\item \textbf{created}\\
+	Giver en dato om hvornår denne objekt er oprettet med en nøjagtighed til sekund, der kan forhøjes hvis det føles nødvendig.\\
+	\item \textbf{metaId}\\
+	En referrence til json-file der er gemt i Firebase Storage\cite{FirebaseStorage}, som indeholder de objekter der skal tegnes på pdf'en. Der bliver brugt når vi skal indlæse de objekter der bliver oprettet på pdf'en.\\ 
+	
+	\item \textbf{name}\\
+	Navnet på pdf som menneskelig læsligt tekst indtastet af brugeren, da en guid vil ikke give meget mening for brugeren.\\
+	
+	\item \textbf{updated}\\
+	En timestamp der fortæller hvornår json-filen, som meta-filen referrer til sidst er blevet ændret. Dette bruger applikationen til at sammenligne den lokale version af json-fil med den der ligger i Storage.   
+\end{itemize}
+
+	\textbf{Project} node har den samme structur som \textbf{pdf} node af samme grund. Der er istedet for 6 key-value-pair
+	\begin{itemize}
+		\item  \textbf{address}\\
+		\\
+		\item  \textbf{buildOwner}\\
+		\\
+		\item  \textbf{customer}\\
+		\\
+		\item  \textbf{name}\\
+		\\
+		\item  \textbf{number}\\
+		\\
+		\item  \textbf{pdf}\\
+		\\
+	\end{itemize}
