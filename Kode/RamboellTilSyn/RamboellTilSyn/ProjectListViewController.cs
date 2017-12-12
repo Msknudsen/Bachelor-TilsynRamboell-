@@ -32,7 +32,7 @@ namespace Ramboell.iOS
             
             if (!File.Exists(_file))
             {
-                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Add New Project" } };
+                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Tilføj projekt" }, new RegistrationDto { Name = "Tilføj bruger" } };
                 File.WriteAllText(_file, JsonConvert.SerializeObject(ProjectInfos));
             }
             else
