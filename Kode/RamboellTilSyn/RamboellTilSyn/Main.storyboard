@@ -34,7 +34,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brugernavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="450" misplaced="YES">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="450" misplaced="YES">
                                 <rect key="frame" x="184" y="271" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -92,7 +92,7 @@
                     <connections>
                         <outlet property="UserNameLabel" destination="450" id="name-outlet-450"/>
                         <outlet property="PasswordLabel" destination="449" id="name-outlet-449"/>
-                        <outlet property="UserNameTxt" destination="447" id="name-outlet-447"/>
+                        <outlet property="EmailTxt" destination="447" id="name-outlet-447"/>
                         <outlet property="PasswordTxt" destination="227" id="name-outlet-227"/>
                         <outlet property="LoginBtn" destination="2510" id="name-outlet-2510"/>
                     </connections>

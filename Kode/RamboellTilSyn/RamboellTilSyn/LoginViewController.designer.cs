@@ -15,6 +15,10 @@ namespace Ramboell.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField EmailTxt { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton LoginBtn { get; set; }
 
         [Outlet]
@@ -29,12 +33,13 @@ namespace Ramboell.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel UserNameLabel { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField UserNameTxt { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
+            if (EmailTxt != null) {
+                EmailTxt.Dispose ();
+                EmailTxt = null;
+            }
+
             if (LoginBtn != null) {
                 LoginBtn.Dispose ();
                 LoginBtn = null;
@@ -53,11 +58,6 @@ namespace Ramboell.iOS
             if (UserNameLabel != null) {
                 UserNameLabel.Dispose ();
                 UserNameLabel = null;
-            }
-
-            if (UserNameTxt != null) {
-                UserNameTxt.Dispose ();
-                UserNameTxt = null;
             }
         }
     }
