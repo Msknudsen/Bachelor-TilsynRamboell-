@@ -19,8 +19,22 @@ I OpretBrugerViewet er der lavet felter til alt det information, som skal tastes
 	\label{fig:OpretBrugerView}
 \end{figure}
 
+\clearpage
+
 \subsubsection{Implementering}
-Når der skal oprettes en ny bruger, validerer controlleren at der er indtastet information i alle felter,
-inden at informationen bliver sendt videre til modellen. Hvis et felt ikke er udfyldt giver controlleren fejlbesked til viewet. \\
+I dette afsnit vil der blive beskrevet funktionaliteten for de vigtigste funktioner i koden tilhørende 'Opret bruger' viewet.
+
+På figur \ref{fig:CreateUser}, ses funktionen for CreateUser().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=17cm]{../ArkitekturDesign/Design/OpretBruger/CreateUser1}
+\end{figure}
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=17cm]{../ArkitekturDesign/Design/OpretBruger/CreateUser2}
+	\caption{}
+	\label{fig:CreateUser}
+\end{figure}
+Alle felter valideres. Derefter hvis alt er godkendt, oprettes brugeren med de input der er kommet fra viewet. Når brugeren er blevet uden problemer, skrives informationen som ikke har noget med log ind at gøre; Fornavn, Efternavn osv. ind i databasen.
 
 \clearpage

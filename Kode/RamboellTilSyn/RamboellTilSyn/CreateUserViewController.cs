@@ -25,7 +25,6 @@ namespace Ramboell.iOS
 
         private void CreateUser(object sender, EventArgs e)
         {
-        var s = Auth.DefaultInstance;
             if (isFieldsValid())
         
         Auth.DefaultInstance.CreateUser(EmailCreateUserTxt.Text, PasswordCreateUserTxt.Text, (user, error) => {
@@ -36,7 +35,7 @@ namespace Ramboell.iOS
                         errorCode = (AuthErrorCode)((long)error.Code);
                     else // 32 bits devices
                         errorCode = (AuthErrorCode)((int)error.Code);
-
+                     
                     // Posible error codes that CreateUser method could throw
                     switch (errorCode)
                     {
@@ -52,7 +51,6 @@ namespace Ramboell.iOS
                 }
                 else
                 {
-                    //TODO MORTEN adder extra user data til firebase 
                     Console.WriteLine("Succesfully Created A User");
                     userNode = userNode.GetChild(user.Uid);
                     object[] keys = {

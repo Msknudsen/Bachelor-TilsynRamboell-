@@ -58,14 +58,6 @@ namespace Ramboell.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PhoneCreateUserTxt { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel UsernameCreateUserLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField UserNameCreateUserTxt { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
             if (CreateUserBtn != null) {
@@ -121,16 +113,6 @@ namespace Ramboell.iOS
             if (PhoneCreateUserTxt != null) {
                 PhoneCreateUserTxt.Dispose ();
                 PhoneCreateUserTxt = null;
-            }
-
-            if (UsernameCreateUserLabel != null) {
-                UsernameCreateUserLabel.Dispose ();
-                UsernameCreateUserLabel = null;
-            }
-
-            if (UserNameCreateUserTxt != null) {
-                UserNameCreateUserTxt.Dispose ();
-                UserNameCreateUserTxt = null;
             }
         }
     }

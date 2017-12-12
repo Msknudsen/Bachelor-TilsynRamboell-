@@ -174,7 +174,7 @@ namespace Ramboell.iOS
     public enum Shape
     {
         CheckMark,
-        Cross,
-        Circle
+        Circle,
+        Minus
     }
 }

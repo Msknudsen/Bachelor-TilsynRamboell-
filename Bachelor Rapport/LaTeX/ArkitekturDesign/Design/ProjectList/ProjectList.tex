@@ -1,7 +1,8 @@
+\subsection{Projekt Oversigt} \label{sec:ProjectList}
 Dette afsnit indeholder en gennemgang af grafisk brugergrænseflade, design og implementering af 'Project List' viewet i Rambøll Tilsyn.
 
 \subsubsection{Design}
-På figur \ref{fig:ProjctListSekvens} ses sekvens diagrammet for 'Project List' viewet til Rambøll Tilsyn.
+%På figur \ref{fig:ProjctListSekvens} ses sekvens diagrammet for 'Project List' viewet til Rambøll Tilsyn.
 %\begin{figure}[H] % (alternativt [H])
 %	\centering
 %	\includegraphics[height=15cm, width=15cm]{../ArkitekturDesign/Design/Login/LoginSekvensDiagram}
@@ -12,7 +13,7 @@ På figur \ref{fig:ProjctListSekvens} ses sekvens diagrammet for 'Project List' 
 \clearpage
 
 \subsubsection{Grafisk brugergrænseflade}
-I LoginViewet er der lavet felter til at bruger indtaster sit brugernavn og kodeord. Se figur \ref{fig:ProjectListView}
+I ProjectListViewet er der en oversigt over hvilke projekter der ligger i databasen, samt mulighed for øverst at tilføje projekt eller tilføj bruger. Se figur \ref{fig:ProjectListView}
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=12cm, width=10cm]{../ArkitekturDesign/Design/ProjectList/ProjectList}
@@ -25,10 +26,64 @@ I LoginViewet er der lavet felter til at bruger indtaster sit brugernavn og kode
 \subsubsection{Implementering}
 I dette afsnit vil der blive beskrevet funktionaliteten for de vigtigste funktioner i koden tilhørende 'Login' viewet.
 
-På figur \ref{fig:Checkifusersigned}, ses funktionen for CheckIfUserSignedIn.
+På figur \ref{fig:ProjectListViewController}, ses konstrukteren til ProjectViewListController.
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/Login/Checkifusersigned}
+	\includegraphics[height=5cm, width=17cm]{../ArkitekturDesign/Design/ProjectList/ProjectListViewController}
 	\caption{}
-	\label{fig:Checkifusersigned}
+	\label{fig:ProjectListViewController}
 \end{figure}
+Det første er at der hentes en reference node med navn PDF fra Firebase, og fortæller at denne node skal holdes synkroniseret, i tilfælde af data ændring. \\
+Efterfølgende initialiseres JSON filen, og synkrorinisere efterfølgende med Firebase.
+
+På figur \ref{fig:JSONFile}, ses funktionen for InstaniateJsonFile().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=5cm, width=15cm]{../ArkitekturDesign/Design/ProjectList/JSONFile}
+	\caption{}
+	\label{fig:JSONFile}
+\end{figure}
+Der oprettes en JSON fil, hvis der ikke findes en i forvejen. Denne gemmes lokalt.\\
+Hvis der findes en JSON fil, læses data fra filen.
+
+\clearpage
+
+På figur \ref{fig:SyncWithDB}, ses funktionen for SyncWithFirebaseDatabase().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/ProjectList/SyncWithDB}
+	\caption{}
+	\label{fig:SyncWithDB}
+\end{figure}
+Noden som er oprettet i konstrukteren, som ses på figur \ref{fig:ProjectListViewController}, den vedhæftes til et event, som kaldes hver gang noden ændres. \\
+Når eventet kaldes, læses data fra eventet og gemmer dette i JSON filen. Efterfølgende fortælles controlleren at viewet skal opdateres.
+
+På figur \ref{fig:ViewDidLoad}, ses funktionen for ViewDidLoad().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=3cm, width=10cm]{../ArkitekturDesign/Design/ProjectList/ViewDidLoad}
+	\caption{}
+	\label{fig:ViewDidLoad}
+\end{figure}
+Her sættes ListViewets source til at være TableSource.
+
+På figur \ref{fig:TableSource}, ses konstrukteren til TableSource.
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=2cm, width=15cm]{../ArkitekturDesign/Design/ProjectList/TableSource}
+	\caption{}
+	\label{fig:TableSource}
+\end{figure}
+Der initialiseres hvilke værdier der skal fremvises og der er givet en reference til ProjctListViewControlleren.
+
+På figur \ref{fig:RowSelection}, ses funktionen for RowSelected().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=17cm]{../ArkitekturDesign/Design/ProjectList/RowSelection}
+	\caption{}
+	\label{fig:RowSelection}
+\end{figure}
+Der er en switch case, case 0 giver bruger mulighed for at navigere til 'Opret projekt' siden. Case 1 navigere brugeren til 'Opret bruger' siden. \\
+Ellers skal den navigere brugeren til PDFViewControlleren, for det valgte projekt.
+
+\clearpage

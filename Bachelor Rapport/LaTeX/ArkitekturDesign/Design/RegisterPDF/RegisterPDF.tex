@@ -49,3 +49,64 @@ Den sidste knap er en liste knap som giver brugeren mulighed for at afslutte sin
 \clearpage
 
 \subsubsection{Implementering}
+I dette afsnit vil der blive beskrevet funktionaliteten for de vigtigste funktioner i koden tilhørende 'Registrering på PDF' viewet.
+
+På figur \ref{fig:LoadPDF}, ses funktionen for LoadPDF().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=4cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/LoadPDF}
+	\caption{}
+	\label{fig:LoadPDF}
+\end{figure}
+Efter PDF'en er blevet downloadet fra Firebase, gemmes denne lokalt. \\
+Der tjekkes om url'en er en fil url. Er dette en fil url loades PDF'en ind i viewt. \\
+Når PDF'en er loadet ind i viewet, oprettes symbol knapperne. \\
+Når både PDFViewet og PDFBottomPanel er loadet, loades disse ind i controllerens view.
+
+\clearpage
+
+På figur \ref{fig:LoadPDF}, ses funktionen for LoadBtnPanel().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadBtnPanel1}
+\end{figure}
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadBtnPanel2}
+	\caption{}
+	\label{fig:LoadBtnPanel2}
+\end{figure}
+Her oprettes UIView, som indeholder vores knapper, der loades ind fra PanelBottomFactory. \\
+PanelBottomFactory er en klasse som står at oprette knapperne. \\
+Når knapperne er oprettet definere vi events på de forskellige knapper. \\
+
+\clearpage
+
+På figur \ref{fig:ClassPage}, ses funktionen for ClassPage().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=3cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/ClassPage}
+	\caption{}
+	\label{fig:ClassPage}
+\end{figure}
+Der overrides funktionen ClassForPage, som er en obejktive C funktion, der normalt returnere en standard PDF page, til vores typeof(MarkedPdfPage).
+
+På figur \ref{fig:Draw}, ses funktionen for Draw().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=10cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/Draw}
+	\caption{}
+	\label{fig:Draw}
+\end{figure}
+Når PDF pagen bliver oprettet, kaldes draw og denne er overridet til at tegne på PDF'en med de objekter som bliver hentet fra JSON filen. Disse tegnes ind på PDF'en.
+
+\clearpage
+
+På figur \ref{fig:Enum}, ses funktionen for Render().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/Design/RegisterPDF/Enum}
+	\caption{}
+	\label{fig:Enum}
+\end{figure}
+Definitionen på vores symboler.

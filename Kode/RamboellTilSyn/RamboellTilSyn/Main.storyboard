@@ -178,20 +178,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="24588" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" misplaced="YES">
                                 <rect key="frame" x="192" y="52" width="215" height="60"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24589" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="33" y="188" width="203" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Opret bruger" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24590" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="234" y="120" width="133" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brugernavn:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24597" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="33" y="159" width="107" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -207,13 +196,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefonnummer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24643" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="35" y="472" width="164" height="21"/>
+                                <rect key="frame" x="33" y="420" width="164" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24644" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
-                                <rect key="frame" x="30" y="501" width="206" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24644" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="30" y="449" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -240,17 +229,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="24782" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="36" y="407" width="101" height="21"/>
+                                <rect key="frame" x="30" y="154" width="101" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="24783" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                                <rect key="frame" x="30" y="434" width="206" height="30"/>
+                                <rect key="frame" x="30" y="183" width="206" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="27155" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES" ambiguous="YES">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="27155" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
                                 <rect key="frame" x="228" y="547" width="144" height="41"/>
                                 <state key="normal" title="Opret bruger" backgroundImage="blue.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,10 +258,6 @@
                             <constraint id="41920" firstItem="24780" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="15"/>
                             <constraint id="41922" firstItem="24585" firstAttribute="centerX" secondItem="24781" secondAttribute="centerX" constant="167"/>
                             <constraint id="41923" firstItem="24781" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
-                            <constraint id="41925" firstItem="24782" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="16"/>
-                            <constraint id="41926" firstItem="24585" firstAttribute="centerX" secondItem="24783" secondAttribute="centerX" constant="167"/>
-                            <constraint id="41928" firstItem="24783" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
-                            <constraint id="41930" firstItem="24643" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="15"/>
                             <constraint id="41935" firstItem="27155" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
                             <constraint id="41937" firstItem="24585" firstAttribute="trailingMargin" secondItem="27155" secondAttribute="trailing" constant="208"/>
                             <constraint id="43179" firstItem="24588" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
@@ -281,32 +266,30 @@
                             <constraint id="43186" firstItem="24599" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="157"/>
                             <constraint id="43187" firstItem="24585" firstAttribute="centerX" secondItem="24599" secondAttribute="centerX" constant="213"/>
                             <constraint id="43188" firstItem="24598" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="187"/>
-                            <constraint id="43189" firstItem="24597" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="89"/>
-                            <constraint id="43190" firstItem="24597" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
-                            <constraint id="43192" firstItem="24589" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="123"/>
-                            <constraint id="43193" firstItem="24585" firstAttribute="centerX" secondItem="24589" secondAttribute="centerX" constant="165"/>
-                            <constraint id="43194" firstItem="24589" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
                             <constraint id="43663" firstItem="24688" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="220"/>
                             <constraint id="43664" firstItem="24688" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
                             <constraint id="43665" firstItem="24689" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="246"/>
                             <constraint id="43666" firstItem="24781" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="304"/>
                             <constraint id="43667" firstItem="24780" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="279"/>
-                            <constraint id="43668" firstItem="24782" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="337"/>
-                            <constraint id="43669" firstItem="24783" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="369"/>
-                            <constraint id="43670" firstItem="24643" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="402"/>
                             <constraint id="43672" firstItem="27155" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="487"/>
-                            <constraint id="45150" firstItem="24644" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="436"/>
-                            <constraint id="45151" firstItem="24644" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
-                            <constraint id="45152" firstItem="24585" firstAttribute="centerX" secondItem="24644" secondAttribute="centerX" constant="167"/>
-                            <constraint id="47374" firstItem="27155" firstAttribute="top" secondItem="24644" secondAttribute="bottom" constant="16"/>
                             <constraint id="48981" firstItem="24590" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
                             <constraint id="48982" firstItem="24590" firstAttribute="top" secondItem="24588" secondAttribute="centerY" constant="38"/>
+                            <constraint id="49492" firstItem="24782" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="82"/>
+                            <constraint id="49493" firstItem="24585" firstAttribute="centerX" secondItem="24782" secondAttribute="centerX" constant="219"/>
+                            <constraint id="49494" firstItem="24782" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="49495" firstItem="24783" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="116"/>
+                            <constraint id="49496" firstItem="24585" firstAttribute="centerX" secondItem="24783" secondAttribute="centerX" constant="167"/>
+                            <constraint id="49497" firstItem="24783" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="49498" firstItem="24585" firstAttribute="centerX" secondItem="24643" secondAttribute="centerX" constant="185"/>
+                            <constraint id="49499" firstItem="24643" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="348"/>
+                            <constraint id="49500" firstItem="24643" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="13"/>
+                            <constraint id="49501" firstItem="24585" firstAttribute="centerX" secondItem="24644" secondAttribute="centerX" constant="167"/>
+                            <constraint id="49502" firstItem="24644" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="382"/>
+                            <constraint id="49503" firstItem="24644" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="PasswordCreateUserTxt" destination="24598" id="name-outlet-24598"/>
-                        <outlet property="UserNameCreateUserTxt" destination="24589" id="name-outlet-24589"/>
-                        <outlet property="UsernameCreateUserLabel" destination="24597" id="name-outlet-24597"/>
                         <outlet property="PasswordCreateUserLabel" destination="24599" id="name-outlet-24599"/>
                         <outlet property="PhoneCreateUserLabel" destination="24643" id="name-outlet-24643"/>
                         <outlet property="PhoneCreateUserTxt" destination="24644" id="name-outlet-24644"/>
