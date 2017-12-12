@@ -26,49 +26,48 @@ namespace Ramboell.iOS
         private void CreateUser(object sender, EventArgs e)
         {
             if (isFieldsValid())
-        
-        Auth.DefaultInstance.CreateUser(EmailCreateUserTxt.Text, PasswordCreateUserTxt.Text, (user, error) => {
-                if (error != null)
-                {
-                    AuthErrorCode errorCode;
-                    if (IntPtr.Size == 8) // 64 bits devices
-                        errorCode = (AuthErrorCode)((long)error.Code);
-                    else // 32 bits devices
-                        errorCode = (AuthErrorCode)((int)error.Code);
-                     
-                    // Posible error codes that CreateUser method could throw
-                    switch (errorCode)
+                Auth.DefaultInstance.CreateUser(EmailCreateUserTxt.Text, PasswordCreateUserTxt.Text, (user, error) => {
+                    if (error != null)
                     {
-                        case AuthErrorCode.InvalidEmail:
-                        case AuthErrorCode.EmailAlreadyInUse:
-                        case AuthErrorCode.OperationNotAllowed:
-                        case AuthErrorCode.WeakPassword:
-                        default:
-                            Console.WriteLine("Failed to Create to User");
-                            //TODO ERROR HANDLING LOGIC
-                            break;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Succesfully Created A User");
-                    userNode = userNode.GetChild(user.Uid);
-                    object[] keys = {
+                        AuthErrorCode errorCode;
+                        if (IntPtr.Size == 8) // 64 bits devices
+                            errorCode = (AuthErrorCode)((long)error.Code);
+                        else // 32 bits devices
+                            errorCode = (AuthErrorCode)((int)error.Code);
+
+                        // Posible error codes that CreateUser method could throw
+                        switch (errorCode)
+                        {
+                            case AuthErrorCode.InvalidEmail:
+                            case AuthErrorCode.EmailAlreadyInUse:
+                            case AuthErrorCode.OperationNotAllowed:
+                            case AuthErrorCode.WeakPassword:
+                            default:
+                                Console.WriteLine("Failed to Create to User");
+                                //TODO ERROR HANDLING LOGIC
+                                break;
+                                    }
+                        }
+                    
+                    else
+                    {
+                        Console.WriteLine("Succesfully Created A User");
+                        userNode = userNode.GetChild(user.Uid);
+                        object[] keys = {
                         "alias",
                         "email",
                         "firstName",
-                        "lastName" 
+                        "lastName"
                     };
-                    object[] values = {
+                        object[] values = {
                         PhoneCreateUserTxt.Text,
                         EmailCreateUserTxt.Text,
                         FirstnameCreateUserTxt.Text,
                         LastnameCreateUserTxt.Text
                     };
-                    var data = NSDictionary.FromObjectsAndKeys(values, keys, keys.Length);
-
-                    userNode.SetValue<NSDictionary>(data);
-                }
+                        var data = NSDictionary.FromObjectsAndKeys(values, keys, keys.Length);
+                        userNode.SetValue<NSDictionary>(data);
+                    }
             });
         }
 
