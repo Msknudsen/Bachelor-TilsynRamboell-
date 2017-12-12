@@ -1,4 +1,4 @@
-\subsection{Registrering på PDF}
+\subsection{Registrering på PDF}\label{sec:PDF}
 Dette afsnit indeholder en gennemgang af grafisk brugergrænseflade, design og implementering af Registrering på PDF viewet i Rambøll Tilsyn.
 
 \subsubsection{Design}
@@ -34,5 +34,18 @@ Sidste sekvensdiagram viser hvordan systemet opføre sig, når brugeren interage
 \clearpage
 
 \subsubsection{Grafisk brugergrænseflade}
+RegistrerpåPDFViewet som ses på figur \ref{fig:RegistrerObjekterView} består af to views. Det første view viser den PDF som er valgt til projektet. \\
+Under ligger der en andet view som indeholder knapper som brugeren kan interagere med. Der er seks forskellige knapper: \\
+Brugeren har mulighed på de første to at enten hoppe en side frem eller en side tilbage. \\
+De næste tre knapper er symboler som brugeren kan tegne på PDF'en. \\
+Den sidste knap er en liste knap som giver brugeren mulighed for at afslutte sin registrering.
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=18cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/PDF}
+	\caption{Registrer på PDF viewet som det er implementeret i Rambøll Tilsyn.}
+	\label{fig:RegistrerObjekterView}
+\end{figure}
+
+\clearpage
 
 \subsubsection{Implementering}

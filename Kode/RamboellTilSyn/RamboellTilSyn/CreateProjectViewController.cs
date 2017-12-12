@@ -18,7 +18,6 @@ namespace Ramboell.iOS
         public override void ViewDidUnload()
         {
             base.ViewDidUnload();
-
         }
     }
 }

@@ -11,19 +11,19 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2017 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2017 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye" misplaced="YES" ambiguous="YES">
                     <rect key="frame" x="20" y="439.5" width="440" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilsyn" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilsyn" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX" misplaced="YES" ambiguous="YES">
                     <rect key="frame" x="26" y="206" width="440" height="43"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="153" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" misplaced="YES">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="153" translatesAutoresizingMaskIntoConstraints="NO" image="Ramboll_Logo_Cyan_RGB_402x85px.png" misplaced="YES" ambiguous="YES">
                     <rect key="frame" x="70" y="74" width="340" height="112"/>
                 </imageView>
             </subviews>
@@ -38,6 +38,8 @@
                 <constraint id="970" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="14"/>
                 <constraint id="1103" firstItem="153" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
                 <constraint id="1236" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="153" secondAttribute="trailing" constant="70"/>
+                <constraint id="1396" firstItem="153" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
+                <constraint id="1530" firstItem="153" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="74"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -47,5 +49,11 @@
     <resources>
         <image name="Ramboll_Logo_Cyan_RGB_402x85px.png" width="402" height="85"/>
         <image name="blue.png" width="220" height="160"/>
+        <image name="back.png" width="400" height="400"/>
+        <image name="checkmark.png" width="570" height="594"/>
+        <image name="circle.png" width="564" height="599"/>
+        <image name="forward.png" width="434" height="364"/>
+        <image name="list.png" width="512" height="512"/>
+        <image name="minus.png" width="640" height="637"/>
     </resources>
 </document>
