@@ -1,1 +1,18 @@
 \section{Applikation}
+I dette afsnit vil der blive gennemgået design, brugergrænseflade og implementering for user stories for Login, Registrering på PDF og Opret Bruger. For den fulde dokumentation design og implentering henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:ApplikationDesign} og de tilhørende afsnit.
+
+I analysen bliver der analyseret på Xamarin Forms \cite{Forms}. Der blev dog under udviklingen fundet begrænsinger i Forms framework. Så applikationen er implementeringet i Xamarin iOS.
+
+Til udvikling af Rambøll Tilsyn er der brugt et MVC design \cite{MVC}, som vist herunder, på figur \ref{fig:MVC}. For beskrivelsen af MVC patternet henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:ApplikationDesign}.
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=8cm]{Design/Applikation/MVC}
+	\caption{MVC design for Rambøll Tilsyn.}
+	\label{fig:MVC}
+\end{figure}
+
+\clearpage
+
+\input{Design/Applikation/Login/Login}
+\input{Design/Applikation/OpretBruger/OpretBruger}
+\input{Design/Applikation/RegistrePDF/RegistrePDF}
