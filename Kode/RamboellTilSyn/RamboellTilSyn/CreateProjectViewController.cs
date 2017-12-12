@@ -10,5 +10,15 @@ namespace Ramboell.iOS
         {
         }
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            
+        }
+        public override void ViewDidUnload()
+        {
+            base.ViewDidUnload();
+
+        }
     }
 }

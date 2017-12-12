@@ -36,11 +36,6 @@ namespace Ramboell.iOS
             });
         }
 
-        SecRecord s = new SecRecord(SecKind.GenericPassword)
-        {
-            ValueData = NSData.FromString("data"),
-            Generic = NSData.FromString("name")
-        };
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
@@ -59,7 +54,6 @@ namespace Ramboell.iOS
         {
             base.ViewDidUnload();
             LoginBtn.TouchUpInside -= LoginBtn_TouchUpInside;
-            SecKeyChain.Remove(s);
         }
 
         private void LoginBtn_TouchUpInside(object sender, EventArgs e)

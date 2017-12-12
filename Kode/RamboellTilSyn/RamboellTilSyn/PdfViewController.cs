@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using CoreGraphics;
@@ -23,7 +24,7 @@ namespace Ramboell.iOS
         public NSUrl PdfLocalNsUrl { get; set; }
         public NSUrl MetalocalNsUrl { get; set; }
         public RegistrationDto PdfInfo { get; }
-        PdfView PDFView;
+        MyPdfView PDFView;
         private nfloat h;
         private nfloat w;
         const int panelHeight = 70;
@@ -103,10 +104,6 @@ namespace Ramboell.iOS
                 Console.WriteLine("Loading local pdf");
                 LoadPdf(PdfLocalNsUrl);
             }
-
-
-            
-            //TODO added for later
             //if (!File.Exists(MetalocalNsUrl.Path))
             //{
             //    StorageDownloadTask downloadTask = metaNode.WriteToFile(MetalocalNsUrl, (url, error) =>
@@ -127,9 +124,17 @@ namespace Ramboell.iOS
 
         }
 
+        public class MyPdfView: PdfView
+        {
+            public override void TouchesBegan(NSSet touches, UIEvent evt)
+            {
+                base.TouchesBegan(touches, evt);
+                Console.WriteLine("Hello, I got touched");
+            }
+        }
         private void InitPdfView(nfloat nwidth, nfloat nfloat)
         {
-            PDFView = new PdfView()
+            PDFView = new MyPdfView()
             {
                 AutoScales = true,
                 Frame = new CGRect(0, 0, nwidth, nfloat),
@@ -145,7 +150,6 @@ namespace Ramboell.iOS
             PdfLocal = true;
 
             var loadPdfBottomPanel = LoadPdfBottomPanel();
-
             View.AddSubviews(loadPdfBottomPanel, PDFView);
             View.BringSubviewToFront(loadPdfBottomPanel);
         }
@@ -162,87 +166,51 @@ namespace Ramboell.iOS
                 },
                 BackgroundColor = UIColor.LightTextColor
             };
-          
             var pW = panelView.Bounds.Width;
             var pH = panelView.Bounds.Height;
             var pLocal = panelView.Bounds.Location;
 
-            var circleButton = UIButton.FromType(UIButtonType.RoundedRect);
-            circleButton.Frame = new CGRect(pLocal.X,pLocal.Y, 70, pH);
-            circleButton.SetTitle("Submit", UIControlState.Normal);
-            circleButton.BackgroundColor = panelView.BackgroundColor;
-            circleButton.Layer.CornerRadius = 5f;
-            circleButton.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            circleButton.TouchUpInside += delegate
-            {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
-                PDFView.GoToPreviousPage(this);
-
-
-            };
-            var PageBtn = UIButton.FromType(UIButtonType.Plain);
-            PageBtn.TouchUpInside += delegate
-            {
-                PDFView.GoToPreviousPage(this);
-            };
-
-            var prePageBtn = UIButton.FromType(UIButtonType.RoundedRect);
+            var prePageBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.PrePage);
             prePageBtn.Frame = new CGRect(pLocal.X, pLocal.Y, 70, pH);
-            prePageBtn.BackgroundColor = panelView.BackgroundColor;
-            //prePageBtn.SetImage(UIImage.FromBundle("preBtn"), UIControlState.Normal);
             prePageBtn.TouchUpInside += delegate
             {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
                 PDFView.GoToPreviousPage(this);
-
-
             };
 
-            var acdb2 = UIButton.FromType(UIButtonType.RoundedRect);
-            acdb2.Frame = new CGRect(100, 10, 50, 44);
-            acdb2.SetTitle("Submit", UIControlState.Normal);
-            acdb2.BackgroundColor = UIColor.White;
-            acdb2.Layer.CornerRadius = 5f;
-            acdb2.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            acdb2.TouchUpInside += delegate
+            var nxtPageBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.NxtPage);
+            nxtPageBtn.Frame = new CGRect(pLocal.X + 100, pLocal.Y, 70, pH);
+            nxtPageBtn.TouchUpInside += delegate
             {
-                Console.WriteLine("1 button pressed");
-                //var page = document.GetPage(1);
-                //var bounds = page.GetBoundsForBox(PdfDisplayBox.Crop);
-
                 PDFView.GoToNextPage(this);
-
-
             };
-
-            var acdb3 = UIButton.FromType(UIButtonType.RoundedRect);
-            acdb3.Frame = new CGRect(w, h, 50, 44);
-            acdb3.SetTitle("Submit", UIControlState.Normal);
-            acdb3.BackgroundColor = UIColor.White;
-            acdb3.Layer.CornerRadius = 5f;
-            acdb3.AutoresizingMask = UIViewAutoresizing.FlexibleWidth;
-
-            acdb3.TouchUpInside += delegate
+            var addCircleBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddCircle);
+            addCircleBtn.Frame = new CGRect(pLocal.X + 200, pLocal.Y, 70, pH);
+            addCircleBtn.TouchUpInside += delegate
             {
                 Console.WriteLine("1 button pressed");
                 var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
                 var pagePageNumber = watermarkPage.Page.PageNumber;
                 watermarkPage?.DrawCircle();
                 PDFView.SetNeedsDisplay();
-                // And apply the transform.
             };
-       
-            panelView.AddSubview(prePageBtn,circleBtn, checkMarkBtn, minusBtn,nxtPageBtn,listPageBtn);
 
-           
+            var addCheckMarkBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddCheckMark);
+            addCheckMarkBtn.Frame = new CGRect(pLocal.X + 300, pLocal.Y, 70, pH);
+            addCheckMarkBtn.TouchUpInside += delegate
+            {
+                Console.WriteLine("1 button pressed");
+            };
+            var addMinusBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddMinus);
+            addMinusBtn.Frame = new CGRect(pLocal.X + 400, pLocal.Y, 70, pH);
+            addMinusBtn.TouchUpInside += delegate
+            {
+                Console.WriteLine("1 button pressed");
+            };
+            var showListBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.ShowList);
+            showListBtn.Frame = new CGRect(pLocal.X + 500, pLocal.Y, 70, pH);
+
+            panelView.AddSubviews(prePageBtn,nxtPageBtn,addCircleBtn,addCheckMarkBtn,addMinusBtn,showListBtn);
+
             return panelView;
         }
 

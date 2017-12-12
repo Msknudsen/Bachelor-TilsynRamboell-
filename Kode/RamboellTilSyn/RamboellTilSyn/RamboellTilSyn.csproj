@@ -111,6 +111,7 @@
     <Compile Include="Dto\ProjectDto.cs" />
     <Compile Include="MarkedPdfPage.cs" />
     <Compile Include="Dto\RegistrationDto.cs" />
+    <Compile Include="panelBtnFactory.cs" />
     <Compile Include="TableSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="ProjectListViewController.designer.cs">
       <DependentUpon>ProjectListViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validator.cs" />
     <Compile Include="View.cs" />
     <Compile Include="View.designer.cs">
       <DependentUpon>View.cs</DependentUpon>
@@ -183,6 +185,12 @@
     </Content>
     <BundleResource Include="Ramboll_Logo_Cyan_RGB_402x85px.png" />
     <BundleResource Include="Resources\blue.png" />
+    <BundleResource Include="Resources\back.png" />
+    <BundleResource Include="Resources\checkmark.png" />
+    <BundleResource Include="Resources\circle.png" />
+    <BundleResource Include="Resources\forward.png" />
+    <BundleResource Include="Resources\list.png" />
+    <BundleResource Include="Resources\minus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

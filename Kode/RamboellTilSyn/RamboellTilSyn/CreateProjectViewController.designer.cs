@@ -20,6 +20,10 @@ namespace Ramboell.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton CreateProjectBtn { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel CustomernameCreateProjectLabel { get; set; }
 
         [Outlet]
@@ -59,6 +63,11 @@ namespace Ramboell.iOS
             if (ChosePDFBtn != null) {
                 ChosePDFBtn.Dispose ();
                 ChosePDFBtn = null;
+            }
+
+            if (CreateProjectBtn != null) {
+                CreateProjectBtn.Dispose ();
+                CreateProjectBtn = null;
             }
 
             if (CustomernameCreateProjectLabel != null) {
