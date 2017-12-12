@@ -1,12 +1,12 @@
 ﻿using System;
+using System.ComponentModel;
 using Firebase.Auth;
 using Foundation;
-using Security;
 using UIKit;
 
 namespace Ramboell.iOS
 {
-    [System.ComponentModel.DesignTimeVisible(false)]
+    [DesignTimeVisible(false)]
     public partial class LoginViewController : UIViewController
     {
         NSObject listenerHandle;
@@ -31,7 +31,6 @@ namespace Ramboell.iOS
                 else
                 {
                     Console.WriteLine("No Users logged In");
-                    // No user is signed in.
                 }
             });
         }
@@ -42,7 +41,7 @@ namespace Ramboell.iOS
             LoginBtn.TouchUpInside += LoginBtn_TouchUpInside;
             //LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
 
-            UserNameTxt.Placeholder = "Indtast brugernavn";
+            EmailTxt.Placeholder = "Indtast Email";
 
             PasswordTxt.SecureTextEntry = true;
             PasswordTxt.Placeholder = "Indtast kodeord";
@@ -76,6 +75,7 @@ namespace Ramboell.iOS
                         case AuthErrorCode.UserDisabled:
                         case AuthErrorCode.WrongPassword:
                         default:
+
                             // Print error
                             Console.WriteLine(errorCode.ToString());
                             break;
@@ -83,9 +83,9 @@ namespace Ramboell.iOS
                 }
                 else
                 {
-                    if (this.Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
+                    if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
                     {
-                        this.NavigationController.PushViewController(projectList, true);
+                        NavigationController.PushViewController(projectList, true);
                     }
                 }
             });

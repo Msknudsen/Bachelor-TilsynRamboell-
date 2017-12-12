@@ -31,7 +31,7 @@ namespace Ramboell.iOS
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField UserNameTxt { get; set; }
+        UIKit.UITextField EmailTxt { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -55,9 +55,9 @@ namespace Ramboell.iOS
                 UserNameLabel = null;
             }
 
-            if (UserNameTxt != null) {
-                UserNameTxt.Dispose ();
-                UserNameTxt = null;
+            if (EmailTxt != null) {
+                EmailTxt.Dispose ();
+                EmailTxt = null;
             }
         }
     }
