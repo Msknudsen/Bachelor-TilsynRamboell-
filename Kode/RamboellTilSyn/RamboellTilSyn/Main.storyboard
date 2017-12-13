@@ -92,8 +92,8 @@
                     <connections>
                         <outlet property="UserNameLabel" destination="450" id="name-outlet-450"/>
                         <outlet property="PasswordLabel" destination="449" id="name-outlet-449"/>
-                        <outlet property="EmailTxt" destination="447" id="name-outlet-447"/>
-                        <outlet property="PasswordTxt" destination="227" id="name-outlet-227"/>
+                        <outlet property="LoginEmailTxt" destination="447" id="name-outlet-447"/>
+                        <outlet property="LoginPasswordTxt" destination="227" id="name-outlet-227"/>
                         <outlet property="LoginBtn" destination="2510" id="name-outlet-2510"/>
                     </connections>
                 </viewController>
@@ -125,7 +125,7 @@
                         <viewControllerLayoutGuide type="top" id="12828"/>
                         <viewControllerLayoutGuide type="bottom" id="12829"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="12832">
+                    <view key="view" contentMode="scaleToFill" id="12832" multipleTouchEnabled="YES">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

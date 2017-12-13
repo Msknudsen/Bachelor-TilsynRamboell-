@@ -9,7 +9,7 @@ namespace NUnit.Tests1
         [TestCase("s@live.sccd")]
         [TestCase("2314@live.dk")]
         [TestCase("s@123.sd")]
-
+        [TestCase("li@oo.dk")]
         public void Email_Is_Valid(string s)
         {
             Assert.IsTrue(Ramboell.iOS.Validator.EmailIsValid(s));
@@ -43,11 +43,12 @@ namespace NUnit.Tests1
             Assert.IsFalse(Ramboell.iOS.Validator.NameIsValid(s));
         }
         [TestCase("Aa2345")]
+        [TestCase("Abc123")]
         [TestCase("Aa#345")]
         [TestCase("Aa#345dsavshw543I/T  VIYI")]
         public void Password_Is_Valid(string s)
         {
-            Assert.IsFalse(Ramboell.iOS.Validator.PasswordIsValid(s));
+            Assert.IsTrue(Ramboell.iOS.Validator.PasswordIsValid(s));
         }
         [TestCase("aa2345")]
         [TestCase("123456")]

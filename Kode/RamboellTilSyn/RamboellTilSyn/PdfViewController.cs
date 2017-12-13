@@ -50,7 +50,7 @@ namespace Ramboell.iOS
             //file node from firebase
             var rootNode = Storage.DefaultInstance.GetRootReference();
             var pdfNode = rootNode.GetChild($"{PDFInfo.Guid.ToString()}.pdf");
-            var metaNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
+            var jsonNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
             //local file url to store file in
 
             var pdfName = $"{PDFInfo.Guid}.pdf";
@@ -80,8 +80,6 @@ namespace Ramboell.iOS
                         Console.WriteLine("NOT saved as " + PDFInfo.Guid + " because" + error.LocalizedDescription);
                     }
                     
-                    LoadPdf(PdfLocalNsUrl);
-
                 });
                 #region Xamarin bug
 
@@ -98,36 +96,34 @@ namespace Ramboell.iOS
 
                 //});
                 #endregion
-
             }
-            else
+            if (!File.Exists(jsonFilePath) && MetalocalNsUrl.IsFileUrl)
             {
-                Console.WriteLine("Loading local pdf");
-                LoadPdf(PdfLocalNsUrl);
-            }
-            //if (!File.Exists(MetalocalNsUrl.Path))
-            //{
-            //    StorageDownloadTask downloadTask = metaNode.WriteToFile(MetalocalNsUrl, (url, error) =>
-            //    {
-            //        if (error != null)
-            //        {
-            //            // Uh-oh, an error occurred!
-            //        }
-            //        else
-            //        {
-            //            Console.WriteLine($"Loading a meta info on pdf: {PDFInfo.Name}");
-            //            //load layer
-            //            MetaLocal = true;
-            //        }
+                jsonNode.GetData(10 * 1024 * 1024, (data, error) =>
+                {
+                    if (error != null)
+                    {
+                        Console.WriteLine();
+                        throw new Exception(error.LocalizedDescription);
+                    }
+                    if (data.Save(MetalocalNsUrl, NSDataWritingOptions.Atomic, out error))
+                    {
+                        Console.WriteLine("saved as " + PDFInfo.MetaId);
+                    }
+                    else
+                    {
+                        Console.WriteLine("NOT saved as " + PDFInfo.Guid + " because" + error.LocalizedDescription);
+                    }
 
-            //    });
-            //}
-           
+                });
+            }
+            LoadPdf(PdfLocalNsUrl);
         }
 
         public override void TouchesBegan(NSSet touches, UIEvent evt)
         {
             base.TouchesBegan(touches, evt);
+            Console.WriteLine("i got touched");
         }
 
         public class MyPdfView: PdfView
@@ -137,6 +133,7 @@ namespace Ramboell.iOS
                 base.TouchesBegan(touches, evt);
                 Console.WriteLine("Hello, I got touched");
             }
+            
         }
         private void InitPdfView(nfloat nwidth, nfloat nfloat)
         {

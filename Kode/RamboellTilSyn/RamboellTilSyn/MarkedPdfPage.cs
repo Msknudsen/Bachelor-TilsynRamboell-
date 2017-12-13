@@ -41,13 +41,14 @@ namespace Ramboell.iOS
             public int Size { get; set; }
             public DateTime TimeStamp { get; set; }
         }
+
         public override void Draw(PdfDisplayBox box, CoreGraphics.CGContext context)
         {
             // Draw original content
             base.Draw(box, context);
             var pdfDocument = this.Document;
             using (context)
-            {
+            {  
                 // Draw watermark underlay
                 UIGraphics.PushContext(context);
                 context.SaveState();
