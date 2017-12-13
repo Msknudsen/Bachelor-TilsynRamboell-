@@ -2,13 +2,42 @@
 Dette kapitel vil indeholde en beskrivelese af de manuelle test cases som er blevet kørt i forbindelse med testen af applikationen til Rambøll Tilsyn.
 
 \section{Login tests}
-Dette afsnit beskriver alle test cases for 'Login' view.
+Denne sektion indeholder de manuelle tests for 'Login' viewet. \\ \\
+\textbf{Pass/fail criteria:} \\
+Alle steps skal verificeres på Rambøll Tilsyn applikationen:
+\begin{itemize}[-]
+	\item Verificer at bruger kan logge ind med korrekte brugeroplysninger.
+	\item Verificer at bruger ikke kan logge ind med forkert email.
+	\item Verificer at bruger ikke kan logge ind med forkert kodeord. \\
+\end{itemize}
 
-
-\section{Opret bruger tests}
+\section{Opret bruger test}
+Denne sektion indeholder de manuelle tests for 'Opret bruger' viewet. \\ \\
+\textbf{Pass/fail criteria:} \\
+Alle steps skal verificeres på Rambøll Tilsyn applikationen:
+\begin{itemize}[-]
+	\item Verificer at en bruger kan oprettes hvis alle felter er udfyldte korrekt.
+	\item Verificer at en bruger ikke kan oprettes hvis email feltet mangler at blive udfyldt.
+	\item Verificer at en bruger ikke kan oprettes hvis kodeord feltet mangler at blive udfyldt.
+	\item Verificer at en bruger ikke kan oprettes hvis fornavn feltet mangler at blive udfyldt.
+	\item Verificer at en bruger ikke kan oprettes hvis efternavn feltetmangler at blive udfyldt.
+	\item Verificer at en bruger ikke kan oprettes hvis telefonnummer feltet mangler at blive udfyldt. \\
+\end{itemize}
 
 \section{Opret projekt tests}
+Denne sektion indeholder de manuelle tests for 'Opret projekt' viewet. \\ \\
+\textbf{Pass/fail criteria:} \\
+Alle steps skal verificeres på Rambøll Tilsyn applikationen:
+\begin{itemize}[-]
+	\item Verificer at et projekt kan oprettes hvis alle felter er udfyldte korrekt.
+	\item Verificer at et projekt ikke kan oprettes hvis projektnavn feltet mangler at blive udfyldt.
+	\item Verificer at et projekt ikke kan oprettes hvis projektnummer feltet mangler at blive udfyldt.
+	\item Verificer at et projekt ikke kan oprettes hvis projektadresse feltet mangler at blive udfyldt.
+	\item Verificer at et projekt ikke kan oprettes hvis kundenavn feltetmangler at blive udfyldt. \\
+\end{itemize}
 
 \section{Registrering på PDF tests}
+\input{../ModulIntegrationstest/Manuel/Registrering/Registrering}
 
 \section{Diverse tests}
+\input{../ModulIntegrationstest/Manuel/Diverse/Diverse}

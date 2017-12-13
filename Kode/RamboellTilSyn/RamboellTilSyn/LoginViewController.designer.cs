@@ -33,10 +33,12 @@ namespace Ramboell.iOS
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel UserNameLabel { get; set; }
 
-
-
         void ReleaseDesignerOutlets ()
         {
+            if (EmailTxt != null) {
+                EmailTxt.Dispose ();
+                EmailTxt = null;
+            }
 
             if (LoginBtn != null) {
                 LoginBtn.Dispose ();
@@ -57,12 +59,6 @@ namespace Ramboell.iOS
                 UserNameLabel.Dispose ();
                 UserNameLabel = null;
             }
-
-            if (EmailTxt != null) {
-                EmailTxt.Dispose ();
-                EmailTxt = null;
-            }
-
         }
     }
 }
