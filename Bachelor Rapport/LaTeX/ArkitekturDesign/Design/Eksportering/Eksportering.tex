@@ -13,13 +13,23 @@ På figur \ref{fig:EksporterSekvensDiagram} ses sekvens diagrammet for 'Export' 
 \clearpage
 
 \subsubsection{Grafisk brugergrænseflade}
-Efter at have eksporteret registreringen i en excel, vil den se ud som på figur \ref{fig:Excel}.
+Efter at have eksporteret registreringen til en XML fil, vil den se ud som på figur \ref{fig:Excel}.
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=12cm, width=17cm]{../ArkitekturDesign/Design/Eksportering/Excel}
+	\includegraphics[height=10cm, width=17cm]{../ArkitekturDesign/Design/Eksportering/Excel}
 	\caption{Export viewet som det er implementeret i Rambøll Tilsyn.}
 	\label{fig:Excel}
 \end{figure}
+Tabellen består af linjer hvor at hvert objekt har følgende information: \\
+\textbf{Symbol:} Er navnet på den type symbol som er oprettet. \\
+\textbf{ID:} Er objektets id. Dette gives ud fra hvilken type symbol det er. \\
+\textbf{Status:} Viser statussen på objektet. Status følger typen af objekt. \\
+\textbf{Dato:} Viser datoen for hvornår objektet er oprettet. \\
+\textbf{Side:} Viser hvilken side i PDF tegningen objektet er oprettet på. \\
+\textbf{Plads:} Viser hvor på den tilhørende side at objektet er placeret. \\
+\textbf{Kommentar:} Giver mulighed for at uddybe eventuelle kommentar til objektet. \\
+\textbf{Objekt id reference:} Hvis et objekt bliver ændret fra f.eks. et minus til et flueben, vil der blive oprettet et nyt fluebens objekt, som så får reference id til det minus, som er ændret til. \\
+\textbf{Udført:} Viser om objektet er blevet udført. F.eks. at alle minus og cirkel objekter er blevet ænderet et flueben. \\
 
 \subsubsection{Implementering}
 
