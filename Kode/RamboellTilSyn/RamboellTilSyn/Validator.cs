@@ -11,6 +11,9 @@ namespace Ramboell.iOS
 
         static readonly System.Text.RegularExpressions.Regex ValidEmailRegex = CreateValidEmailRegex();
         static readonly System.Text.RegularExpressions.Regex ValidNameRegex = CreateValidNameRegex();
+        static readonly System.Text.RegularExpressions.Regex ValidPasswordRegex = CreateValidPasswordRegex();
+
+  
 
         /// <summary>
         /// Taken from http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
@@ -26,21 +29,29 @@ namespace Ramboell.iOS
         }
         private static Regex CreateValidNameRegex()
         {
-            string validPattern = "[a-zA-Z]";
+            string validPattern = @"^[A-Z][a-zA-Z .,'-]*${2,30}";
 
-            return new Regex(validPattern, RegexOptions.IgnoreCase);
+            return new Regex(validPattern, RegexOptions.None);
+        }
+        private static Regex CreateValidPasswordRegex()
+        {
+            //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+            string validPasswordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
+            return new Regex(validPasswordPattern, RegexOptions.None);
+        }
+        public static bool EmailIsValid(string emailAddress)
+        {
+            return ValidEmailRegex.IsMatch(emailAddress);
         }
 
-        internal static bool EmailIsValid(string emailAddress)
+        public static bool NameIsValid(string emailAddress)
         {
-            bool isValid = ValidEmailRegex.IsMatch(emailAddress);
-
-            return isValid;
+            return ValidNameRegex.IsMatch(emailAddress);
         }
-        internal static bool NameIsValid(string emailAddress)
+
+        public static bool PasswordIsValid(string password)
         {
-            bool isValid = ValidNameRegex.IsMatch(emailAddress);
-            return isValid;
+            return ValidPasswordRegex.IsMatch(password);
         }
     }
 }
