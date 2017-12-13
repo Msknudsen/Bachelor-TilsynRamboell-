@@ -20,9 +20,7 @@ Firebase Realtime Database bliver i forbindelse med applikationen vil blive brug
 På figur \ref{fig:FirebaseDBPNG} vises hvordan applikationens database er struktureret som et træ, med en root node\cite{rootNode} der hedder ramboellfcm, som derfra bliver opdelt i 3 noder:
 \textbf{pdf}, \textbf{project} og \textbf{user}.\\
 
-\textbf{Pdf} node indeholder en liste af Guid \cite{GUID}, fungerende som keys i pdf node, der bruges til at tilgå de specifikke pdf noder.  
-
-!!! Under hver specifik pdf node er der 4 key-value-pair\cite{KVP}, ud over fungerer disse Guid som en referrence til Firebase Storage, når det bliver nødvendigt at hente filen ned lokalt.  !!!!!!!!
+\textbf{Pdf} node indeholder en liste af Guid \cite{GUID}, som er keys til en pdf node, disse bruges til at tilgå de specifikke pdf noder. Under hver specifik pdf node er der 4 key-value-pair\cite{KVP}. Disse keys fungerer, også som en reference til Firebase Storage, når det bliver nødvendigt at hente PDF filen ned lokalt.
 
 Dette gør at man kan se hvilket projekter og pdf'er der findes i databasen, og vente med at downloade PDF'en indtil når man har brug for det. På den måde kan man få en oversigt over hvilket projekter og pdf'er der er, og kun hente de data man har behov for. 
 \begin{itemize}

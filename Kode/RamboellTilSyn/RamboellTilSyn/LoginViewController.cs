@@ -20,13 +20,14 @@ namespace Ramboell.iOS
             listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) => {
                 if (user != null)
                 {
-                    Console.WriteLine("User Currently Logged In: {0}", user.Email);
+                    var signedOut = Auth.DefaultInstance.SignOut(out var error);
+                    //Console.WriteLine("User Currently Logged In: {0}", user.Email);
 
-                    if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
-                    {
-                        NavigationController.RemoveFromParentViewController();
-                        NavigationController.PushViewController(projectList, true);
-                    }
+                    //if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
+                    //{
+                    //    NavigationController.RemoveFromParentViewController();
+                    //    NavigationController.PushViewController(projectList, true);
+                    //}
                 }
                 else
                 {
@@ -57,7 +58,16 @@ namespace Ramboell.iOS
 
         private void LoginBtn_TouchUpInside(object sender, EventArgs e)
         {
-            Auth.DefaultInstance.SignIn("pass@123456.dk", "123456", (user, error) => {
+            if (!Validator.EmailIsValid(EmailTxt.Text) || !Validator.EmailIsValid(EmailTxt.Text))
+            {
+                UIAlertView alert = new UIAlertView()
+                {
+                    Title = "´Invalid email or password"
+                };
+                alert.AddButton("OK");
+                alert.Show();
+            }else
+            Auth.DefaultInstance.SignIn(EmailTxt.Text, EmailTxt.Text, (user, error) => {
                 if (error != null)
                 {
                     AuthErrorCode errorCode;
