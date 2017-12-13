@@ -40,13 +40,15 @@ De første to er frem og tilbage, hvor brugeren kan bladre mellem de forskellige
 Sidste knap er en liste knap. Her har brugeren mulighed for at afslutte sin registrering.
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=18cm, width=15cm]{Design/Applikation/RegistrePDF/PDF}
+	\includegraphics[height=12cm, width=10cm]{Design/Applikation/RegistrePDF/PDF}
 	\caption{Registrer på PDF viewet som det er implementeret i Rambøll Tilsyn.}
 	\label{fig:RegistrerObjekterView}
 \end{figure}
 
 \subsubsection{Implementering}
+Når der navigeres ind i 'Registrering på PDF' viewet, loades PDF'en fra Firebase og gemmes lokalt. Den loades herefter ind i viewet. Efterfølgende oprettes et UIView hvor at symbol knapperne oprettes i. Når begge dele er oprettet og loadet, hentes information fra den JSON filen der blev hentet i 'Project List' viewet, og tegner så de objekter som er gemt i PDF'en. \\
+Når disse er tegnet vises PDF'en for bruger. \\
+For en mere deltajeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations afsnit \ref{Design-sec:PDF}.
 
-\subsubsection{Test}
 
 \clearpage

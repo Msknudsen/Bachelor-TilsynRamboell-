@@ -26,11 +26,11 @@ I ProjectListViewet er der en oversigt over hvilke projekter der ligger i databa
 \subsubsection{Implementering}
 I dette afsnit vil der blive beskrevet funktionaliteten for de vigtigste funktioner i koden tilhørende 'Project List' viewet.
 
-På figur \ref{fig:ProjectListViewController}, ses konstrukteren til ProjectViewListController.
+På figur \ref{fig:ProjectListViewController}, ses funktionen for ProjectListViewController().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=3cm, width=17cm]{../ArkitekturDesign/Design/ProjectList/ProjectListViewController}
-	\caption{}
+	\caption{Kode snip - ProjectListViewController() fra ProjectListViewController.cs}
 	\label{fig:ProjectListViewController}
 \end{figure}
 Det første er at der hentes en reference node med navn PDF fra Firebase, og fortæller at denne node skal holdes synkroniseret, i tilfælde af data ændring. \\
@@ -40,7 +40,7 @@ På figur \ref{fig:JSONFile}, ses funktionen for InstaniateJsonFile().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=5cm, width=15cm]{../ArkitekturDesign/Design/ProjectList/JSONFile}
-	\caption{}
+	\caption{Kode snip - InstaniateJsonFile() fra ProjectListViewController.cs}
 	\label{fig:JSONFile}
 \end{figure}
 Der oprettes en JSON fil, hvis der ikke findes en i forvejen. Denne gemmes lokalt.\\
@@ -52,7 +52,7 @@ På figur \ref{fig:SyncWithDB}, ses funktionen for SyncWithFirebaseDatabase().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/ProjectList/SyncWithDB}
-	\caption{}
+	\caption{Kode snip - SyncWithFirebaseDatabase() fra ProjectListViewController.cs}
 	\label{fig:SyncWithDB}
 \end{figure}
 Noden som er oprettet i konstrukteren, som ses på figur \ref{fig:ProjectListViewController}, den vedhæftes til et event, som kaldes hver gang noden ændres. \\
@@ -61,17 +61,19 @@ Når eventet kaldes, læses data fra eventet og gemmer dette i JSON filen. Efter
 På figur \ref{fig:ViewDidLoad}, ses funktionen for ViewDidLoad().
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=3cm, width=10cm]{../ArkitekturDesign/Design/ProjectList/ViewDidLoad}
-	\caption{}
+	\includegraphics[height=5cm, width=10cm]{../ArkitekturDesign/Design/ProjectList/ViewDidLoad}
+	\caption{Kode snip - ViewDidLoad() fra ProjectListViewController.cs}
 	\label{fig:ViewDidLoad}
 \end{figure}
 Her sættes ListViewets source til at være TableSource.
 
-På figur \ref{fig:TableSource}, ses konstrukteren til TableSource.
+\clearpage
+
+På figur \ref{fig:TableSource}, ses funktionen for TableSource().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=2cm, width=15cm]{../ArkitekturDesign/Design/ProjectList/TableSource}
-	\caption{}
+	\caption{Kode snip - TableSource() fra TableSource.cs}
 	\label{fig:TableSource}
 \end{figure}
 Der initialiseres hvilke værdier der skal fremvises og der er givet en reference til ProjctListViewControlleren.
@@ -80,7 +82,7 @@ På figur \ref{fig:RowSelection}, ses funktionen for RowSelected().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=8cm, width=17cm]{../ArkitekturDesign/Design/ProjectList/RowSelection}
-	\caption{}
+	\caption{Kode snip - RowSelected() fra TableSource.cs}
 	\label{fig:RowSelection}
 \end{figure}
 Der er en switch case, case 0 giver bruger mulighed for at navigere til 'Opret projekt' siden. Case 1 navigere brugeren til 'Opret bruger' siden. \\
