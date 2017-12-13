@@ -14,7 +14,7 @@ namespace Ramboell.iOS
 
         string CellIdentifier = "TableCell";
 
-        public ProjectListViewController ProjectListViewController { get; }
+        private ProjectListViewController ProjectListViewController { get; }
 
  
         public TableSource(List<RegistrationDto> projectInfos, ProjectListViewController projectListViewController)

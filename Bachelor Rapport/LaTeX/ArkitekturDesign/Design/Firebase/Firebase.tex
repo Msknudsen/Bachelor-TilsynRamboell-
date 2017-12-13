@@ -34,18 +34,32 @@ På figur \ref{fig:FirebaseDBPNG} vises hvordan applikationens database er struk
 	En timestamp der fortæller hvornår json-filen, som meta-filen referrer til sidst er blevet ændret. Dette bruger applikationen til at sammenligne den lokale version af json-fil med den der ligger i Storage.   
 \end{itemize}
 
-	\textbf{Project} node har den samme structur som \textbf{pdf} node af samme grund. Der er istedet for 6 key-value-pair
+	\textbf{Project} node har den samme structur som \textbf{pdf} node af samme grund. Der er istedet for 6 key-value-pair. 
 	\begin{itemize}
 		\item  \textbf{address}\\
-		\\
+		Værdien gemt i address vil være et vej navn, der fortælller hvor projektet befinder sig.\\
 		\item  \textbf{buildOwner}\\
-		\\
+		For diverse projekter vil der være bygge herrer, her vil der være gemt kontakt informationer til byggeherren, som navn, email og telefonnummer. \\ 
 		\item  \textbf{customer}\\
-		\\
+		Denne key indeholder kontakt informationerne for hvem der udføres tilsynsrapport over for.\\
 		\item  \textbf{name}\\
-		\\
+		Et menneskelig læsligt navn til projektet, for at gøre det overskulig for brugerne.\\
 		\item  \textbf{number}\\
-		\\
+		Rambøll bruger også et projekt nummer til deres projekter, og dette sætter de selv som brugere, og derfor gemmes denne information her\\
 		\item  \textbf{pdf}\\
-		\\
+		En Referrence til en pdf node, samt en referrence til Firebase Storage så applikationen kan  downloade PDF'en når den først har brug for det.\\
 	\end{itemize}
+
+\textbf{User} node indeholder de brugerdefineret data der tilhører brugerne af applikationen. Det id der bliver brugt som key til \textbf{user} stammer fra Firebase Authentication, og er en reference til User uid som ses på figur \ref{fig:FirebaseAuthPNG}. 
+\begin{itemize}
+	\item \textbf{alias} \\
+	Her gemmes telefon nummeret til brugeren. \\
+	\item \textbf{email} \\
+	Brugerens email vil blive gemt i både Firebase- Authentication og Storage, for at gøre det let tilgænglig at tilgå det information.\\
+	\item \textbf{firstName} \\
+	Fornavnet på brugeren\\
+	\item \textbf{firstName} \\
+	Efternavnet på brugeren\\
+
+\end{itemize}
+

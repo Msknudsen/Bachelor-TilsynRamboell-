@@ -44,7 +44,6 @@ namespace Ramboell.iOS
 
         private void SyncWithFirebaseDatabase()
         {
-            // var s = _node.GetQueryOrderedByKey();
             handleReference = _node.ObserveEvent(DataEventType.Value, (snapshot) =>
             {
 
