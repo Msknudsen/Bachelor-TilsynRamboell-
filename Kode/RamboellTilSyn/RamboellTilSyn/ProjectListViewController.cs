@@ -87,13 +87,5 @@ namespace Ramboell.iOS
                 AllowsMultipleSelection = false
             };
         }
-        //public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
-        //{
-        //    Console.WriteLine($"Row Selected: {0}", tableItems[indexPath.Row]);
-
-        //    UIAlertController okAlertController = UIAlertController.Create("Row Selected", tableItems[indexPath.Row], UIAlertControllerStyle.Alert);
-        //    okAlertController.AddAction(UIAlertAction.Create("OK", UIAlertActionStyle.Default, null));
-        //    tableView.DeselectRow(indexPath, true);
-        //}
     }
 }

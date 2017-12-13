@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using ARKit;
 
 namespace Ramboell.iOS
 {
@@ -36,12 +37,13 @@ namespace Ramboell.iOS
         private static Regex CreateValidPasswordRegex()
         {
             //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-            string validPasswordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$";
+            string validPasswordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$";
             return new Regex(validPasswordPattern, RegexOptions.None);
         }
         public static bool EmailIsValid(string emailAddress)
         {
-            return ValidEmailRegex.IsMatch(emailAddress);
+            var test =  ValidEmailRegex.IsMatch(emailAddress);
+            return test;
         }
 
         public static bool NameIsValid(string emailAddress)
@@ -51,7 +53,8 @@ namespace Ramboell.iOS
 
         public static bool PasswordIsValid(string password)
         {
-            return ValidPasswordRegex.IsMatch(password);
+            var test =  ValidPasswordRegex.IsMatch(password);
+            return test;
         }
     }
 }

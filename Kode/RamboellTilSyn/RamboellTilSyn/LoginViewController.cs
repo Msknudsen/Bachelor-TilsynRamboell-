@@ -17,17 +17,17 @@ namespace Ramboell.iOS
 
         public void CheckIfUserSignedIn()
         {
-            listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) => {
+            listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) =>
+            {
                 if (user != null)
                 {
-                    var signedOut = Auth.DefaultInstance.SignOut(out var error);
-                    //Console.WriteLine("User Currently Logged In: {0}", user.Email);
+                    Console.WriteLine("User Currently Logged In: {0}", user.Email);
 
-                    //if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
-                    //{
-                    //    NavigationController.RemoveFromParentViewController();
-                    //    NavigationController.PushViewController(projectList, true);
-                    //}
+                    if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
+                    {
+                        NavigationController.RemoveFromParentViewController();
+                        NavigationController.PushViewController(projectList, true);
+                    }
                 }
                 else
                 {
@@ -42,10 +42,10 @@ namespace Ramboell.iOS
             LoginBtn.TouchUpInside += LoginBtn_TouchUpInside;
             //LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
 
-            EmailTxt.Placeholder = "Indtast Email";
+            LoginEmailTxt.Placeholder = "Indtast Email";
 
-            PasswordTxt.SecureTextEntry = true;
-            PasswordTxt.Placeholder = "Indtast kodeord";
+            LoginPasswordTxt.SecureTextEntry = true;
+            LoginPasswordTxt.Placeholder = "Indtast kodeord";
 
             CheckIfUserSignedIn();
         }
@@ -58,16 +58,18 @@ namespace Ramboell.iOS
 
         private void LoginBtn_TouchUpInside(object sender, EventArgs e)
         {
-            if (!Validator.EmailIsValid(EmailTxt.Text) || !Validator.EmailIsValid(EmailTxt.Text))
+            if (!Validator.EmailIsValid(LoginEmailTxt.Text) || !Validator.PasswordIsValid(LoginPasswordTxt.Text))
             {
                 UIAlertView alert = new UIAlertView()
                 {
-                    Title = "´Invalid email or password"
+                    Title = "Invalid email or password"
                 };
                 alert.AddButton("OK");
                 alert.Show();
-            }else
-            Auth.DefaultInstance.SignIn(EmailTxt.Text, EmailTxt.Text, (user, error) => {
+            }
+            else
+                Auth.DefaultInstance.SignIn(LoginEmailTxt.Text, LoginPasswordTxt.Text, (user, error) =>
+            {
                 if (error != null)
                 {
                     AuthErrorCode errorCode;
@@ -99,7 +101,7 @@ namespace Ramboell.iOS
                     }
                 }
             });
-            
+
         }
 
         public void SignOut()
