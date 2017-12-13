@@ -17,8 +17,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilsyn" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX">
-                    <rect key="frame" x="26" y="206" width="440" height="43"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tilsyn" textAlignment="center" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="kId-c2-rCX" misplaced="YES">
+                    <rect key="frame" x="68" y="203" width="343" height="43"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -32,12 +32,11 @@
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint id="571" firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" constant="6"/>
-                <constraint id="837" firstItem="8ie-xW-0ye" firstAttribute="centerY" secondItem="kId-c2-rCX" secondAttribute="centerY" constant="222"/>
-                <constraint id="970" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="14"/>
-                <constraint id="1821" firstItem="153" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
-                <constraint id="1822" firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="153" secondAttribute="centerY" constant="97"/>
-                <constraint id="1823" firstItem="kId-c2-rCX" firstAttribute="trailing" secondItem="153" secondAttribute="trailing" constant="56"/>
+                <constraint id="2413" firstItem="153" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX"/>
+                <constraint id="2415" firstItem="153" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="74"/>
+                <constraint id="2419" firstItem="kId-c2-rCX" firstAttribute="centerY" secondItem="153" secondAttribute="centerY" constant="94"/>
+                <constraint id="2420" firstItem="kId-c2-rCX" firstAttribute="centerX" secondItem="153" secondAttribute="centerX"/>
+                <constraint id="2421" firstItem="iN0-l3-epB" firstAttribute="trailing" secondItem="kId-c2-rCX" secondAttribute="trailing" constant="69"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
