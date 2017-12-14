@@ -1,7 +1,7 @@
 \section{Firebase}
 I dette afsnit vil der blive gennemgået design for Firebase. For den fulde dokumentation af design og implentering henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:FirebaseDesign} og de tilhørende afsnit. \\
 
-Håndtering af brugere benyttes Firebase Auth\cite{FirebaseAuth}. Opbygningen af denne kan ses på figur \ref{fig:FirebaseAuthPNG}.
+Håndtering af brugere benyttes Firebase Auth \cite{FirebaseAuth}. Opbygningen af denne kan ses på figur \ref{fig:FirebaseAuthPNG}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -19,7 +19,7 @@ Her er også gemt et hashed password, men dette bliver ikke vist pga sikkerhed. 
 Figur \ref{fig:FirebaseDB} ses database strukturen i Firebase. 
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=10cm, width=15cm]{Design/Firebase/FirebaseDB}
+	\includegraphics[height=12cm, width=10cm]{Design/Firebase/FirebaseDB}
 	\caption{Oversigt strukturen i Firebase databasen}
 	\label{fig:FirebaseDB}
 \end{figure}
@@ -27,6 +27,6 @@ Databasen består af tre noder: \textbf{pdf}, \textbf{projekt} og \textbf{user}.
 \textbf{pdf} noden indeholder alle PDF tegninger i systemet, samt en reference til informationen omkring oprettede objekter på disse PDF filer. \\
 Hver ny PDF som bliver tilføjet i systemet, vil blive oprettet som en undernode i \textbf{pdf} noden. \\
 \textbf{projekt} noden indeholder noder for hvert projekt som er oprettet. Disse undernoder indeholder alt det information som tilhører projekterne. \\
-\textbf{user} noden indeholder information for brugere. Hver bruger oprettes som en ny undernode, undernodens id bliver brugt som en key til Firebase Auth tabellen.
+\textbf{user} noden indeholder information for brugere. Hver bruger oprettes som en ny undernode.
 
 \clearpage
