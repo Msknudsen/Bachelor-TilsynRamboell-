@@ -111,7 +111,7 @@
     <Compile Include="Dto\ProjectDto.cs" />
     <Compile Include="MarkedPdfPage.cs" />
     <Compile Include="Dto\RegistrationDto.cs" />
-    <Compile Include="panelBtnFactory.cs" />
+    <Compile Include="PanelBtnFactory.cs" />
     <Compile Include="TableSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
