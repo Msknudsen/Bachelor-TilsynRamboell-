@@ -9,12 +9,9 @@ namespace Ramboell.iOS
     /// <returns></returns>
     public static class Validator
     {
-
         static readonly System.Text.RegularExpressions.Regex ValidEmailRegex = CreateValidEmailRegex();
         static readonly System.Text.RegularExpressions.Regex ValidNameRegex = CreateValidNameRegex();
         static readonly System.Text.RegularExpressions.Regex ValidPasswordRegex = CreateValidPasswordRegex();
-
-  
 
         /// <summary>
         /// Taken from http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
@@ -37,7 +34,9 @@ namespace Ramboell.iOS
         private static Regex CreateValidPasswordRegex()
         {
             //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-            string validPasswordPattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$";
+            //Rule: 1 Upper char, 1 number min 6 characters, optional symbols
+            string validPasswordPattern = @"^(?=.*[A-Z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{6,}$";
+
             return new Regex(validPasswordPattern, RegexOptions.None);
         }
         public static bool EmailIsValid(string emailAddress)
