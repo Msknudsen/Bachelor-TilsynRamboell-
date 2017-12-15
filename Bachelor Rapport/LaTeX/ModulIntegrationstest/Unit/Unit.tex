@@ -13,10 +13,12 @@ Validator-klassen er en statisk klasse, som har ansvar for at håndtere valideri
 	\label{fig:ValidatorUnit}
 \end{figure}
 
-På Figur \ref{fig:ValidatorUnitEmail} ses følgende test på email der bliver udført. Her ses hvilke format af email vi tillader for at sikre klassen fungerer som ønsket.
-Der bliver udført både negativ og positiv test på emails, for at tjekke at både de ønskede og uønskede værdier bliver godkendt. Funktionen EmailIsValid tjekker at Email opfylder bland andet disse krav:\\
+\clearpage
+
+På Figur \ref{fig:ValidatorUnitEmail} ses følgende test på e-mail der bliver udført. Her ses hvilket format af e-mail vi tillader for at sikre klassen fungerer som ønsket.
+Der bliver udført både negativ og positiv test på e-mails, for at tjekke at både de ønskede og uønskede værdier bliver godkendt. Funktionen EmailIsValid tjekker at E-mail opfylder bland andet disse krav:\\
 \begin{itemize}
-	\item Email må ikke have mellemskarakter
+	\item E-mail må ikke have mellemskarakter
 	\item Domæne navnet må ikke være tomt
 	\item Top level domain navnet\cite{TLD} må ikke være tomt
 	\item Lokal navn må ikke være tomt
@@ -29,10 +31,13 @@ Der bliver udført både negativ og positiv test på emails, for at tjekke at b�
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{Unit/ValidatorUnitEmail.PNG}
-	\caption{Her ses et screenshot af test sessionen på ValidatorUnit emails}
+	\caption{Her ses et screenshot af test sessionen på ValidatorUnit e-mail}
 	\label{fig:ValidatorUnitEmail}
 \end{figure}
-På Figur \ref{fig:ValidatorUnitPassword} ses både positive og negative tests på funktionen PasswordIsValid. Der bliver givet både password som funktion vil godkende og ikke godkende, også bliver der tjekket op mod at der gives det forventet resultat. Funktionen PasswordIsValid tjekker på at et password opfylder disse krav: \\
+
+\clearpage
+
+På Figur \ref{fig:ValidatorUnitPassword} ses både positive og negative tests på funktionen PasswordIsValid. Der bliver givet et password som funktion vil godkende og et password som ikke bliver godkendt. Der bliver også tjekket op mod at der bliver givet det forventet resultat. Funktionen PasswordIsValid tjekker at et password opfylder disse krav: \\
 \begin{itemize}
 	\item Minimum 6 karakter lang
 	\item Minimum et stort bogstav
