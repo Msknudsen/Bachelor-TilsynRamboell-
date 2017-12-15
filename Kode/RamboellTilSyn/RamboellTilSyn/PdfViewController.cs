@@ -6,6 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 using CoreGraphics;
 using Firebase.Storage;
 using Foundation;
+using Newtonsoft.Json;
 using PdfKit;
 using UIKit;
 //https://components.xamarin.com/gettingstarted/firebaseiosstorage#download-files
@@ -52,11 +53,11 @@ namespace Ramboell.iOS
             var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             View.UserInteractionEnabled = true;
             PDFView.UserInteractionEnabled = true;
-            UITapGestureRecognizer tapGesture = new UITapGestureRecognizer(TapThat);
-            UITapGestureRecognizer tapGesture2 = new UITapGestureRecognizer(TapThat2);
+
+            UITapGestureRecognizer tapGesture = new UITapGestureRecognizer(TapOnPdf);
             PDFView.AddGestureRecognizer(tapGesture);
-            View.AddGestureRecognizer(tapGesture2);
             //file node from firebase
+
             var rootNode = Storage.DefaultInstance.GetRootReference();
             var pdfNode = rootNode.GetChild($"{PDFInfo.Guid.ToString()}.pdf");
             var jsonNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
@@ -128,17 +129,33 @@ namespace Ramboell.iOS
             }
             LoadPdf(PdfLocalNsUrl);
         }
-
-        private void TapThat2(UITapGestureRecognizer obj)
+        private void TapOnPdf(UITapGestureRecognizer obj)
         {
-            var arg = obj.View.Bounds;
-            Console.WriteLine("TapThat2");
-        }
-
-        private void TapThat(UITapGestureRecognizer obj)
-        {
-            var arg1 = obj.LocationInView(obj.View);
-            Console.WriteLine($"{arg1.X}, {arg1.Y}");
+            var position = obj.LocationInView(obj.View);
+            Console.WriteLine($"{position.X}, {position.Y}");
+            //check which shape we are working with
+            if (Shape != null)
+            {
+                
+                if (PDFView.CurrentPage is MarkedPdfPage watermarkPage)
+                {
+                    var pagePageNumber = watermarkPage.Page.PageNumber;
+                    //watermarkPage.DrawObject(Shape,pagePageNumber,position);
+                    var jsonList = File.ReadAllText(MetalocalNsUrl.Path);
+                    var pdfObjects = JsonConvert.DeserializeObject<List<PdfObject>>(jsonList);
+                    //Add comment when time is right
+                    pdfObjects.Add(new PdfObject
+                    {
+                        XCord = (int)position.X,
+                        YCord = (int)position.Y,
+                        PageNo = (int) pagePageNumber,
+                        Shape = (Shape) Shape,
+                        TimeStamp = new DateTime().ToUniversalTime().ToString("dd-MM-yyyy HH:mm:ss")
+                    });
+                    File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
+                }
+                PDFView.SetNeedsDisplay();
+            }
         }
 
      
@@ -208,25 +225,20 @@ namespace Ramboell.iOS
                 Console.WriteLine("addCircleBtn pressed");
                 SelectShape(iOS.Shape.Circle, addCircleBtn);
                 
-                //var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
-                //var pagePageNumber = watermarkPage.Page.PageNumber;
-                //watermarkPage?.DrawCircle();
-                //PDFView.SetNeedsDisplay();
+               
             };
 
             var addCheckMarkBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddCheckMark);
             addCheckMarkBtn.Frame = new CGRect(pLocal.X + 300, pLocal.Y, 70, pH);
             addCheckMarkBtn.TouchUpInside += delegate
             {
-                Console.WriteLine(" addCheckMarkBtn pressed");
-                SelectShape(iOS.Shape.CheckMark, addCheckMarkBtn);
-
+                SelectShape(iOS.Shape.Minus, addCheckMarkBtn);
             };
             var addMinusBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddMinus);
             addMinusBtn.Frame = new CGRect(pLocal.X + 400, pLocal.Y, 70, pH);
             addMinusBtn.TouchUpInside += delegate
             {
-                SelectShape(iOS.Shape.Minus, addCheckMarkBtn);
+                SelectShape(iOS.Shape.Minus, addMinusBtn);
             };
             var showListBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.ShowList);
             showListBtn.Frame = new CGRect(pLocal.X + 500, pLocal.Y, 70, pH);
@@ -238,38 +250,19 @@ namespace Ramboell.iOS
 
             return panelView;
         }
-
         private void SelectShape(Shape shape, UIButton btn)
         {
-            if (ShapeIsSelected == false)
+
+            if (preSelectedbtn != null)
             {
-                if (preSelectedbtn != null) preSelectedbtn.Selected = false;
-                Shape = shape;
-                ShapeIsSelected = true;
-                btn.Selected = true;
-                preSelectedbtn = btn;
+                Shape = null;
+                preSelectedbtn.Selected = false;
+                if (Equals(preSelectedbtn, btn))
+                    return;
             }
-            else
-            {
-                if (Shape == null)
-                {
-                    Shape = shape;
-                }
-                else
-                {
-                    if (Shape == shape)
-                    {
-                        Shape = null;
-                        ShapeIsSelected = false;
-                        btn.Selected = false;
-                        preSelectedbtn = null;
-                    }
-                    else
-                    {
-                        Shape = shape;
-                    }
-                }
-            }
+            Shape = shape;
+            btn.Selected = true;
+            preSelectedbtn = btn;
         }
 
         private void LoadPdfView(NSUrl url)

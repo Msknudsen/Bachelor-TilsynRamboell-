@@ -11,7 +11,8 @@ namespace Ramboell.iOS
         public List<RegistrationDto> ProjectInfos { get; }
     
         //string[] TableItems;
-
+        private const int CreateProejct = 0;
+        private const int CreateUser = 1;
         string CellIdentifier = "TableCell";
 
         private ProjectListViewController ProjectListViewController { get; }
@@ -45,7 +46,7 @@ namespace Ramboell.iOS
         {
                 switch (indexPath.Row)
                 {
-                    case 0:
+                    case CreateProejct:
                         if (ProjectListViewController.Storyboard.InstantiateViewController("CreateProjectViewController") is CreateProjectViewController createProjectVC)
                         {
 
@@ -53,10 +54,9 @@ namespace Ramboell.iOS
                         }
                         break;
 
-                    case 1:
+                    case CreateUser:
                         if (ProjectListViewController.Storyboard.InstantiateViewController("CreateUserViewController") is CreateUserViewController createUserVC)
                         {
-
                             ProjectListViewController.NavigationController.PushViewController(createUserVC, true);
                         }
                         break;

@@ -16,9 +16,9 @@ namespace Ramboell.iOS
         protected MarkedPdfPage(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
-            objects = new List<Pdfobject>
+            objects = new List<PdfObject>
             {
-                new Pdfobject()
+                new PdfObject()
                 {
                     XCord = 250,
                     YCord = 200,
@@ -28,19 +28,7 @@ namespace Ramboell.iOS
             };
         }
         #endregion
-        List<Pdfobject> objects;
-
-        public class Pdfobject
-        {
-            public int PageNo { get; set; }
-            public int XCord { get; set; }
-            public int YCord { get; set; }
-            public Shape Shape { get; set; }
-            public String Comment { get; set; }
-            public Byte[] BlobBytes { get; set; }
-            public int Size { get; set; }
-            public DateTime TimeStamp { get; set; }
-        }
+        List<PdfObject> objects;
 
         public override void Draw(PdfDisplayBox box, CoreGraphics.CGContext context)
         {
@@ -78,7 +66,7 @@ namespace Ramboell.iOS
 
         public void DrawCircle()
         {
-            objects.Add(new Pdfobject
+            objects.Add(new PdfObject
             {
                 PageNo = 1,
                 Shape = Shape.Circle,
@@ -169,6 +157,10 @@ namespace Ramboell.iOS
                 g.RestoreState();
                 // Finally, we draw the page and rest
             }
+        }
+
+        public void DrawObject(Shape shape)
+        {
         }
     }
 

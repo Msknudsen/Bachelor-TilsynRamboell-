@@ -48,5 +48,44 @@ namespace Ramboell.iOS
             }
             return btn; 
         }
+
+        internal static object GetButtonForType(BtnType param, EventHandler method)
+        {
+            var btn = UIButton.FromType(UIButtonType.Plain);
+            btn.BackgroundColor = UIColor.LightTextColor;
+
+            switch (param)
+            {
+                case BtnType.PrePage:
+                    btn.SetImage(UIImage.FromBundle("back"), UIControlState.Normal);
+                    break;
+                case BtnType.NxtPage:
+                    btn.SetImage(UIImage.FromBundle("forward"), UIControlState.Normal);
+                    break;
+                case BtnType.AddCircle:
+                    btn.SetImage(UIImage.FromBundle("circle"), UIControlState.Normal);
+                    break;
+                case BtnType.AddCheckMark:
+                    btn.SetImage(UIImage.FromBundle("checkmark"), UIControlState.Normal);
+                    break;
+                case BtnType.ShowList:
+                    btn.SetImage(UIImage.FromBundle("list"), UIControlState.Normal);
+                    break;
+                case BtnType.AddMinus:
+                    btn.SetImage(UIImage.FromBundle("minus"), UIControlState.Normal);
+                    break;
+            }
+            btn.TouchUpInside += method;
+            btn.TouchUpInside += Method;
+
+            return btn;
+        }
+
+        private static void Method(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
     }
+
+   
 }
