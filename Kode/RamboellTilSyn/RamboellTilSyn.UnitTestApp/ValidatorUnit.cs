@@ -1,10 +1,18 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace NUnit.Tests1
+using Foundation;
+using NUnit.Framework;
+using UIKit;
+
+namespace RamboellTilSyn.UnitTestApp
 {
     [TestFixture]
     public class ValidatorUnit
     {
+        [Test]
         [TestCase("liao@live.dk")]
         [TestCase("s@live.sccd")]
         [TestCase("2314@live.dk")]
@@ -12,7 +20,7 @@ namespace NUnit.Tests1
         [TestCase("li@oo.dk")]
         public void Email_Is_Valid(string s)
         {
-            Assert.IsTrue(Ramboell.iOS.Validator.EmailIsValid(s));
+            Assert.IsTrue(ClassLibrary.Validator.EmailIsValid(s));
         }
         [TestCase("s@live.s")]
         [TestCase("s@s.123")]
@@ -21,13 +29,13 @@ namespace NUnit.Tests1
         [TestCase("")]
         public void Email_Is_Not_Valid(string s)
         {
-            Assert.IsFalse(Ramboell.iOS.Validator.EmailIsValid(s));
+            Assert.IsFalse(ClassLibrary.Validator.EmailIsValid(s));
         }
         [TestCase("Ao")]
         [TestCase("Asdsads")]
         public void Name_Is_Valid(string s)
         {
-            Assert.IsTrue(Ramboell.iOS.Validator.NameIsValid(s));
+            Assert.IsTrue(ClassLibrary.Validator.NameIsValid(s));
         }
         [TestCase("o")]
         [TestCase("oo")]
@@ -40,14 +48,15 @@ namespace NUnit.Tests1
         [TestCase("")]
         public void Name_Is_Not_Valid(string s)
         {
-            Assert.IsFalse(Ramboell.iOS.Validator.NameIsValid(s));
+            Assert.IsFalse(ClassLibrary.Validator.NameIsValid(s));
         }
         [TestCase("Aa2345")]
         [TestCase("Abc123")]
         [TestCase("Aa#345")]
+        [TestCase("Aa#345dsavshw543I/T  VIYI")]
         public void Password_Is_Valid(string s)
         {
-            Assert.IsTrue(Ramboell.iOS.Validator.PasswordIsValid(s));
+            Assert.IsTrue(ClassLibrary.Validator.PasswordIsValid(s));
         }
         [TestCase("aa2345")]
         [TestCase("123456")]
@@ -58,10 +67,9 @@ namespace NUnit.Tests1
         [TestCase("RTYVFUGHBNJK")]
         [TestCase("DXFG")]
         [TestCase("¤%&fbf83bgc")]
-        [TestCase("Aa#345dsavshw543I/T  VIYI")]
         public void Password_Is_Not_Valid(string s)
         {
-            Assert.IsFalse(Ramboell.iOS.Validator.PasswordIsValid(s));
+            Assert.IsFalse(ClassLibrary.Validator.PasswordIsValid(s));
         }
     }
 }
