@@ -1,11 +1,11 @@
 \chapter{Design}
-Dette kapitel indeholder en beskrivelse af design valgene for Firebase databasen og applikationen, samt hvordan disse er implementeret. \\
+Dette kapitel indeholder en beskrivelse af designvalgene for Firebase databasen og applikationen, samt hvordan disse er implementeret. \\
 
 \section{Firebase database} \label{sec:FirebaseDesign}
 \input{Design/Firebase/Firebase}
 \section{Applikation} \label{sec:ApplikationDesign}
-Implementeringen af applikationen sker i Xamarin iOS, da der i analysen var blevet overset nogle begrænsninger i forhold til funktionaliteten når der skulle arbejdes med PDF'er i Xamarin Forms\cite{Forms}. \\ \\
-Til udvikling af applikationen er der brugt et MVC design \cite{MVC}, som vist herunder, på figur \ref{fig:MVC}
+Implementeringen af applikationen sker i Xamarin iOS, da der i analysen var blevet overset nogle begrænsninger i forhold til funktionaliteten, når der skulle arbejdes med PDF'er i Xamarin Forms\cite{Forms}. \\ \\
+Til udvikling af applikationen er der brugt et MVC design \cite{MVC}, som vist herunder, på Figur \ref{fig:MVC}
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=8cm, width=8cm]{../ArkitekturDesign/Design/MVC}
@@ -13,11 +13,11 @@ Til udvikling af applikationen er der brugt et MVC design \cite{MVC}, som vist h
 	\label{fig:MVC}
 \end{figure}
 
-Model-View-Controller er et design pattern til opbygning af user interfaces. Model er der alt
-data ligger. Det er så Controllerens opgave at manipulere det til Viewet. Viewet er det som
+Model-View-Controller er et designpattern til opbygning af user interfaces. \textbf{Model} er der alt
+data ligger. Det er \textbf{Controllerens} opgave at manipulere det til Viewet. \textbf{Viewet} er det som
 ses af brugeren og som der kan interageres med. Hvis brugeren interagerer med applikationen er
 det Controllerns opgave at få det ned i Modellen og få kaldt det nye view frem. \\
-Modellen i Rambøll Tilsyn, ligger i Firebase.
+Modellen i Rambøll Tilsyn ligger i Firebase.
 Der er brugt MVC design pattern til alle views i applikationen.
 
 \clearpage

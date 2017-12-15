@@ -1,9 +1,9 @@
 \subsection{Registrering på PDF}\label{sec:PDF}
-Dette afsnit indeholder en gennemgang af grafisk brugergrænseflade, design og implementering af 'Registrering på PDF' viewet i Rambøll Tilsyn.
+Dette afsnit indeholder en gennemgang af den grafisk brugergrænseflade, design og implementering af 'Registrering på PDF' viewet i Rambøll Tilsyn.
 
 \subsubsection{Design}
 Her under kan sekvensdiagrammerne for registrering på PDF. \\
-Det første sekvensdiagram, som ses på figur \ref{fig:LoadPDFSekvensDiagram}, hvordan PDF tegningen bliver loadet ind i applikationen.
+Det første sekvensdiagram, som ses på Figur \ref{fig:LoadPDFSekvensDiagram}, hvordan PDF-tegningen bliver loadet ind i applikationen.
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=12cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadPDFSekvensDiagram}
@@ -13,7 +13,7 @@ Det første sekvensdiagram, som ses på figur \ref{fig:LoadPDFSekvensDiagram}, h
 
 \clearpage
 
-Næste sekvensdiagram, som ses på figur \ref{fig:LoadJSONSekvensDiagram}, viser hvordan JSON filen bliver oprettet. Sekvensen med JSON sker direkte efter at PDF sekvensen er overstået.
+Næste sekvensdiagram, som ses på Figur \ref{fig:LoadJSONSekvensDiagram}, viser hvordan JSON-filen bliver oprettet. Sekvensen med JSON sker direkte efter at PDF sekvensen er overstået.
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=15cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadJSONSekvensDiagram}
@@ -23,7 +23,7 @@ Næste sekvensdiagram, som ses på figur \ref{fig:LoadJSONSekvensDiagram}, viser
 
 \clearpage
 
-Sidste sekvensdiagram viser hvordan systemet opføre sig, når brugeren interagere med applikationen i forbindelse med oprettelse af objekter på PDF tegningen. Denne sekvens sker i forlængelse af først Loading af PDF og Load JSON. Sekvensdiagrammet for dette kan ses på \ref{fig:RegistrerObjekterSekvensDiagram}.
+Sidste sekvensdiagram viser, hvordan systemet opfører sig, når brugeren interagerer med applikationen i forbindelse med oprettelse af objekter på PDF-tegningen. Denne sekvens sker i forlængelse af først Loading af PDF og Load JSON. Sekvensdiagrammet for dette kan ses på Figur \ref{fig:RegistrerObjekterSekvensDiagram}.
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=18cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/RegistrerObjekterSekvensDiagram}
@@ -34,10 +34,10 @@ Sidste sekvensdiagram viser hvordan systemet opføre sig, når brugeren interage
 \clearpage
 
 \subsubsection{Grafisk brugergrænseflade}
-RegistrerpåPDFViewet som ses på figur \ref{fig:RegistrerObjekterView} består af to views. Det første view viser den PDF som er valgt til projektet. \\
-Under ligger der en andet view som indeholder knapper som brugeren kan interagere med. Der er seks forskellige knapper: \\
-Brugeren har mulighed på de første to at enten hoppe en side frem eller en side tilbage. \\
-De næste tre knapper er symboler som brugeren kan tegne på PDF'en. \\
+RegistrerpåPDFViewet, som ses på Figur \ref{fig:RegistrerObjekterView} består af to views. Det første view viser den PDF, som er valgt til projektet. \\
+Under ligger der et andet view, der indeholder knapper som brugeren kan interagere med. Der er seks forskellige knapper: \\
+Brugeren har mulighed på de første to, at hoppe en side frem eller en side tilbage. \\
+De næste tre knapper er symboler, som brugeren kan tegne på PDF'en. \\
 Den sidste knap er en liste knap som giver brugeren mulighed for at afslutte sin registrering.
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -51,7 +51,7 @@ Den sidste knap er en liste knap som giver brugeren mulighed for at afslutte sin
 \subsubsection{Implementering}
 I dette afsnit vil der blive beskrevet funktionaliteten for de vigtigste funktioner i koden tilhørende 'Registrering på PDF' viewet.
 
-På figur \ref{fig:LoadPDF}, ses funktionen for LoadPDF().
+På Figur \ref{fig:LoadPDF}, ses funktionen for LoadPDF().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=4cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/LoadPDF}
@@ -59,13 +59,13 @@ På figur \ref{fig:LoadPDF}, ses funktionen for LoadPDF().
 	\label{fig:LoadPDF}
 \end{figure}
 Efter PDF'en er blevet downloadet fra Firebase, gemmes denne lokalt. \\
-Der tjekkes om url'en er en fil url. Er dette en fil url loades PDF'en ind i viewt. \\
+Det kontrolleres om url'en er en filurl. Er dette en filurl loades PDF'en ind i viewt. \\
 Når PDF'en er loadet ind i viewet, oprettes symbol knapperne. \\
 Når både PDFViewet og PDFBottomPanel er loadet, loades disse ind i controllerens view.
 
 \clearpage
 
-På figur \ref{fig:LoadPDF}, ses funktionen for LoadBottomPanel().
+På Figur \ref{fig:LoadPDF}, ses funktionen for LoadBottomPanel().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadBtnPanel1}
@@ -76,33 +76,33 @@ På figur \ref{fig:LoadPDF}, ses funktionen for LoadBottomPanel().
 	\caption{Kode snip - LoadBottomPanel() fra PdfViewController.cs}
 	\label{fig:LoadBtnPanel2}
 \end{figure}
-Her oprettes UIView, som indeholder vores knapper, der loades ind fra PanelBottomFactory. \\
-PanelBottomFactory er en klasse som står at oprette knapperne. \\
-Når knapperne er oprettet definere vi events på de forskellige knapper. \\
+Her oprettes UIView, som indeholder knapper, der loades ind fra PanelBottomFactory. \\
+PanelBottomFactory er en klasse, som står at oprette knapperne. \\
+Når knapperne er oprettet defineres events på de forskellige knapper. \\
 
 \clearpage
 
-På figur \ref{fig:ClassPage}, ses funktionen for GetClassForPage().
+På Figur \ref{fig:ClassPage}, ses funktionen for GetClassForPage().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=3cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/ClassPage}
 	\caption{Kode snip - GetClassForPage() fra PdfViewController.cs}
 	\label{fig:ClassPage}
 \end{figure}
-Der overrides funktionen ClassForPage, som er en obejktive C funktion, der normalt returnere en standard PDF page, til vores typeof(MarkedPdfPage).
+Funktionen ClassForPage overrides, som er en obejktive C funktion, der normalt returnerer en standard PDF page, til vores typeof(MarkedPdfPage).
 
-På figur \ref{fig:Draw}, ses funktionen for Draw().
+På Figur \ref{fig:Draw}, ses funktionen for Draw().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=10cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/Draw}
 	\caption{Kode snip - Draw() fra MarkedPdfPage.cs}
 	\label{fig:Draw}
 \end{figure}
-Når PDF pagen bliver oprettet, kaldes draw og denne er overridet til at tegne på PDF'en med de objekter som bliver hentet fra JSON filen. Disse tegnes ind på PDF'en.
+Når PDFpagen bliver oprettet, kaldes draw og denne er overridet til at tegne på PDF'en med de objekter som bliver hentet fra JSON filen. Disse tegnes ind på PDF'en.
 
 \clearpage
 
-På figur \ref{fig:Enum}, ses enum Shape.
+På Figur \ref{fig:Enum}, ses enum Shape.
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/Design/RegisterPDF/Enum}
