@@ -18,6 +18,8 @@ namespace Ramboell.iOS
         {
             
         }
+        public bool ShapeIsSelected { get; set; }
+        public Shape? Shape;
         StorageDownloadTask downloadTask;
         public RegistrationDto PDFInfo { get; set; }
         private bool PdfLocal { get; set; }
@@ -28,6 +30,8 @@ namespace Ramboell.iOS
         MyPdfView PDFView;
         private nfloat h;
         private nfloat w;
+        UIButton preSelectedbtn;
+
         const int panelHeight = 70;
         public override void DidReceiveMemoryWarning()
         {
@@ -46,7 +50,12 @@ namespace Ramboell.iOS
             InitPdfView(w, h- panelHeight);
 
             var documents = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-
+            View.UserInteractionEnabled = true;
+            PDFView.UserInteractionEnabled = true;
+            UITapGestureRecognizer tapGesture = new UITapGestureRecognizer(TapThat);
+            UITapGestureRecognizer tapGesture2 = new UITapGestureRecognizer(TapThat2);
+            PDFView.AddGestureRecognizer(tapGesture);
+            View.AddGestureRecognizer(tapGesture2);
             //file node from firebase
             var rootNode = Storage.DefaultInstance.GetRootReference();
             var pdfNode = rootNode.GetChild($"{PDFInfo.Guid.ToString()}.pdf");
@@ -120,12 +129,19 @@ namespace Ramboell.iOS
             LoadPdf(PdfLocalNsUrl);
         }
 
-        public override void TouchesBegan(NSSet touches, UIEvent evt)
+        private void TapThat2(UITapGestureRecognizer obj)
         {
-            base.TouchesBegan(touches, evt);
-            Console.WriteLine("i got touched");
+            var arg = obj.View.Bounds;
+            Console.WriteLine("TapThat2");
         }
 
+        private void TapThat(UITapGestureRecognizer obj)
+        {
+            var arg1 = obj.LocationInView(obj.View);
+            Console.WriteLine($"{arg1.X}, {arg1.Y}");
+        }
+
+     
         public class MyPdfView: PdfView
         {
             public override void TouchesBegan(NSSet touches, UIEvent evt)
@@ -150,8 +166,6 @@ namespace Ramboell.iOS
             if (!url.IsFileUrl) return;
             LoadPdfView(url);
 
-            PdfLocal = true;
-
             var loadPdfBottomPanel = LoadPdfBottomPanel();
             View.AddSubviews(loadPdfBottomPanel, PDFView);
             View.BringSubviewToFront(loadPdfBottomPanel);
@@ -169,6 +183,7 @@ namespace Ramboell.iOS
                 },
                 BackgroundColor = UIColor.LightTextColor
             };
+            
             var pW = panelView.Bounds.Width;
             var pH = panelView.Bounds.Height;
             var pLocal = panelView.Bounds.Location;
@@ -190,31 +205,71 @@ namespace Ramboell.iOS
             addCircleBtn.Frame = new CGRect(pLocal.X + 200, pLocal.Y, 70, pH);
             addCircleBtn.TouchUpInside += delegate
             {
-                Console.WriteLine("1 button pressed");
-                var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
-                var pagePageNumber = watermarkPage.Page.PageNumber;
-                watermarkPage?.DrawCircle();
-                PDFView.SetNeedsDisplay();
+                Console.WriteLine("addCircleBtn pressed");
+                SelectShape(iOS.Shape.Circle, addCircleBtn);
+                
+                //var watermarkPage = PDFView.CurrentPage as MarkedPdfPage;
+                //var pagePageNumber = watermarkPage.Page.PageNumber;
+                //watermarkPage?.DrawCircle();
+                //PDFView.SetNeedsDisplay();
             };
 
             var addCheckMarkBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddCheckMark);
             addCheckMarkBtn.Frame = new CGRect(pLocal.X + 300, pLocal.Y, 70, pH);
             addCheckMarkBtn.TouchUpInside += delegate
             {
-                Console.WriteLine("1 button pressed");
+                Console.WriteLine(" addCheckMarkBtn pressed");
+                SelectShape(iOS.Shape.CheckMark, addCheckMarkBtn);
+
             };
             var addMinusBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddMinus);
             addMinusBtn.Frame = new CGRect(pLocal.X + 400, pLocal.Y, 70, pH);
             addMinusBtn.TouchUpInside += delegate
             {
-                Console.WriteLine("1 button pressed");
+                SelectShape(iOS.Shape.Minus, addCheckMarkBtn);
             };
             var showListBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.ShowList);
             showListBtn.Frame = new CGRect(pLocal.X + 500, pLocal.Y, 70, pH);
-
+            showListBtn.TouchUpInside += delegate
+            {
+                Console.WriteLine("showListBtn pressed");
+            };
             panelView.AddSubviews(prePageBtn,nxtPageBtn,addCircleBtn,addCheckMarkBtn,addMinusBtn,showListBtn);
 
             return panelView;
+        }
+
+        private void SelectShape(Shape shape, UIButton btn)
+        {
+            if (ShapeIsSelected == false)
+            {
+                if (preSelectedbtn != null) preSelectedbtn.Selected = false;
+                Shape = shape;
+                ShapeIsSelected = true;
+                btn.Selected = true;
+                preSelectedbtn = btn;
+            }
+            else
+            {
+                if (Shape == null)
+                {
+                    Shape = shape;
+                }
+                else
+                {
+                    if (Shape == shape)
+                    {
+                        Shape = null;
+                        ShapeIsSelected = false;
+                        btn.Selected = false;
+                        preSelectedbtn = null;
+                    }
+                    else
+                    {
+                        Shape = shape;
+                    }
+                }
+            }
         }
 
         private void LoadPdfView(NSUrl url)

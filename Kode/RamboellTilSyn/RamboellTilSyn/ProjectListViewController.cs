@@ -29,7 +29,6 @@ namespace Ramboell.iOS
 
         private void InstaniateJsonFile()
         {
-            
             if (!File.Exists(_file))
             {
                 ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Tilføj projekt" }, new RegistrationDto { Name = "Tilføj bruger" } };
