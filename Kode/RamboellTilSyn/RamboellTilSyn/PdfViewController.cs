@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using CoreGraphics;
+using Firebase.Database;
 using Firebase.Storage;
 using Foundation;
 using Newtonsoft.Json;
@@ -32,14 +33,9 @@ namespace Ramboell.iOS
         private nfloat h;
         private nfloat w;
         UIButton preSelectedbtn;
+        StorageReference jsonNode;
 
         const int panelHeight = 70;
-        public override void DidReceiveMemoryWarning()
-        {
-            base.DidReceiveMemoryWarning();
-
-            // Release any cached data, images, etc that aren't in use.
-        }
 
         public override void ViewDidLoad()
         {
@@ -60,7 +56,7 @@ namespace Ramboell.iOS
 
             var rootNode = Storage.DefaultInstance.GetRootReference();
             var pdfNode = rootNode.GetChild($"{PDFInfo.Guid.ToString()}.pdf");
-            var jsonNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
+            jsonNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
             //local file url to store file in
 
             var pdfName = $"{PDFInfo.Guid}.pdf";
@@ -75,22 +71,50 @@ namespace Ramboell.iOS
             {
                 pdfNode.GetData(10 * 1024 * 1024, (data, error) =>
                 {
+                    Logger.Log("PDFViewController.DownloadEvent", PDFInfo.Guid.ToString(), error.LocalizedDescription);
+
                     if (error != null)
                     {
-                        Console.WriteLine();
+                        Logger.Log("PDFViewController.DownloadError", PDFInfo.Guid.ToString(), error.LocalizedDescription);
                         throw new Exception(error.LocalizedDescription);
                     }
 
                     if (data.Save(PdfLocalNsUrl, NSDataWritingOptions.Atomic, out error))
                     {
-                        Console.WriteLine("saved as " + PDFInfo.Guid);
+                        Logger.Log("PDFViewController.FileEvent", PDFInfo.Guid.ToString(), "Pdf saved");
+
+                        if (!File.Exists(jsonFilePath) && MetalocalNsUrl.IsFileUrl)
+                        {
+                            jsonNode.GetData(10 * 1024 * 1024, (jsonData, JsonReaderExceptionrror) =>
+                            {
+                                if (error != null)
+                                {
+                                    Logger.Log("PDFViewController.FileEvent", PDFInfo.MetaId.ToString(), error.LocalizedDescription);
+                                    throw new Exception(error.LocalizedDescription);
+                                }
+                                if (jsonData.Save(MetalocalNsUrl, NSDataWritingOptions.Atomic, out error))
+                                {
+                                    Logger.Log("PDFViewController.FileEvent", PDFInfo.MetaId.ToString(), "json file saved");
+
+                                    Console.WriteLine("saved json as " + PDFInfo.MetaId);
+                                    LoadPdf(PdfLocalNsUrl);
+                                }
+                                else
+                                {
+                                    Logger.Log("PDFViewController.DownloadError",PDFInfo.MetaId.ToString(),error.LocalizedDescription);
+                                }
+
+                            });
+                        }
                     }
                     else
                     {
                         Console.WriteLine("NOT saved as " + PDFInfo.Guid + " because" + error.LocalizedDescription);
+                        Logger.Log("PDFViewController.DownloadError", PDFInfo.Guid.ToString(), error.LocalizedDescription);
                     }
-                    
+
                 });
+
                 #region Xamarin bug
 
                 //downloadTask = pdfNode.WriteToFile(PdflocalNsUrl, (url, error) =>
@@ -105,29 +129,16 @@ namespace Ramboell.iOS
                 //    }
 
                 //});
+
                 #endregion
             }
-            if (!File.Exists(jsonFilePath) && MetalocalNsUrl.IsFileUrl)
+            else
             {
-                jsonNode.GetData(10 * 1024 * 1024, (data, error) =>
-                {
-                    if (error != null)
-                    {
-                        Console.WriteLine();
-                        throw new Exception(error.LocalizedDescription);
-                    }
-                    if (data.Save(MetalocalNsUrl, NSDataWritingOptions.Atomic, out error))
-                    {
-                        Console.WriteLine("saved as " + PDFInfo.MetaId);
-                    }
-                    else
-                    {
-                        Console.WriteLine("NOT saved as " + PDFInfo.Guid + " because" + error.LocalizedDescription);
-                    }
-
-                });
+                if (File.Exists(pdfFilePath))
+                    LoadPdf(PdfLocalNsUrl);
             }
-            LoadPdf(PdfLocalNsUrl);
+            
+      
         }
         private void TapOnPdf(UITapGestureRecognizer obj)
         {
@@ -140,9 +151,10 @@ namespace Ramboell.iOS
                 if (PDFView.CurrentPage is MarkedPdfPage watermarkPage)
                 {
                     var pagePageNumber = watermarkPage.Page.PageNumber;
-                    //watermarkPage.DrawObject(Shape,pagePageNumber,position);
+                    watermarkPage.DrawObjectFrom(MetalocalNsUrl.Path);
                     var jsonList = File.ReadAllText(MetalocalNsUrl.Path);
                     var pdfObjects = JsonConvert.DeserializeObject<List<PdfObject>>(jsonList);
+                    var timeNow = new DateTime().ToUniversalTime().ToString("dd-MM-yyyy HH:mm:ss");
                     //Add comment when time is right
                     pdfObjects.Add(new PdfObject
                     {
@@ -150,11 +162,31 @@ namespace Ramboell.iOS
                         YCord = (int)position.Y,
                         PageNo = (int) pagePageNumber,
                         Shape = (Shape) Shape,
-                        TimeStamp = new DateTime().ToUniversalTime().ToString("dd-MM-yyyy HH:mm:ss")
+                        TimeStamp = timeNow
                     });
                     File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
+                    // Create a reference to the file you want to upload
+
+                    // Upload the file to the path "images/rivers.jpg"
+                    StorageUploadTask uploadTask = jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
+                        if (error != null)
+                        {
+                            Console.WriteLine("Error");
+                        }
+                        else
+                        {
+                            DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
+                            var key = nameof(RegistrationDto.Updated);
+                            //update Firebase database 
+                            rootNode
+                                .GetChild(Global.Pdf)
+                                .GetChild(PDFInfo.Guid.ToString())
+                                .GetChild(key)
+                                .SetValue(new NSString(timeNow));
+                            PDFView.SetNeedsDisplay();
+                        }
+                    });
                 }
-                PDFView.SetNeedsDisplay();
             }
         }
 

@@ -5,27 +5,9 @@ namespace NUnit.Tests1
     [TestFixture]
     public class ValidatorUnit
     {
-        [TestCase("liao@live.dk")]
-        [TestCase("s@live.sccd")]
-        [TestCase("2314@live.dk")]
-        [TestCase("s@123.sd")]
-        [TestCase("li@oo.dk")]
-        public void Email_Is_Valid(string s)
-        {
-            Assert.IsTrue(Ramboell.iOS.Validator.EmailIsValid(s));
-        }
-        [TestCase("s@live.s")]
-        [TestCase("s@s.123")]
-        [TestCase("s@s.shj")]
-        [TestCase("s@s.s")]
-        [TestCase("")]
-        public void Email_Is_Not_Valid(string s)
-        {
-            Assert.IsFalse(Ramboell.iOS.Validator.EmailIsValid(s));
-        }
         [TestCase("Ao")]
         [TestCase("Asdsads")]
-        public void Name_Is_Valid(string s)
+        public void NameIsValid_Is_Valid(string s)
         {
             Assert.IsTrue(Ramboell.iOS.Validator.NameIsValid(s));
         }
@@ -38,14 +20,46 @@ namespace NUnit.Tests1
         [TestCase("#1")]
         [TestCase("A!")]
         [TestCase("")]
-        public void Name_Is_Not_Valid(string s)
+        public void NameIsValid_Is_Not_Valid(string s)
         {
             Assert.IsFalse(Ramboell.iOS.Validator.NameIsValid(s));
         }
+        [TestCase("liao@live.dk")]
+        [TestCase("s@live.sccd")]
+        [TestCase("2314@live.dk")]
+        [TestCase("s@123.sd")]
+        [TestCase("s.d@123.sd")]
+        [TestCase("li@oo.dk")]
+        public void EmailIsValid_Is_Valid(string s)
+        {
+            Assert.IsTrue(Ramboell.iOS.Validator.EmailIsValid(s));
+        }
+        [TestCase(".d@123.sd")]
+        [TestCase("s.@123.sd")]
+        [TestCase("s@live.s")]
+        [TestCase("s@s.123")]
+        [TestCase("s@s.shj")]
+        [TestCase("s@s.s")]
+        [TestCase("")]
+        [TestCase("s@s.")]
+        [TestCase("s@s")]
+        [TestCase("s@")]
+        [TestCase("sd")]
+        [TestCase("@")]
+        [TestCase("s.sd")]
+        [TestCase("s@123.sd   ")]
+        [TestCase("s@123   .sd")]
+        [TestCase("s    @123.sd")]
+        [TestCase("s@s.s")]
+        public void EmailIsValid_Is_Not_Valid(string s)
+        {
+            Assert.IsFalse(Ramboell.iOS.Validator.EmailIsValid(s));
+        }
+
         [TestCase("Aa2345")]
         [TestCase("Abc123")]
         [TestCase("Aa#345")]
-        public void Password_Is_Valid(string s)
+        public void PasswordIsValid_Is_Valid(string s)
         {
             Assert.IsTrue(Ramboell.iOS.Validator.PasswordIsValid(s));
         }
@@ -59,7 +73,7 @@ namespace NUnit.Tests1
         [TestCase("DXFG")]
         [TestCase("¤%&fbf83bgc")]
         [TestCase("Aa#345dsavshw543I/T  VIYI")]
-        public void Password_Is_Not_Valid(string s)
+        public void PasswordIsValid_Is_Not_Valid(string s)
         {
             Assert.IsFalse(Ramboell.iOS.Validator.PasswordIsValid(s));
         }

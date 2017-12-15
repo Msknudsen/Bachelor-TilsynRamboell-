@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using CoreGraphics;
 using Foundation;
 using PdfKit;
@@ -10,31 +11,24 @@ namespace Ramboell.iOS
     [Register("MarkedPdfPage")]
     public class MarkedPdfPage : PdfPage
     {
+        #region properties
+        MetaListJSonSingleton listOfData;
         public string JsonData { get; set; }
+
+        #endregion
         #region Constructors
 
         protected MarkedPdfPage(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
-            objects = new List<PdfObject>
-            {
-                new PdfObject()
-                {
-                    XCord = 250,
-                    YCord = 200,
-                    Shape = Shape.Circle,
-                    PageNo = 2
-                }
-            };
+
         }
         #endregion
-        List<PdfObject> objects;
 
         public override void Draw(PdfDisplayBox box, CoreGraphics.CGContext context)
         {
             // Draw original content
             base.Draw(box, context);
-            var pdfDocument = this.Document;
             using (context)
             {  
                 // Draw watermark underlay
@@ -55,52 +49,49 @@ namespace Ramboell.iOS
                 };
 
                 var text = new NSAttributedString("TEST", attributes);
-
-
                 text.DrawString(new CGPoint(250, 40));
-                RenderObjects(context);
+                RenderObjects(pageBounds, context);
                 context.RestoreState();
                 UIGraphics.PopContext();
             }
         }
 
-        public void DrawCircle()
+        private void RenderObjects(CGRect rect, CGContext g)
         {
-            objects.Add(new PdfObject
+            if (listOfData == null) return;
+            using (g)
             {
-                PageNo = 1,
-                Shape = Shape.Circle,
-                Size = 50,
-                XCord = 10,
-                YCord = 10
-            });
-        }
-        private void RenderObjects(CGContext g)
-        {
-            foreach (var item in objects)
-            {
-
-                if (Page.PageNumber == item.PageNo)
+                foreach (var item in listOfData.PdfObjects)
                 {
-                    var attributes = new UIStringAttributes()
+                    
+                    if (Page.PageNumber == item.PageNo)
                     {
-                        ForegroundColor = UIColor.FromRGBA(255, 0, 0, 125),
-                        Font = UIFont.BoldSystemFontOfSize(84)
-                    };
-                    var text1 = new NSAttributedString("✓", attributes);
-                    text1.DrawString(new CGPoint(400, 300));
+                        var size = new CGRect(item.XCord, item.YCord, 50, 50);
+                        CGImage img = null;
+                        switch (item.Shape)
+                        {
+                            case Shape.Circle:
+                                img = UIImage.FromBundle("back").CGImage;
+                                break;
+                            case Shape.CheckMark:
 
-                    g.SetFillColor(UIColor.Cyan.CGColor);
-
-                    //g.AddEllipseInRect(new CGRect(new CGPoint(item.XCord, item.YCord),CGSize.Empty));
-                    g.AddEllipseInRect(new CGRect(
-                        new CGPoint(
-                            x: item.XCord,
-                            y: item.YCord),
-                        new CGSize(100, 100)
-                        ));
+                                img = UIImage.FromBundle("checkmark").CGImage;
+                                break;
+                            default:
+                            #if DEBUG
+                                Console.WriteLine("Using an invalid Shape ");
+                                break;
+                            #else
+                                throw new Exception("Using an invalid Shape ");
+                            #endif
+                        }
+                        
+                        g.DrawImage(size, img);
+                        
+                    }
                 }
             }
+            
         }
 
         public PdfDisplayBox Mybox { get; set; }
@@ -159,10 +150,13 @@ namespace Ramboell.iOS
             }
         }
 
-        public void DrawObject(Shape shape)
+
+        public void DrawObjectFrom(string path)
         {
+            listOfData = MetaListJSonSingleton.GetInstance(path);
         }
     }
+
 
     public enum Shape
     {

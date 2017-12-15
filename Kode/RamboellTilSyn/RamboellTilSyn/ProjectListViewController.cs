@@ -17,10 +17,10 @@ namespace Ramboell.iOS
         nuint handleReference;
         DatabaseReference _node;
 
-        private readonly string _file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "list.json");
+        private readonly string _file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Global.ProjectListFileName);
         public ProjectListViewController (IntPtr handle) : base (handle)
         {
-            _node = Database.DefaultInstance.GetRootReference().GetChild("pdf");
+            _node = Database.DefaultInstance.GetRootReference().GetChild(Global.Pdf);
             _node.KeepSynced(true);
 
             InstaniateJsonFile();
@@ -31,7 +31,7 @@ namespace Ramboell.iOS
         {
             if (!File.Exists(_file))
             {
-                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Tilføj projekt" }, new RegistrationDto { Name = "Tilføj bruger" } };
+                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = Global.AddProjectLabel }, new RegistrationDto { Name = Global.AddUserLabel } };
                 File.WriteAllText(_file, JsonConvert.SerializeObject(ProjectInfos));
             }
             else
@@ -46,20 +46,20 @@ namespace Ramboell.iOS
             handleReference = _node.ObserveEvent(DataEventType.Value, (snapshot) =>
             {
 
-                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = "Tilføj projekt"}, new RegistrationDto { Name = "Tilføj bruger" } };
+                ProjectInfos = new List<RegistrationDto> { new RegistrationDto { Name = Global.AddProjectLabel }, new RegistrationDto { Name = Global.AddUserLabel } };
 
                 foreach (var element in snapshot.GetValue<NSDictionary>())
                 {
                     ProjectInfos.Add(new RegistrationDto
                     {
                         Guid = new Guid(element.Key.Description),
-                        Name = element.Value.ValueForKeyPath((NSString)"name").Description,
-                        MetaId = new Guid(element.Value.ValueForKeyPath((NSString)"metaId").Description),
-                        Created = element.Value.ValueForKeyPath((NSString)"created").Description,
-                        Updated = element.Value.ValueForKeyPath((NSString)"updated").Description
+                        Name = element.Value.ValueForKeyPath((NSString) nameof(RegistrationDto.Name)).Description,
+                        MetaId = new Guid(element.Value.ValueForKeyPath((NSString)nameof(RegistrationDto.MetaId)).Description),
+                        Created = element.Value.ValueForKeyPath((NSString)nameof(RegistrationDto.Created)).Description,
+                        Updated = element.Value.ValueForKeyPath((NSString)nameof(RegistrationDto.Updated)).Description
                     });
                     if (File.Exists(_file))
-                    {
+                    {   
                         File.WriteAllText(_file, JsonConvert.SerializeObject(ProjectInfos));
                         TableView.ReloadData();
                     }

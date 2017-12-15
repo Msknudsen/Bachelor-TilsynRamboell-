@@ -5,11 +5,48 @@ Diverse klasser vil blive testet i Testklassen af følgende syntaks "\big[Klasse
 \big[Hvad der testes\big]\_[I hvilke slags senarier]\_\big[og den forventet resultat\big] 
 
 \section{Validator}
-Validator-klassen er en statisk klasse, som har ansvar for at håndtere validering af input felterne i applikationen fra brugeren. For eksempel kan det være når brugeren skal indtaste sin Email.
+Validator-klassen er en statisk klasse, som har ansvar for at håndtere validering af input felterne i applikationen fra brugeren. For eksempel kan det være når brugeren skal indtaste sin email og password. På figur \ref{fig:ValidatorUnit} ses følgende test der bliver udført.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{Unit/ValidatorUnit.PNG}
-	\caption{Screenshot af test sessionen på ValidatorUnit}
+	\caption{Her ses et screenshot af test sessionen på ValidatorUnit}
 	\label{fig:ValidatorUnit}
 \end{figure}
-På figur \ref{fig:ValidatorUnit} ses følgende test der bliver udført. 
+
+På Figur \ref{fig:ValidatorUnitEmail} ses følgende test på email der bliver udført. Her ses hvilke format af email vi tillader for at sikre klassen fungerer som ønsket.
+Der bliver udført både negativ og positiv test på emails, for at tjekke at både de ønskede og uønskede værdier bliver godkendt. Funktionen EmailIsValid tjekker at Email opfylder bland andet disse krav:\\
+\begin{itemize}
+	\item Email må ikke have mellemskarakter
+	\item Domæne navnet må ikke være tomt
+	\item Top level domain navnet\cite{TLD} må ikke være tomt
+	\item Lokal navn må ikke være tomt
+	\item Lokal navn må ikke starte eller slutte med et punktum
+	\item Lokal navn må ikke være tomt
+	\item Lokal navn må ikke starte eller slutte med et punktum
+	
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Unit/ValidatorUnitEmail.PNG}
+	\caption{Her ses et screenshot af test sessionen på ValidatorUnit emails}
+	\label{fig:ValidatorUnitEmail}
+\end{figure}
+På Figur \ref{fig:ValidatorUnitPassword} ses både positive og negative tests på funktionen PasswordIsValid. Der bliver givet både password som funktion vil godkende og ikke godkende, også bliver der tjekket op mod at der gives det forventet resultat. Funktionen PasswordIsValid tjekker på at et password opfylder disse krav: \\
+\begin{itemize}
+	\item Minimum 6 karakter lang
+	\item Minimum et stort bogstav
+	\item Minimum et lille bogstav
+	\item Minimum et tal
+	\item Speciel tegn er valgfrit
+	\item Må ikke have mellemrum
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\linewidth]{Unit/ValidatorUnitPassword.PNG}
+	\caption{Her ses et screenshot af test sessionen på ValidatorUnit på password}
+	\label{fig:ValidatorUnitPassword}
+\end{figure}
+
+

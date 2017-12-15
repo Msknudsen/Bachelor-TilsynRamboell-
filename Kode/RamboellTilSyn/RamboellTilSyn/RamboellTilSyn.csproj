@@ -99,6 +99,8 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Logger.cs" />
+    <Compile Include="MetaListJSonSingleton.cs" />
     <Compile Include="CreateProjectViewController.cs" />
     <Compile Include="CreateProjectViewController.designer.cs">
       <DependentUpon>CreateProjectViewController.cs</DependentUpon>
@@ -109,6 +111,7 @@
     </Compile>
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Dto\ProjectDto.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="MarkedPdfPage.cs" />
     <Compile Include="Dto\RegistrationDto.cs" />
     <Compile Include="PanelBtnFactory.cs" />

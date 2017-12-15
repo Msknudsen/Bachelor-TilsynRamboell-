@@ -25,7 +25,7 @@ namespace Ramboell.iOS
 
         private void CreateUser(object sender, EventArgs e)
         {
-            if (isFieldsValid())
+            if (IsFieldsValid())
                 Auth.DefaultInstance.CreateUser(EmailCreateUserTxt.Text, PasswordCreateUserTxt.Text, (user, error) => {
                     if (error != null)
                     {
@@ -71,7 +71,7 @@ namespace Ramboell.iOS
             });
         }
 
-        private bool isFieldsValid()
+        private bool IsFieldsValid()
         {
             return IsValidEmail() && IsValidName() && IsValidPhoneNumber();
         }
