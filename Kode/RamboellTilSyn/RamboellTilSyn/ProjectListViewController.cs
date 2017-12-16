@@ -16,15 +16,11 @@ namespace Ramboell.iOS
         public List<RegistrationDto> ProjectInfos;
         nuint handleReference;
         DatabaseReference _node;
-
         private readonly string _file = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Global.ProjectListFileName);
         public ProjectListViewController (IntPtr handle) : base (handle)
         {
             _node = Database.DefaultInstance.GetRootReference().GetChild(Global.Pdf);
             _node.KeepSynced(true);
-
-            InstaniateJsonFile();
-            SyncWithFirebaseDatabase();
         }
 
         private void InstaniateJsonFile()
@@ -61,7 +57,12 @@ namespace Ramboell.iOS
                     if (File.Exists(_file))
                     {   
                         File.WriteAllText(_file, JsonConvert.SerializeObject(ProjectInfos));
-                        TableView.ReloadData();
+
+                        if (TableView.Source is TableSource source)
+                        {
+                            source.ProjectInfos = ProjectInfos;
+                            TableView.ReloadData();
+                        }
                     }
                     else
                         Console.WriteLine("No Json file containing a list of projectInfo found");
@@ -69,22 +70,25 @@ namespace Ramboell.iOS
             });
         }
 
+
         public override void ViewDidUnload()
         {
             base.ViewDidLoad();
         }
-        
+
+    
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
-    
+            InstaniateJsonFile();
             TableView = new UITableView(View.Bounds)
             {
                 Source = new TableSource(ProjectInfos, this),
                 AllowsSelection = true,
                 AllowsMultipleSelection = false
             };
+            SyncWithFirebaseDatabase();
         }
     }
 }

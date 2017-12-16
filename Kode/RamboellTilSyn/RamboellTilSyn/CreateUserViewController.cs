@@ -14,16 +14,16 @@ namespace Ramboell.iOS
 
         public CreateUserViewController(IntPtr handle) : base(handle)
         {
-            userNode = Database.DefaultInstance.GetRootReference().GetChild("user");
+            userNode = Database.DefaultInstance.GetRootReference().GetChild(Global.User);
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            CreateUserBtn.TouchUpInside += CreateUser;
+            CreateUserBtn.TouchUpInside += CreateUserEventHandler;
         }
 
-        private void CreateUser(object sender, EventArgs e)
+        private void CreateUserEventHandler(object sender, EventArgs e)
         {
             if (IsFieldsValid())
                 Auth.DefaultInstance.CreateUser(EmailCreateUserTxt.Text, PasswordCreateUserTxt.Text, (user, error) => {
@@ -95,7 +95,7 @@ namespace Ramboell.iOS
         public override void ViewDidUnload()
         {
             base.ViewDidUnload();
-            CreateUserBtn.TouchUpInside -= CreateUser;
+            CreateUserBtn.TouchUpInside -= CreateUserEventHandler;
         }
     }
 }

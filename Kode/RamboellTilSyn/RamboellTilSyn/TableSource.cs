@@ -8,7 +8,7 @@ namespace Ramboell.iOS
 {
     public class TableSource : UITableViewSource
     {
-        public List<RegistrationDto> ProjectInfos { get; }
+        public List<RegistrationDto> ProjectInfos { get; set; }
     
         //string[] TableItems;
         private const int CreateProejct = 0;

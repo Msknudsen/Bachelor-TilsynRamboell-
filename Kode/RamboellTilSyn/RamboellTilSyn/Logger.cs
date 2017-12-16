@@ -10,10 +10,6 @@ namespace Ramboell.iOS
 {
     public class Logger
     {
-        private Logger()
-        {
-        }
-
         public static void Log(string key,string description)
         {
             NSString[] keys = { ParameterNamesConstants.ContentType, ParameterNamesConstants.ItemId };

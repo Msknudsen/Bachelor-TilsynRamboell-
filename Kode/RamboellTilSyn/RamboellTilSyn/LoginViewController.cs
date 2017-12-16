@@ -39,7 +39,7 @@ namespace Ramboell.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            LoginBtn.TouchUpInside += LoginBtn_TouchUpInside;
+            LoginBtn.TouchUpInside += LoginEventHandler;
             //LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
 
             LoginEmailTxt.Placeholder = "Indtast Email";
@@ -53,10 +53,10 @@ namespace Ramboell.iOS
         public override void ViewDidUnload()
         {
             base.ViewDidUnload();
-            LoginBtn.TouchUpInside -= LoginBtn_TouchUpInside;
+            LoginBtn.TouchUpInside -= LoginEventHandler;
         }
 
-        private void LoginBtn_TouchUpInside(object sender, EventArgs e)
+        private void LoginEventHandler(object sender, EventArgs e)
         {
             if (!Validator.EmailIsValid(LoginEmailTxt.Text) || !Validator.PasswordIsValid(LoginPasswordTxt.Text))
             {
@@ -104,7 +104,7 @@ namespace Ramboell.iOS
 
         }
 
-        public void SignOut()
+        private void SignOut()
         {
             var signedOut = Auth.DefaultInstance.SignOut(out var error);
 
@@ -134,11 +134,6 @@ namespace Ramboell.iOS
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
-        }
-
-        private void LogOutBtn_TouchUpInside(object sender, EventArgs avg)
-        {
-            SignOut();
         }
     }
 }

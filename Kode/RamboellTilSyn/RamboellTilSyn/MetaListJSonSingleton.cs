@@ -9,33 +9,29 @@ namespace Ramboell.iOS
 {
     public class MetaListJSonSingleton
     {
-        private static MetaListJSonSingleton instance;
-        public List<PdfObject> PdfObjects { get; private set; }
+        private static MetaListJSonSingleton _instance;
+        private string _path ="";
+        public List<PdfObjectDto> PdfObjects { get; private set; }
 
         private MetaListJSonSingleton(string path)
         {
-           var txt =  File.ReadAllText(path);
-            PdfObjects = JsonConvert.DeserializeObject<List<PdfObject>>(txt);
-        }
-
-        private void NewMetaFile(string path)
-        {
+            _path = path;
             var txt = File.ReadAllText(path);
-            PdfObjects = JsonConvert.DeserializeObject<List<PdfObject>>(txt);
+            PdfObjects = JsonConvert.DeserializeObject<List<PdfObjectDto>>(txt) ?? new List<PdfObjectDto>();
         }
-        public static MetaListJSonSingleton GetInstance(string path)
+        public static  MetaListJSonSingleton GetInstance(string path)
         {
-            return instance ?? (instance = new MetaListJSonSingleton(path));
+            return _instance ?? (_instance = new MetaListJSonSingleton(path));
+        }
+        public void Reset()
+        {
+            _instance = null;
         }
 
-        public List<PdfObject> TryGetNewMetaList(string path)
-        {
-            {
-                if (instance == null) return null;
 
-                NewMetaFile(path);
-                return instance.PdfObjects;
-            }
+        public static MetaListJSonSingleton TryGetInstance()
+        {
+            return _instance;
         }
     }
 }

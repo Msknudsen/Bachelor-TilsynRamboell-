@@ -115,7 +115,8 @@
     <Compile Include="MarkedPdfPage.cs" />
     <Compile Include="Dto\RegistrationDto.cs" />
     <Compile Include="PanelBtnFactory.cs" />
-    <Compile Include="PdfObject.cs" />
+    <Compile Include="Dto\PdfObjectDto.cs" />
+    <Compile Include="Shape.cs" />
     <Compile Include="TableSource.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />

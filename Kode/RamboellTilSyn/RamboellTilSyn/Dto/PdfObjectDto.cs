@@ -2,7 +2,7 @@
 
 namespace Ramboell.iOS
 {
-        public class PdfObject
+        public class PdfObjectDto
         {
             public int PageNo { get; set; }
             public int XCord { get; set; }

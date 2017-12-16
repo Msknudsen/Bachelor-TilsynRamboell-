@@ -20,20 +20,16 @@ namespace Ramboell.iOS
         {
             
         }
-        public bool ShapeIsSelected { get; set; }
         public Shape? Shape;
-        StorageDownloadTask downloadTask;
+        List<PdfObjectDto> pdfObjects;
         public RegistrationDto PDFInfo { get; set; }
-        private bool PdfLocal { get; set; }
-        private bool MetaLocal { get; set; }
         public NSUrl PdfLocalNsUrl { get; set; }
         public NSUrl MetalocalNsUrl { get; set; }
-        public RegistrationDto PdfInfo { get; }
         MyPdfView PDFView;
         private nfloat h;
         private nfloat w;
-        UIButton preSelectedbtn;
-        StorageReference jsonNode;
+        private UIButton _preSelectedbtn;
+        StorageReference _jsonNode;
 
         const int panelHeight = 70;
 
@@ -56,7 +52,7 @@ namespace Ramboell.iOS
 
             var rootNode = Storage.DefaultInstance.GetRootReference();
             var pdfNode = rootNode.GetChild($"{PDFInfo.Guid.ToString()}.pdf");
-            jsonNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
+            _jsonNode = rootNode.GetChild($"{PDFInfo.MetaId.ToString()}.json");
             //local file url to store file in
 
             var pdfName = $"{PDFInfo.Guid}.pdf";
@@ -71,7 +67,7 @@ namespace Ramboell.iOS
             {
                 pdfNode.GetData(10 * 1024 * 1024, (data, error) =>
                 {
-                    Logger.Log("PDFViewController.DownloadEvent", PDFInfo.Guid.ToString(), error.LocalizedDescription);
+                    Logger.Log("PDFViewController.DownloadEvent", PDFInfo.Guid.ToString(), "Succes");
 
                     if (error != null)
                     {
@@ -85,7 +81,7 @@ namespace Ramboell.iOS
 
                         if (!File.Exists(jsonFilePath) && MetalocalNsUrl.IsFileUrl)
                         {
-                            jsonNode.GetData(10 * 1024 * 1024, (jsonData, JsonReaderExceptionrror) =>
+                            _jsonNode.GetData(10 * 1024 * 1024, (jsonData, JsonReaderExceptionrror) =>
                             {
                                 if (error != null)
                                 {
@@ -94,6 +90,7 @@ namespace Ramboell.iOS
                                 }
                                 if (jsonData.Save(MetalocalNsUrl, NSDataWritingOptions.Atomic, out error))
                                 {
+                                    pdfObjects = MetaListJSonSingleton.GetInstance(MetalocalNsUrl.Path).PdfObjects;
                                     Logger.Log("PDFViewController.FileEvent", PDFInfo.MetaId.ToString(), "json file saved");
 
                                     Console.WriteLine("saved json as " + PDFInfo.MetaId);
@@ -134,59 +131,53 @@ namespace Ramboell.iOS
             }
             else
             {
-                if (File.Exists(pdfFilePath))
-                    LoadPdf(PdfLocalNsUrl);
+                pdfObjects = MetaListJSonSingleton.GetInstance(MetalocalNsUrl.Path).PdfObjects;
+                LoadPdf(PdfLocalNsUrl);
             }
-            
-      
+
+
         }
         private void TapOnPdf(UITapGestureRecognizer obj)
         {
             var position = obj.LocationInView(obj.View);
-            Console.WriteLine($"{position.X}, {position.Y}");
             //check which shape we are working with
-            if (Shape != null)
+            if (Shape == null) return;
+            if (PDFView.CurrentPage is MarkedPdfPage markPage)
             {
-                
-                if (PDFView.CurrentPage is MarkedPdfPage watermarkPage)
+                var pagePageNumber = markPage.Page.PageNumber;
+                    
+                var timeNow = new DateTime().ToUniversalTime().ToString("dd-MM-yyyy HH:mm:ss");
+                //Add comment when time is right
+                pdfObjects.Add(new PdfObjectDto
                 {
-                    var pagePageNumber = watermarkPage.Page.PageNumber;
-                    watermarkPage.DrawObjectFrom(MetalocalNsUrl.Path);
-                    var jsonList = File.ReadAllText(MetalocalNsUrl.Path);
-                    var pdfObjects = JsonConvert.DeserializeObject<List<PdfObject>>(jsonList);
-                    var timeNow = new DateTime().ToUniversalTime().ToString("dd-MM-yyyy HH:mm:ss");
-                    //Add comment when time is right
-                    pdfObjects.Add(new PdfObject
-                    {
-                        XCord = (int)position.X,
-                        YCord = (int)position.Y,
-                        PageNo = (int) pagePageNumber,
-                        Shape = (Shape) Shape,
-                        TimeStamp = timeNow
-                    });
-                    File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
-                    // Create a reference to the file you want to upload
+                    XCord = (int)position.X,
+                    YCord = (int)position.Y+100,
+                    PageNo = (int) pagePageNumber,
+                    Shape = (Shape) Shape,
+                    TimeStamp = timeNow
+                });
+                File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
+                // Create a reference to the file you want to upload
 
-                    // Upload the file to the path "images/rivers.jpg"
-                    StorageUploadTask uploadTask = jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
-                        if (error != null)
-                        {
-                            Console.WriteLine("Error");
-                        }
-                        else
-                        {
-                            DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
-                            var key = nameof(RegistrationDto.Updated);
-                            //update Firebase database 
-                            rootNode
-                                .GetChild(Global.Pdf)
-                                .GetChild(PDFInfo.Guid.ToString())
-                                .GetChild(key)
-                                .SetValue(new NSString(timeNow));
-                            PDFView.SetNeedsDisplay();
-                        }
-                    });
-                }
+                // Upload the file to the path "images/rivers.jpg"
+                StorageUploadTask uploadTask = _jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
+                    if (error != null)
+                    {
+                        Console.WriteLine("Error");
+                    }
+                    else
+                    {
+                        DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
+                        var key = nameof(RegistrationDto.Updated);
+                        //update Firebase database 
+                        rootNode
+                            .GetChild(Global.Pdf)
+                            .GetChild(PDFInfo.Guid.ToString())
+                            .GetChild(key)
+                            .SetValue(new NSString(timeNow));
+                    }
+                });
+                PDFView.SetNeedsDisplay();
             }
         }
 
@@ -264,7 +255,7 @@ namespace Ramboell.iOS
             addCheckMarkBtn.Frame = new CGRect(pLocal.X + 300, pLocal.Y, 70, pH);
             addCheckMarkBtn.TouchUpInside += delegate
             {
-                SelectShape(iOS.Shape.Minus, addCheckMarkBtn);
+                SelectShape(iOS.Shape.CheckMark, addCheckMarkBtn);
             };
             var addMinusBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddMinus);
             addMinusBtn.Frame = new CGRect(pLocal.X + 400, pLocal.Y, 70, pH);
@@ -285,16 +276,22 @@ namespace Ramboell.iOS
         private void SelectShape(Shape shape, UIButton btn)
         {
 
-            if (preSelectedbtn != null)
+            if (_preSelectedbtn != null)
             {
                 Shape = null;
-                preSelectedbtn.Selected = false;
-                if (Equals(preSelectedbtn, btn))
+                _preSelectedbtn.Selected = false;
+                if (Equals(_preSelectedbtn, btn))
                     return;
             }
             Shape = shape;
             btn.Selected = true;
-            preSelectedbtn = btn;
+            _preSelectedbtn = btn;
+        }
+
+        public override void ViewDidUnload()
+        {
+            base.ViewDidUnload();
+            MetaListJSonSingleton.TryGetInstance().Reset();
         }
 
         private void LoadPdfView(NSUrl url)
@@ -306,6 +303,8 @@ namespace Ramboell.iOS
                 // Set our document to the view, center it, and set a background color
                 document.Delegate = this;
                 PDFView.Document = document;
+                //var markedPdfPage = document.GetPage(1) as MarkedPdfPage;
+                //markedPdfPage.InitPdfObjectFrom();
             }
         }
         #region PdfDocumentDelegate
