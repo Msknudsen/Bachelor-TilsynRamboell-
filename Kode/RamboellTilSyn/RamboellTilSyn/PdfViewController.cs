@@ -67,17 +67,17 @@ namespace Ramboell.iOS
             {
                 pdfNode.GetData(10 * 1024 * 1024, (data, error) =>
                 {
-                    Logger.Log("PDFViewController.DownloadEvent", PDFInfo.Guid.ToString(), "Succes");
+                    Logger.Log("PDFViewController_downloadEvent", PDFInfo.Guid.ToString(), "Succes");
 
                     if (error != null)
                     {
-                        Logger.Log("PDFViewController.DownloadError", PDFInfo.Guid.ToString(), error.LocalizedDescription);
+                        Logger.Log("PDFViewController_downloadError", PDFInfo.Guid.ToString(), error.LocalizedDescription);
                         throw new Exception(error.LocalizedDescription);
                     }
 
                     if (data.Save(PdfLocalNsUrl, NSDataWritingOptions.Atomic, out error))
                     {
-                        Logger.Log("PDFViewController.FileEvent", PDFInfo.Guid.ToString(), "Pdf saved");
+                        Logger.Log("PDFViewController_fileEvent", PDFInfo.Guid.ToString(), "Pdf saved");
 
                         if (!File.Exists(jsonFilePath) && MetalocalNsUrl.IsFileUrl)
                         {
@@ -85,7 +85,7 @@ namespace Ramboell.iOS
                             {
                                 if (error != null)
                                 {
-                                    Logger.Log("PDFViewController.FileEvent", PDFInfo.MetaId.ToString(), error.LocalizedDescription);
+                                    Logger.Log("PDFViewController_fileEvent", PDFInfo.MetaId.ToString(), error.LocalizedDescription);
                                     throw new Exception(error.LocalizedDescription);
                                 }
                                 if (jsonData.Save(MetalocalNsUrl, NSDataWritingOptions.Atomic, out error))

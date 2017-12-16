@@ -28,7 +28,7 @@ Når brugeren er færdig med en registrering, vil objekter, PDF-tegning mv. bliv
 \clearpage
 
 \section{Klasse diagram}
-
+På Figur \ref{fig:KlasseDiagram} ses der en klasse diagram over RamboellTilSyn vist i standard UML notation. Klassen diagrammet udpeger essentielle funktioner og felter for klassen i applikationen, og mapper dem visuelt til hinanden på diagrammet. 
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -36,3 +36,5 @@ Når brugeren er færdig med en registrering, vil objekter, PDF-tegning mv. bliv
 	\caption{Klassediagram for Rambøll Tilsyn.}
 	\label{fig:KlasseDiagram}
 \end{figure}
+
+Her ses at Alle ViewController er nedarvet fra UIViewController, som er en klasse der stammer fra Xamarin.iOS framework. For at vide mere om hvad UIViewController gør, læs her \cite{UIViewController}. UITableViewController er en specialiseret  klasse fra Xamarin.iOS framework, der er nedarvet fra UIViewController, med den formål at vise en liste med data som man selv implementerer. Logger klassen bruger Firebase Analytics for at logge events fra applikationen som en erstatning for skrive sine fejlbeskeder ud i Console lokalt\cite{CON}. Fordelen ved dette er at man kan logge diverse events fra alle devices og se det på Firebase Console.  
