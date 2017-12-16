@@ -13,7 +13,7 @@ For den fulde arkitektur henvises til Arkitektur og Design dokumentationens afsn
 
 \clearpage
 
-
+På Figur \ref{fig:KlasseDiagram} ses der en klassediagram over RamboellTilSyn. Klassediagrammet viser klasserne i Rambøll Tilsyn og hvilke relationer disse har til hinanden.
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=13cm, width=17cm]{Arkitektur/KlasseDiagram}
@@ -21,3 +21,7 @@ For den fulde arkitektur henvises til Arkitektur og Design dokumentationens afsn
 	\label{fig:KlasseDiagram}
 \end{figure}
 
+
+Alle ViewControllers er nedarvet fra UIViewController\cite{UIViewController}. UIViewController en klasse der stammer fra Xamarin.iOS frameworket. \\
+Klassen UITableViewControllers formål er at vise en liste af data som man selv har implementeret. \\
+Logger klassen bruger Firebase Analytics for at logge events fra applikationen. Dette gør at man kan bruge fejlmeddelelserne fra Analytics til fortælle brugeren hvad der er sket af fejl.  
