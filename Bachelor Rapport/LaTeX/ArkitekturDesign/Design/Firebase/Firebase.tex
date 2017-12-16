@@ -1,4 +1,4 @@
-Rambøll Tilsyn benytter tre Firebase produkter for at fungere, Authentication, Realtime Database og Storage.\\
+Rambøll Tilsyn benytter tre Firebase produkter for at fungere, Authentication(Auth), Realtime Database og Storage.\\
 
  Firebase Auth\cite{FirebaseAuth} bruges til håndtering brugere som login og oprettelse. Den indeholder data som e-mail, en hashet password og en unik identifier, der bliver skabt af Firebase Authentication, når brugeren bliver skabt. Firebase tilbyder en Console , som er en hjemmeside, der giver mulighed for at se og manipulere data og konfigure sin Firebase. På Figur \ref{fig:FirebaseAuthPNG} kan en oversigt med informationer over bruger ses. 
 \begin{figure}[H] % (alternativt [H])
@@ -52,7 +52,7 @@ Dette gør, at man kan se, hvilket projekter og pdf'er der findes i databasen og
 		En Referrence til en pdf-node, samt en referrence til Firebase Storage så applikationen kan  downloade PDF'en når den først har brug for det.\\
 	\end{itemize}
 
-\textbf{User} node indeholder brugerdefineret data der tilhører brugerne af applikationen. Det id der bliver brugt som key til user stammer fra Firebase Authentication og er en reference til User guid som ses på figur \ref{fig:FirebaseAuthPNG}. 
+\textbf{User} node indeholder brugerdefineret data der tilhører brugerne af applikationen. Det id der bliver brugt som key til user stammer fra Firebase Authentication og er en reference til User guid som ses på Figur \ref{fig:FirebaseAuthPNG}. 
 \begin{itemize}
 	\item \textbf{alias} \\
 	Her gemmes telefonnummeret til brugeren. \\
