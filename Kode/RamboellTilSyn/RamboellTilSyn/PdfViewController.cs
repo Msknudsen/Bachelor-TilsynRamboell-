@@ -156,27 +156,30 @@ namespace Ramboell.iOS
                     Shape = (Shape) Shape,
                     TimeStamp = timeNow
                 });
-                File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
-                // Create a reference to the file you want to upload
+                //File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
+                //// Create a reference to the file you want to upload
 
-                // Upload the file to the path "images/rivers.jpg"
-                StorageUploadTask uploadTask = _jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
-                    if (error != null)
-                    {
-                        Console.WriteLine("Error");
-                    }
-                    else
-                    {
-                        DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
-                        var key = nameof(RegistrationDto.Updated);
-                        //update Firebase database 
-                        rootNode
-                            .GetChild(Global.Pdf)
-                            .GetChild(PDFInfo.Guid.ToString())
-                            .GetChild(key)
-                            .SetValue(new NSString(timeNow));
-                    }
-                });
+                //// Upload the file to the path "images/rivers.jpg"
+                //StorageUploadTask uploadTask = _jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
+                //    if (error != null)
+                //    {
+                //        Console.WriteLine("Error");
+                //    }
+                //    else
+                //    {
+                //        DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
+                //        var key = nameof(RegistrationDto.Updated);
+                //        //update Firebase database 
+                //        rootNode
+                //            .GetChild(Global.Pdf)
+                //            .GetChild(PDFInfo.Guid.ToString())
+                //            .GetChild(key)
+                //            .SetValue(new NSString(timeNow));
+                //    }
+                //});
+                Shape = null;
+                _preSelectedbtn.Selected = false;
+                Console.WriteLine($"TapOnPdf: end ---> Shape: {Shape}, Selected: {_preSelectedbtn.Selected}");
                 PDFView.SetNeedsDisplay();
             }
         }
@@ -275,17 +278,25 @@ namespace Ramboell.iOS
         }
         private void SelectShape(Shape shape, UIButton btn)
         {
-
+            Console.WriteLine($" SelectShape:start --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
             if (_preSelectedbtn != null)
             {
                 Shape = null;
-                _preSelectedbtn.Selected = false;
-                if (Equals(_preSelectedbtn, btn))
+                if (Equals(_preSelectedbtn, btn) && _preSelectedbtn.Selected == false)
                     return;
             }
+            //if (_preSelectedbtn != null)
+            //{
+            //    Shape = null;
+            //    _preSelectedbtn.Selected = false;
+            //    if (Equals(_preSelectedbtn, btn))
+            //        return;
+            //}
             Shape = shape;
             btn.Selected = true;
             _preSelectedbtn = btn;
+            Console.WriteLine($" SelectShape:end --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
+
         }
 
         public override void ViewDidUnload()

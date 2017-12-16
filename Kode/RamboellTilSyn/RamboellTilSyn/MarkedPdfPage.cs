@@ -70,7 +70,7 @@ namespace Ramboell.iOS
                         switch (item.Shape)
                         {
                             case Shape.Circle:
-                                img = UIImage.FromBundle("back").CGImage;
+                                img = UIImage.FromBundle("circle").CGImage;
                                 break;
                             case Shape.CheckMark:
 
@@ -84,7 +84,7 @@ namespace Ramboell.iOS
                                 throw new Exception("Using an invalid Shape ");
                             #endif
                         }
-                        
+                        g.RotateCTM((float) (Math.PI / 12.0f));
                         g.DrawImage(size, img);
                         
                     }
