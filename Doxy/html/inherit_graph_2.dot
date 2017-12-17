@@ -1,0 +1,19 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node25 [label="IPdfDocumentDelegate",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node25 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Ramboell.iOS.PdfViewController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ramboell_1_1i_o_s_1_1_pdf_view_controller.html"];
+  Node1 [label="UIViewController",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node0 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 [label="Ramboell.iOS.ChosePdfView\lController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ramboell_1_1i_o_s_1_1_chose_pdf_view_controller.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Ramboell.iOS.CreateProject\lViewController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ramboell_1_1i_o_s_1_1_create_project_view_controller.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Ramboell.iOS.CreateUserView\lController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ramboell_1_1i_o_s_1_1_create_user_view_controller.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Ramboell.iOS.LoginViewController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_ramboell_1_1i_o_s_1_1_login_view_controller.html",tooltip="Responsible for LoginView "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

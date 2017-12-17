@@ -4,6 +4,7 @@
     {
         CheckMark,
         Circle,
-        Minus
+        Minus,
+        None
     }
 }

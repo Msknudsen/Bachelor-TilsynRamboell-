@@ -5,6 +5,7 @@ namespace Ramboell.iOS
 {
     /// <summary>
     /// Taken from https://stackoverflow.com/questions/1365407/c-sharp-code-to-validate-email-address
+    /// This class is used when there is a need for validation of user input
     /// </summary>
     /// <returns></returns>
     public static class Validator
@@ -16,7 +17,7 @@ namespace Ramboell.iOS
         /// <summary>
         /// Taken from http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
         /// </summary>
-        /// <returns></returns>
+        /// <returns> A regex pattern scheme for matching email strings</returns>
         private static Regex CreateValidEmailRegex()
         {
             string validEmailPattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])*""|"
@@ -25,12 +26,20 @@ namespace Ramboell.iOS
 
             return new Regex(validEmailPattern, RegexOptions.IgnoreCase);
         }
+        /// <summary>
+        ///  Creating a Regex matching pattern
+        /// </summary>
+        /// <returns> A regex pattern scheme for matching name</returns>
         private static Regex CreateValidNameRegex()
         {
             string validPattern = @"^[A-Z][a-zA-Z .,'-]*${2,30}";
 
             return new Regex(validPattern, RegexOptions.None);
         }
+        /// <summary>
+        ///  Creating a Regex matching pattern
+        /// </summary>
+        /// <returns> A regex pattern scheme for matching password</returns>
         private static Regex CreateValidPasswordRegex()
         {
             //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
@@ -39,21 +48,33 @@ namespace Ramboell.iOS
 
             return new Regex(validPasswordPattern, RegexOptions.None);
         }
+
+        /// <summary>
+        /// Validating the input param
+        /// </summary>
+        /// <param name="emailAddress">input string</param>
+        /// <returns>true if input is valid email string, else false</returns>
         public static bool EmailIsValid(string emailAddress)
         {
-            var test =  ValidEmailRegex.IsMatch(emailAddress);
-            return test;
+            return ValidEmailRegex.IsMatch(emailAddress);
         }
-
-        public static bool NameIsValid(string emailAddress)
+        /// <summary>
+        /// Validating the input param
+        /// </summary>
+        /// <param name="name">input string</param>
+        /// <returns>true if input is valid name string, else false</returns>
+        public static bool NameIsValid(string name)
         {
-            return ValidNameRegex.IsMatch(emailAddress);
+            return ValidNameRegex.IsMatch(name);
         }
-
+        /// <summary>
+        /// Validating the input param
+        /// </summary>
+        /// <param name="password">input string</param>
+        /// <returns>true if input is valid password string, else false</returns>
         public static bool PasswordIsValid(string password)
         {
-            var test =  ValidPasswordRegex.IsMatch(password);
-            return test;
+            return ValidPasswordRegex.IsMatch(password);
         }
     }
 }

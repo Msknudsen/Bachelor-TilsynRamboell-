@@ -7,6 +7,9 @@ using Newtonsoft.Json;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// Singleton for loading json from a file into a list as draw from MarkPdfPage would be called multiple times
+    /// </summary>
     public class MetaListJSonSingleton
     {
         private static MetaListJSonSingleton _instance;

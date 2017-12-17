@@ -1,0 +1,75 @@
+\hypertarget{class_ramboell_1_1i_o_s_1_1_validator}{}\section{Ramboell.\+i\+O\+S.\+Validator Class Reference}
+\label{class_ramboell_1_1i_o_s_1_1_validator}\index{Ramboell.\+i\+O\+S.\+Validator@{Ramboell.\+i\+O\+S.\+Validator}}
+
+
+Taken from \href{https://stackoverflow.com/questions/1365407/c-sharp-code-to-validate-email-address}{\tt https\+://stackoverflow.\+com/questions/1365407/c-\/sharp-\/code-\/to-\/validate-\/email-\/address}  
+
+
+
+
+Collaboration diagram for Ramboell.\+i\+O\+S.\+Validator\+:
+% FIG 0
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a4ddde85cd5af147feb9f2a308ea86f47}\label{class_ramboell_1_1i_o_s_1_1_validator_a4ddde85cd5af147feb9f2a308ea86f47}} 
+static bool {\bfseries Email\+Is\+Valid} (string email\+Address)
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a416dae415a4c4233709f314d52cb7656}\label{class_ramboell_1_1i_o_s_1_1_validator_a416dae415a4c4233709f314d52cb7656}} 
+static bool {\bfseries Name\+Is\+Valid} (string email\+Address)
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a0de089b1419ac4021fa74bb450bc6c49}\label{class_ramboell_1_1i_o_s_1_1_validator_a0de089b1419ac4021fa74bb450bc6c49}} 
+static bool {\bfseries Password\+Is\+Valid} (string password)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Regex \hyperlink{class_ramboell_1_1i_o_s_1_1_validator_a6e258a73cdcd1a90685fc026e7e92ff3}{Create\+Valid\+Email\+Regex} ()
+\begin{DoxyCompactList}\small\item\em Taken from \href{http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx}{\tt http\+://haacked.\+com/archive/2007/08/21/i-\/knew-\/how-\/to-\/validate-\/an-\/email-\/address-\/until-\/i.\+aspx} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a93026ab8f508ce6cb3e8b666b1c4b1ce}\label{class_ramboell_1_1i_o_s_1_1_validator_a93026ab8f508ce6cb3e8b666b1c4b1ce}} 
+static Regex {\bfseries Create\+Valid\+Name\+Regex} ()
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_abec24ab9e7a001acd05cc37a9ffdb26b}\label{class_ramboell_1_1i_o_s_1_1_validator_abec24ab9e7a001acd05cc37a9ffdb26b}} 
+static Regex {\bfseries Create\+Valid\+Password\+Regex} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a5e438b906572b3a481a1a6e983e9602f}\label{class_ramboell_1_1i_o_s_1_1_validator_a5e438b906572b3a481a1a6e983e9602f}} 
+static readonly System.\+Text.\+Regular\+Expressions.\+Regex {\bfseries Valid\+Email\+Regex} = \hyperlink{class_ramboell_1_1i_o_s_1_1_validator_a6e258a73cdcd1a90685fc026e7e92ff3}{Create\+Valid\+Email\+Regex}()
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a40ce762de26bb0607852bb2af896c75f}\label{class_ramboell_1_1i_o_s_1_1_validator_a40ce762de26bb0607852bb2af896c75f}} 
+static readonly System.\+Text.\+Regular\+Expressions.\+Regex {\bfseries Valid\+Name\+Regex} = Create\+Valid\+Name\+Regex()
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_ad7f61c9214d32c8c260354f6979edc58}\label{class_ramboell_1_1i_o_s_1_1_validator_ad7f61c9214d32c8c260354f6979edc58}} 
+static readonly System.\+Text.\+Regular\+Expressions.\+Regex {\bfseries Valid\+Password\+Regex} = Create\+Valid\+Password\+Regex()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Taken from \href{https://stackoverflow.com/questions/1365407/c-sharp-code-to-validate-email-address}{\tt https\+://stackoverflow.\+com/questions/1365407/c-\/sharp-\/code-\/to-\/validate-\/email-\/address} 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_validator_a6e258a73cdcd1a90685fc026e7e92ff3}\label{class_ramboell_1_1i_o_s_1_1_validator_a6e258a73cdcd1a90685fc026e7e92ff3}} 
+\index{Ramboell\+::i\+O\+S\+::\+Validator@{Ramboell\+::i\+O\+S\+::\+Validator}!Create\+Valid\+Email\+Regex@{Create\+Valid\+Email\+Regex}}
+\index{Create\+Valid\+Email\+Regex@{Create\+Valid\+Email\+Regex}!Ramboell\+::i\+O\+S\+::\+Validator@{Ramboell\+::i\+O\+S\+::\+Validator}}
+\subsubsection{\texorpdfstring{Create\+Valid\+Email\+Regex()}{CreateValidEmailRegex()}}
+{\footnotesize\ttfamily static Regex Ramboell.\+i\+O\+S.\+Validator.\+Create\+Valid\+Email\+Regex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Taken from \href{http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx}{\tt http\+://haacked.\+com/archive/2007/08/21/i-\/knew-\/how-\/to-\/validate-\/an-\/email-\/address-\/until-\/i.\+aspx} 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Validator.\+cs\end{DoxyCompactItemize}

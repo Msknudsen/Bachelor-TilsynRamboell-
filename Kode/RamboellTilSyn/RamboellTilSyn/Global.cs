@@ -11,6 +11,8 @@ namespace Ramboell.iOS
 
     public static class Global
     {
+        public static nfloat PdfViewWidth = 0;
+        public static nfloat PdfViewHeight = 0;
         public const string Pdf = "pdf";
         public const string User = "user";
         public const string ProjectListFileName = "list.json";

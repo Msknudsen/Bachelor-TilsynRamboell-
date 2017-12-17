@@ -20,7 +20,7 @@ namespace Ramboell.iOS
         {
             
         }
-        public Shape? Shape;
+        public Shape Shape;
         List<PdfObjectDto> pdfObjects;
         public RegistrationDto PDFInfo { get; set; }
         public NSUrl PdfLocalNsUrl { get; set; }
@@ -35,6 +35,7 @@ namespace Ramboell.iOS
 
         public override void ViewDidLoad()
         {
+            Shape = Shape.None;
             base.ViewDidLoad();
             View.BackgroundColor = UIColor.Gray;
             w = View.Bounds.Width;
@@ -92,7 +93,7 @@ namespace Ramboell.iOS
                                 {
                                     pdfObjects = MetaListJSonSingleton.GetInstance(MetalocalNsUrl.Path).PdfObjects;
                                     Logger.Log("PDFViewController.FileEvent", PDFInfo.MetaId.ToString(), "json file saved");
-
+                                    add();
                                     Console.WriteLine("saved json as " + PDFInfo.MetaId);
                                     LoadPdf(PdfLocalNsUrl);
                                 }
@@ -132,30 +133,62 @@ namespace Ramboell.iOS
             else
             {
                 pdfObjects = MetaListJSonSingleton.GetInstance(MetalocalNsUrl.Path).PdfObjects;
+                add();
+
                 LoadPdf(PdfLocalNsUrl);
             }
+ 
 
+        }
 
+        private void add()
+        {
+            pdfObjects.Add(new PdfObjectDto
+            {
+                XCord = 0,
+                YCord = 50,
+                PageNo = 1,
+                Shape = Shape.Circle,
+                TimeStamp = ""
+            });
+            pdfObjects.Add(new PdfObjectDto
+            {
+                XCord = (int)w - 50,
+                YCord = 50,
+                PageNo = 1,
+                Shape = Shape.Circle,
+                TimeStamp = ""
+            });
+
+            pdfObjects.Add(new PdfObjectDto
+            {
+                XCord = (int)w - 50,
+                YCord = 50,
+                PageNo = 1,
+                Shape = Shape.Circle,
+                TimeStamp = ""
+            });
         }
         private void TapOnPdf(UITapGestureRecognizer obj)
         {
             var position = obj.LocationInView(obj.View);
             //check which shape we are working with
-            if (Shape == null) return;
+            if (Shape == Shape.None) return;
             if (PDFView.CurrentPage is MarkedPdfPage markPage)
             {
                 var pagePageNumber = markPage.Page.PageNumber;
-                    
+
                 var timeNow = new DateTime().ToUniversalTime().ToString("dd-MM-yyyy HH:mm:ss");
                 //Add comment when time is right
                 pdfObjects.Add(new PdfObjectDto
                 {
                     XCord = (int)position.X,
-                    YCord = (int)position.Y+100,
-                    PageNo = (int) pagePageNumber,
-                    Shape = (Shape) Shape,
+                    YCord = (int)position.Y,
+                    PageNo = (int)pagePageNumber,
+                    Shape = Shape,
                     TimeStamp = timeNow
                 });
+
                 //File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
                 //// Create a reference to the file you want to upload
 
@@ -177,9 +210,8 @@ namespace Ramboell.iOS
                 //            .SetValue(new NSString(timeNow));
                 //    }
                 //});
-                Shape = null;
+                Shape = Shape.None;
                 _preSelectedbtn.Selected = false;
-                Console.WriteLine($"TapOnPdf: end ---> Shape: {Shape}, Selected: {_preSelectedbtn.Selected}");
                 PDFView.SetNeedsDisplay();
             }
         }
@@ -203,6 +235,8 @@ namespace Ramboell.iOS
                 BackgroundColor = UIColor.DarkGray,
                 DisplayMode = PdfDisplayMode.SinglePage
             };
+            Global.PdfViewWidth = PDFView.Bounds.Width;
+            Global.PdfViewHeight = PDFView.Bounds.Height;
         }
         private void LoadPdf(NSUrl url)
         {
@@ -278,24 +312,61 @@ namespace Ramboell.iOS
         }
         private void SelectShape(Shape shape, UIButton btn)
         {
-            Console.WriteLine($" SelectShape:start --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
-            if (_preSelectedbtn != null)
+            bool lol = _preSelectedbtn != null;
+
+            if (lol)
+                Console.WriteLine($" SelectShape:start --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
+            else
             {
-                Shape = null;
-                if (Equals(_preSelectedbtn, btn) && _preSelectedbtn.Selected == false)
-                    return;
+                Console.WriteLine($" SelectShape:start --> Shape: {Shape}, Selected:false");
             }
             //if (_preSelectedbtn != null)
             //{
             //    Shape = null;
-            //    _preSelectedbtn.Selected = false;
-            //    if (Equals(_preSelectedbtn, btn))
+            //    if (Equals(_preSelectedbtn, btn) && _preSelectedbtn.Selected == false)
             //        return;
             //}
-            Shape = shape;
-            btn.Selected = true;
-            _preSelectedbtn = btn;
-            Console.WriteLine($" SelectShape:end --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
+            if (_preSelectedbtn != null)
+            {
+                //button pressed before
+                Console.WriteLine("SelectShape: in if");
+                if (Equals(_preSelectedbtn, btn))
+                {
+                    Console.WriteLine("preselected btn is equal");
+
+                    _preSelectedbtn.Selected = !_preSelectedbtn.Selected;
+                    Console.WriteLine($" new preselected btn is { _preSelectedbtn.Selected}");
+
+                    if (_preSelectedbtn.Selected)
+                        Shape = shape;
+                    else
+                        Shape = Shape.None;
+                    Shape = _preSelectedbtn.Selected ? shape : Shape.None;
+                    //same btn as before
+                    return;
+                }
+                else
+                {
+                    //not same btn as before
+                    Console.WriteLine($" SelectShape:end --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
+
+                    _preSelectedbtn.Selected = false;
+                    btn.Selected = true;
+                    _preSelectedbtn = btn;
+                    Shape = shape;
+
+                }
+            }
+            else
+            {
+
+                Shape = shape;
+                btn.Selected = true;
+                _preSelectedbtn = btn;
+                Console.WriteLine($" SelectShape:last end --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
+
+            }
+
 
         }
 

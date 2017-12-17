@@ -6,6 +6,9 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// Used as the input for IUTableView 
+    /// </summary>
     public class TableSource : UITableViewSource
     {
         public List<RegistrationDto> ProjectInfos { get; set; }
@@ -42,6 +45,11 @@ namespace Ramboell.iOS
 
             return cell;
         }
+        /// <summary>
+        /// This is the event handler which is called when an item is selected in a tableview
+        /// </summary>
+        /// <param name="tableView"> A reference from the caller</param>
+        /// <param name="indexPath"> Providing information about which row is selected</param>
         public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
         {
                 switch (indexPath.Row)

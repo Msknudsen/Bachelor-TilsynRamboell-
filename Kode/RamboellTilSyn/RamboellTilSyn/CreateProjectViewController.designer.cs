@@ -16,7 +16,7 @@ namespace Ramboell.iOS
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton ChosePDFBtn { get; set; }
+        UIKit.UIButton ChoosePdfBtn { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -60,9 +60,9 @@ namespace Ramboell.iOS
 
         void ReleaseDesignerOutlets ()
         {
-            if (ChosePDFBtn != null) {
-                ChosePDFBtn.Dispose ();
-                ChosePDFBtn = null;
+            if (ChoosePdfBtn != null) {
+                ChoosePdfBtn.Dispose ();
+                ChoosePdfBtn = null;
             }
 
             if (CreateProjectBtn != null) {

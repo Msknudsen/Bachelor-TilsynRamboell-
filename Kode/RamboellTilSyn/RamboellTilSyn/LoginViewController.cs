@@ -6,18 +6,22 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// Responsible for LoginView 
+    /// </summary>
     [DesignTimeVisible(false)]
     public partial class LoginViewController : UIViewController
     {
-        NSObject listenerHandle;
 
         public LoginViewController(IntPtr handle) : base(handle)
         {
         }
-
-        public void CheckIfUserSignedIn()
+        /// <summary>
+        /// Skipping the login view if there has been previous signed in users
+        /// </summary>
+        private void CheckIfUserSignedIn()
         {
-            listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) =>
+            var listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) =>
             {
                 if (user != null)
                 {
@@ -35,12 +39,14 @@ namespace Ramboell.iOS
                 }
             });
         }
-
+        
+        /// <summary>
+        /// Initiation of the view with placeholders and eventhandler
+        /// </summary>
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
             LoginBtn.TouchUpInside += LoginEventHandler;
-            //LogOutBtn.TouchUpInside += LogOutBtn_TouchUpInside;
 
             LoginEmailTxt.Placeholder = "Indtast Email";
 
@@ -49,13 +55,18 @@ namespace Ramboell.iOS
 
             CheckIfUserSignedIn();
         }
-
+        /// <summary>
+        /// remove eventhandler
+        /// </summary>
         public override void ViewDidUnload()
         {
             base.ViewDidUnload();
             LoginBtn.TouchUpInside -= LoginEventHandler;
         }
 
+        /// <summary>
+        /// event handling for when user signs in
+        /// </summary>
         private void LoginEventHandler(object sender, EventArgs e)
         {
             if (!Validator.EmailIsValid(LoginEmailTxt.Text) || !Validator.PasswordIsValid(LoginPasswordTxt.Text))

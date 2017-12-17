@@ -447,7 +447,7 @@
                         <outlet property="ProjectnumberCreateProjectTxt" destination="27740" id="name-outlet-27740"/>
                         <outlet property="ProjectadressCreateProjectLabel" destination="27743" id="name-outlet-27743"/>
                         <outlet property="ProjectadressCreateProjectTxt" destination="27744" id="name-outlet-27744"/>
-                        <outlet property="ChosePDFBtn" destination="28385" id="name-outlet-28385"/>
+                        <outlet property="ChoosePdfBtn" destination="28385" id="name-outlet-28385"/>
                         <outlet property="CreateProjectBtn" destination="28370" id="name-outlet-28370"/>
                     </connections>
                 </viewController>
@@ -465,5 +465,7 @@
         <image name="forward.png" width="434" height="364"/>
         <image name="list.png" width="512" height="512"/>
         <image name="minus.png" width="640" height="637"/>
+        <image name="checkmarkpdf.png" width="570" height="594"/>
+        <image name="minuspdf.png" width="640" height="637"/>
     </resources>
 </document>
