@@ -1,7 +1,7 @@
 \section{Firebase}
-I dette afsnit vil designet for Firebase blive gennemgået. For den fulde dokumentation af design og implentering henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:FirebaseDesign} og de tilhørende afsnit. \\
+I dette afsnit vil designet for Firebase blive gennemgået. For den fulde dokumentation af design og implentering henvises til Arkitektur og Design dokumentationens Afsnit \ref{Design-sec:FirebaseDesign} og de tilhørende afsnit. \\
 
-Håndtering af brugere benyttes Firebase Auth \cite{FirebaseAuth}. Opbygningen af denne kan ses på Figur \ref{fig:FirebaseAuthPNG}.
+For håndtering af brugere benyttes Firebase Auth \cite{FirebaseAuth}. Opbygningen af denne kan ses på Figur \ref{fig:FirebaseAuthPNG}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -9,8 +9,8 @@ Håndtering af brugere benyttes Firebase Auth \cite{FirebaseAuth}. Opbygningen a
 	\caption{Oversigt over authentication data i Firebase Console.}
 	\label{fig:FirebaseAuthPNG}
 \end{figure}
-Denne indeholder en tabel, med en identifier som er brugerens e-mail. \\
-Provider fortæller, hvordan brugeren har oprettet sig, som hænger sammen med created feltet, der fortæller, hvornår brugernen er oprettet. \\
+Denne indeholder en tabel med en identifier, som er brugerens e-mail. \\
+Provider fortæller, hvordan brugeren har oprettet sig og som hænger sammen med created feltet, der fortæller, hvornår brugeren er oprettet. \\
 Signed In fortæller, hvornår brugeren sidst er logget ind og det sidste felt er brugerens unikke id. \\
 Her er også gemt et hashed password, men dette bliver ikke vist pga sikkerhed. \\
 
@@ -24,9 +24,9 @@ Figur \ref{fig:FirebaseDB} vises database strukturen i Firebase.
 	\label{fig:FirebaseDB}
 \end{figure}
 Databasen består af tre noder: \textbf{pdf}, \textbf{projekt} og \textbf{user}. \\
-\textbf{pdf} noden indeholder alle PDF-tegninger i systemet, samt en reference til informationen omkring oprettede objekter på disse PDF filer. \\
+\textbf{Pdf} noden indeholder alle PDF-tegninger i systemet samt en reference til informationen omkring oprettede objekter på disse PDF filer. \\
 Hver ny PDF, som bliver tilføjet i systemet, vil blive oprettet som en undernode i \textbf{pdf} noden. \\
-\textbf{projekt} noden indeholder noder for hvert projekt som er oprettet. Disse undernoder indeholder alt det information som tilhører projekterne. \\
-\textbf{user} noden indeholder information for brugere. Hver bruger oprettes som en ny undernode.
+\textbf{Projekt} noden indeholder noder for hvert projekt, som er oprettet. Disse undernoder indeholder alt det information som tilhører projekterne. \\
+\textbf{User} noden indeholder information for brugere. Hver bruger oprettes som en ny undernode.
 
 \clearpage
