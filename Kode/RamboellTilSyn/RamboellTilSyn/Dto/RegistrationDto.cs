@@ -9,6 +9,11 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+
+
+    /// <summary>
+    /// dto obj mapping from firebase to C# object
+    /// </summary>
     public class RegistrationDto
     {
         public string Name { get; set; }

@@ -2,6 +2,9 @@
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// dto class for various shapes on pdf
+    /// </summary>
         public class PdfObjectDto
         {
             public int PageNo { get; set; }

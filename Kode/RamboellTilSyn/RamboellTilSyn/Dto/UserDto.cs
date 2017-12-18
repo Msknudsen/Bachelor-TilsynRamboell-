@@ -6,6 +6,9 @@ using Contacts;
 
 namespace Ramboell.iOS.Dto
 {
+    /// <summary>
+    /// user dto mapping between firebase and C# obj
+    /// </summary>
     public class UserDto
     {
         public Guid Guid { get; set; }

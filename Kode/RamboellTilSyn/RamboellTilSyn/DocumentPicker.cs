@@ -8,6 +8,9 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// Not implemented yet, to be added
+    /// </summary>
     class DocumentPicker: UIDocument
     {
         protected DocumentPicker(NSObjectFlag t) : base(t)

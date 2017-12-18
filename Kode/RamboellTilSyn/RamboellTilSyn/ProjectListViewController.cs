@@ -10,6 +10,9 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// ViewController used for showing list of different project in Ramboell
+    /// </summary>
     [System.ComponentModel.DesignTimeVisible(false)]
     public partial class ProjectListViewController : UITableViewController
     { 
@@ -23,6 +26,9 @@ namespace Ramboell.iOS
             _node.KeepSynced(true);
         }
 
+        /// <summary>
+        /// Adding a default list of data it needs to show if there is no project list to be found 
+        /// </summary>
         private void InstaniateJsonFile()
         {
             if (!File.Exists(_file))
@@ -37,6 +43,9 @@ namespace Ramboell.iOS
             }
         }
 
+        /// <summary>
+        /// Latching onto a FirebaseNode and listen to events on the perticular node in this case "pdf node from firebase if there is any changes on the node, the event would create a updated local file" 
+        /// </summary>
         private void SyncWithFirebaseDatabase()
         {
             handleReference = _node.ObserveEvent(DataEventType.Value, (snapshot) =>
@@ -75,8 +84,6 @@ namespace Ramboell.iOS
         {
             base.ViewDidLoad();
         }
-
-    
 
         public override void ViewDidLoad()
         {

@@ -8,6 +8,9 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// Logging events from all devices onto firebase and watch them on console 
+    /// </summary>
     public class Logger
     {
         public static void Log(string key,string description)

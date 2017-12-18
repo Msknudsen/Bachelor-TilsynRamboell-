@@ -14,6 +14,10 @@ using UIKit;
 //https://components.xamarin.com/gettingstarted/firebaseiosstorage#download-files
 namespace Ramboell.iOS
 {
+
+    /// <summary>
+    /// Showing the PDF and Allows user to mark pdf with objects.
+    /// </summary>
     [System.ComponentModel.DesignTimeVisible(false)]
     public partial class PdfViewController : UIViewController, IPdfDocumentDelegate
     {
@@ -21,7 +25,13 @@ namespace Ramboell.iOS
         {
             
         }
+        /// <summary>
+        /// This enum saves the state of the Shape selected for pdf 
+        /// </summary>
         public Shape Shape;
+        /// <summary>
+        /// The objects for the pdf
+        /// </summary>
         List<PdfObjectDto> pdfObjects;
         public RegistrationDto PDFInfo { get; set; }
         public NSUrl PdfLocalNsUrl { get; set; }
@@ -34,6 +44,9 @@ namespace Ramboell.iOS
 
         const int panelHeight = 70;
 
+        /// <summary>
+        /// getting all the needed data before being able to show the view. This will check for the pdf and json file on the next if not exist
+        /// </summary>
         public override void ViewDidLoad()
         {
             Shape = Shape.None;
@@ -169,6 +182,10 @@ namespace Ramboell.iOS
                 TimeStamp = ""
             });
         }
+        /// <summary>
+        /// Detecting a Tap gesture when user tapping on screen, then saving it to lokal, upload it and reload the pdfview for new object 
+        /// </summary>
+        /// <param name="obj"></param>
         private void TapOnPdf(UITapGestureRecognizer obj)
         {
             var position = obj.LocationInView(obj.View);
@@ -226,6 +243,11 @@ namespace Ramboell.iOS
             }
             
         }
+        /// <summary>
+        /// adding PDFView and initi Width and Heigh for later in markedPDF class
+        /// </summary>
+        /// <param name="nwidth"></param>
+        /// <param name="nfloat"></param>
         private void InitPdfView(nfloat nwidth, nfloat nfloat)
         {
             PDFView = new MyPdfView()
@@ -238,6 +260,11 @@ namespace Ramboell.iOS
             Global.PdfViewWidth = PDFView.Bounds.Width;
             Global.PdfViewHeight = PDFView.Bounds.Height;
         }
+
+        /// <summary>
+        /// LoadPdf when all init is done, this will glue the other functions together and load a pdf with given urlpath together with the pdf panel. 
+        /// </summary>
+        /// <param name="url"> the url for the pdf</param>
         private void LoadPdf(NSUrl url)
         {
             if (!url.IsFileUrl) return;
@@ -248,6 +275,10 @@ namespace Ramboell.iOS
             View.BringSubviewToFront(loadPdfBottomPanel);
         }
 
+        /// <summary>
+        /// Loads all the buttons from factory method into a UIView, and then set the logic and the placement for the buttons 
+        /// </summary>
+        /// <returns>returns all the buttons in one UIView </returns>
         private UIView LoadPdfBottomPanel()
         {
             var panelView = new UIView
@@ -310,22 +341,16 @@ namespace Ramboell.iOS
 
             return panelView;
         }
+
+
+
+        /// <summary>
+        /// Containing the logic for animation of highlighting the UIButtons created, to show user if any shape is selected and remembers it
+        /// </summary>
+        /// <param name="shape">telling which shape is selected</param>
+        /// <param name="btn">a reference of the btn</param>
         private void SelectShape(Shape shape, UIButton btn)
         {
-            bool lol = _preSelectedbtn != null;
-
-            if (lol)
-                Console.WriteLine($" SelectShape:start --> Shape: {Shape}, Selected:{_preSelectedbtn.Selected}");
-            else
-            {
-                Console.WriteLine($" SelectShape:start --> Shape: {Shape}, Selected:false");
-            }
-            //if (_preSelectedbtn != null)
-            //{
-            //    Shape = null;
-            //    if (Equals(_preSelectedbtn, btn) && _preSelectedbtn.Selected == false)
-            //        return;
-            //}
             if (_preSelectedbtn != null)
             {
                 //button pressed before
@@ -370,12 +395,19 @@ namespace Ramboell.iOS
 
         }
 
+        /// <summary>
+        /// Resetting the MetaListJSonSingleton when view unloads. 
+        /// </summary>
         public override void ViewDidUnload()
         {
             base.ViewDidUnload();
             MetaListJSonSingleton.TryGetInstance().Reset();
         }
 
+        /// <summary>
+        /// laods the pdf document into the View
+        /// </summary>
+        /// <param name="url"></param>
         private void LoadPdfView(NSUrl url)
         {
             var document = new PdfDocument(url);
@@ -389,6 +421,10 @@ namespace Ramboell.iOS
                 //markedPdfPage.InitPdfObjectFrom();
             }
         }
+        /// <summary>
+        /// The override for Objective-C to Return an instance of MarkedPdfPage instead of PdfPage
+        /// </summary>
+        /// <returns></returns>
         #region PdfDocumentDelegate
         [Export("classForPage")]
         public ObjCRuntime.Class GetClassForPage()
