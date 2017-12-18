@@ -13,6 +13,7 @@ namespace Ramboell.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            //ChoosePdfBtn.TouchUpInside += ChoosePdf;
             
         }
 

@@ -258,8 +258,6 @@
                             <constraint id="41920" firstItem="24780" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="15"/>
                             <constraint id="41922" firstItem="24585" firstAttribute="centerX" secondItem="24781" secondAttribute="centerX" constant="167"/>
                             <constraint id="41923" firstItem="24781" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
-                            <constraint id="41935" firstItem="27155" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
-                            <constraint id="41937" firstItem="24585" firstAttribute="trailingMargin" secondItem="27155" secondAttribute="trailing" constant="208"/>
                             <constraint id="43179" firstItem="24588" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
                             <constraint id="43180" firstItem="24585" firstAttribute="trailingMargin" secondItem="24588" secondAttribute="trailing" constant="185"/>
                             <constraint id="43181" firstItem="24588" firstAttribute="top" secondItem="24581" secondAttribute="bottom" constant="37"/>
@@ -271,7 +269,6 @@
                             <constraint id="43665" firstItem="24689" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="246"/>
                             <constraint id="43666" firstItem="24781" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="304"/>
                             <constraint id="43667" firstItem="24780" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="279"/>
-                            <constraint id="43672" firstItem="27155" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="487"/>
                             <constraint id="48981" firstItem="24590" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
                             <constraint id="48982" firstItem="24590" firstAttribute="top" secondItem="24588" secondAttribute="centerY" constant="38"/>
                             <constraint id="49492" firstItem="24782" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="82"/>
@@ -286,6 +283,11 @@
                             <constraint id="49501" firstItem="24585" firstAttribute="centerX" secondItem="24644" secondAttribute="centerX" constant="167"/>
                             <constraint id="49502" firstItem="24644" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="382"/>
                             <constraint id="49503" firstItem="24644" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
+                            <constraint id="49995" firstItem="27155" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
+                            <constraint id="49996" firstItem="27155" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="485"/>
+                            <constraint id="49997" firstItem="24585" firstAttribute="trailingMargin" secondItem="27155" secondAttribute="trailing" constant="208"/>
+                            <constraint id="49998" firstItem="27155" firstAttribute="top" secondItem="24644" secondAttribute="bottom" constant="68"/>
+                            <constraint id="49999" firstItem="24582" firstAttribute="top" secondItem="27155" secondAttribute="bottom" constant="12"/>
                         </constraints>
                     </view>
                     <connections>
