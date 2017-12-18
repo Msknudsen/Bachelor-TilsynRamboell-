@@ -56,26 +56,45 @@ namespace Ramboell.iOS
                         Console.WriteLine("Succesfully Created A User");
                         userNode = userNode.GetChild(user.Uid);
                         object[] keys = {
-                        "alias",
-                        "email",
-                        "firstName",
-                        "lastName"
-                    };
+                            "alias",
+                            "email",
+                            "firstName",
+                            "lastName"
+                        };
                         object[] values = {
-                        PhoneCreateUserTxt.Text,
-                        EmailCreateUserTxt.Text,
-                        FirstnameCreateUserTxt.Text,
-                        LastnameCreateUserTxt.Text
-                    };
+                            PhoneCreateUserTxt.Text,
+                            EmailCreateUserTxt.Text,
+                            FirstnameCreateUserTxt.Text,
+                            LastnameCreateUserTxt.Text
+                        };
+                        var userValue = NSUserDefaults.StandardUserDefaults.StringForKey(Global.CurrentUserKey);
+                        var passValue = NSUserDefaults.StandardUserDefaults.StringForKey(Global.CurrentPassKey);
+                        if (userValue != null && passValue != null)
+                        {
+                            Auth.DefaultInstance.SignIn(userValue,passValue, (userdata, err) =>
+                            {
+                                if (err ==null)
+                                {
+                                    NavigationController.PopViewController(true);
+                                    Console.WriteLine("Succesfully Created A User and logging back into the intended user");
+                                }
+                            });
+                        }
+                        else
+                        {
+                            throw new Exception("Something Unexpected happened");
+                        }
+                        
                         var data = NSDictionary.FromObjectsAndKeys(values, keys, keys.Length);
                         userNode.SetValue<NSDictionary>(data);
                     }
+
             });
         }
 
         private bool IsFieldsValid()
         {
-            return IsValidEmail() && IsValidName() && IsValidPhoneNumber() && IsValidPassword();
+            return IsValidEmail() && IsValidPassword() && IsValidName() && IsValidPhoneNumber();
         }
 
         private bool IsValidPassword()
@@ -84,7 +103,7 @@ namespace Ramboell.iOS
                 return true;
             UIAlertView alert = new UIAlertView()
             {
-                Title = "Invalid Number"
+                Title = "Invalid Password"
             };
             alert.AddButton("OK");
             alert.Show();
@@ -106,8 +125,9 @@ namespace Ramboell.iOS
 
         private bool IsValidName()
         {
-            if (FirstnameCreateUserTxt.HasText && FirstnameCreateUserTxt.Text.Length > 2 &&
-                Validator.NameIsValid(FirstnameCreateUserTxt.Text))
+            if (FirstnameCreateUserTxt.HasText && FirstnameCreateUserTxt.Text.Length >= 2 &&
+                Validator.NameIsValid(FirstnameCreateUserTxt.Text) && LastnameCreateUserTxt.HasText && LastnameCreateUserTxt.Text.Length >= 2 &&
+                Validator.NameIsValid(LastnameCreateUserTxt.Text))
             {
                 return true;
             }

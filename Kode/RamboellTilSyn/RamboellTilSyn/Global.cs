@@ -18,6 +18,8 @@ namespace Ramboell.iOS
         public const string ProjectListFileName = "list.json";
         public const string AddUserLabel = "Tilføj bruger";
         public const string AddProjectLabel = "Tilføj projekt";
+        public static string CurrentUserKey => "SignedInUser";
+        public static string CurrentPassKey => "SignedInUserPassword";
     }
 
 }
