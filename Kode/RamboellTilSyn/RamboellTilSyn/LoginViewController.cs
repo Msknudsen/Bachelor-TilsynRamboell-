@@ -2,8 +2,7 @@
 using System.ComponentModel;
 using Firebase.Auth;
 using Foundation;
-using UIKit;
-
+using UIKit; 
 namespace Ramboell.iOS
 {
     /// <summary>
@@ -16,30 +15,35 @@ namespace Ramboell.iOS
         public LoginViewController(IntPtr handle) : base(handle)
         {
         }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            CheckIfUserSignedIn();
+        }
+
         /// <summary>
         /// Skipping the login view if there has been previous signed in users
         /// </summary>
         private void CheckIfUserSignedIn()
         {
-            var listenerHandle = Auth.DefaultInstance.AddAuthStateDidChangeListener((auth, user) =>
+            var user = Auth.DefaultInstance.CurrentUser;
+            if (user != null)
             {
-                if (user != null)
+                Console.WriteLine("User Currently Logged In: {0}", user.Email);
+                NavigationController.PopViewController(false);
+                if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController
+                    projectList)
                 {
-                    Console.WriteLine("User Currently Logged In: {0}", user.Email);
-                    //SignOut();
-                    if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
-                    {
-                        NavigationController.RemoveFromParentViewController();
-                        NavigationController.PushViewController(projectList, true);
-                    }
+                    NavigationController.PushViewController(projectList, true);
                 }
-                else
-                {
-                    Console.WriteLine("No Users logged In");
-                }
-            });
+            }
+            else
+            {
+                Console.WriteLine("No Users logged In");
+            }
         }
-        
+
         /// <summary>
         /// Initiation of the view with placeholders and eventhandler
         /// </summary>
@@ -53,7 +57,7 @@ namespace Ramboell.iOS
             LoginPasswordTxt.SecureTextEntry = true;
             LoginPasswordTxt.Placeholder = "Indtast kodeord";
 
-            CheckIfUserSignedIn();
+            //CheckIfUserSignedIn();
         }
         /// <summary>
         /// remove eventhandler
@@ -71,7 +75,7 @@ namespace Ramboell.iOS
         {
             if (!Validator.EmailIsValid(LoginEmailTxt.Text) || !Validator.PasswordIsValid(LoginPasswordTxt.Text))
             {
-                UIAlertView alert = new UIAlertView()
+                UIAlertView alert = new UIAlertView
                 {
                     Title = "Invalid email or password"
                 };
@@ -80,41 +84,45 @@ namespace Ramboell.iOS
             }
             else
                 Auth.DefaultInstance.SignIn(LoginEmailTxt.Text, LoginPasswordTxt.Text, (user, error) =>
-            {
-                if (error != null)
                 {
-                    AuthErrorCode errorCode;
-                    if (IntPtr.Size == 8) // 64 bits devices
-                        errorCode = (AuthErrorCode)((long)error.Code);
-                    else // 32 bits devices
-                        errorCode = (AuthErrorCode)((int)error.Code);
-
-                    // Posible error codes that SignIn method with email and password could throw
-                    // Visit https://firebase.google.com/docs/auth/ios/errors for more information
-                    switch (errorCode)
+                    if (error != null)
                     {
-                        case AuthErrorCode.OperationNotAllowed:
-                        case AuthErrorCode.InvalidEmail:
-                        case AuthErrorCode.UserDisabled:
-                        case AuthErrorCode.WrongPassword:
-                        default:
+                        AuthErrorCode errorCode;
+                        if (IntPtr.Size == 8) // 64 bits devices
+                            errorCode = (AuthErrorCode)((long)error.Code);
+                        else // 32 bits devices
+                            errorCode = (AuthErrorCode)((int)error.Code);
 
-                            // Print error
-                            Console.WriteLine(errorCode.ToString());
-                            break;
+                        // Posible error codes that SignIn method with email and password could throw
+                        // Visit https://firebase.google.com/docs/auth/ios/errors for more information
+                        switch (errorCode)
+                        {
+                            case AuthErrorCode.OperationNotAllowed:
+                            case AuthErrorCode.InvalidEmail:
+                            case AuthErrorCode.UserDisabled:
+                            case AuthErrorCode.WrongPassword:
+                            default:
+
+                                // Print error
+                                Console.WriteLine(errorCode.ToString());
+                                break;
+                        }
                     }
-                }
-                else
-                {
-                    if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
+                    else
                     {
-                        NavigationController.PushViewController(projectList, true);
+                        NSUserDefaults.StandardUserDefaults.SetString(LoginEmailTxt.Text, Global.CurrentUserKey);
+                        NSUserDefaults.StandardUserDefaults.SetString(LoginPasswordTxt.Text, Global.CurrentPassKey);
+                        NSUserDefaults.StandardUserDefaults.Synchronize();
+
+                        if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
+                        {
+                            NavigationController.RemoveFromParentViewController();
+                            NavigationController.PushViewController(projectList, true);
+                        }
                     }
-                }
-            });
+                });
 
         }
-
         private void SignOut()
         {
             var signedOut = Auth.DefaultInstance.SignOut(out var error);
