@@ -1,0 +1,114 @@
+\hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{}\section{Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton Class Reference}
+\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}\index{Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton@{Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton}}
+
+
+Singleton for loading json from a file into a list as draw from Mark\+Pdf\+Page would be called multiple times  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a515bd2adaadc63f39c96b329074bf390}{Reset} ()
+\begin{DoxyCompactList}\small\item\em Used to get a new instance of this class instead of the old one, use this if you need a new list from another file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a6ccf9aa0f83d994c9e711c93fbcf17cd}{Get\+Instance} (string path)
+\begin{DoxyCompactList}\small\item\em Getting a instancee from a speciffic path \end{DoxyCompactList}\item 
+static \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4e654af0774fd51b8509bbcba9376a8c}{Try\+Get\+Instance} ()
+\begin{DoxyCompactList}\small\item\em Will try get a instance if there is one, without the to specify which path \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_ae3bdc50a2c96e628e41c00b82a779c63}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_ae3bdc50a2c96e628e41c00b82a779c63}} 
+List$<$ \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_object_dto}{Pdf\+Object\+Dto} $>$ {\bfseries Pdf\+Objects}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4c53cce0428da8e4f5be5950e884a8ad}{Meta\+List\+J\+Son\+Singleton} (string path)
+\begin{DoxyCompactList}\small\item\em private constructor needs to be called from a public method \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4d6f60f45234b616c6588019567b837a}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4d6f60f45234b616c6588019567b837a}} 
+string {\bfseries \+\_\+path} =\char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_aa5187f1cc93f8405c270e7b19844e5fe}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_aa5187f1cc93f8405c270e7b19844e5fe}} 
+static \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} {\bfseries \+\_\+instance}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Singleton for loading json from a file into a list as draw from Mark\+Pdf\+Page would be called multiple times 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4c53cce0428da8e4f5be5950e884a8ad}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4c53cce0428da8e4f5be5950e884a8ad}} 
+\index{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}!Meta\+List\+J\+Son\+Singleton@{Meta\+List\+J\+Son\+Singleton}}
+\index{Meta\+List\+J\+Son\+Singleton@{Meta\+List\+J\+Son\+Singleton}!Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}}
+\subsubsection{\texorpdfstring{Meta\+List\+J\+Son\+Singleton()}{MetaListJSonSingleton()}}
+{\footnotesize\ttfamily Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton.\+Meta\+List\+J\+Son\+Singleton (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+private constructor needs to be called from a public method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a6ccf9aa0f83d994c9e711c93fbcf17cd}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a6ccf9aa0f83d994c9e711c93fbcf17cd}} 
+\index{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}!Get\+Instance@{Get\+Instance}}
+\index{Get\+Instance@{Get\+Instance}!Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}}
+\subsubsection{\texorpdfstring{Get\+Instance()}{GetInstance()}}
+{\footnotesize\ttfamily static \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton.\+Get\+Instance (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Getting a instancee from a speciffic path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the meta list json file path\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an instance of this class
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a515bd2adaadc63f39c96b329074bf390}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a515bd2adaadc63f39c96b329074bf390}} 
+\index{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}!Reset@{Reset}}
+\index{Reset@{Reset}!Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}}
+\subsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton.\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used to get a new instance of this class instead of the old one, use this if you need a new list from another file 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4e654af0774fd51b8509bbcba9376a8c}\label{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton_a4e654af0774fd51b8509bbcba9376a8c}} 
+\index{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}!Try\+Get\+Instance@{Try\+Get\+Instance}}
+\index{Try\+Get\+Instance@{Try\+Get\+Instance}!Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton@{Ramboell\+::i\+O\+S\+::\+Meta\+List\+J\+Son\+Singleton}}
+\subsubsection{\texorpdfstring{Try\+Get\+Instance()}{TryGetInstance()}}
+{\footnotesize\ttfamily static \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} Ramboell.\+i\+O\+S.\+Meta\+List\+J\+Son\+Singleton.\+Try\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Will try get a instance if there is one, without the to specify which path 
+
+\begin{DoxyReturn}{Returns}
+Returns null, when failing
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Ramboell\+Til\+Syn/Meta\+List\+J\+Son\+Singleton.\+cs\end{DoxyCompactItemize}

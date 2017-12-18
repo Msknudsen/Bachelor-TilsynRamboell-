@@ -1,0 +1,114 @@
+\hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller}{}\section{Ramboell.\+i\+O\+S.\+Login\+View\+Controller Class Reference}
+\label{class_ramboell_1_1i_o_s_1_1_login_view_controller}\index{Ramboell.\+i\+O\+S.\+Login\+View\+Controller@{Ramboell.\+i\+O\+S.\+Login\+View\+Controller}}
+
+
+Responsible for Login\+View  
+
+
+Inheritance diagram for Ramboell.\+i\+O\+S.\+Login\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ramboell_1_1i_o_s_1_1_login_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_ad47b0bfc828ac5009b16abe51283a6d6}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_ad47b0bfc828ac5009b16abe51283a6d6}} 
+{\bfseries Login\+View\+Controller} (Int\+Ptr handle)
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_aad7d3c377988c749c64d85932bdde0a3}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_aad7d3c377988c749c64d85932bdde0a3}} 
+override void {\bfseries View\+Will\+Appear} (bool animated)
+\item 
+override void \hyperlink{class_ramboell_1_1i_o_s_1_1_login_view_controller_a43dbaf2dd54a2a4884ca87d26697f375}{View\+Did\+Load} ()
+\begin{DoxyCompactList}\small\item\em Initiation of the view with placeholders and eventhandler \end{DoxyCompactList}\item 
+override void \hyperlink{class_ramboell_1_1i_o_s_1_1_login_view_controller_ac6f5b00fbb4861aa7e87e21c25e76c55}{View\+Did\+Unload} ()
+\begin{DoxyCompactList}\small\item\em remove eventhandler \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a33baa98e9632062555dc7cc43d3f6d1a}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a33baa98e9632062555dc7cc43d3f6d1a}} 
+override void {\bfseries Did\+Receive\+Memory\+Warning} ()
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_ae7bc1fc7fdb5836366be3a2c590b1147}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_ae7bc1fc7fdb5836366be3a2c590b1147}} 
+U\+I\+Kit.\+U\+I\+Button {\bfseries Login\+Btn}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_aa7244f7b96d83a9f8f6b96520eebe28f}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_aa7244f7b96d83a9f8f6b96520eebe28f}} 
+U\+I\+Kit.\+U\+I\+Text\+Field {\bfseries Login\+Email\+Txt}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a698151a466470b25edd23a816e9e7499}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a698151a466470b25edd23a816e9e7499}} 
+U\+I\+Kit.\+U\+I\+Text\+Field {\bfseries Login\+Password\+Txt}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a88791c6b7437a60795d020a65239a761}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a88791c6b7437a60795d020a65239a761}} 
+U\+I\+Kit.\+U\+I\+Label {\bfseries Password\+Label}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a50c688fc0d94e064987dba4fd01c4da7}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a50c688fc0d94e064987dba4fd01c4da7}} 
+U\+I\+Kit.\+U\+I\+Label {\bfseries User\+Name\+Label}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_login_view_controller_a178185c28863ebd8a7918135534c508b}{Check\+If\+User\+Signed\+In} ()
+\begin{DoxyCompactList}\small\item\em Skipping the login view if there has been previous signed in users \end{DoxyCompactList}\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_login_view_controller_ab6b1b3b1ad0cc52e134869455ee8cad8}{Login\+Event\+Handler} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em event handling for when user signs in \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a2239a327cc26eda697b424d7c4d61969}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a2239a327cc26eda697b424d7c4d61969}} 
+void {\bfseries Sign\+Out} ()
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_add77014f1a30a9945553f070031962d1}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_add77014f1a30a9945553f070031962d1}} 
+void {\bfseries Release\+Designer\+Outlets} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Responsible for Login\+View 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a178185c28863ebd8a7918135534c508b}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a178185c28863ebd8a7918135534c508b}} 
+\index{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}!Check\+If\+User\+Signed\+In@{Check\+If\+User\+Signed\+In}}
+\index{Check\+If\+User\+Signed\+In@{Check\+If\+User\+Signed\+In}!Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}}
+\subsubsection{\texorpdfstring{Check\+If\+User\+Signed\+In()}{CheckIfUserSignedIn()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Login\+View\+Controller.\+Check\+If\+User\+Signed\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Skipping the login view if there has been previous signed in users 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_ab6b1b3b1ad0cc52e134869455ee8cad8}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_ab6b1b3b1ad0cc52e134869455ee8cad8}} 
+\index{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}!Login\+Event\+Handler@{Login\+Event\+Handler}}
+\index{Login\+Event\+Handler@{Login\+Event\+Handler}!Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}}
+\subsubsection{\texorpdfstring{Login\+Event\+Handler()}{LoginEventHandler()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Login\+View\+Controller.\+Login\+Event\+Handler (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+event handling for when user signs in 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_a43dbaf2dd54a2a4884ca87d26697f375}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_a43dbaf2dd54a2a4884ca87d26697f375}} 
+\index{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}!View\+Did\+Load@{View\+Did\+Load}}
+\index{View\+Did\+Load@{View\+Did\+Load}!Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}}
+\subsubsection{\texorpdfstring{View\+Did\+Load()}{ViewDidLoad()}}
+{\footnotesize\ttfamily override void Ramboell.\+i\+O\+S.\+Login\+View\+Controller.\+View\+Did\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initiation of the view with placeholders and eventhandler 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_login_view_controller_ac6f5b00fbb4861aa7e87e21c25e76c55}\label{class_ramboell_1_1i_o_s_1_1_login_view_controller_ac6f5b00fbb4861aa7e87e21c25e76c55}} 
+\index{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}!View\+Did\+Unload@{View\+Did\+Unload}}
+\index{View\+Did\+Unload@{View\+Did\+Unload}!Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Login\+View\+Controller}}
+\subsubsection{\texorpdfstring{View\+Did\+Unload()}{ViewDidUnload()}}
+{\footnotesize\ttfamily override void Ramboell.\+i\+O\+S.\+Login\+View\+Controller.\+View\+Did\+Unload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+remove eventhandler 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ramboell\+Til\+Syn/Login\+View\+Controller.\+cs\item 
+Ramboell\+Til\+Syn/Login\+View\+Controller.\+designer.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,253 @@
+\hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller}{}\section{Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller Class Reference}
+\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller}\index{Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller@{Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller}}
+
+
+Showing the P\+DF and Allows user to mark pdf with objects.  
+
+
+Inheritance diagram for Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ramboell_1_1i_o_s_1_1_pdf_view_controller}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_1_1_my_pdf_view}{My\+Pdf\+View}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a51b992b2b10ea7341a981b49cc1b6216}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a51b992b2b10ea7341a981b49cc1b6216}} 
+{\bfseries Pdf\+View\+Controller} (Int\+Ptr handle)
+\item 
+override void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a6ffe0642ee3a6af8e624afe3b9450943}{View\+Did\+Load} ()
+\begin{DoxyCompactList}\small\item\em getting all the needed data before being able to show the view. This will check for the pdf and json file on the next if not exist \end{DoxyCompactList}\item 
+override void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a203e0e87fd40da6f90ffbe9ffe96c65f}{View\+Did\+Unload} ()
+\begin{DoxyCompactList}\small\item\em Resetting the \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} when view unloads. \end{DoxyCompactList}\item 
+Obj\+C\+Runtime.\+Class \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a2d7a663fc7396055d1a38753e1910ade}{Get\+Class\+For\+Page} ()
+\begin{DoxyCompactList}\small\item\em The override for Objective-\/C to Return an instance of \hyperlink{class_ramboell_1_1i_o_s_1_1_marked_pdf_page}{Marked\+Pdf\+Page} instead of Pdf\+Page \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Shape \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae9d97ce3c5ade4517fe1191c2dd25707}{Shape}
+\begin{DoxyCompactList}\small\item\em This enum saves the state of the Shape selected for pdf \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a0f8c3f9c8271551c5abed1a9714ee9c8}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a0f8c3f9c8271551c5abed1a9714ee9c8}} 
+\hyperlink{class_ramboell_1_1i_o_s_1_1_registration_dto}{Registration\+Dto} {\bfseries P\+D\+F\+Info}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_aebf58418a4c039373d81ff969241db11}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_aebf58418a4c039373d81ff969241db11}} 
+N\+S\+Url {\bfseries Pdf\+Local\+Ns\+Url}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_abab5bc1d0053bdb3572c951a90225aed}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_abab5bc1d0053bdb3572c951a90225aed}} 
+N\+S\+Url {\bfseries Metalocal\+Ns\+Url}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a98592f0761cdfd7d542edae55741c557}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a98592f0761cdfd7d542edae55741c557}} 
+void {\bfseries add} ()
+\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a01454d9af76d631cb95d1654a11db485}{Tap\+On\+Pdf} (U\+I\+Tap\+Gesture\+Recognizer obj)
+\begin{DoxyCompactList}\small\item\em Detecting a Tap gesture when user tapping on screen, then saving it to lokal, upload it and reload the pdfview for new object \end{DoxyCompactList}\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a0d484e0bce9d3a84ed8a0e1847e2bc57}{Init\+Pdf\+View} (nfloat nwidth, nfloat nfloat)
+\begin{DoxyCompactList}\small\item\em adding P\+D\+F\+View and initi Width and Heigh for later in marked\+P\+DF class \end{DoxyCompactList}\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a99c92204a2fdec0fa8f085deda7c710a}{Load\+Pdf} (N\+S\+Url url)
+\begin{DoxyCompactList}\small\item\em Load\+Pdf when all init is done, this will glue the other functions together and load a pdf with given urlpath together with the pdf panel. \end{DoxyCompactList}\item 
+U\+I\+View \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a636b53fa9debf8c5e062be6df567afa1}{Load\+Pdf\+Bottom\+Panel} ()
+\begin{DoxyCompactList}\small\item\em Loads all the buttons from factory method into a U\+I\+View, and then set the logic and the placement for the buttons \end{DoxyCompactList}\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_adcb7bc4fd260d2006f243bff72f2c7cb}{Select\+Shape} (\hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae9d97ce3c5ade4517fe1191c2dd25707}{Shape} shape, U\+I\+Button btn)
+\begin{DoxyCompactList}\small\item\em Containing the logic for animation of highlighting the U\+I\+Buttons created, to show user if any shape is selected and remembers it \end{DoxyCompactList}\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a29c0a1aafda725e0bc0d5f8d5c0ba971}{Load\+Pdf\+View} (N\+S\+Url url)
+\begin{DoxyCompactList}\small\item\em laods the pdf document into the View \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a90ef9035f083d5bbe30d49f28c2a2542}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a90ef9035f083d5bbe30d49f28c2a2542}} 
+void {\bfseries Release\+Designer\+Outlets} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_object_dto}{Pdf\+Object\+Dto} $>$ \hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae92538214df4571ae24ccded6da10609}{pdf\+Objects}
+\begin{DoxyCompactList}\small\item\em The objects for the pdf \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a64fc418acef69d5ddf5991919135ecf3}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a64fc418acef69d5ddf5991919135ecf3}} 
+\hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_1_1_my_pdf_view}{My\+Pdf\+View} {\bfseries P\+D\+F\+View}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_aa49ce5510df519448c768cc7868f7533}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_aa49ce5510df519448c768cc7868f7533}} 
+nfloat {\bfseries h}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a8b30539f325520b3919609a87de383db}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a8b30539f325520b3919609a87de383db}} 
+nfloat {\bfseries w}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a5505533213a5f82d5a34ca7c5514d5d8}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a5505533213a5f82d5a34ca7c5514d5d8}} 
+U\+I\+Button {\bfseries \+\_\+pre\+Selectedbtn}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a7d098fbe2fd772475f1bcc6de9d665f9}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a7d098fbe2fd772475f1bcc6de9d665f9}} 
+Storage\+Reference {\bfseries \+\_\+json\+Node}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ab6de5c3b8d72a66479d9a681a7c692d7}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ab6de5c3b8d72a66479d9a681a7c692d7}} 
+const int {\bfseries panel\+Height} = 70
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Showing the P\+DF and Allows user to mark pdf with objects. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a2d7a663fc7396055d1a38753e1910ade}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a2d7a663fc7396055d1a38753e1910ade}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Get\+Class\+For\+Page@{Get\+Class\+For\+Page}}
+\index{Get\+Class\+For\+Page@{Get\+Class\+For\+Page}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Class\+For\+Page()}{GetClassForPage()}}
+{\footnotesize\ttfamily Obj\+C\+Runtime.\+Class Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Get\+Class\+For\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The override for Objective-\/C to Return an instance of \hyperlink{class_ramboell_1_1i_o_s_1_1_marked_pdf_page}{Marked\+Pdf\+Page} instead of Pdf\+Page 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a0d484e0bce9d3a84ed8a0e1847e2bc57}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a0d484e0bce9d3a84ed8a0e1847e2bc57}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Init\+Pdf\+View@{Init\+Pdf\+View}}
+\index{Init\+Pdf\+View@{Init\+Pdf\+View}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Init\+Pdf\+View()}{InitPdfView()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Init\+Pdf\+View (\begin{DoxyParamCaption}\item[{nfloat}]{nwidth,  }\item[{nfloat}]{nfloat }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+adding P\+D\+F\+View and initi Width and Heigh for later in marked\+P\+DF class 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nwidth} & \\
+\hline
+{\em nfloat} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a99c92204a2fdec0fa8f085deda7c710a}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a99c92204a2fdec0fa8f085deda7c710a}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Load\+Pdf@{Load\+Pdf}}
+\index{Load\+Pdf@{Load\+Pdf}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Load\+Pdf()}{LoadPdf()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Load\+Pdf (\begin{DoxyParamCaption}\item[{N\+S\+Url}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Load\+Pdf when all init is done, this will glue the other functions together and load a pdf with given urlpath together with the pdf panel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & the url for the pdf\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a636b53fa9debf8c5e062be6df567afa1}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a636b53fa9debf8c5e062be6df567afa1}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Load\+Pdf\+Bottom\+Panel@{Load\+Pdf\+Bottom\+Panel}}
+\index{Load\+Pdf\+Bottom\+Panel@{Load\+Pdf\+Bottom\+Panel}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Load\+Pdf\+Bottom\+Panel()}{LoadPdfBottomPanel()}}
+{\footnotesize\ttfamily U\+I\+View Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Load\+Pdf\+Bottom\+Panel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Loads all the buttons from factory method into a U\+I\+View, and then set the logic and the placement for the buttons 
+
+\begin{DoxyReturn}{Returns}
+returns all the buttons in one U\+I\+View 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a29c0a1aafda725e0bc0d5f8d5c0ba971}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a29c0a1aafda725e0bc0d5f8d5c0ba971}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Load\+Pdf\+View@{Load\+Pdf\+View}}
+\index{Load\+Pdf\+View@{Load\+Pdf\+View}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Load\+Pdf\+View()}{LoadPdfView()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Load\+Pdf\+View (\begin{DoxyParamCaption}\item[{N\+S\+Url}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+laods the pdf document into the View 
+
+
+\begin{DoxyParams}{Parameters}
+{\em url} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_adcb7bc4fd260d2006f243bff72f2c7cb}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_adcb7bc4fd260d2006f243bff72f2c7cb}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Select\+Shape@{Select\+Shape}}
+\index{Select\+Shape@{Select\+Shape}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Select\+Shape()}{SelectShape()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Select\+Shape (\begin{DoxyParamCaption}\item[{\hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae9d97ce3c5ade4517fe1191c2dd25707}{Shape}}]{shape,  }\item[{U\+I\+Button}]{btn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Containing the logic for animation of highlighting the U\+I\+Buttons created, to show user if any shape is selected and remembers it 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & telling which shape is selected\\
+\hline
+{\em btn} & a reference of the btn\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a01454d9af76d631cb95d1654a11db485}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a01454d9af76d631cb95d1654a11db485}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Tap\+On\+Pdf@{Tap\+On\+Pdf}}
+\index{Tap\+On\+Pdf@{Tap\+On\+Pdf}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Tap\+On\+Pdf()}{TapOnPdf()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Tap\+On\+Pdf (\begin{DoxyParamCaption}\item[{U\+I\+Tap\+Gesture\+Recognizer}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Detecting a Tap gesture when user tapping on screen, then saving it to lokal, upload it and reload the pdfview for new object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a6ffe0642ee3a6af8e624afe3b9450943}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a6ffe0642ee3a6af8e624afe3b9450943}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!View\+Did\+Load@{View\+Did\+Load}}
+\index{View\+Did\+Load@{View\+Did\+Load}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{View\+Did\+Load()}{ViewDidLoad()}}
+{\footnotesize\ttfamily override void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+View\+Did\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+getting all the needed data before being able to show the view. This will check for the pdf and json file on the next if not exist 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a203e0e87fd40da6f90ffbe9ffe96c65f}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_a203e0e87fd40da6f90ffbe9ffe96c65f}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!View\+Did\+Unload@{View\+Did\+Unload}}
+\index{View\+Did\+Unload@{View\+Did\+Unload}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{View\+Did\+Unload()}{ViewDidUnload()}}
+{\footnotesize\ttfamily override void Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+View\+Did\+Unload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resetting the \hyperlink{class_ramboell_1_1i_o_s_1_1_meta_list_j_son_singleton}{Meta\+List\+J\+Son\+Singleton} when view unloads. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae92538214df4571ae24ccded6da10609}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae92538214df4571ae24ccded6da10609}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!pdf\+Objects@{pdf\+Objects}}
+\index{pdf\+Objects@{pdf\+Objects}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{pdf\+Objects}{pdfObjects}}
+{\footnotesize\ttfamily List$<$\hyperlink{class_ramboell_1_1i_o_s_1_1_pdf_object_dto}{Pdf\+Object\+Dto}$>$ Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+pdf\+Objects\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The objects for the pdf 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae9d97ce3c5ade4517fe1191c2dd25707}\label{class_ramboell_1_1i_o_s_1_1_pdf_view_controller_ae9d97ce3c5ade4517fe1191c2dd25707}} 
+\index{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}!Shape@{Shape}}
+\index{Shape@{Shape}!Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Pdf\+View\+Controller}}
+\subsubsection{\texorpdfstring{Shape}{Shape}}
+{\footnotesize\ttfamily Shape Ramboell.\+i\+O\+S.\+Pdf\+View\+Controller.\+Shape}
+
+
+
+This enum saves the state of the Shape selected for pdf 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ramboell\+Til\+Syn/Pdf\+View\+Controller.\+cs\item 
+Ramboell\+Til\+Syn/Pdf\+View\+Controller.\+designer.\+cs\end{DoxyCompactItemize}

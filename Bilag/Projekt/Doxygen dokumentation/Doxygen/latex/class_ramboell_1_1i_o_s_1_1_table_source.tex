@@ -1,0 +1,78 @@
+\hypertarget{class_ramboell_1_1i_o_s_1_1_table_source}{}\section{Ramboell.\+i\+O\+S.\+Table\+Source Class Reference}
+\label{class_ramboell_1_1i_o_s_1_1_table_source}\index{Ramboell.\+i\+O\+S.\+Table\+Source@{Ramboell.\+i\+O\+S.\+Table\+Source}}
+
+
+Used as the input for I\+U\+Table\+View  
+
+
+Inheritance diagram for Ramboell.\+i\+O\+S.\+Table\+Source\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ramboell_1_1i_o_s_1_1_table_source}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_a5fb8505918e88892eabd85c6dec8b497}\label{class_ramboell_1_1i_o_s_1_1_table_source_a5fb8505918e88892eabd85c6dec8b497}} 
+{\bfseries Table\+Source} (List$<$ \hyperlink{class_ramboell_1_1i_o_s_1_1_registration_dto}{Registration\+Dto} $>$ project\+Infos, \hyperlink{class_ramboell_1_1i_o_s_1_1_project_list_view_controller}{Project\+List\+View\+Controller} project\+List\+View\+Controller)
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_a1a8e92696ee9117753ece243e4cddfe0}\label{class_ramboell_1_1i_o_s_1_1_table_source_a1a8e92696ee9117753ece243e4cddfe0}} 
+override nint {\bfseries Rows\+In\+Section} (U\+I\+Table\+View tableview, nint section)
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_a7bd63e83a5b5a86d5143bf4645ad70c6}\label{class_ramboell_1_1i_o_s_1_1_table_source_a7bd63e83a5b5a86d5143bf4645ad70c6}} 
+override U\+I\+Table\+View\+Cell {\bfseries Get\+Cell} (U\+I\+Table\+View table\+View, N\+S\+Index\+Path index\+Path)
+\item 
+override void \hyperlink{class_ramboell_1_1i_o_s_1_1_table_source_aeb3dbc467781e4e4fed884e82e6719b1}{Row\+Selected} (U\+I\+Table\+View table\+View, N\+S\+Index\+Path index\+Path)
+\begin{DoxyCompactList}\small\item\em This is the event handler which is called when an item is selected in a tableview \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_ae0fe7793c01c2b4f396d7dab4b6e37f5}\label{class_ramboell_1_1i_o_s_1_1_table_source_ae0fe7793c01c2b4f396d7dab4b6e37f5}} 
+List$<$ \hyperlink{class_ramboell_1_1i_o_s_1_1_registration_dto}{Registration\+Dto} $>$ {\bfseries Project\+Infos}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_afa2c9dfc0246691be13b51d1ae005395}\label{class_ramboell_1_1i_o_s_1_1_table_source_afa2c9dfc0246691be13b51d1ae005395}} 
+\hyperlink{class_ramboell_1_1i_o_s_1_1_project_list_view_controller}{Project\+List\+View\+Controller} {\bfseries Project\+List\+View\+Controller}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_abef74a5e22f05b9d396fdf75a04157ea}\label{class_ramboell_1_1i_o_s_1_1_table_source_abef74a5e22f05b9d396fdf75a04157ea}} 
+const int {\bfseries Create\+Proejct} = 0
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_a337b1fdd687a20321bc53492f682f20e}\label{class_ramboell_1_1i_o_s_1_1_table_source_a337b1fdd687a20321bc53492f682f20e}} 
+const int {\bfseries Create\+User} = 1
+\item 
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_a48b6eb2c6e8feff06a5980b2bfb187d9}\label{class_ramboell_1_1i_o_s_1_1_table_source_a48b6eb2c6e8feff06a5980b2bfb187d9}} 
+string {\bfseries Cell\+Identifier} = \char`\"{}Table\+Cell\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used as the input for I\+U\+Table\+View 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_table_source_aeb3dbc467781e4e4fed884e82e6719b1}\label{class_ramboell_1_1i_o_s_1_1_table_source_aeb3dbc467781e4e4fed884e82e6719b1}} 
+\index{Ramboell\+::i\+O\+S\+::\+Table\+Source@{Ramboell\+::i\+O\+S\+::\+Table\+Source}!Row\+Selected@{Row\+Selected}}
+\index{Row\+Selected@{Row\+Selected}!Ramboell\+::i\+O\+S\+::\+Table\+Source@{Ramboell\+::i\+O\+S\+::\+Table\+Source}}
+\subsubsection{\texorpdfstring{Row\+Selected()}{RowSelected()}}
+{\footnotesize\ttfamily override void Ramboell.\+i\+O\+S.\+Table\+Source.\+Row\+Selected (\begin{DoxyParamCaption}\item[{U\+I\+Table\+View}]{table\+View,  }\item[{N\+S\+Index\+Path}]{index\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This is the event handler which is called when an item is selected in a tableview 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+View} & A reference from the caller\\
+\hline
+{\em index\+Path} & Providing information about which row is selected\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Ramboell\+Til\+Syn/Table\+Source.\+cs\end{DoxyCompactItemize}

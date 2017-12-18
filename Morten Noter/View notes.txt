@@ -1,6 +1,0 @@
-Login:
-StackLayout, simpelt stack opstilling af login side, nemmere og hurtigere end at skulle definere grids
-
-Projekt oversigt:
-List view, for at kunne tilføje flere knapper, og når der overskrider skærmen kan man scrolle
-https://developer.xamarin.com/guides/xamarin-forms/user-interface/listview/customizing-list-appearance/
