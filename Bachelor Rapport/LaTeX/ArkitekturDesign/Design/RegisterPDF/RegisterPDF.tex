@@ -54,7 +54,7 @@ I dette afsnit vil der blive beskrevet funktionaliteten for de vigtigste funktio
 På Figur \ref{fig:LoadPDF} ses funktionen for LoadPDF().
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=4cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/LoadPDF}
+	\includegraphics[height=5cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/LoadPDF}
 	\caption{Kode snip - LoadPDF() fra PdfViewController.cs}
 	\label{fig:LoadPDF}
 \end{figure}
@@ -82,7 +82,7 @@ Når knapperne er oprettet defineres events på de forskellige knapper. \\
 
 \clearpage
 
-På Figur \ref{fig:TapOnPDF2} ses funktionen for GetClassForPage().
+På Figur \ref{fig:TapOnPDF2} ses funktionen for TapOnPDF().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/TapOnPDF1}
@@ -100,7 +100,7 @@ På Figur \ref{fig:TapOnPDF2} ses funktionen for GetClassForPage().
 På Figur \ref{fig:ClassPage} ses funktionen for GetClassForPage().
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=5cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/ClassPage}
+	\includegraphics[height=4cm, width=10cm]{../ArkitekturDesign/Design/RegisterPDF/ClassPage}
 	\caption{Kode snip - GetClassForPage() fra PdfViewController.cs}
 	\label{fig:ClassPage}
 \end{figure}
@@ -109,7 +109,7 @@ Funktionen ClassForPage overrides, som er en obejktive C funktion, der normalt r
 På Figur \ref{fig:Draw} ses funktionen for Draw().
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=10cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/Draw}
+	\includegraphics[height=13cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/Draw}
 	\caption{Kode snip - Draw() fra MarkedPdfPage.cs}
 	\label{fig:Draw}
 \end{figure}
@@ -120,30 +120,35 @@ Når PDFpagen bliver oprettet, kaldes draw, og denne er overridet til at tegne p
 På Figur \ref{fig:Enum} ses Enum Shape.
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/Design/RegisterPDF/Enum}
+	\includegraphics[height=2cm, width=5cm]{../ArkitekturDesign/Design/RegisterPDF/Enum}
 	\caption{Kode snip - Enum Shape for objects fra MarkedPdfPage.cs}
 	\label{fig:Enum}
 \end{figure}
 Definitionen på vores symboler.
 
-På Figur \ref{fig:Render} ses funktionen for Render().
+På Figur \ref{fig:Singleton} ses MetaListJsonSingleton.
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/Design/RegisterPDF/Render1}
-\end{figure}
-\begin{figure}[H] % (alternativt [H])
-	\centering
-	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/Design/RegisterPDF/Render2}
-	\caption{Kode snip - Render() fra MarkedPdfPage.cs}
-	\label{fig:Render}
-\end{figure}
-
-På Figur \ref{fig:Singleton} ses Enum Shape.
-\begin{figure}[H] % (alternativt [H])
-	\centering
-	\includegraphics[height=3cm, width=8cm]{../ArkitekturDesign/Design/RegisterPDF/Singleton}
-	\caption{Kode snip - }
+	\includegraphics[height=10cm, width=14cm]{../ArkitekturDesign/Design/RegisterPDF/Singleton}
+	\caption{Kode snip - MetaListJsonSingleton fra MetaListJsonSingleton.cs }
 	\label{fig:Singleton}
 \end{figure}
 Definitionen på vores symboler.
+
+\clearpage
+
+På Figur \ref{fig:Render} ses funktionen for RenderObjects().
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=10cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/Render1}
+\end{figure}
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/Render2}
+	\caption{Kode snip - RenderObjects() fra MarkedPdfPage.cs}
+	\label{fig:Render}
+\end{figure}
+
+
+\clearpage
 

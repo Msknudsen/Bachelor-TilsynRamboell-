@@ -1,6 +1,6 @@
 \chapter{Resultater}
 Dette kapitel gennemgår resultaterne, som er opnået ved arbejde med Rambøll Tilsyn. Herunder vises en tabel over User Stories, som er opdelt efter MoSCoW, og ud fra hver User Story kan resultatet ses.
-For resultaterne baseret på user story niveau henvises til Accepttestspecifikationen, som er vedlagt i bilag. \\
+For resultaterne baseret på user story niveau henvises til Accepttestspecifikationen, som er vedlagt i bilag. \\ \\
 \begin{tabular}{ l | c  }
 	\hline
 	\textbf{Must} & \textbf{Resultat} \\ \hline
@@ -18,7 +18,7 @@ For resultaterne baseret på user story niveau henvises til Accepttestspecifikat
 	\hline
 	Afslut registrering på PDF-tegning (CRS-13) & Ikke implementeret\\
 	\hline
-	Opret projekt (CRS-16) & Næsten fuld funktionsdygtigt\\
+	Opret projekt (CRS-16) & Ikke implementeret\\
 	\hline
 	\hline
 	\textbf{Should} &  \\ \hline
@@ -26,7 +26,7 @@ For resultaterne baseret på user story niveau henvises til Accepttestspecifikat
 	\hline
 	Opret tekstfeltobjekt på PDF-tegning (CRS-7) & Ikke implementeret\\
 	\hline
-	Opret cirkelobjekt på PDF-tegning (CRS-10) & Næsten fuld funktionsdygtigt\\
+	Opret cirkelobjekt på PDF-tegning (CRS-10) & Fuld funktionsdygtigt\\
 	\hline
 	\hline
 	\textbf{Could} &  \\ \hline
@@ -51,7 +51,12 @@ For resultaterne baseret på user story niveau henvises til Accepttestspecifikat
 \end{tabular} \\
 
 
+
+\clearpage
+
 Resultatet af Rambøll Tilsyn anses som 'ikke helt tilfredstillende'. 
 Der er startet på en prototype til systemet. Der mangler enkelte funktionaliteter fra \textbf{MUST} kategorien. Hvis disse var blevet implementeret, ville prototypen have været færdig, og dette ville have givet et tilfredsstillende resultat for gruppen. \\
 Der blev i slutningen af projektet lagt fokus på at få implementeret funktionalitet, så flowet igennem applikationen fungerede. Her menes der, at brugeren kunne logge ind, oprette en registrering og efterfølgende lave objekter i denne registrering. \\
-For at kunne gøre flowet muligt, uden at skulle hardcode brugere, valgte gruppen at få implementeret, funktionalitet så der gennem applikationen kunne oprettes brugere.
+For at kunne gøre flowet muligt, uden at skulle hardcode brugere, valgte gruppen at få implementeret, funktionalitet så der gennem applikationen kunne oprettes brugere. 
+
+Til dry run af accepttesten var der nogle observationer omkring manglende fejlmeddelelser ved oprettelse af en bruger, og at efter oprettelse af en ny bruger, blev den nye bruger automatisk logget ind. Dette var nogle mindre fejl, hvor at fejlmeddelelser blev tilføjet, men problemstillingen med log ind af anden bruger ligger hos Firebase, og der er ikke blevet implementeret en løsning.
