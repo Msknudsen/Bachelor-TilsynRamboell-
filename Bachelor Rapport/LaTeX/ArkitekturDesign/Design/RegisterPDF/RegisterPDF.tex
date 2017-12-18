@@ -65,7 +65,7 @@ Når både PDFViewet og PDFBottomPanel er loadet, loades disse ind i controllere
 
 \clearpage
 
-På Figur \ref{fig:LoadPDF} ses funktionen for LoadBottomPanel().
+På Figur \ref{fig:LoadBtnPanel2} ses funktionen for LoadBottomPanel().
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=8cm, width=15cm]{../ArkitekturDesign/Design/RegisterPDF/LoadBtnPanel1}
@@ -93,7 +93,9 @@ På Figur \ref{fig:TapOnPDF2} ses funktionen for TapOnPDF().
 	\caption{Kode snip - TapOnPDF() fra PdfViewController.cs}
 	\label{fig:TapOnPDF2}
 \end{figure}
-
+TapOnPdf() er en eventhandler som håndterer når der detekteres en geusture, som f.eks. Tap. \\
+Denne håndterer også tap lokationen og opretter objektet som er valgt af brugeren. \\
+Derefter gemmes disse informationer i Firebase.
 
 \clearpage
 
@@ -133,7 +135,7 @@ På Figur \ref{fig:Singleton} ses MetaListJsonSingleton.
 	\caption{Kode snip - MetaListJsonSingleton fra MetaListJsonSingleton.cs }
 	\label{fig:Singleton}
 \end{figure}
-Definitionen på vores symboler.
+Denne Singleton bliver brugt til at hente PDF objekter fra den lokale JSON-fil.
 
 \clearpage
 
@@ -148,7 +150,7 @@ På Figur \ref{fig:Render} ses funktionen for RenderObjects().
 	\caption{Kode snip - RenderObjects() fra MarkedPdfPage.cs}
 	\label{fig:Render}
 \end{figure}
-
+Funktionen RenderObjects() står for at tegne de objekter der tilhører PDF'en.
 
 \clearpage
 

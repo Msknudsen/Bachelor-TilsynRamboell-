@@ -2,12 +2,12 @@
 
 Følgende er en beskrivelse af de aktuelle krav stillet til projektet, i samarbejde mellem Rambøll og projektgruppen. De er alle opstillet som user stories. User stories er korte beskrivelser af funktionalitet, som står på en fast form. De er let læselige og har værdi for både personer direkte involveret i projektet og udefrakommende, som skal opnå en idé om kravene til projektet. 
 
-\section{Aktør kontekst diagram}\label{sec:Aktor}
-	På figur \ref{fig:AktorKontekst} ses aktør/kontekst diagrammet for Rambøll Tilsyn. 
+\section{Aktør-kontekst diagram}\label{sec:Aktor}
+	På figur \ref{fig:AktorKontekst} ses aktør-kontekst diagrammet for Rambøll Tilsyn. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.6\linewidth]{FunktionelleKrav/AktorDiagram}
-	\caption{Aktør/kontekst diagram for Rambøll Tilsyn}
+	\caption{Aktør-kontekst diagram for Rambøll Tilsyn}
 	\label{fig:AktorKontekst}
 \end{figure}
 Det ses at systemet har følgende aktører:
@@ -95,11 +95,11 @@ For at kunne benytte applikationen\\ \\
 \end{tabular}
 \newline \newline
 \textcolor{RoyalBlue}{Og} Ao er ikke allerede logget ind i systemet\\
-\textcolor{RoyalBlue}{Og} han har navigeret til applikationens log-in side\\
+\textcolor{RoyalBlue}{Og} han har navigeret til applikationens login side\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Log ind med korrekte oplysninger}\\
 \textcolor{RoyalBlue}{Når} Ao indtaster sin mail og kode i de korrekte tekstfelter\\
-\textcolor{RoyalBlue}{Og} han trykker på log-in knappen\\
+\textcolor{RoyalBlue}{Og} han trykker på login knappen\\
 \textcolor{RoyalBlue}{Så} navigeres han til applikationens forside\\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Log ind med forkerte oplysninger} \\
@@ -161,7 +161,7 @@ For at have aktuelle oplysninger
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger kode}\\
 \textcolor{RoyalBlue}{Når} Niels indtaster paris i kodefeltet Gammel adgangskode\\
-\textcolor{RoyalBlue}{Og} han skriver london i Ny adgangskode og Bekræft ny adgangskode\\
+\textcolor{RoyalBlue}{Og} han skriver london i Ny adgangskode\\
 \textcolor{RoyalBlue}{Og} han trykker på gem oplysninger\\
 \textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 \textcolor{RoyalBlue}{Og} han informeres om at ændringerne er gemt
@@ -182,7 +182,7 @@ For at have aktuelle oplysninger
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret en registrering på PDF-tegning}}\\
 Som bruger\\
 Ønsker jeg at kunne oprette en registrering på en PDF\\
-For kunne lave en registrering på et givent projekts pdf tegning \\ \\
+For kunne lave en registrering på et givent projekts PDF-tegning \\ \\
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Søren er logget ind\\
@@ -225,6 +225,8 @@ Som bruger\\
 Ønsker jeg at kunne oprette et billedeobjekt på en PDF\\
 For at kunne opdatere min registrering på et givent projekt \\
 
+\clearpage
+
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Jan er logget ind\\
 \textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
@@ -234,7 +236,7 @@ For at kunne opdatere min registrering på et givent projekt \\
 \end{tabular}
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret billedeobjekt på PDF-tegning}\\
-\textcolor{RoyalBlue}{Når} Jan trykker på billede objektet\\
+\textcolor{RoyalBlue}{Når} Jan trykker på billedeobjektet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at sætte objektet et sted på PDF-tegningen\\
 \textcolor{RoyalBlue}{Så}  åbnes hans kamera og han kan nu tilføje et billede, og derefter en billede tekst\\
 \textcolor{RoyalBlue}{Når} han har placeret billedeobjektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
@@ -265,6 +267,8 @@ Som bruger\\
 Ønsker jeg at kunne oprette et kommentarfeltobjekt på en PDF\\
 For at kunne opdatere min registrering på et givent projekt \\
 
+\clearpage
+
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
 \textcolor{RoyalBlue}{Givet} at Morten er logget ind\\
 \textcolor{RoyalBlue}{Og} han har følgende nuværende oplysninger:\\
@@ -272,8 +276,6 @@ For at kunne opdatere min registrering på et givent projekt \\
 	\textbf{fornavn} & \textbf{rolle} \\
 	Morten & Bruger\\
 \end{tabular}
-
-\clearpage
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret kommentarfeltobjekt på PDF-tegning}\\
 \textcolor{RoyalBlue}{Når} Morten trykker på kommentarfeltobjektet\\
@@ -318,7 +320,6 @@ For at kunne opdatere min registrering på et givent projekt \\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret cirkelobjekt på PDF-tegning}\\
 \textcolor{RoyalBlue}{Når} Morten trykker på cirkelobjektet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for at sætte objektet et sted på PDF-tegningen\\
-\textcolor{RoyalBlue}{Så}  har han mulighed for at trække i cirklen så den passer i radius\\
 \textcolor{RoyalBlue}{Når} han har placeret cirkelobjektet, kan han oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
 \subsection{Opret minusobjekt på PDF-tegning (CRS-11)} \label{sec:USOpretMinusObjekt}
@@ -359,8 +360,6 @@ For at kunne opdatere min registrering på et givent projekt \\
 \textcolor{RoyalBlue}{Så}  har han mulighed for slette et objektet på PDF-tegningen\\
 \textcolor{RoyalBlue}{Når} han trykker på objektet, slettes dette. Han kun nu oprette et nyt objekt, slette et objekt eller vælge at afslutte \\
 
-\clearpage
-
 \subsection{Afslut registrering på PDF-tegning (CRS-13)} \label{sec:USAfslutRegPåPDF}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Afslut registrering på PDF-tegning}}\\
 Som bruger\\
@@ -379,7 +378,7 @@ For at kunne afslutte en registrering på et projekt\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Afslut registrering på PDF-tegning}\\
 \textcolor{RoyalBlue}{Når} Jakob trykker på submenu ikonet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for afslut og eksporter\\
-\textcolor{RoyalBlue}{Så}  navigeres han til sin mail, hvor en ny mail åbner med en vedhæftet excel fil\\
+\textcolor{RoyalBlue}{Så}  oprettes der en excel fil, som indeholder informationer fra registreringen\\
 
 \subsection{Opret en registrering uden PDF-tegning (CRS-14)} \label{sec:USOpretRegUdenPDF}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret en registrering uden PDF-tegning}}\\
@@ -399,7 +398,7 @@ For kunne lave en registrering på et givent projekt\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret en registrering uden PDF-tegning}\\
 \textcolor{RoyalBlue}{Når} Dan vælger Opret registrering uden PDF-tegning\\
 \textcolor{RoyalBlue}{Så} navigeres han videre til registrerings siden\\
-\textcolor{RoyalBlue}{Så} har han mulighed for at indsætte billede objekter på den tomme PDF\\
+\textcolor{RoyalBlue}{Så} har han mulighed for at indsætte billedeobjekter på den tomme PDF\\
 
 \clearpage
 
@@ -420,13 +419,13 @@ For at kunne afslutte en registrering på et projekt\\
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Afslut registrering uden PDF-tegning}\\
 \textcolor{RoyalBlue}{Når} Jakob trykker på submenu ikonet\\
 \textcolor{RoyalBlue}{Så}  har han mulighed for afslut og eksporter\\
-\textcolor{RoyalBlue}{Så}  navigeres han til sin mail, hvor en ny mail åbner med en vedhæftet excel fil\\
+\textcolor{RoyalBlue}{Så}  oprettes der en excel fil, som indeholder informationer fra registreringen\\
 
 
 \subsection{Opret projekt (CRS-16)} \label{sec:USOpretProjekt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Opret projekt}}\\
-Som bruger\\
-Ønsker jeg at kunne oprette projektoplysninger\\
+Som bruger \\
+Ønsker jeg at kunne oprette et projekt med projektoplysninger \\
 For at have aktuelle oplysninger om projektet
 
 \textsc{\textcolor{RoyalBlue}{\textbf{Baggrund:}}}\\
@@ -440,17 +439,10 @@ For at have aktuelle oplysninger om projektet
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret projekt}\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster projektnavn i feltet projektnavn\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster projektnummer i feltet projektnummer\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster projektadresse i feltet projektadresse\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
-\textcolor{RoyalBlue}{Når} Alexander indtaster information om projektets entreprenør i deres tilhørende felter\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Så}  Indtaster Alexander projektnummer i feltet projektnummer\\
+\textcolor{RoyalBlue}{Så} Indtaster Alexander projektadresse i feltet projektadresse\\
+\textcolor{RoyalBlue}{Og} tilsidst trykker Alexander på Opret projekt knappen\\
+\textcolor{RoyalBlue}{Så} oprettes projektet\\
 
 \subsection{Rediger projektoplysninger (CRS-17)} \label{sec:USRedigerProjekt}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Rediger projektoplysninger}}\\
@@ -475,18 +467,18 @@ For at have aktuelle oplysninger
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger projekt navn}\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt navn i projektnavn feltet\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Og} han trykker på gem \\
+\textcolor{RoyalBlue}{Så} gemmes informationerne \\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger projekt nummer}\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster det nye projekt nummer i projektnummer feltet\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Og} han trykker på gem \\
+\textcolor{RoyalBlue}{Så} gemmes informationerne \\
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Rediger projekt adresse}\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster den nye projekt adresse i projektadresse feltet\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Og} han trykker på gem \\
+\textcolor{RoyalBlue}{Så} gemmes informationerne \\
 
 \subsection{Se tilsynsrapporter (CRS-18)} \label{sec:USTilsynsrapport}
 \textbf{\textsc{\textcolor{RoyalBlue}{Egenskab:} Se tilsynsrapporter}}\\
@@ -502,6 +494,8 @@ For at kunne følge byggeriets gang
 	Jonas & Bruger\\
 \end{tabular}
 \newline
+
+\clearpage
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Se tilsynsrapporter}\\
 \textcolor{RoyalBlue}{Når} Jonas vælger tilsynsrapport\\
@@ -520,26 +514,21 @@ For at have give et beder overblik over projektet
 \textcolor{RoyalBlue}{Og} han ønsker at oprette en subprojekt på et projekt med følgende oplysninger:\\
 \begin{tabular}{| l | l | l |}
 	\textbf{Projektnavn} & \textbf{Projektnummer} & \textbf{Adresse} \\
-	Broer & Projekt 170 & Finlandsgade 22 \\
+	Broer & Projekt 170 & Finlandsgade 22 
 \end{tabular}
-\newline \newline
+\newline
 
 \begin{tabular}{| l | l | l |}
 	\textbf{Entreprise} & \textbf{Entreprisetnummer} & \textbf{Adresse} \\
-	Bro 1 & Projekt 170.1 & Finlandsgade 28 \\
+	Bro 1 & Projekt 170.1 & Finlandsgade 28 
 \end{tabular}
-\newline \newline
+\newline
 
 \textbf{\textsc{\textcolor{RoyalBlue}{Scenarie:}} Opret sub projekt}\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster entreprisenavn i feltet for entreprisenavn\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster entreprisenummer i feltet for entreprisenummer\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster entrepriseadresse i feltet for entrepriseadresse\\
 \textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
 \textcolor{RoyalBlue}{Når} Alexander indtaster entrepriseinformationer i felterne for entrepriseinformations\\
-\textcolor{RoyalBlue}{Og} han forlader tekstfeltet\\
-\textcolor{RoyalBlue}{Så} gemmes oplysningerne\\
+\textcolor{RoyalBlue}{Og} tilsidst trykker Alexander på Opret subprojekt knappen\\
+\textcolor{RoyalBlue}{Så} oprettes subprojektet \\
