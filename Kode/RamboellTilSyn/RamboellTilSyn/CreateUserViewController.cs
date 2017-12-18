@@ -1,6 +1,7 @@
 ﻿using Foundation;
 using System;
 using AVFoundation;
+using CoreGraphics;
 using Firebase.Auth;
 using Firebase.Database;
 using UIKit;
@@ -20,6 +21,7 @@ namespace Ramboell.iOS
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            //CreateUserBtn.Frame = new CGRect();
             CreateUserBtn.TouchUpInside += CreateUserEventHandler;
         }
 
@@ -73,7 +75,20 @@ namespace Ramboell.iOS
 
         private bool IsFieldsValid()
         {
-            return IsValidEmail() && IsValidName() && IsValidPhoneNumber();
+            return IsValidEmail() && IsValidName() && IsValidPhoneNumber() && IsValidPassword();
+        }
+
+        private bool IsValidPassword()
+        {
+            if (Validator.PasswordIsValid(PasswordCreateUserTxt.Text))
+                return true;
+            UIAlertView alert = new UIAlertView()
+            {
+                Title = "Invalid Number"
+            };
+            alert.AddButton("OK");
+            alert.Show();
+            return false;
         }
 
         private bool IsValidPhoneNumber()
@@ -128,5 +143,6 @@ namespace Ramboell.iOS
             base.ViewDidUnload();
             CreateUserBtn.TouchUpInside -= CreateUserEventHandler;
         }
+
     }
 }

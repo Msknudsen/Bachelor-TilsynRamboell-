@@ -283,11 +283,10 @@
                             <constraint id="49501" firstItem="24585" firstAttribute="centerX" secondItem="24644" secondAttribute="centerX" constant="167"/>
                             <constraint id="49502" firstItem="24644" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="382"/>
                             <constraint id="49503" firstItem="24644" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="10"/>
-                            <constraint id="49995" firstItem="27155" firstAttribute="centerX" secondItem="24585" secondAttribute="centerX"/>
-                            <constraint id="49996" firstItem="27155" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="485"/>
-                            <constraint id="49997" firstItem="24585" firstAttribute="trailingMargin" secondItem="27155" secondAttribute="trailing" constant="208"/>
-                            <constraint id="49998" firstItem="27155" firstAttribute="top" secondItem="24644" secondAttribute="bottom" constant="68"/>
-                            <constraint id="49999" firstItem="24582" firstAttribute="top" secondItem="27155" secondAttribute="bottom" constant="12"/>
+                            <constraint id="51595" firstItem="27155" firstAttribute="centerY" secondItem="24588" secondAttribute="centerY" constant="485"/>
+                            <constraint id="51596" firstItem="27155" firstAttribute="top" secondItem="24644" secondAttribute="centerY" constant="83"/>
+                            <constraint id="51597" firstItem="24585" firstAttribute="trailingMargin" secondItem="27155" secondAttribute="trailing" constant="208"/>
+                            <constraint id="51598" firstItem="27155" firstAttribute="leading" secondItem="24585" secondAttribute="leadingMargin" constant="208"/>
                         </constraints>
                     </view>
                     <connections>
