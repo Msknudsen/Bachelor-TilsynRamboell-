@@ -189,27 +189,27 @@ namespace Ramboell.iOS
                     TimeStamp = timeNow
                 });
 
-                //File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
-                //// Create a reference to the file you want to upload
+                File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
+                Create a reference to the file you want to upload
 
-                //// Upload the file to the path "images/rivers.jpg"
-                //StorageUploadTask uploadTask = _jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
-                //    if (error != null)
-                //    {
-                //        Console.WriteLine("Error");
-                //    }
-                //    else
-                //    {
-                //        DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
-                //        var key = nameof(RegistrationDto.Updated);
-                //        //update Firebase database 
-                //        rootNode
-                //            .GetChild(Global.Pdf)
-                //            .GetChild(PDFInfo.Guid.ToString())
-                //            .GetChild(key)
-                //            .SetValue(new NSString(timeNow));
-                //    }
-                //});
+                Upload the file to the path "images/rivers.jpg"
+                StorageUploadTask uploadTask = _jsonNode.PutFile(MetalocalNsUrl, null, (metadata, error) => {
+                    if (error != null)
+                    {
+                        Console.WriteLine("Error");
+                    }
+                    else
+                    {
+                        DatabaseReference rootNode = Database.DefaultInstance.GetRootReference();
+                        var key = nameof(RegistrationDto.Updated);
+                        update Firebase database 
+                        rootNode
+                            .GetChild(Global.Pdf)
+                            .GetChild(PDFInfo.Guid.ToString())
+                            .GetChild(key)
+                            .SetValue(new NSString(timeNow));
+                    }
+                });
                 Shape = Shape.None;
                 _preSelectedbtn.Selected = false;
                 PDFView.SetNeedsDisplay();
