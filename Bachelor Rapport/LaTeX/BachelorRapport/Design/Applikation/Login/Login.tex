@@ -1,5 +1,5 @@
 \subsection{Login}
-I dette afsnit vises design, brugergrænseflade, implementering og test for 'Login' viewet. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:Login}.
+I dette afsnit vises design, brugergrænseflade, implementering og test for 'Login' viewet. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens Afsnit \ref{Design-sec:Login} Login.
 \subsubsection{Design}
 Sekvensdiagrammet for 'Login' viewet til Rambøll Tilsyn kan ses på Figur \ref{fig:LoginSekvens}. Figuren viser det logiske flow der sker, når brugeren vil logge ind.
 \begin{figure}[H] % (alternativt [H])
@@ -25,6 +25,6 @@ Når applikationen åbner og login siden kommer frem, starter Firebase med at ko
 Når login bliver loadet, sættes der en eventhandler på login knappen, så når bruger trykker på den, vil der blive forsøgt at logge ind på applikationen. \\
 Der bliver også indsat placeholders i tekstfelterne for e-mail og kodeord. Når brugeren begynder at skrive kodeordet, vil dette være masked, så kodeordet ikke står i klar tekst. \\
 Når brugeren trykker på login, sendes værdierne fra tekstfelterne til Firebase, som her validerer oplysningerne. Er oplysningerne korrekte, vil brugeren blive navigeret til 'Project List' viewet. Hvis de er forkerte, vil der blive vist en fejlmeddelelse til brugeren. \\
-For en mere deltajeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations afsnit \ref{Design-sec:Login} Login.
+For en mere deltajeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations Afsnit \ref{Design-sec:Login} Login.
 
 \clearpage

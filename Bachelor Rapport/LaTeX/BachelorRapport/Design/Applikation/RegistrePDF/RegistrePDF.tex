@@ -1,5 +1,5 @@
 \subsection{Registrering på PDF}
-I dette afsnit vises design, brugergrænseflade, implementering og test for 'Registrering på PDF' viewet. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:PDF} Registrering på PDF.
+I dette afsnit vises design, brugergrænseflade, implementering og test for 'Registrering på PDF' viewet. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens Afsnit \ref{Design-sec:PDF} Registrering på PDF.
 \subsubsection{Design}
 Sekvensdiagrammerne for registrering på PDF-tegning, er opdelt i tre, for at overskueliggøre flowet. \\
 Det første sekvensdiagram viser, hvordan applikationen loader PDF-tegningen ind. Sekvensdiagrammet kan ses på Figur \ref{fig:LoadPDFSekvensDiagram}.
@@ -48,7 +48,7 @@ Sidste knap er en liste-knap. Her har brugeren mulighed for at afslutte sin regi
 \subsubsection{Implementering}
 Når der navigeres ind i 'Registrering på PDF' viewet, loades PDF'en fra Firebase og gemmes lokalt. Den loades herefter ind i viewet. Efterfølgende oprettes et UIView, hvori symbol-knapperne oprettes. Når begge dele er oprettet og loadet, hentes information fra den JSON fil der blev hentet i 'Project List' viewet, og så tegnes de objekter, som er gemt i PDF'en. \\
 Når disse er tegnet, vises PDF'en for brugeren. \\
-For en mere deltajeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations afsnit \ref{Design-sec:PDF} Registrering på PDF.
+For en mere deltajeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations Afsnit \ref{Design-sec:PDF} Registrering på PDF.
 
 
 \clearpage
