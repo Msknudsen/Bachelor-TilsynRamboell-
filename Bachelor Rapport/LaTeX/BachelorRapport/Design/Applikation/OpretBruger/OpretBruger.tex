@@ -1,17 +1,17 @@
 \subsection{Opret Bruger}\label{sec:Opretbruger}
-Dette afsnit indeholder en gennemgang af den grafisk brugergrænseflade, design og implementering af 'Opret Bruger' viewet i Rambøll Tilsyn.
+Dette afsnit indeholder en gennemgang af den grafiske brugergrænseflade, design og implementering af 'Opret Bruger' viewet i Rambøll Tilsyn. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:Opretbruger} Opret Bruger.
 
 \subsubsection{Design}
 På Figur \ref{fig:OpretBrugerSekvens} ses sekvensdiagrammet for 'Opret bruger' viewet til Rambøll Tilsyn.
 \begin{figure}[H] % (alternativt [H])
 	\centering
-	\includegraphics[height=20cm, width=15cm]{Design/Applikation/OpretBruger/OpretBrugerSekvensDiagram}
+	\includegraphics[height=18cm, width=15cm]{Design/Applikation/OpretBruger/OpretBrugerSekvensDiagram}
 	\caption{Sekvensdiagram for 'Opret bruger' i Rambøll Tilsyn.}
 	\label{fig:OpretBrugerSekvens}
 \end{figure}
 
 \subsubsection{Grafisk brugergrænseflade}
-I OpretBrugerViewet er der lavet felter til alt den information, som skal tastes ind om en bruger. Se Figur \ref{fig:OpretBrugerView}
+I 'Opret bruger' viewet er der lavet felter til alt den information, som skal tastes ind om en bruger. Se Figur \ref{fig:OpretBrugerView}
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[height=12cm, width=10cm]{Design/Applikation/OpretBruger/OpretBrugerView}
@@ -20,7 +20,8 @@ I OpretBrugerViewet er der lavet felter til alt den information, som skal tastes
 \end{figure}
 
 \subsubsection{Implementering}
-Først valideres alle felterne og hvis inputs i alle felter bliver godkendte, oprettes brugeren der er indtastet i viewet. Når brugeren er oprettet korrekt, skrives informationen, der ikke er log ind specifikke ind i databasen. Dette er information som; fornavn og efternavn.
+Først valideres alle felterne og hvis inputs i alle felter bliver godkendte, oprettes brugeren der er indtastet i viewet. Når brugeren er oprettet korrekt, skrives informationen, der ikke er log ind specifikke ind i databasen. Dette er information som; fornavn og efternavn. \\
+For en mere deltajeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations afsnit \ref{Design-sec:Opretbruger} Opret Bruger.
 
 
 \clearpage

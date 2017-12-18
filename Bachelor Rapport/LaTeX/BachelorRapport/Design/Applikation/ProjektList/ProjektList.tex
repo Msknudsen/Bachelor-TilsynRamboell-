@@ -1,5 +1,5 @@
 \subsection{Projekt oversigt}
-I dette afsnit vises design, brugergrænseflade, implementering og test for 'Project List' viewet. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens afsnit \ref{Design-sec:Opretbruger}.
+I dette afsnit vises design, brugergrænseflade, implementering og test for 'Project List' viewet. For den fulde dokumentation henvises til Arkitektur og Design dokumentationens Afsnit \ref{Design-sec:ProjectList} Projekt Oversigt.
 
 \subsubsection{Design}
 På Figur \ref{fig:ProjctListSekvens} ses sekvensdiagrammet for 'Project List' viewet til Rambøll Tilsyn.
@@ -25,6 +25,6 @@ I 'Project List' viewet er der en oversigt over, hvilke projekter der ligger i d
 Før listen af projekter bliver vist for brugeren, initialiserer 'Project List' viewet en forbindelse til Firebase, hvor den sætter et synkroniseringsevent, som kaldes såfremt, der sker ændringer i PDF-filerne. \\
 Dernæst opretter den en JSON-fil, som indeholder alt projektinformation fra Firebase. \\
 Controlleren opretter nu et nyt TableView som har sourcen TableSource. Her laver den en liste bestående af alle projekter og muligheden for at tilføje projekt og bruger. \\
-For en mere deltaljeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations afsnit \ref{Design-sec:ProjectList}.
+For en mere deltaljeret beskrivelse af implementeringen og kode snips, henvises til Arkitektur og Design dokumentations Afsnit \ref{Design-sec:ProjectList} Projekt Oversigt.
 
 \clearpage
