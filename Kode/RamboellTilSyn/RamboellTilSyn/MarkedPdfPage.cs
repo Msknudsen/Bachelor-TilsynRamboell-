@@ -50,7 +50,7 @@ namespace Ramboell.iOS
 
                
                 //draw extra data
-                RenderObjects(pageBounds, context);
+                RenderObjects(context);
                 context.RestoreState();
                 UIGraphics.PopContext();
             }
@@ -62,7 +62,7 @@ namespace Ramboell.iOS
         /// <summary>
         /// Rendering additional pdf objects on top of the pdf file
         /// </summary>
-        private void RenderObjects(CGRect rect, CGContext g)
+        private void RenderObjects(CGContext g)
         {
             var listOfData = MetaListJSonSingleton.TryGetInstance();
             if (listOfData?.PdfObjects != null)

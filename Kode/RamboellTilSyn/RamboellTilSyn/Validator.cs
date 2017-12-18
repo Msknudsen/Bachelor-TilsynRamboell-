@@ -4,7 +4,6 @@ using ARKit;
 namespace Ramboell.iOS
 {
     /// <summary>
-    /// Taken from https://stackoverflow.com/questions/1365407/c-sharp-code-to-validate-email-address
     /// This class is used when there is a need for validation of user input
     /// </summary>
     /// <returns></returns>
@@ -15,7 +14,7 @@ namespace Ramboell.iOS
         static readonly System.Text.RegularExpressions.Regex ValidPasswordRegex = CreateValidPasswordRegex();
 
         /// <summary>
-        /// Taken from http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx
+        /// Taken from http://haacked.com/archive/2007/08/21/i-knew-how-to-validate-an-email-address-until-i.aspx 11/12-2017
         /// </summary>
         /// <returns> A regex pattern scheme for matching email strings</returns>
         private static Regex CreateValidEmailRegex()
@@ -42,7 +41,7 @@ namespace Ramboell.iOS
         /// <returns> A regex pattern scheme for matching password</returns>
         private static Regex CreateValidPasswordRegex()
         {
-            //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
+            //https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a /11/12-2017
             //Rule: 1 Upper char, 1 number min 6 characters, optional symbols
             string validPasswordPattern = @"^(?=.*[A-Z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{6,}$";
 

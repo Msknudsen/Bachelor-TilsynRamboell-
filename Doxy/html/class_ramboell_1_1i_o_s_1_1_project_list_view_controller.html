@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Ramboell.iOS.ProjectListViewController Class Reference</title>
+<title>\Kode\Ramboell: Ramboell.iOS.ProjectListViewController Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">My Project
+   <div id="projectname">\Kode\Ramboell
    </div>
   </td>
  </tr>
@@ -72,18 +72,17 @@ $(function() {
 <div class="title">Ramboell.iOS.ProjectListViewController Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>ViewController used for showing list of different project in <a class="el" href="namespace_ramboell.html">Ramboell</a>  
+ <a href="class_ramboell_1_1i_o_s_1_1_project_list_view_controller.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for Ramboell.iOS.ProjectListViewController:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_ramboell_1_1i_o_s_1_1_project_list_view_controller__inherit__graph.png" border="0" usemap="#_ramboell_8i_o_s_8_project_list_view_controller_inherit__map" alt="Inheritance graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for Ramboell.iOS.ProjectListViewController:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_ramboell_1_1i_o_s_1_1_project_list_view_controller__coll__graph.png" border="0" usemap="#_ramboell_8i_o_s_8_project_list_view_controller_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 1 -->
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+ <div class="center">
+  <img src="class_ramboell_1_1i_o_s_1_1_project_list_view_controller.png" usemap="#Ramboell.iOS.ProjectListViewController_map" alt=""/>
+  <map id="Ramboell.iOS.ProjectListViewController_map" name="Ramboell.iOS.ProjectListViewController_map">
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -100,16 +99,16 @@ override void&#160;</td><td class="memItemRight" valign="bottom"><b>ViewDidLoad<
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:abb2511c3c29ee55bb6562e30893fc917"><td class="memItemLeft" align="right" valign="top"><a id="abb2511c3c29ee55bb6562e30893fc917"></a>
-List&lt; RegistrationDto &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ProjectInfos</b></td></tr>
+List&lt; <a class="el" href="class_ramboell_1_1i_o_s_1_1_registration_dto.html">RegistrationDto</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>ProjectInfos</b></td></tr>
 <tr class="separator:abb2511c3c29ee55bb6562e30893fc917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a037a0f546ea6fcf14af695751464b781"><td class="memItemLeft" align="right" valign="top"><a id="a037a0f546ea6fcf14af695751464b781"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>InstaniateJsonFile</b> ()</td></tr>
+<tr class="memitem:a037a0f546ea6fcf14af695751464b781"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ramboell_1_1i_o_s_1_1_project_list_view_controller.html#a037a0f546ea6fcf14af695751464b781">InstaniateJsonFile</a> ()</td></tr>
+<tr class="memdesc:a037a0f546ea6fcf14af695751464b781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adding a default list of data it needs to show if there is no project list to be found  <a href="#a037a0f546ea6fcf14af695751464b781">More...</a><br /></td></tr>
 <tr class="separator:a037a0f546ea6fcf14af695751464b781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea12a1a3796492b53f800400f1ea92be"><td class="memItemLeft" align="right" valign="top"><a id="aea12a1a3796492b53f800400f1ea92be"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SyncWithFirebaseDatabase</b> ()</td></tr>
+<tr class="memitem:aea12a1a3796492b53f800400f1ea92be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_ramboell_1_1i_o_s_1_1_project_list_view_controller.html#aea12a1a3796492b53f800400f1ea92be">SyncWithFirebaseDatabase</a> ()</td></tr>
+<tr class="memdesc:aea12a1a3796492b53f800400f1ea92be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Latching onto a FirebaseNode and listen to events on the perticular node in this case "pdf node from firebase if there is any changes on the node, the event would create a updated local file"  <a href="#aea12a1a3796492b53f800400f1ea92be">More...</a><br /></td></tr>
 <tr class="separator:aea12a1a3796492b53f800400f1ea92be"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cfe3c5a97cb35ed9fc0f669441db8e1"><td class="memItemLeft" align="right" valign="top"><a id="a8cfe3c5a97cb35ed9fc0f669441db8e1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ReleaseDesignerOutlets</b> ()</td></tr>
@@ -124,12 +123,69 @@ nuint&#160;</td><td class="memItemRight" valign="bottom"><b>handleReference</b><
 DatabaseReference&#160;</td><td class="memItemRight" valign="bottom"><b>_node</b></td></tr>
 <tr class="separator:a4ad3f8af1c55c3a53c030a4a8933595f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf9f6d35e9d5542080a81597994aa79"><td class="memItemLeft" align="right" valign="top"><a id="aebf9f6d35e9d5542080a81597994aa79"></a>
-readonly string&#160;</td><td class="memItemRight" valign="bottom"><b>_file</b> = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), Global.ProjectListFileName)</td></tr>
+readonly string&#160;</td><td class="memItemRight" valign="bottom"><b>_file</b> = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), <a class="el" href="class_ramboell_1_1i_o_s_1_1_global.html#a23d8cd28e3aa412d459934cd1ec82a74">Global.ProjectListFileName</a>)</td></tr>
 <tr class="separator:aebf9f6d35e9d5542080a81597994aa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>ViewController used for showing list of different project in <a class="el" href="namespace_ramboell.html">Ramboell</a> </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a037a0f546ea6fcf14af695751464b781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a037a0f546ea6fcf14af695751464b781">&#9670;&nbsp;</a></span>InstaniateJsonFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ramboell.iOS.ProjectListViewController.InstaniateJsonFile </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adding a default list of data it needs to show if there is no project list to be found </p>
+
+</div>
+</div>
+<a id="aea12a1a3796492b53f800400f1ea92be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea12a1a3796492b53f800400f1ea92be">&#9670;&nbsp;</a></span>SyncWithFirebaseDatabase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ramboell.iOS.ProjectListViewController.SyncWithFirebaseDatabase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Latching onto a FirebaseNode and listen to events on the perticular node in this case "pdf node from firebase if there is any changes on the node, the event would create a updated local file" </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>ProjectListViewController.cs</li>
-<li>ProjectListViewController.designer.cs</li>
+<li>RamboellTilSyn/ProjectListViewController.cs</li>
+<li>RamboellTilSyn/ProjectListViewController.designer.cs</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

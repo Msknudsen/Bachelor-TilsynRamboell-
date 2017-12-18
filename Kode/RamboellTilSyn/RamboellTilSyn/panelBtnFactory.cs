@@ -9,6 +9,10 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+
+    /// <summary>
+    /// Returns UIButton objects for others classes to use
+    /// </summary>
     public class PanelBtnFactory
     {
         public enum BtnType
@@ -20,6 +24,12 @@ namespace Ramboell.iOS
             ShowList,
             AddMinus
         }
+
+        /// <summary>
+        /// Returns UIButton objects for others classes to use
+        /// </summary>
+        /// <param name="param"> specify which type of button to return</param>
+        /// <returns>type of UIButton</returns>
         public static UIButton GetButtonForType(BtnType param)
         {
            var btn = UIButton.FromType(UIButtonType.Plain);

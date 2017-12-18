@@ -8,6 +8,9 @@ using UIKit;
 
 namespace Ramboell.iOS
 {
+    /// <summary>
+    /// Create users
+    /// </summary>
     [System.ComponentModel.DesignTimeVisible(false)]
     public partial class CreateUserViewController : UIViewController
     {
@@ -25,6 +28,11 @@ namespace Ramboell.iOS
             CreateUserBtn.TouchUpInside += CreateUserEventHandler;
         }
 
+        /// <summary>
+        /// eventhandler for creating user
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CreateUserEventHandler(object sender, EventArgs e)
         {
             if (IsFieldsValid())
@@ -92,6 +100,10 @@ namespace Ramboell.iOS
             });
         }
 
+        /// <summary>
+        /// checking all the fields and return true if all fields is valid
+        /// </summary>
+        /// <returns></returns>
         private bool IsFieldsValid()
         {
             return IsValidEmail() && IsValidPassword() && IsValidName() && IsValidPhoneNumber();

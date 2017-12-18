@@ -8,6 +8,9 @@ using UIKit;
 
 namespace Ramboell.iOS.Dto
 {
+    /// <summary>
+    /// project dto mapping between firebase and C# obj
+    /// </summary>
     public class ProjectDto
     {
         public Guid Guid { get; set; }

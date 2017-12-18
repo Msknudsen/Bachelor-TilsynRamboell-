@@ -121,7 +121,6 @@
     <Compile Include="Dto\RegistrationDto.cs" />
     <Compile Include="PanelBtnFactory.cs" />
     <Compile Include="Dto\PdfObjectDto.cs" />
-    <Compile Include="PlacementScaler.cs" />
     <Compile Include="Shape.cs" />
     <Compile Include="TableSource.cs" />
     <Compile Include="Main.cs" />
@@ -137,10 +136,6 @@
     <Compile Include="PdfViewController.cs" />
     <Compile Include="PdfViewController.designer.cs">
       <DependentUpon>PdfViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProjectOverviewViewController.cs" />
-    <Compile Include="ProjectOverviewViewController.designer.cs">
-      <DependentUpon>ProjectOverviewViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="packages.config" />

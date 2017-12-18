@@ -2,12 +2,15 @@
 \label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller}\index{Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller@{Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller}}
 
 
-Inheritance diagram for Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller\+:
-% FIG 0
+View\+Controller used for showing list of different project in \hyperlink{namespace_ramboell}{Ramboell}  
 
 
-Collaboration diagram for Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller\+:
-% FIG 1
+Inheritance diagram for Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_ramboell_1_1i_o_s_1_1_project_list_view_controller}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,17 +27,15 @@ override void {\bfseries View\+Did\+Load} ()
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_abb2511c3c29ee55bb6562e30893fc917}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_abb2511c3c29ee55bb6562e30893fc917}} 
-List$<$ Registration\+Dto $>$ {\bfseries Project\+Infos}
+List$<$ \hyperlink{class_ramboell_1_1i_o_s_1_1_registration_dto}{Registration\+Dto} $>$ {\bfseries Project\+Infos}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a037a0f546ea6fcf14af695751464b781}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a037a0f546ea6fcf14af695751464b781}} 
-void {\bfseries Instaniate\+Json\+File} ()
-\item 
-\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aea12a1a3796492b53f800400f1ea92be}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aea12a1a3796492b53f800400f1ea92be}} 
-void {\bfseries Sync\+With\+Firebase\+Database} ()
-\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a037a0f546ea6fcf14af695751464b781}{Instaniate\+Json\+File} ()
+\begin{DoxyCompactList}\small\item\em Adding a default list of data it needs to show if there is no project list to be found \end{DoxyCompactList}\item 
+void \hyperlink{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aea12a1a3796492b53f800400f1ea92be}{Sync\+With\+Firebase\+Database} ()
+\begin{DoxyCompactList}\small\item\em Latching onto a Firebase\+Node and listen to events on the perticular node in this case \char`\"{}pdf node from firebase if there is any changes on the node, the event would create a updated local file\char`\"{} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a8cfe3c5a97cb35ed9fc0f669441db8e1}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a8cfe3c5a97cb35ed9fc0f669441db8e1}} 
 void {\bfseries Release\+Designer\+Outlets} ()
 \end{DoxyCompactItemize}
@@ -48,11 +49,39 @@ nuint {\bfseries handle\+Reference}
 Database\+Reference {\bfseries \+\_\+node}
 \item 
 \mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aebf9f6d35e9d5542080a81597994aa79}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aebf9f6d35e9d5542080a81597994aa79}} 
-readonly string {\bfseries \+\_\+file} = Path.\+Combine(Environment.\+Get\+Folder\+Path(Environment.\+Special\+Folder.\+Personal), Global.\+Project\+List\+File\+Name)
+readonly string {\bfseries \+\_\+file} = Path.\+Combine(Environment.\+Get\+Folder\+Path(Environment.\+Special\+Folder.\+Personal), \hyperlink{class_ramboell_1_1i_o_s_1_1_global_a23d8cd28e3aa412d459934cd1ec82a74}{Global.\+Project\+List\+File\+Name})
 \end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+View\+Controller used for showing list of different project in \hyperlink{namespace_ramboell}{Ramboell} 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a037a0f546ea6fcf14af695751464b781}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_a037a0f546ea6fcf14af695751464b781}} 
+\index{Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller}!Instaniate\+Json\+File@{Instaniate\+Json\+File}}
+\index{Instaniate\+Json\+File@{Instaniate\+Json\+File}!Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller}}
+\subsubsection{\texorpdfstring{Instaniate\+Json\+File()}{InstaniateJsonFile()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller.\+Instaniate\+Json\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Adding a default list of data it needs to show if there is no project list to be found 
+
+\mbox{\Hypertarget{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aea12a1a3796492b53f800400f1ea92be}\label{class_ramboell_1_1i_o_s_1_1_project_list_view_controller_aea12a1a3796492b53f800400f1ea92be}} 
+\index{Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller}!Sync\+With\+Firebase\+Database@{Sync\+With\+Firebase\+Database}}
+\index{Sync\+With\+Firebase\+Database@{Sync\+With\+Firebase\+Database}!Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller@{Ramboell\+::i\+O\+S\+::\+Project\+List\+View\+Controller}}
+\subsubsection{\texorpdfstring{Sync\+With\+Firebase\+Database()}{SyncWithFirebaseDatabase()}}
+{\footnotesize\ttfamily void Ramboell.\+i\+O\+S.\+Project\+List\+View\+Controller.\+Sync\+With\+Firebase\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Latching onto a Firebase\+Node and listen to events on the perticular node in this case \char`\"{}pdf node from firebase if there is any changes on the node, the event would create a updated local file\char`\"{} 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-Project\+List\+View\+Controller.\+cs\item 
-Project\+List\+View\+Controller.\+designer.\+cs\end{DoxyCompactItemize}
+Ramboell\+Til\+Syn/Project\+List\+View\+Controller.\+cs\item 
+Ramboell\+Til\+Syn/Project\+List\+View\+Controller.\+designer.\+cs\end{DoxyCompactItemize}
