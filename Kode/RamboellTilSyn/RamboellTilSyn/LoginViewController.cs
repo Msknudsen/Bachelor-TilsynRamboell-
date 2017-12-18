@@ -26,7 +26,7 @@ namespace Ramboell.iOS
                 if (user != null)
                 {
                     Console.WriteLine("User Currently Logged In: {0}", user.Email);
-
+                    //SignOut();
                     if (Storyboard.InstantiateViewController("ProjectListViewController") is ProjectListViewController projectList)
                     {
                         NavigationController.RemoveFromParentViewController();

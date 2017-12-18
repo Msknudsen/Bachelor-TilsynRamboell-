@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using CoreAnimation;
 using CoreGraphics;
 using Firebase.Database;
 using Firebase.Storage;
@@ -137,7 +138,6 @@ namespace Ramboell.iOS
 
                 LoadPdf(PdfLocalNsUrl);
             }
- 
 
         }
 
@@ -188,7 +188,7 @@ namespace Ramboell.iOS
                     Shape = Shape,
                     TimeStamp = timeNow
                 });
-
+                //TODO ADD this code back when done
                 //File.WriteAllText(MetalocalNsUrl.Path,JsonConvert.SerializeObject(pdfObjects));
                 //// Create a reference to the file you want to upload
 
@@ -266,20 +266,20 @@ namespace Ramboell.iOS
             var pLocal = panelView.Bounds.Location;
 
             var prePageBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.PrePage);
-            prePageBtn.Frame = new CGRect(pLocal.X, pLocal.Y, 70, pH);
+            prePageBtn.Frame = new CGRect(pLocal.X, pLocal.Y, pH, pH);
             prePageBtn.TouchUpInside += delegate
             {
                 PDFView.GoToPreviousPage(this);
             };
 
             var nxtPageBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.NxtPage);
-            nxtPageBtn.Frame = new CGRect(pLocal.X + 100, pLocal.Y, 70, pH);
+            nxtPageBtn.Frame = new CGRect(pLocal.X + 100, pLocal.Y, pH, pH);
             nxtPageBtn.TouchUpInside += delegate
             {
                 PDFView.GoToNextPage(this);
             };
             var addCircleBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddCircle);
-            addCircleBtn.Frame = new CGRect(pLocal.X + 200, pLocal.Y, 70, pH);
+            addCircleBtn.Frame = new CGRect(pLocal.X + 200, pLocal.Y, pH, pH);
             addCircleBtn.TouchUpInside += delegate
             {
                 Console.WriteLine("addCircleBtn pressed");
@@ -289,19 +289,19 @@ namespace Ramboell.iOS
             };
 
             var addCheckMarkBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddCheckMark);
-            addCheckMarkBtn.Frame = new CGRect(pLocal.X + 300, pLocal.Y, 70, pH);
+            addCheckMarkBtn.Frame = new CGRect(pLocal.X + 300, pLocal.Y, pH, pH);
             addCheckMarkBtn.TouchUpInside += delegate
             {
                 SelectShape(iOS.Shape.CheckMark, addCheckMarkBtn);
             };
             var addMinusBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.AddMinus);
-            addMinusBtn.Frame = new CGRect(pLocal.X + 400, pLocal.Y, 70, pH);
+            addMinusBtn.Frame = new CGRect(pLocal.X + 400, pLocal.Y, pH, pH);
             addMinusBtn.TouchUpInside += delegate
             {
                 SelectShape(iOS.Shape.Minus, addMinusBtn);
             };
             var showListBtn = PanelBtnFactory.GetButtonForType(PanelBtnFactory.BtnType.ShowList);
-            showListBtn.Frame = new CGRect(pLocal.X + 500, pLocal.Y, 70, pH);
+            showListBtn.Frame = new CGRect(pLocal.X + 500, pLocal.Y, pH, pH);
             showListBtn.TouchUpInside += delegate
             {
                 Console.WriteLine("showListBtn pressed");

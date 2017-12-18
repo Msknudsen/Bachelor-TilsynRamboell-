@@ -15,6 +15,12 @@ namespace Ramboell.iOS
             base.ViewDidLoad();
             
         }
+
+        private void ChoosePdf(object sender, EventArgs eventArgs)
+        {
+            this.Storyboard.InstantiateViewController("ChoosePdfViewController");
+        }
+
         public override void ViewDidUnload()
         {
             base.ViewDidUnload();

@@ -78,18 +78,49 @@ namespace Ramboell.iOS
 
         private bool IsValidPhoneNumber()
         {
-            return PhoneCreateUserTxt.HasText;
+            if (PhoneCreateUserTxt != null)
+                return true;
+            UIAlertView alert = new UIAlertView()
+            {
+                Title = "Invalid Number"
+            };
+            alert.AddButton("OK");
+            alert.Show();
+            return false;
         }
 
         private bool IsValidName()
         {
-            return FirstnameCreateUserTxt.HasText && FirstnameCreateUserTxt.Text.Length > 2 && Validator.NameIsValid(FirstnameCreateUserTxt.Text);
+            if (FirstnameCreateUserTxt.HasText && FirstnameCreateUserTxt.Text.Length > 2 &&
+                Validator.NameIsValid(FirstnameCreateUserTxt.Text))
+            {
+                return true;
+            }
+            UIAlertView alert = new UIAlertView()
+            {
+                Title = "Invalid Name. First Name and Last name must start with upper character and have minimum 2 character"
+            };
+            alert.AddButton("OK");
+            alert.Show();
+            return false;
         }
 
 
         private bool IsValidEmail()
         {
-            return Validator.EmailIsValid(EmailCreateUserTxt.Text);
+            if (Validator.EmailIsValid(EmailCreateUserTxt.Text))
+            {
+                return true;
+            }
+            else { 
+            UIAlertView alert = new UIAlertView()
+                {
+                    Title = "Invalid Email"
+                };
+                alert.AddButton("OK");
+                alert.Show();
+                return false;
+            }
         }
 
         public override void ViewDidUnload()

@@ -99,6 +99,11 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ChosePdfViewController.cs" />
+    <Compile Include="ChosePdfViewController.designer.cs">
+      <DependentUpon>ChosePdfViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocumentPicker.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="MetaListJSonSingleton.cs" />
     <Compile Include="CreateProjectViewController.cs" />
@@ -126,10 +131,6 @@
       <DependentUpon>ProjectListViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Validator.cs" />
-    <Compile Include="View.cs" />
-    <Compile Include="View.designer.cs">
-      <DependentUpon>View.cs</DependentUpon>
-    </Compile>
     <None Include="GettingStarted.Xamarin" />
     <BundleResource Include="GoogleService-Info.plist" />
     <None Include="Info.plist" />
